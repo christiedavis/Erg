@@ -14,6 +14,10 @@
 		871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C01EC6E4F7002933E6 /* Assets.xcassets */; };
 		871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */; };
 		871E05CF1EC6E4F7002933E6 /* ergTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05CE1EC6E4F7002933E6 /* ergTests.swift */; };
+		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
+		878022651EC6E6B200D6A867 /* AddErgDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022631EC6E6B200D6A867 /* AddErgDataViewController.xib */; };
+		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
+		8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* InputCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,10 @@
 		871E05CA1EC6E4F7002933E6 /* ergTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ergTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E05CE1EC6E4F7002933E6 /* ergTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ergTests.swift; sourceTree = "<group>"; };
 		871E05D01EC6E4F7002933E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
+		878022631EC6E6B200D6A867 /* AddErgDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddErgDataViewController.xib; sourceTree = "<group>"; };
+		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		878022681EC6E9CB00D6A867 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 		871E05B51EC6E4F6002933E6 /* erg */ = {
 			isa = PBXGroup;
 			children = (
+				878022661EC6E99F00D6A867 /* Cells */,
+				878022611EC6E59800D6A867 /* ViewControllers */,
 				871E05B61EC6E4F7002933E6 /* AppDelegate.swift */,
 				871E05B81EC6E4F7002933E6 /* ViewController.swift */,
 				871E05BA1EC6E4F7002933E6 /* Main.storyboard */,
@@ -97,6 +107,24 @@
 				871E05D01EC6E4F7002933E6 /* Info.plist */,
 			);
 			path = ergTests;
+			sourceTree = "<group>";
+		};
+		878022611EC6E59800D6A867 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */,
+				878022631EC6E6B200D6A867 /* AddErgDataViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		878022661EC6E99F00D6A867 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				878022671EC6E9CB00D6A867 /* InputCell.swift */,
+				878022681EC6E9CB00D6A867 /* InputCell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +177,6 @@
 				TargetAttributes = {
 					871E05B21EC6E4F6002933E6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = RU5SGBJGGX;
 						ProvisioningStyle = Automatic;
 					};
 					871E05C91EC6E4F7002933E6 = {
@@ -184,7 +211,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */,
 				871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */,
+				878022651EC6E6B200D6A867 /* AddErgDataViewController.xib in Resources */,
 				871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */,
 				871E05BC1EC6E4F7002933E6 /* Main.storyboard in Resources */,
 			);
@@ -204,7 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
 				871E05BF1EC6E4F7002933E6 /* erg.xcdatamodeld in Sources */,
+				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 			);
@@ -347,7 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RU5SGBJGGX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = erg/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = star.erg;
@@ -360,7 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = RU5SGBJGGX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = erg/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = star.erg;
@@ -418,6 +449,7 @@
 				871E05D51EC6E4F7002933E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		871E05D61EC6E4F7002933E6 /* Build configuration list for PBXNativeTarget "ergTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +458,7 @@
 				871E05D81EC6E4F7002933E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>353316488130-kr2598a33sp069sr3me0uqbp01kjqu46.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.353316488130-kr2598a33sp069sr3me0uqbp01kjqu46</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCGfK2_oNq6n5RbYs4wzYq_Wce_XBoUQik</string>
+	<key>GCM_SENDER_ID</key>
+	<string>353316488130</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.starboatingclub.erg</string>
+	<key>PROJECT_ID</key>
+	<string>ergapp-49f52</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ergapp-49f52.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:353316488130:ios:9ba93937f0025303</string>
+	<key>DATABASE_URL</key>
+	<string>https://ergapp-49f52.firebaseio.com</string>
+</dict>
+</plist>

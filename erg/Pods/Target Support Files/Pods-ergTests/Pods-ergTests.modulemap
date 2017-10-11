@@ -1,0 +1,6 @@
+framework module Pods_ergTests {
+  umbrella header "Pods-ergTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

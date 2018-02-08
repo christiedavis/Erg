@@ -40,6 +40,8 @@ class AddErgDataViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSession)), animated: true)
+        
         tableView.isHidden = true
     }
     
@@ -51,6 +53,14 @@ class AddErgDataViewController: UIViewController {
     func reloadTable() {
         tableView.isHidden = false
         tableView.reloadData()
+    }
+    
+    @objc
+    func saveSession() {
+        delegate?.addItemToView()
+        // todo actually add item
+        self.navigationController?.popViewController(animated: true)
+        
     }
 }
 

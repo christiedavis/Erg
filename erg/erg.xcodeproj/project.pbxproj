@@ -20,6 +20,7 @@
 		87606DC7202CECEC00261CF2 /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC3202CECEC00261CF2 /* Lora-Italic.ttf */; };
 		87606DC8202CECEC00261CF2 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC4202CECEC00261CF2 /* Lora-BoldItalic.ttf */; };
 		87606DCA202CECFD00261CF2 /* Sofia-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */; };
+		87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCC202CF00600261CF2 /* FontExtensions.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
 		8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* InputCell.xib */; };
@@ -64,6 +65,7 @@
 		87606DC3202CECEC00261CF2 /* Lora-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Italic.ttf"; sourceTree = "<group>"; };
 		87606DC4202CECEC00261CF2 /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
 		87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia-Regular.ttf"; sourceTree = "<group>"; };
+		87606DCC202CF00600261CF2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		878022681EC6E9CB00D6A867 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				87606DBD202C67F600261CF2 /* ColorExtensions.swift */,
+				87606DCC202CF00600261CF2 /* FontExtensions.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */,
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,

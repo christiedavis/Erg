@@ -109,7 +109,7 @@ extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
         if indexPath.item == 0 {
             return 150
         }
-        return 80
+        return 60
         
     }
 }

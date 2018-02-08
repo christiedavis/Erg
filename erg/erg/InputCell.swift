@@ -56,12 +56,11 @@ class InputCell: UITableViewCell {
         inputField?.isHidden = true
         titleLabel?.text = "Piece \(pieceNo + 1)"
         
-        topDivider.isHidden = false
+        
+        topDivider.isHidden = pieceNo == 0 ? true : false
         bottomDivider.isHidden = false
         
-        inputBottomConstraint.constant = 10
-        
-        
+        inputBottomConstraint.constant = 5
     }
     
     func setup(_ inputType: InputType) {

@@ -68,8 +68,6 @@ class AddErgDataViewController: UIViewController {
     }
 }
 
-
-
 extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
  
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,6 +109,9 @@ extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
+        if indexPath.row == 0 {
+            return 40
+        }
         return 60
         
     }

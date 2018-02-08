@@ -11,6 +11,10 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+protocol ItemsViewControllerDelegate: class {
+    func addItemToView()
+}
+
 class ItemsTableViewController: UITableViewController {
 
     var user: User!
@@ -60,17 +64,20 @@ class ItemsTableViewController: UITableViewController {
     }
 
     @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
-        let prompt = UIAlertController(title: "To Do App", message: "To Do Item", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            let userInput = prompt.textFields![0].text
-            if (userInput!.isEmpty) {
-                return
-            }
-            self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
-        }
-        prompt.addTextField(configurationHandler: nil)
-        prompt.addAction(okAction)
-        present(prompt, animated: true, completion: nil);
+        
+        performSegue(withIdentifier: "ShowAddErgData", sender: self)
+        
+//        let prompt = UIAlertController(title: "To Do App", message: "To Do Item", preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+//            let userInput = prompt.textFields![0].text
+//            if (userInput!.isEmpty) {
+//                return
+//            }
+//            self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
+//        }
+//        prompt.addTextField(configurationHandler: nil)
+//        prompt.addAction(okAction)
+//        present(prompt, animated: true, completion: nil);
 
     }
 
@@ -91,5 +98,19 @@ class ItemsTableViewController: UITableViewController {
 
     deinit {
         ref.child("users/\(self.user.uid)/items").removeObserver(withHandle: databaseHandle)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowAddErgData" {
+            if let vc = segue.destination as? AddErgDataViewController {
+               vc.delegate = self
+            }
+        }
+    }
+}
+
+extension ItemsTableViewController: ItemsViewControllerDelegate {
+    func addItemToView() {
+        
     }
 }

@@ -9,44 +9,57 @@
 import UIKit
 
 enum InputType {
-   case Time,
-        Distance,
-        Split,
-        Rate,
-        HeartRate
+   case time,
+        distance,
+        split,
+        rate,
+        heartRate,
+        header
 }
 
 class InputCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var inputField: UITextField!
-    @IBOutlet weak var unitLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel?
+    @IBOutlet weak var inputField: UITextField?
+    @IBOutlet weak var unitLabel: UILabel?
+    
+    static var cellName: String = "InputCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
+    func setupheader(_ pieceNo: Int) {
+        
+    }
+    
     func setup(_ inputType: InputType) {
+        self.awakeFromNib()
+        
         switch inputType {
-            case .Time:
-            titleLabel.text = "Total time"
-            unitLabel.text = "m"
+            case .time:
+            titleLabel?.text = "Total time"
+            unitLabel?.text = "m"
             
-            case .Distance:
-            titleLabel.text = "Distance"
-            unitLabel.text = "m"
+            case .distance:
+            titleLabel?.text = "Distance"
+            unitLabel?.text = "m"
             
-            case .Split:
-            titleLabel.text = "Split"
-            unitLabel.text = "m/s"
+            case .split:
+            titleLabel?.text = "Split"
+            unitLabel?.text = "m/s"
             
-            case .Rate:
-            titleLabel.text = "Rate"
-            unitLabel.text = "spm"
+            case .rate:
+            titleLabel?.text = "Rate"
+            unitLabel?.text = "spm"
             
-            case .HeartRate:
-            titleLabel.text = "Heart Rate"
-            unitLabel.text = "Bpm"
+            case .heartRate:
+            titleLabel?.text = "Heart Rate"
+            unitLabel?.text = "Bpm"
+            
+        case .header:
+            titleLabel?.text = "tile"
         }
     }
 }

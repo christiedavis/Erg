@@ -23,20 +23,50 @@ class InputCell: UITableViewCell {
     @IBOutlet weak var inputField: UITextField?
     @IBOutlet weak var unitLabel: UILabel?
     
+    @IBOutlet weak var topDivider: UIView!
+    @IBOutlet weak var bottomDivider: UIView!
+    
+    @IBOutlet var inputBottomConstraint: NSLayoutConstraint!
+    
     static var cellName: String = "InputCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // not called
+    }
+    
+    private func setup() {
+        bottomDivider.backgroundColor = UIColor.gray
+        topDivider.backgroundColor = .gray
         
+        topDivider.isHidden = true
+        bottomDivider.isHidden = true
+        
+        inputBottomConstraint.constant = 15
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        inputField?.isHidden = false
+
+    }
+    
     func setupheader(_ pieceNo: Int) {
+        setup()
+        inputField?.isHidden = true
+        titleLabel?.text = "Piece \(pieceNo + 1)"
+        
+        topDivider.isHidden = false
+        bottomDivider.isHidden = false
+        
+        inputBottomConstraint.constant = 10
+        
         
     }
     
     func setup(_ inputType: InputType) {
-        self.awakeFromNib()
-        
+        setup()
+       
         switch inputType {
             case .time:
             titleLabel?.text = "Total time"
@@ -60,6 +90,7 @@ class InputCell: UITableViewCell {
             
         case .header:
             titleLabel?.text = "tile"
+
         }
     }
 }

@@ -45,6 +45,10 @@ class AddErgDataViewController: UIViewController {
         tableView.isHidden = true
     }
     
+    @IBAction func segmentTapped(_ sender: Any) {
+        reloadTable()
+    }
+    
     @IBAction func stepperTapped(_ sender: Any) {
         noPieces = Int(noPiecesStepper.value)
         reloadTable()
@@ -85,7 +89,7 @@ extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         if indexPath.item == 0 {
-            cell.setup(.header)
+            cell.setupheader(indexPath.section)
         } else if indexPath.item == 2 {
             if sessionType == .distance {
                 cell.setup(.distance)
@@ -106,9 +110,7 @@ extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.item == 0 {
-            return 150
-        }
+
         return 60
         
     }

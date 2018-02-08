@@ -247,6 +247,9 @@
                                     <segment title="Distance"/>
                                     <segment title="Time"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentTapped:" destination="5EU-2m-tU6" eventType="touchUpInside" id="2gb-5R-hfB"/>
+                                </connections>
                             </segmentedControl>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-1M-DnH">
                                 <rect key="frame" x="265" y="128" width="94" height="29"/>

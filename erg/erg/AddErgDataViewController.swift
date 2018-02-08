@@ -88,19 +88,19 @@ extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
         
         if indexPath.item == 0 {
             cell.setupheader(indexPath.section)
+        } else if indexPath.item == 1 {
+            if sessionType == .distance {
+                cell.setup(.distance)
+            } else {
+                cell.setup(.time)
+            }
         } else if indexPath.item == 2 {
             if sessionType == .distance {
-                cell.setup(.distance)
-            } else {
                 cell.setup(.time)
+            } else {
+                cell.setup(.distance)
             }
         } else if indexPath.item == 3 {
-            if sessionType == .distance {
-                cell.setup(.time)
-            } else {
-                cell.setup(.distance)
-            }
-        } else if indexPath.item == 4{
             cell.setup(.rate)
         }
         return cell
@@ -113,6 +113,5 @@ extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
             return 40
         }
         return 60
-        
     }
 }

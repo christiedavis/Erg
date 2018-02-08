@@ -248,7 +248,6 @@
                                     <segment title="Time"/>
                                 </segments>
                                 <connections>
-                                    <action selector="segmentTapped:" destination="5EU-2m-tU6" eventType="touchUpInside" id="2gb-5R-hfB"/>
                                     <action selector="segmentTapped:" destination="5EU-2m-tU6" eventType="valueChanged" id="rHs-0d-Cx1"/>
                                 </connections>
                             </segmentedControl>

@@ -15,6 +15,7 @@
 		871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C01EC6E4F7002933E6 /* Assets.xcassets */; };
 		871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */; };
 		871E05CF1EC6E4F7002933E6 /* ergTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05CE1EC6E4F7002933E6 /* ergTests.swift */; };
+		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
 		8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* InputCell.xib */; };
@@ -54,6 +55,7 @@
 		871E05CA1EC6E4F7002933E6 /* ergTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ergTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E05CE1EC6E4F7002933E6 /* ergTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ergTests.swift; sourceTree = "<group>"; };
 		871E05D01EC6E4F7002933E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		878022681EC6E9CB00D6A867 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */,
 				871E05C51EC6E4F7002933E6 /* Info.plist */,
 				871E05BD1EC6E4F7002933E6 /* erg.xcdatamodeld */,
+				87606DBD202C67F600261CF2 /* ColorExtensions.swift */,
 			);
 			path = erg;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
+				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
 				871E05BF1EC6E4F7002933E6 /* erg.xcdatamodeld in Sources */,

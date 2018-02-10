@@ -9,6 +9,22 @@
 import Foundation
 import FirebaseDatabase
 
+struct SessionDTO {
+    var title: String?
+    var type: Int?
+    var distance: Int?
+    var time: Int?
+    var rate: Int?
+    var date: Date?
+    var pieces: Dictionary<Int, PieceDTO>?
+}
+
+struct PieceDTO {
+    var distance: Int?
+    var time: Int?
+    var rate: Int?
+}
+
 class Session {
     
     var ref: DatabaseReference

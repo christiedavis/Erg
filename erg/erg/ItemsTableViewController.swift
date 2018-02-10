@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 protocol ItemsViewControllerDelegate: class {
-    func addItemToView()
+    func addItemToView(session: SessionDTO)
 }
 
 class ItemsTableViewController: UITableViewController {
@@ -110,7 +110,8 @@ class ItemsTableViewController: UITableViewController {
 }
 
 extension ItemsTableViewController: ItemsViewControllerDelegate {
-    func addItemToView() {
-        
+    func addItemToView(session: SessionDTO) {
+        //                    self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
+
     }
 }

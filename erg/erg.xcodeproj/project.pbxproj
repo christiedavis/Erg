@@ -25,6 +25,10 @@
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
 		8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* InputCell.xib */; };
+		878655CE203184AF0050D1BD /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655C8203184AE0050D1BD /* SessionCell.swift */; };
+		878655CF203184AF0050D1BD /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655C9203184AF0050D1BD /* SessionCell.xib */; };
+		878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655CB203184AF0050D1BD /* HeaderCell.swift */; };
+		878655D2203184AF0050D1BD /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655CC203184AF0050D1BD /* HeaderCell.xib */; };
 		87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */; };
 		87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */; };
 		87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */; };
@@ -71,6 +75,10 @@
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		878022681EC6E9CB00D6A867 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
+		878655C8203184AE0050D1BD /* SessionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
+		878655C9203184AF0050D1BD /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
+		878655CB203184AF0050D1BD /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		878655CC203184AF0050D1BD /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 		87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +226,10 @@
 		878022661EC6E99F00D6A867 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				878655CB203184AF0050D1BD /* HeaderCell.swift */,
+				878655CC203184AF0050D1BD /* HeaderCell.xib */,
+				878655C8203184AE0050D1BD /* SessionCell.swift */,
+				878655C9203184AF0050D1BD /* SessionCell.xib */,
 				878022671EC6E9CB00D6A867 /* InputCell.swift */,
 				878022681EC6E9CB00D6A867 /* InputCell.xib */,
 			);
@@ -320,7 +332,9 @@
 				871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */,
 				87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */,
 				87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */,
+				878655D2203184AF0050D1BD /* HeaderCell.xib in Resources */,
 				87606DC7202CECEC00261CF2 /* Lora-Italic.ttf in Resources */,
+				878655CF203184AF0050D1BD /* SessionCell.xib in Resources */,
 				87606DC5202CECEC00261CF2 /* Lora-Bold.ttf in Resources */,
 				871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */,
 				87606DC8202CECEC00261CF2 /* Lora-BoldItalic.ttf in Resources */,
@@ -456,9 +470,11 @@
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
+				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,
 				87606DCF202CFD8200261CF2 /* Session.swift in Sources */,
+				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
 				871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,

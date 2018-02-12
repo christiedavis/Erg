@@ -19,12 +19,6 @@ struct SessionDTO {
     var pieces: Dictionary<Int, PieceDTO>?
 }
 
-struct PieceDTO {
-    var distance: Int?
-    var time: Int?
-    var rate: Int?
-}
-
 class Session {
     
     var ref: DatabaseReference
@@ -55,18 +49,4 @@ class Session {
     }
 }
 
-class Piece {
-    var ref: DatabaseReference
-    var distance: Int?
-    var time: Int?
-    var rate: Int?
-    
-    init (snapshot: DataSnapshot) {
-        ref = snapshot.ref
-        
-        let data = snapshot.value as! Dictionary<String, AnyObject>
-        distance = data["distance"]! as? Int
-        time = data["time"]! as? Int
-        rate = data["rate"]! as? Int
-    }
-}
+

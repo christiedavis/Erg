@@ -14,6 +14,7 @@
 		871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C01EC6E4F7002933E6 /* Assets.xcassets */; };
 		871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */; };
 		871E05CF1EC6E4F7002933E6 /* ergTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05CE1EC6E4F7002933E6 /* ergTests.swift */; };
+		874A69AF20323F690009A83D /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A69AE20323F690009A83D /* Piece.swift */; };
 		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
 		87606DC5202CECEC00261CF2 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */; };
 		87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */; };
@@ -60,6 +61,7 @@
 		871E05CA1EC6E4F7002933E6 /* ergTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ergTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E05CE1EC6E4F7002933E6 /* ergTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ergTests.swift; sourceTree = "<group>"; };
 		871E05D01EC6E4F7002933E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		874A69AE20323F690009A83D /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
 		87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				87B5CF111F8DEA1E00FE12E8 /* Item.swift */,
 				87606DCE202CFD8200261CF2 /* Session.swift */,
+				874A69AE20323F690009A83D /* Piece.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,
 				87606DCF202CFD8200261CF2 /* Session.swift in Sources */,
+				874A69AF20323F690009A83D /* Piece.swift in Sources */,
 				871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,

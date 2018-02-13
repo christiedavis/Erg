@@ -9,26 +9,34 @@
 import UIKit
 
 class ItemsDatasource: NSObject {
-    var items: [String] = ["hi", "hello"]
-    
-    var sessionPickerValueArray: [String] = ["No filter"]
-    var sessionFilter: String = "No Filter"
+    var items: [Item] = []
+    var presenter: ItemsPresenterDataDelegate?
     
     override init() {
         super.init()
-        
-        
+    }
+    
+    init(_ presenter: ItemsPresenterDataDelegate) {
+        self.presenter = presenter
     }
 }
 
 extension ItemsDatasource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        guard let presenter = presenter else {
+            return 0
+        }
+        
+        return presenter.numberOfSessions
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        guard let presenter = presenter else {
+            return 0
+        }
+        let numRows = presenter.rowsForSession(section)
+        return numRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,14 +47,14 @@ extension ItemsDatasource: UITableViewDataSource {
         }
         
         let item = items[indexPath.row]
-//        cell.textLabel?.text = item.title
+        cell.textLabel?.text = item.title
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = items[indexPath.row]
-//            item.ref.removeValue()
+            item.ref.removeValue()
         }
     }
 }
@@ -61,17 +69,17 @@ extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return sessionPickerValueArray.count
+        return presenter?.sessionPickerValueArray.count ?? 0
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sessionPickerValueArray[row]
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return presenter?.sessionPickerValueArray[row] ?? "Error"
     }
     
     // Catpure the picker view selection
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // The parameter named row and component represents what was selected.
-        sessionFilter = sessionPickerValueArray[row]
+        presenter?.setSessionTypeFromPicker(row) //presenter?.sessionPickerValueArray[row] ?? "filter")
     }
 }
 

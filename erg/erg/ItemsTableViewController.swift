@@ -9,9 +9,10 @@
 import UIKit
 
 protocol ItemsViewControllerDelegate: class {
-    var presenter: ItemsPresenterDelegate? { get set }
+    var presenter: ItemsPresenterViewDelegate? { get set }
 //    func addItemToView(session: SessionDTO)
     func reloadTable()
+    func signOut()
 }
 
 class ItemsTableViewController: UIViewController {
@@ -21,7 +22,7 @@ class ItemsTableViewController: UIViewController {
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var sessionPickerView: UIPickerView!
 
-    var presenter: ItemsPresenterDelegate?
+    var presenter: ItemsPresenterViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,26 +40,13 @@ class ItemsTableViewController: UIViewController {
    
 
     @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
-        presenter!.signOut()
-        
-       
+        presenter?.signOut()
     }
 
     @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
         
         performSegue(withIdentifier: "ShowAddErgData", sender: self)
-        
-//        let prompt = UIAlertController(title: "To Do App", message: "To Do Item", preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-//            let userInput = prompt.textFields![0].text
-//            if (userInput!.isEmpty) {
-//                return
-//            }
-//            self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
-//        }
-//        prompt.addTextField(configurationHandler: nil)
-//        prompt.addAction(okAction)
-//        present(prompt, animated: true, completion: nil);
+//        self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
     }
 
    
@@ -79,13 +67,17 @@ class ItemsTableViewController: UIViewController {
 extension ItemsTableViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
-        
+        tableView.reloadData()
     }
     
     func addItemToView(session: SessionDTO) {
         
-        presenter?.addItemToView(session: session)
+        presenter?.addItemToDatabase(session: session)
         //                    self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
 
+    }
+    
+    func signOut() {
+        performSegue(withIdentifier: "SignOut", sender: nil)
     }
 }

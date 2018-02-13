@@ -16,7 +16,7 @@ struct PieceDTO {
 }
 
 class Piece {
-    var ref: DatabaseReference
+    var ref: DatabaseReference?
     var distance: Int?
     var time: Int?
     var rate: Int?
@@ -28,5 +28,24 @@ class Piece {
         distance = data["distance"]! as? Int
         time = data["time"]! as? Int
         rate = data["rate"]! as? Int
+    }
+    init(_ piece: PieceDTO, date: Date, sessionType: SessionType) {
+        
+//        var things = session.pieces?.map({ (key: Int, value: PieceDTO) -> (key: Int, value: Piece) in
+//            var newThing = (key, Piece(value, session.date, session.sessionType))
+//        })
+//        
+//        title = "\(pieces)x \(value)"
+//        
+        
+        self.ref = nil
+        
+    }
+    
+    func toAnyObject() -> Any {
+        return [
+            "distance": distance,
+            "time": time,
+        ]
     }
 }

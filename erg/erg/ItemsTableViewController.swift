@@ -17,16 +17,21 @@ protocol ItemsViewControllerDelegate: class {
 
 class ItemsTableViewController: UITableViewController {
 
+    private var rootReference: DatabaseReference! = Database.database().reference()
+    private var sessionReference: DatabaseReference {
+        return rootReference.child("users/\(self.user.uid)/sessions")
+    }
+    
     var user: User!
     var items = [Item]()
-    var ref: DatabaseReference!
+//    var ref: DatabaseReference!
     private var databaseHandle: DatabaseHandle!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         user = Auth.auth().currentUser
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
         startObservingDatabase()
     }
 
@@ -82,7 +87,7 @@ class ItemsTableViewController: UITableViewController {
     }
 
     func startObservingDatabase () {
-        databaseHandle = ref.child("users/\(self.user.uid)/items").observe(.value, with: { (snapshot) in
+        databaseHandle = rootReference.child("users/\(self.user.uid)/items").observe(.value, with: { (snapshot) in
             var newItems = [Item]()
 
             for itemSnapShot in snapshot.children {
@@ -94,10 +99,21 @@ class ItemsTableViewController: UITableViewController {
             self.tableView.reloadData()
 
         })
+        
+//        databaseHandle = sessionReference.observe(.value, with: { snapshot in
+//            var newSessions = [ErgSessionModel]()
+//            
+//            for sessionSnapshot in snapshot.children {
+//                let session = ErgSessionModel(snapshot: sessionSnapshot as! DataSnapshot)
+//                newSessions.append(session)
+//            }
+//            self.ergSessions = newSessions
+//        })
+        
     }
 
     deinit {
-        ref.child("users/\(self.user.uid)/items").removeObserver(withHandle: databaseHandle)
+//        ref.child("users/\(self.user.uid)/items").removeObserver(withHandle: databaseHandle)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

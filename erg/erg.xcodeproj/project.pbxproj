@@ -31,6 +31,7 @@
 		87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */; };
 		87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */; };
 		87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF111F8DEA1E00FE12E8 /* Item.swift */; };
+		87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9CAFC2032874200CDF755 /* ArrayExtension.swift */; };
 		FFF3A9DD99EF72337C9B79BD /* Pods_erg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCB5CE723B2FEAD15EC34FB /* Pods_erg.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87B5CF111F8DEA1E00FE12E8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		87E9CAFC2032874200CDF755 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			children = (
 				87606DBD202C67F600261CF2 /* ColorExtensions.swift */,
 				87606DCC202CF00600261CF2 /* FontExtensions.swift */,
+				87E9CAFC2032874200CDF755 /* ArrayExtension.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,
+				87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

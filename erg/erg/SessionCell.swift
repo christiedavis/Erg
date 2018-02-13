@@ -13,11 +13,13 @@ class SessionCell: UITableViewCell {
     @IBOutlet var timeLabel: UILabel?
     @IBOutlet var distanceLabel: UILabel?
     
+    static var cellName: String = "SessionCell"
+
     static var reuseIdentifier: String! { return "SessionCell" }
     static var nibName: String! { return "SessionCell" }
     
-    func setupWithErgSession(_ ergSession: ErgSessionModel) {
-        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))
-        distanceLabel?.attributedText = (ergSession.distance ?? "error").apply(font: UIFont.regularFont(size: 12))
-    }
+//    func setupWithErgSession(_ ergSession: ErgSessionModel) {
+//        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))
+//        distanceLabel?.attributedText = (ergSession.distance ?? "error").apply(font: UIFont.regularFont(size: 12))
+//    }
 }

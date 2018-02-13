@@ -66,7 +66,7 @@ class AddErgDataViewController: UIViewController {
         let pieces = PieceDTO(distance: 23, time: 32, rate: 23)
         let newSession = SessionDTO(title: "hello", type: 32, distance: 23, time: 232, rate: 23, date: Date(), pieces: [ 0 : pieces])
         
-        delegate?.addItemToView(session: newSession)
+//        delegate?.addItemToView(session: newSession)
 //                    self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
 
         self.navigationController?.popViewController(animated: true)

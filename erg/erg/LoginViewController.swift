@@ -103,4 +103,13 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "SignInFromLogin", sender: nil)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SignInFromLogin" {
+            if let vc = segue.destination as? ItemsTableViewController {
+                let iPresenter = ItemsPresenter()
+                iPresenter.viewDelegate = vc
+                vc.presenter = iPresenter
+            }
+        }
+    }
 }

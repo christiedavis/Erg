@@ -29,6 +29,8 @@
 		878655CF203184AF0050D1BD /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655C9203184AF0050D1BD /* SessionCell.xib */; };
 		878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655CB203184AF0050D1BD /* HeaderCell.swift */; };
 		878655D2203184AF0050D1BD /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655CC203184AF0050D1BD /* HeaderCell.xib */; };
+		878655D6203192FD0050D1BD /* ItemsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655D5203192FD0050D1BD /* ItemsDatasource.swift */; };
+		878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655D7203197B30050D1BD /* ItemsPresenter.swift */; };
 		87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */; };
 		87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */; };
 		87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */; };
@@ -79,6 +81,8 @@
 		878655C9203184AF0050D1BD /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		878655CB203184AF0050D1BD /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		878655CC203184AF0050D1BD /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		878655D5203192FD0050D1BD /* ItemsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDatasource.swift; sourceTree = "<group>"; };
+		878655D7203197B30050D1BD /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
 		87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				87606DCB202CED1700261CF2 /* Utilities */,
 				87606DBF202CECAC00261CF2 /* Resources */,
 				878022661EC6E99F00D6A867 /* Cells */,
+				878655D4203192D00050D1BD /* Datasources */,
 				878022611EC6E59800D6A867 /* ViewControllers */,
 				871E05B61EC6E4F7002933E6 /* AppDelegate.swift */,
 				871E05BA1EC6E4F7002933E6 /* Main.storyboard */,
@@ -217,6 +222,7 @@
 				878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */,
 				871E05B81EC6E4F7002933E6 /* ViewController.swift */,
 				87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */,
+				878655D7203197B30050D1BD /* ItemsPresenter.swift */,
 				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
 				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
 			);
@@ -234,6 +240,14 @@
 				878022681EC6E9CB00D6A867 /* InputCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		878655D4203192D00050D1BD /* Datasources */ = {
+			isa = PBXGroup;
+			children = (
+				878655D5203192FD0050D1BD /* ItemsDatasource.swift */,
+			);
+			name = Datasources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,10 +480,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */,
+				878655D6203192FD0050D1BD /* ItemsDatasource.swift in Sources */,
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
+				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,

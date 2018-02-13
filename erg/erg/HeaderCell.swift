@@ -19,8 +19,8 @@ class HeaderCell: UITableViewCell {
     override func setNeedsLayout() {
         super.setNeedsLayout()
         
-        rightLabel.attributedText = "Time".apply(font: .boldFont(size: 16))
-        leftLabel.attributedText = "Distance".apply(font: .boldFont(size: 16))
+//        rightLabel.attributedText = "Time".apply(font: .boldFont(size: 16))
+//        leftLabel.attributedText = "Distance".apply(font: .boldFont(size: 16))
 
     }
 }

@@ -32,6 +32,11 @@ protocol ItemsPresenterDataDelegate {
 
 class ItemsPresenter: NSObject {
 
+    private var rootReference: DatabaseReference! = Database.database().reference()
+    private var sessionReference: DatabaseReference {
+        return rootReference.child("users/\(self.user.uid)/sessions")
+    }
+    
     var user: User!
     var items = [Item]()
     var ref: DatabaseReference!
@@ -68,12 +73,12 @@ class ItemsPresenter: NSObject {
         datasource = ItemsDatasource(self)
     
         user = Auth.auth().currentUser
-        ref = Database.database().reference()
+//        ref = Database.database().reference()
         startObservingDatabase()
     }
     
     func startObservingDatabase () {
-        databaseHandle = ref.child("users/\(self.user.uid)/items").observe(.value, with: { (snapshot) in
+        databaseHandle = rootReference.child("users/\(self.user.uid)/items").observe(.value, with: { (snapshot) in
             var newItems = [Item]()
             
             for itemSnapShot in snapshot.children {
@@ -84,10 +89,22 @@ class ItemsPresenter: NSObject {
             self.items = newItems
             self.viewDelegate?.reloadTable()
         })
+        
+        databaseHandle = sessionReference.observe(.value, with: { snapshot in
+//            var newSessions = [ErgSessionModel]()
+//
+//            for sessionSnapshot in snapshot.children {
+//                let session = ErgSessionModel(snapshot: sessionSnapshot as! DataSnapshot)
+//                newSessions.append(session)
+//            }
+//            self.ergSessions = newSessions
+        })
     }
     
     deinit {
         ref.child("users/\(self.user.uid)/items").removeObserver(withHandle: databaseHandle)
+        ref.child("users/\(self.user.uid)/sessions").removeObserver(withHandle: databaseHandle)
+
     }
 }
 

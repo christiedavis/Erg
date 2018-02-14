@@ -126,6 +126,18 @@ class LoginViewController: UIViewController {
 //            //TODO: add completion
 //        }
 //    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SignInFromLogin" {
+            
+            if let destinationNavigationController = segue.destination as? UINavigationController {
+                if let targetController = destinationNavigationController.topViewController as? ItemsTableViewController {
+                    let itemPresenter = ItemsPresenter()
+                    itemPresenter.viewDelegate = targetController
+                    targetController.presenter = itemPresenter
+                }
+            }
+        }
+    }
 }
 
 //extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {

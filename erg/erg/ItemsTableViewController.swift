@@ -7,15 +7,15 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
-import FirebaseAuth
 
 protocol ItemsViewControllerDelegate: class {
-    func addItemToView(session: SessionDTO)
+    var presenter: ItemsPresenterViewDelegate? { get set }
+//    func addItemToView(session: SessionDTO)
+    func reloadTable()
+    func signOut()
 }
 
-class ItemsTableViewController: UITableViewController {
+class ItemsTableViewController: UIViewController {
 
     private var rootReference: DatabaseReference! = Database.database().reference()
     private var sessionReference: DatabaseReference {
@@ -26,64 +26,39 @@ class ItemsTableViewController: UITableViewController {
     var items = [Item]()
 //    var ref: DatabaseReference!
     private var databaseHandle: DatabaseHandle!
+    @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet var filterButton: UIButton!
+    @IBOutlet var sessionPickerView: UIPickerView!
 
+    var presenter: ItemsPresenterViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         user = Auth.auth().currentUser
 //        ref = Database.database().reference()
         startObservingDatabase()
+        sessionPickerView.delegate = presenter!.datasource
+        sessionPickerView.dataSource = presenter!.datasource
+        sessionPickerView.isHidden = true
+        sessionPickerView.backgroundColor = UIColor.lightGray
+
+        tableView.delegate = presenter!.datasource
+        tableView.dataSource = presenter!.datasource
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let item = items[indexPath.row]
-        cell.textLabel?.text = item.title
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let item = items[indexPath.row]
-            item.ref.removeValue()
-        }
-    }
+   
 
     @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            performSegue(withIdentifier: "SignOut", sender: nil)
-        } catch let error {
-            assertionFailure("Error signing out: \(error)")
-        }
+        presenter?.signOut()
     }
 
     @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
         
         performSegue(withIdentifier: "ShowAddErgData", sender: self)
-        
-//        let prompt = UIAlertController(title: "To Do App", message: "To Do Item", preferredStyle: .alert)
-//        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-//            let userInput = prompt.textFields![0].text
-//            if (userInput!.isEmpty) {
-//                return
-//            }
-//            self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
-//        }
-//        prompt.addTextField(configurationHandler: nil)
-//        prompt.addAction(okAction)
-//        present(prompt, animated: true, completion: nil);
-
+//        self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
     }
 
     func startObservingDatabase () {
@@ -115,6 +90,7 @@ class ItemsTableViewController: UITableViewController {
     deinit {
 //        ref.child("users/\(self.user.uid)/items").removeObserver(withHandle: databaseHandle)
     }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowAddErgData" {
@@ -123,11 +99,26 @@ class ItemsTableViewController: UITableViewController {
             }
         }
     }
+    
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        sessionPickerView.isHidden = false
+    }
 }
 
 extension ItemsTableViewController: ItemsViewControllerDelegate {
+    
+    func reloadTable() {
+        tableView.reloadData()
+    }
+    
     func addItemToView(session: SessionDTO) {
+        
+        presenter?.addItemToDatabase(session: session)
         //                    self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
 
+    }
+    
+    func signOut() {
+        performSegue(withIdentifier: "SignOut", sender: nil)
     }
 }

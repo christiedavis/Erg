@@ -38,7 +38,7 @@ class ItemsPresenter: NSObject {
     }
     
     var user: User!
-    var items = [Item]()
+    var sessions = [Session]()
     var ref: DatabaseReference!
     private var databaseHandle: DatabaseHandle!
     
@@ -54,7 +54,7 @@ class ItemsPresenter: NSObject {
     }
 
     var numberOfSessions: Int {
-        return items.count
+        return sessions.count
     }
     
     func rowsForSession(_ sessionIndex: Int) -> Int {
@@ -65,39 +65,25 @@ class ItemsPresenter: NSObject {
         }
     }
 
-    
-    
     override init() {
         datasource = ItemsDatasource()
         super.init()
         datasource = ItemsDatasource(self)
     
         user = Auth.auth().currentUser
-//        ref = Database.database().reference()
         startObservingDatabase()
     }
     
     func startObservingDatabase () {
-        databaseHandle = rootReference.child("users/\(self.user.uid)/items").observe(.value, with: { (snapshot) in
-            var newItems = [Item]()
-            
-            for itemSnapShot in snapshot.children {
-                let item = Item(snapshot: itemSnapShot as! DataSnapshot)
-                newItems.append(item)
-            }
-            
-            self.items = newItems
-            self.viewDelegate?.reloadTable()
-        })
-        
         databaseHandle = sessionReference.observe(.value, with: { snapshot in
-//            var newSessions = [ErgSessionModel]()
-//
-//            for sessionSnapshot in snapshot.children {
-//                let session = ErgSessionModel(snapshot: sessionSnapshot as! DataSnapshot)
-//                newSessions.append(session)
-//            }
-//            self.ergSessions = newSessions
+            var newSessions = [Session]()
+
+            for sessionSnapshot in snapshot.children {
+                let session = Session(snapshot: sessionSnapshot as! DataSnapshot)
+                newSessions.append(session)
+            }
+            self.sessions = newSessions
+            self.viewDelegate?.reloadTable()
         })
     }
     
@@ -123,7 +109,8 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     }
 
     func addItemToDatabase(session: SessionDTO) {
-//        self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
+        let sessionDBO = Session(session: session)
+        sessionReference.childByAutoId().child("title").setValue(sessionDBO)
         self.viewDelegate?.reloadTable()
     }
     

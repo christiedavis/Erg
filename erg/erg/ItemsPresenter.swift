@@ -50,11 +50,13 @@ class ItemsPresenter: NSObject {
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
         //TODO: update with real values using filter once db connected
-        return sessions.filter { session -> Bool in
+        let filteredList = sessions.filter { session -> Bool in
             return session.type == viewFilter?.rawValue
             }.flatMap({ (session) -> String? in
                 return session.title
             })
+        
+        return Array(Set(filteredList.map { $0 }))
     }
 
     var numberOfSessions: Int {

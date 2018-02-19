@@ -51,6 +51,11 @@ class ItemsPresenter: NSObject {
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
         //TODO: update with real values using filter once db connected
+        
+        if viewFilter == nil {
+            return sessions.flatMap({ $0.title })
+        }
+        
         let filteredList = sessions.filter { session -> Bool in
             return session.type == viewFilter?.rawValue
             }.flatMap({ (session) -> String? in
@@ -61,6 +66,19 @@ class ItemsPresenter: NSObject {
     }
     
     var filteredSessions: [Session] {
+        if viewFilter == nil {
+            return sessions
+        }
+        
+        if sessionViewFilter == nil {
+            return sessions.flatMap({ (session) -> Session? in
+                if session.type == viewFilter?.rawValue {
+                    return session
+                }
+                return nil
+            })
+        }
+        
         return sessions.filter({ (session) -> Bool in
             return session.title == sessionViewFilter
         })
@@ -88,7 +106,7 @@ class ItemsPresenter: NSObject {
     }
     
     func sessionViewModelForRow(_ row: Int) -> PieceDTO? {
-        return filteredSessions.first?.pieces[row].asPieceDTO()
+        return filteredSessions[row].pieces.first?.asPieceDTO()
     }
     
     func startObservingDatabase () {
@@ -105,9 +123,7 @@ class ItemsPresenter: NSObject {
     }
     
     deinit {
-        ref.child("users/\(self.user.uid)/items").removeObserver(withHandle: databaseHandle)
         ref.child("users/\(self.user.uid)/sessions").removeObserver(withHandle: databaseHandle)
-
     }
 }
 

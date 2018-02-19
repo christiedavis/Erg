@@ -45,8 +45,8 @@ extension ItemsDatasource: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
         }
         
-        presenter?.sessionViewModelForRow(indexPath.row)
-//        cell.textLabel?.text = item.title
+        let piece = presenter?.sessionViewModelForRow(indexPath.row)
+        cell.textLabel?.text = "\(piece?.distance) + \(piece?.time)"
         return cell
     }
     

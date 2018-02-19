@@ -63,7 +63,7 @@ class AddErgDataViewController: UIViewController {
     func saveSession() {
         // todo actually add item
         let pieces = PieceDTO(distance: 23, time: 32, rate: 23)
-        let newSession = SessionDTO(title: "hello", sessionType: .time, date: Date(), pieces: [pieces])
+        let newSession = SessionDTO(title: "hello", sessionType: .time, date: Date(), pieces: [pieces], anyPieces: [])
         
         delegate?.addItemToView(session: newSession)
         self.navigationController?.popViewController(animated: true)

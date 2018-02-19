@@ -14,6 +14,7 @@ class HeaderCell: UITableViewCell {
     static var nibName: String! { return "HeaderCell" }
     static var cellName: String = "HeaderCell"
 
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
     @IBOutlet var leftLabel: UILabel!
     
@@ -25,10 +26,15 @@ class HeaderCell: UITableViewCell {
     }
     
     func setUpAsSessionCell(sessionDto: SessionDTO?) {
-        rightLabel?.text = sessionDto?.title
-        leftLabel?.text  = "\(sessionDto?.date)"
-        //    func setupWithErgSession(_ ergSession: ErgSessionModel) {
-        //        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))
-        //        distanceLabel?.attributedText = (ergSession.distance ?? "error").apply(font: UIFont.regularFont(size: 12))
+        if let first = sessionDto?.pieces.first {
+            rightLabel?.text = "\(first.distance)"
+            leftLabel?.text  = "\(first.time)"
+        }
+        
+        dateLabel.text = "\(sessionDto?.date ?? Date())"
+        
+//    func setupWithErgSession(_ ergSession: ErgSe“ssionModel) {
+//        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))
+//        distanceLabel?.attributedText = (ergSess”ion.distance ?? "error").apply(font: UIFont.regularFont(size: 12))
     }
 }

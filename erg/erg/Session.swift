@@ -14,6 +14,7 @@ struct SessionDTO {
     var sessionType: SessionType = .time
     var date: Date = Date()
     var pieces: [PieceDTO] = []
+    var anyPieces: Any?
 }
 
 class Session {
@@ -23,6 +24,7 @@ class Session {
     var type: Int = 1
     var date: String?     // TODO: do i need this?
     var pieces: [Piece] = []
+    var anyPieces: Any?
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
@@ -31,13 +33,13 @@ class Session {
 //         * + NSArray
 //         * + NSNumber (also includes booleans)
 //         * + NSString
-        
+
         let data = snapshot.value as! Dictionary<String, AnyObject>
         title = data["title"] as? String ?? ""
         type = data["type"] as? Int ?? 9
-//        value = data["value"] as? Int ?? 0
         date = data["date"] as? String
         pieces = data["pieces"] as? [Piece] ?? []
+        anyPieces = data["pieces.*"] as? [Any] ?? []
     }
     
     init(session: SessionDTO) {
@@ -56,7 +58,6 @@ class Session {
         }
         
         self.ref = nil
-        
     }
     
     func toAnyObject() -> Any {
@@ -64,14 +65,13 @@ class Session {
         return [
             "title": title,
             "type": type,
-//            "value": value,
             "date": date,
             "pieces": pieceDict,
             ]
     }
     
     func asSessionDTO() -> SessionDTO {
-        return SessionDTO(title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date(), pieces: pieces.map({ $0.asPieceDTO() }) )
+        return SessionDTO(title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date(), pieces: pieces.map({ $0.asPieceDTO() }), anyPieces: anyPieces )
     }
 }
 

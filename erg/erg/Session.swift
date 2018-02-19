@@ -12,7 +12,6 @@ import FirebaseDatabase
 struct SessionDTO {
     var title: String?
     var sessionType: SessionType = .time
-    var value: Int?
     var date: Date = Date()
     var pieces: [PieceDTO] = []
 }
@@ -22,7 +21,6 @@ class Session {
     var ref: DatabaseReference?
     var title: String = ""
     var type: Int = 1
-//    var value: Int?
     var date: String?     // TODO: do i need this?
     var pieces: [Piece] = []
     
@@ -70,6 +68,10 @@ class Session {
             "date": date,
             "pieces": pieceDict,
             ]
+    }
+    
+    func asSessionDTO() -> SessionDTO {
+        return SessionDTO(title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date(), pieces: pieces.map({ $0.asPieceDTO() }) )
     }
 }
 

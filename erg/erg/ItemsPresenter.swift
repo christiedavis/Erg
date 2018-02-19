@@ -27,8 +27,7 @@ protocol ItemsPresenterDataDelegate {
     var numberOfSessions: Int { get }
     func rowsForSession(_ sessionIndex: Int) -> Int
     func setSessionTypeFromPicker(_ rowSelected: Int)
-    func sessionViewModelForRow(_ row: Int) -> PieceDTO?
-
+    func sessionViewModelForRow(_ row: Int) -> SessionDTO?
 }
 
 class ItemsPresenter: NSObject {
@@ -50,8 +49,6 @@ class ItemsPresenter: NSObject {
     private var sessionViewFilter: String?
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
-        //TODO: update with real values using filter once db connected
-        
         if viewFilter == nil {
             return sessions.flatMap({ $0.title })
         }
@@ -105,9 +102,14 @@ class ItemsPresenter: NSObject {
         startObservingDatabase()
     }
     
-    func sessionViewModelForRow(_ row: Int) -> PieceDTO? {
+    func sessionViewModelForRow(_ row: Int) -> SessionDTO? {
+        return filteredSessions[row].asSessionDTO()
+    }
+    
+    func pieceViewModelForRow(_ row: Int) -> PieceDTO? {
         return filteredSessions[row].pieces.first?.asPieceDTO()
     }
+    
     
     func startObservingDatabase () {
         databaseHandle = sessionReference.observe(.value, with: { snapshot in
@@ -128,7 +130,6 @@ class ItemsPresenter: NSObject {
 }
 
 extension ItemsPresenter : ItemsPresenterDataDelegate {
-
     
     func setSessionTypeFromPicker(_ rowSelected: Int) {
         sessionViewFilter = sessionPickerValueArray[rowSelected]

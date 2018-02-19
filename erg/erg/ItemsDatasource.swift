@@ -39,14 +39,20 @@ extension ItemsDatasource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell: SessionCell! = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
+//        var cell: SessionCell! = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
+//        if cell == nil {
+//            tableView.register(UINib(nibName: SessionCell.cellName, bundle: nil), forCellReuseIdentifier: SessionCell.cellName)
+//            cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
+//        }
+        var cell: HeaderCell! = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
         if cell == nil {
-            tableView.register(UINib(nibName: SessionCell.cellName, bundle: nil), forCellReuseIdentifier: SessionCell.cellName)
-            cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
+            tableView.register(UINib(nibName: HeaderCell.cellName, bundle: nil), forCellReuseIdentifier: HeaderCell.cellName)
+            cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
         }
         
         let piece = presenter?.sessionViewModelForRow(indexPath.row)
-        cell.textLabel?.text = "\(piece?.distance) + \(piece?.time)"
+//        cell.textLabel?.text = "\(piece?.distance) + \(piece?.time)"
+        cell.setUpAsSessionCell(sessionDto: piece)
         return cell
     }
     

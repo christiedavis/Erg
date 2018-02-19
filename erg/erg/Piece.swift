@@ -10,8 +10,8 @@ import Foundation
 import FirebaseDatabase
 
 struct PieceDTO {
-    var distance: Int?
-    var time: Int?
+    var distance: Int!
+    var time: Int!
     var rate: Int?
 }
 
@@ -21,6 +21,7 @@ class Piece {
     var time: Int?
     var rate: Int?
     
+    var title: String = "piece" // This is used by the session object
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
         
@@ -29,23 +30,30 @@ class Piece {
         time = data["time"]! as? Int
         rate = data["rate"]! as? Int
     }
-    init(_ piece: PieceDTO, date: Date, sessionType: SessionType) {
+    init(_ piece: PieceDTO, sessionType: SessionType) {
         
-//        var things = session.pieces?.map({ (key: Int, value: PieceDTO) -> (key: Int, value: Piece) in
-//            var newThing = (key, Piece(value, session.date, session.sessionType))
-//        })
-//        
-//        title = "\(pieces)x \(value)"
-//        
+        self.time = piece.time
+        self.distance = piece.distance
+        self.rate = piece.rate
+        
+        if sessionType == .distance {
+            title = "\(piece.distance)"
+        } else {
+            title = "\(piece.time)"
+        }
         
         self.ref = nil
-        
     }
     
     func toAnyObject() -> Any {
         return [
             "distance": distance,
             "time": time,
+            "rate": rate
         ]
+    }
+    
+    func asPieceDTO() -> PieceDTO {
+        return PieceDTO(distance: self.distance, time: self.time, rate: self.rate)
     }
 }

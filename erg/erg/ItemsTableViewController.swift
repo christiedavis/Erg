@@ -10,7 +10,7 @@ import UIKit
 
 protocol ItemsViewControllerDelegate: class {
     var presenter: ItemsPresenterViewDelegate? { get set }
-//    func addItemToView(session: SessionDTO)
+    func addItemToView(session: SessionDTO)
     func reloadTable()
     func signOut()
 }

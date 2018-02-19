@@ -9,7 +9,6 @@
 import UIKit
 
 class ItemsDatasource: NSObject {
-    var items: [Item] = []
     var presenter: ItemsPresenterDataDelegate?
     
     override init() {
@@ -46,15 +45,16 @@ extension ItemsDatasource: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
         }
         
-        let item = items[indexPath.row]
-        cell.textLabel?.text = item.title
+        presenter?.sessionViewModelForRow(indexPath.row)
+//        cell.textLabel?.text = item.title
         return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let item = items[indexPath.row]
-            item.ref.removeValue()
+//            presenter.delete()
+//            let item = items[indexPath.row]
+//            item.ref.removeValue()
         }
     }
 }

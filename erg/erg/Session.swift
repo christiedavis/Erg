@@ -12,61 +12,63 @@ import FirebaseDatabase
 struct SessionDTO {
     var title: String?
     var sessionType: SessionType = .time
-//    var distance: Int?
-//    var time: Int?
     var value: Int?
-//    var rate: Int?
     var date: Date = Date()
-    var pieces: Dictionary<Int, PieceDTO>?
+    var pieces: [PieceDTO] = []
 }
 
 class Session {
     
     var ref: DatabaseReference?
-    var title: String?
-    var type: Int?
-//    var distance: Int?
-//    var time: Int?
-    var value: Int?
-//    var rate: Int?
-    var date: Date? // TODO: do i need this?
-    var pieces: Dictionary<Int, Piece>?
+    var title: String = ""
+    var type: Int = 1
+//    var value: Int?
+    var date: String?     // TODO: do i need this?
+    var pieces: [Piece] = []
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
         
-//           + NSDictionary
-//           * + NSArray
-//           * + NSNumber (also includes booleans)
-//           * + NSString
+//         + NSDictionary
+//         * + NSArray
+//         * + NSNumber (also includes booleans)
+//         * + NSString
         
         let data = snapshot.value as! Dictionary<String, AnyObject>
-        title = data["title"]! as? String
-        type = data["type"]! as? Int
-//        distance = data["distance"]! as? Int
-//        time = data["time"]! as? Int
-        value = data["value"]! as? Int
-        date = data["date"]! as? Date
-        pieces = data["pieces"]! as? Dictionary<Int, Piece>
+        title = data["title"] as? String ?? ""
+        type = data["type"] as? Int ?? 9
+//        value = data["value"] as? Int ?? 0
+        date = data["date"] as? String
+        pieces = data["pieces"] as? [Piece] ?? []
     }
     
     init(session: SessionDTO) {
        
-        pieces = session.pieces?.flatMap({ sessionPiece -> (Int, Piece) in
-            return (sessionPiece.key, Piece(sessionPiece.value, date: session.date, sessionType: session.sessionType))
-        }).toDictionary()
+        pieces = session.pieces.flatMap({ sessionPiece -> (Piece) in
+            return Piece(sessionPiece, sessionType: session.sessionType)
+        })
         type = session.sessionType.rawValue
-        date = session.date
-        title = session.title ?? "No pieces"
+        date = "\(session.date)"
+        if pieces.count == 1 {
+            title = pieces.first?.title ?? ""
+        } else {
+            if let firstPiece = pieces.first {
+                title = firstPiece.title
+            }
+        }
         
         self.ref = nil
         
     }
     
     func toAnyObject() -> Any {
+        let pieceDict =  pieces.map({ $0.toAnyObject() })
         return [
-//            "distance": distance,
-//            "time": time,
+            "title": title,
+            "type": type,
+//            "value": value,
+            "date": date,
+            "pieces": pieceDict,
             ]
     }
 }

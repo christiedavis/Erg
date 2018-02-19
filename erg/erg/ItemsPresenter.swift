@@ -27,6 +27,7 @@ protocol ItemsPresenterDataDelegate {
     var numberOfSessions: Int { get }
     func rowsForSession(_ sessionIndex: Int) -> Int
     func setSessionTypeFromPicker(_ rowSelected: Int)
+    func sessionViewModelForRow(_ row: Int) -> PieceDTO?
 
 }
 
@@ -37,9 +38,9 @@ class ItemsPresenter: NSObject {
         return rootReference.child("users/\(self.user.uid)/sessions")
     }
     
-    var user: User!
-    var sessions = [Session]()
-    var ref: DatabaseReference!
+    private var user: User!
+    private var sessions = [Session]()
+    private var ref: DatabaseReference!
     private var databaseHandle: DatabaseHandle!
     
     var viewDelegate: ItemsViewControllerDelegate?
@@ -58,9 +59,15 @@ class ItemsPresenter: NSObject {
         
         return Array(Set(filteredList.map { $0 }))
     }
+    
+    var filteredSessions: [Session] {
+        return sessions.filter({ (session) -> Bool in
+            return session.title == sessionViewFilter
+        })
+    }
 
     var numberOfSessions: Int {
-        return sessions.count
+        return filteredSessions.count
     }
     
     func rowsForSession(_ sessionIndex: Int) -> Int {
@@ -78,6 +85,10 @@ class ItemsPresenter: NSObject {
     
         user = Auth.auth().currentUser
         startObservingDatabase()
+    }
+    
+    func sessionViewModelForRow(_ row: Int) -> PieceDTO? {
+        return filteredSessions.first?.pieces[row].asPieceDTO()
     }
     
     func startObservingDatabase () {
@@ -101,6 +112,8 @@ class ItemsPresenter: NSObject {
 }
 
 extension ItemsPresenter : ItemsPresenterDataDelegate {
+
+    
     func setSessionTypeFromPicker(_ rowSelected: Int) {
         sessionViewFilter = sessionPickerValueArray[rowSelected]
         viewDelegate?.reloadTable()
@@ -115,8 +128,8 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     }
 
     func addItemToDatabase(session: SessionDTO) {
-        let sessionDBO = Session(session: session)
-        sessionReference.childByAutoId().child("title").setValue(sessionDBO)
+        let sessionDBO = Session(session: session) //.child(sessionDBO.title)
+        sessionReference.childByAutoId().setValue(sessionDBO.toAnyObject())
         self.viewDelegate?.reloadTable()
     }
     

@@ -106,26 +106,6 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "SignInFromLogin", sender: nil)
     }
 
-//    func showPickerView() {
-//        let alertView: UIAlertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .actionSheet)
-//        alertView.view.addSubview(picker)
-//
-//        picker.translatesAutoresizingMaskIntoConstraints = false
-//
-//        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[subview]|", options: NSLayoutFormatOptions.directionLeadingToTrailing, metrics: nil, views: ["subview" : picker])
-//        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-25-[subview]-50-|", options: .directionLeadingToTrailing, metrics: nil, views: ["subview" : picker])
-//
-//        alertView.view.addConstraints(hConstraints)
-//        alertView.view.addConstraints(vConstraints)
-//
-//        let alertAction: UIAlertAction = UIAlertAction(title: "Done", style: .default) { (action) in
-//            // TODO: Completion handler
-//        }
-//        alertView.addAction(alertAction)
-//        self.present(alertView, animated: true) {
-//            //TODO: add completion
-//        }
-//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SignInFromLogin" {
             

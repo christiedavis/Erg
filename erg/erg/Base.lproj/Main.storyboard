@@ -265,13 +265,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bo8-dh-SnE">
-                        <barButtonItem key="backBarButtonItem" title="SIgn Out" id="BsO-1x-ZvY"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="d1N-OF-b19">
+                            <connections>
+                                <action selector="didTapSignOut:" destination="8pU-t1-VdL" id="5ZQ-1x-g5g"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pWE-SQ-RW8">
+                            <connections>
+                                <action selector="didTapAddItem:" destination="8pU-t1-VdL" id="Iw3-0I-jxZ"/>
+                                <segue destination="5EU-2m-tU6" kind="show" identifier="ShowAddErgData" id="XmM-oa-Gog"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="filterButton" destination="fZo-FJ-NxR" id="GDk-nE-atv"/>
                         <outlet property="sessionPickerView" destination="EBz-6Y-CuW" id="K3q-7i-fpY"/>
                         <outlet property="tableView" destination="Lh2-KU-hUh" id="JJX-xq-1FG"/>
-                        <segue destination="5EU-2m-tU6" kind="show" identifier="ShowAddErgData" action="showDetailViewController:sender:" id="pDi-Bb-w2c"/>
                         <segue destination="A1i-VZ-B1j" kind="presentation" identifier="SignOut" id="cux-R5-QKI"/>
                     </connections>
                 </viewController>
@@ -350,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHC-XZ-bFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2295.1999999999998" y="1631.3343328335834"/>
+            <point key="canvasLocation" x="2287" y="1670"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aPf-OR-mm7">

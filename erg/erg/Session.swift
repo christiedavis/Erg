@@ -66,7 +66,7 @@ class Session {
             "title": title,
             "type": type,
             "date": date,
-            "pieces": pieceDict,
+//            "pieces": pieceDict,
             ]
     }
     

@@ -36,6 +36,7 @@ class ItemsTableViewController: UIViewController {
 //        user = Auth.auth().currentUser
 //        ref = Database.database().reference()
 //        startObservingDatabase()
+        //TODO: crashed on sign up
         sessionPickerView.delegate = presenter!.datasource
         sessionPickerView.dataSource = presenter!.datasource
         sessionPickerView.isHidden = true

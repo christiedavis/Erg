@@ -36,6 +36,9 @@ class ItemsPresenter: NSObject {
     private var sessionReference: DatabaseReference {
         return rootReference.child("users/\(self.user.uid)/sessions")
     }
+    private var pieceReference: DatabaseReference {
+        return rootReference.child("users/\(self.user.uid)/pieces")
+    }
     
     private var user: User!
     private var sessions = [Session]()
@@ -146,7 +149,13 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
 
     func addItemToDatabase(session: SessionDTO) {
         let sessionDBO = Session(session: session) //.child(sessionDBO.title)
-        sessionReference.childByAutoId().setValue(sessionDBO.toAnyObject())
+        let sessionID = sessionReference.childByAutoId()
+        
+        sessionID.setValue(sessionDBO.toAnyObject())
+        let anyDict = sessionDBO.pieces.map({ $0.toAnyObject() })
+        pieceReference.child(sessionID.key).setValue(anyDict)
+        
+        print(sessionID.key)
         self.viewDelegate?.reloadTable()
     }
     

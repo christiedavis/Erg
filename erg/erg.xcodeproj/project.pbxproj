@@ -315,6 +315,7 @@
 				TargetAttributes = {
 					871E05B21EC6E4F6002933E6 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 77B4XKLPCN;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -659,7 +660,7 @@
 			baseConfigurationReference = 7E7DD50F3F7701A26348AE83 /* Pods-erg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 77B4XKLPCN;
 				INFOPLIST_FILE = erg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -676,7 +677,7 @@
 			baseConfigurationReference = 30790E637379AEB011944A81 /* Pods-erg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 77B4XKLPCN;
 				INFOPLIST_FILE = erg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -26,10 +26,10 @@ class HeaderCell: UITableViewCell {
     }
     
     func setUpAsSessionCell(sessionDto: SessionDTO?) {
-        if let first = sessionDto?.pieces.first {
-            rightLabel?.text = "\(first.distance)"
-            leftLabel?.text  = "\(first.time)"
-        }
+//        if let first = sessionDto?.pieces.first {
+//            rightLabel?.text = "\(first.distance)"
+//            leftLabel?.text  = "\(first.time)"
+//        }
         
         dateLabel.text = "\(sessionDto?.date ?? Date())"
         

@@ -110,7 +110,8 @@ class ItemsPresenter: NSObject {
     }
     
     func pieceViewModelForRow(_ row: Int) -> PieceDTO? {
-        return filteredSessions[row].pieces.first?.asPieceDTO()
+        return nil
+        // filteredSessions[row].pieces.first?.asPieceDTO()
     }
     
     

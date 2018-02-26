@@ -25,13 +25,15 @@ class HeaderCell: UITableViewCell {
 //        leftLabel.attributedText = "Distance".apply(font: .boldFont(size: 16))
     }
     
-    func setUpAsSessionCell(sessionDto: SessionDTO?) {
-//        if let first = sessionDto?.pieces.first {
-//            rightLabel?.text = "\(first.distance)"
-//            leftLabel?.text  = "\(first.time)"
-//        }
+    func setUpAsSessionCell(workout: WorkoutDTO?) {
+        if let first = workout?.pieceArray.first {
+            rightLabel?.text = "\(first.distance)"
+            leftLabel?.text  = "\(first.time)"
+        }
         
-        dateLabel.text = "\(sessionDto?.date ?? Date())"
+//        rightLabel.text = sessionDto?.title
+        
+        dateLabel.text = "\(workout?.session.date ?? Date())"
         
 //    func setupWithErgSession(_ ergSession: ErgSe“ssionModel) {
 //        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))

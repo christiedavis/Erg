@@ -19,4 +19,14 @@ struct WorkoutDTO {
     var pieces: [Any] {
         return pieceArray.map({ Piece($0, sessionType: session.sessionType)}).map({ $0.toAnyObject() })
     }
+    
+    init(_ pieceArray: [PieceDTO], _ session: SessionDTO) {
+        self.pieceArray = pieceArray
+        self.session = session
+    }
+    
+    init(_ pieceArray: [Piece], _ session: Session) {
+        self.session = session.asSessionDTO()
+        self.pieceArray = pieceArray.map({ $0.asPieceDTO() })
+    }
 }

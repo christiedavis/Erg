@@ -67,8 +67,8 @@ class AddErgDataViewController: UIViewController {
         let pieces2 = PieceDTO(distance: 23, time: 32, rate: 23)
         let pieces3 = PieceDTO(distance: 23, time: 32, rate: 23)
 
-        let newSession = SessionDTO(title: "hello", sessionType: .time, date: Date())
-        let workout = WorkoutDTO(pieceArray: [pieces0, pieces1, pieces2, pieces3], session: newSession)
+        let newSession = SessionDTO(id: nil, title: "hello", sessionType: .time, date: Date())
+        let workout = WorkoutDTO([pieces0, pieces1, pieces2, pieces3], newSession)
         
         delegate?.addWorkoutToView(workout: workout)
         self.navigationController?.popViewController(animated: true)

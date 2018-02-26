@@ -50,9 +50,9 @@ extension ItemsDatasource: UITableViewDataSource {
             cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
         }
         
-        let piece = presenter?.sessionViewModelForRow(indexPath.row)
+        let workout = presenter?.workoutViewModelForRow(indexPath.row)
 //        cell.textLabel?.text = "\(piece?.distance) + \(piece?.time)"
-        cell.setUpAsSessionCell(sessionDto: piece)
+        cell.setUpAsSessionCell(workout: workout)
         return cell
     }
     

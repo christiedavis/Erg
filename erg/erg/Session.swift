@@ -10,6 +10,7 @@ import Foundation
 import FirebaseDatabase
 
 struct SessionDTO {
+    var id: String?
     var title: String?
     var sessionType: SessionType = .time
     var date: Date = Date()
@@ -23,6 +24,7 @@ class Session {
     var title: String = ""
     var type: Int = 1
     var date: String?     // TODO: do i need this?
+    var id: String?
 //    var pieces: [Piece] = []
 //    var anyPieces: Any?
     
@@ -33,6 +35,7 @@ class Session {
         title = data["title"] as? String ?? ""
         type = data["type"] as? Int ?? 9
         date = data["date"] as? String
+        id = snapshot.key
 //        pieces = data["pieces"] as? [Piece] ?? []
 //        anyPieces = data["pieces.*"] as? [Any] ?? []
     }
@@ -66,7 +69,7 @@ class Session {
     }
     
     func asSessionDTO() -> SessionDTO {
-        return SessionDTO(title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date())
+        return SessionDTO(id: id, title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date())
         //, pieces: pieces.map({ $0.asPieceDTO() }), anyPieces: anyPieces )
     }
 }

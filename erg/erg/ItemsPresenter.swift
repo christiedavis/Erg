@@ -27,7 +27,7 @@ protocol ItemsPresenterDataDelegate {
     var numberOfSessions: Int { get }
     func rowsForSession(_ sessionIndex: Int) -> Int
     func setSessionTypeFromPicker(_ rowSelected: Int)
-    func sessionViewModelForRow(_ row: Int) -> SessionDTO?
+    func workoutViewModelForRow(_ row: Int) -> WorkoutDTO?
 }
 
 class ItemsPresenter: NSObject {
@@ -42,6 +42,7 @@ class ItemsPresenter: NSObject {
     
     private var user: User!
     private var sessions = [Session]()
+    private var pieces = [String: [Piece]]()
     private var ref: DatabaseReference!
     private var sessionsDatabaseHandle: DatabaseHandle!
     private var piecesDatabaseHandle: DatabaseHandle!
@@ -110,9 +111,14 @@ class ItemsPresenter: NSObject {
         return filteredSessions[row].asSessionDTO()
     }
     
-    func pieceViewModelForRow(_ row: Int) -> PieceDTO? {
-        return nil
-        // filteredSessions[row].pieces.first?.asPieceDTO()
+    func workoutViewModelForRow(_ row: Int) -> WorkoutDTO? {
+//        return nil
+        let sessionId = filteredSessions[row].id ?? ""
+        let pieceArray = pieces[sessionId] ?? []
+        let session = filteredSessions[row]
+        
+        let workoutDto = WorkoutDTO(pieceArray, session)
+        return workoutDto
     }
     
     
@@ -124,6 +130,7 @@ class ItemsPresenter: NSObject {
                 let session = Session(snapshot: sessionSnapshot as! DataSnapshot)
                 newSessions.append(session)
             }
+            self.sessions = newSessions
         })
             
             
@@ -133,17 +140,17 @@ class ItemsPresenter: NSObject {
             
             for pieceSnapshot in snapshot.children {
                 let dataSnapshot = pieceSnapshot as! DataSnapshot
-                for child in dataSnapshot.children {
-                    let piece = Piece(snapshot: child)
+                for  child in dataSnapshot.children {
+                    let piece = Piece(snapshot: child as! DataSnapshot)
                     pieceArray.append(piece)
                 }
-                let piece = Piece(snapshot: dataSnapshot)
                 newPieces[dataSnapshot.key] = pieceArray
                 
             }
-        
+            self.pieces = newPieces
+        })
         self.viewDelegate?.reloadTable()
-    })
+
     }
     
     deinit {

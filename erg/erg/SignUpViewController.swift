@@ -55,5 +55,17 @@ class SignUpViewController: UIViewController {
     func signIn() {
         performSegue(withIdentifier: "SignInFromSignUp", sender: nil)
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SignInFromSignUp" {
+            
+            if let destinationNavigationController = segue.destination as? UINavigationController {
+                if let targetController = destinationNavigationController.topViewController as? ItemsTableViewController {
+                    let itemPresenter = ItemsPresenter()
+                    itemPresenter.viewDelegate = targetController
+                    targetController.presenter = itemPresenter
+                }
+            }
+        }
+    }
 }

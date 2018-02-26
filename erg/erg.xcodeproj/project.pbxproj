@@ -37,6 +37,7 @@
 		87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */; };
 		87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */; };
 		87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF111F8DEA1E00FE12E8 /* Item.swift */; };
+		87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CDA2292043F2DA00E2D86B /* Workout.swift */; };
 		87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9CAFC2032874200CDF755 /* ArrayExtension.swift */; };
 		FFF3A9DD99EF72337C9B79BD /* Pods_erg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCB5CE723B2FEAD15EC34FB /* Pods_erg.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87B5CF111F8DEA1E00FE12E8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		87CDA2292043F2DA00E2D86B /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		87E9CAFC2032874200CDF755 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -218,6 +220,7 @@
 				87B5CF111F8DEA1E00FE12E8 /* Item.swift */,
 				87606DCE202CFD8200261CF2 /* Session.swift */,
 				874A69AE20323F690009A83D /* Piece.swift */,
+				87CDA2292043F2DA00E2D86B /* Workout.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
+				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
 				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,

@@ -10,19 +10,13 @@ import UIKit
 
 protocol ItemsViewControllerDelegate: class {
     var presenter: ItemsPresenterViewDelegate? { get set }
-    func addItemToView(session: SessionDTO)
+    func addWorkoutToView(workout: WorkoutDTO)
     func reloadTable()
     func signOut()
 }
 
 class ItemsTableViewController: UIViewController {
 
-    
-    
-//    var user: User!
-//    var items = [Item]()
-////    var ref: DatabaseReference!
-//    private var databaseHandle: DatabaseHandle!
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var filterButton: UIButton!
@@ -33,9 +27,6 @@ class ItemsTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        user = Auth.auth().currentUser
-//        ref = Database.database().reference()
-//        startObservingDatabase()
         //TODO: crashed on sign up
         sessionPickerView.delegate = presenter!.datasource
         sessionPickerView.dataSource = presenter!.datasource
@@ -47,7 +38,6 @@ class ItemsTableViewController: UIViewController {
     }
 
     // MARK: - Table view data source
-   
 
     @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
         presenter?.signOut()
@@ -56,7 +46,6 @@ class ItemsTableViewController: UIViewController {
     @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
         
         performSegue(withIdentifier: "ShowAddErgData", sender: self)
-//        self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,8 +67,8 @@ extension ItemsTableViewController: ItemsViewControllerDelegate {
         tableView.reloadData()
     }
     
-    func addItemToView(session: SessionDTO) {
-        presenter?.addItemToDatabase(session: session)
+    func addWorkoutToView(workout: WorkoutDTO) {
+        presenter?.addWorkoutToDatabase(workout: workout)
     }
     
     func signOut() {

@@ -15,7 +15,7 @@ protocol ItemsPresenterViewDelegate: class {
     var viewDelegate: ItemsViewControllerDelegate? { get set }
     var datasource: ItemsDatasource { get }
     
-    func addItemToDatabase(session: SessionDTO)
+    func addWorkoutToDatabase(workout: WorkoutDTO)
     func setFilter(_ sessionType: SessionType?)
     func signOut()
 }
@@ -147,15 +147,14 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
         
     }
 
-    func addItemToDatabase(session: SessionDTO) {
-        let sessionDBO = Session(session: session) //.child(sessionDBO.title)
+    func addWorkoutToDatabase(workout: WorkoutDTO) {
+        
+        let sessionDBO = workout.sessionDBO
         let sessionID = sessionReference.childByAutoId()
         
-        sessionID.setValue(sessionDBO.toAnyObject())
-        let anyDict = sessionDBO.pieces.map({ $0.toAnyObject() })
-        pieceReference.child(sessionID.key).setValue(anyDict)
+        sessionID.setValue(sessionDBO)
+        pieceReference.child(sessionID.key).setValue(workout.pieces)
         
-        print(sessionID.key)
         self.viewDelegate?.reloadTable()
     }
     

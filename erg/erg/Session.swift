@@ -13,8 +13,8 @@ struct SessionDTO {
     var title: String?
     var sessionType: SessionType = .time
     var date: Date = Date()
-    var pieces: [PieceDTO] = []
-    var anyPieces: Any?
+//    var pieces: [PieceDTO] = []
+//    var anyPieces: Any?
 }
 
 class Session {
@@ -23,45 +23,40 @@ class Session {
     var title: String = ""
     var type: Int = 1
     var date: String?     // TODO: do i need this?
-    var pieces: [Piece] = []
-    var anyPieces: Any?
+//    var pieces: [Piece] = []
+//    var anyPieces: Any?
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
         
-//         + NSDictionary
-//         * + NSArray
-//         * + NSNumber (also includes booleans)
-//         * + NSString
-
         let data = snapshot.value as! Dictionary<String, AnyObject>
         title = data["title"] as? String ?? ""
         type = data["type"] as? Int ?? 9
         date = data["date"] as? String
-        pieces = data["pieces"] as? [Piece] ?? []
-        anyPieces = data["pieces.*"] as? [Any] ?? []
+//        pieces = data["pieces"] as? [Piece] ?? []
+//        anyPieces = data["pieces.*"] as? [Any] ?? []
     }
     
     init(session: SessionDTO) {
        
-        pieces = session.pieces.flatMap({ sessionPiece -> (Piece) in
-            return Piece(sessionPiece, sessionType: session.sessionType)
-        })
+//        pieces = session.pieces.flatMap({ sessionPiece -> (Piece) in
+//            return Piece(sessionPiece, sessionType: session.sessionType)
+//        })
         type = session.sessionType.rawValue
         date = "\(session.date)"
-        if pieces.count == 1 {
-            title = pieces.first?.title ?? ""
-        } else {
-            if let firstPiece = pieces.first {
-                title = firstPiece.title
-            }
-        }
+//        if pieces.count == 1 {
+//            title = pieces.first?.title ?? ""
+//        } else {
+//            if let firstPiece = pieces.first {
+//                title = firstPiece.title
+//            }
+//        }
         
         self.ref = nil
     }
     
     func toAnyObject() -> Any {
-        let pieceDict =  pieces.map({ $0.toAnyObject() })
+//        let pieceDict =  pieces.map({ $0.toAnyObject() })
         return [
             "title": title,
             "type": type,
@@ -71,7 +66,8 @@ class Session {
     }
     
     func asSessionDTO() -> SessionDTO {
-        return SessionDTO(title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date(), pieces: pieces.map({ $0.asPieceDTO() }), anyPieces: anyPieces )
+        return SessionDTO(title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date())
+        //, pieces: pieces.map({ $0.asPieceDTO() }), anyPieces: anyPieces )
     }
 }
 

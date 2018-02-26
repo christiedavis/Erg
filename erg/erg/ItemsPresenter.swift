@@ -43,8 +43,9 @@ class ItemsPresenter: NSObject {
     private var user: User!
     private var sessions = [Session]()
     private var ref: DatabaseReference!
-    private var databaseHandle: DatabaseHandle!
-    
+    private var sessionsDatabaseHandle: DatabaseHandle!
+    private var piecesDatabaseHandle: DatabaseHandle!
+
     var viewDelegate: ItemsViewControllerDelegate?
     var datasource: ItemsDatasource
     
@@ -116,20 +117,38 @@ class ItemsPresenter: NSObject {
     
     
     func startObservingDatabase () {
-        databaseHandle = sessionReference.observe(.value, with: { snapshot in
+        sessionsDatabaseHandle = sessionReference.observe(.value, with: { snapshot in
             var newSessions = [Session]()
 
             for sessionSnapshot in snapshot.children {
                 let session = Session(snapshot: sessionSnapshot as! DataSnapshot)
                 newSessions.append(session)
             }
-            self.sessions = newSessions
-            self.viewDelegate?.reloadTable()
         })
+            
+            
+        piecesDatabaseHandle = pieceReference.observe(.value, with: { snapshot in
+            var newPieces = [String : [Piece]]()
+            var pieceArray = [Piece]()
+            
+            for pieceSnapshot in snapshot.children {
+                let dataSnapshot = pieceSnapshot as! DataSnapshot
+                for child in dataSnapshot.children {
+                    let piece = Piece(snapshot: child)
+                    pieceArray.append(piece)
+                }
+                let piece = Piece(snapshot: dataSnapshot)
+                newPieces[dataSnapshot.key] = pieceArray
+                
+            }
+        
+        self.viewDelegate?.reloadTable()
+    })
     }
     
     deinit {
-        ref.child("users/\(self.user.uid)/sessions").removeObserver(withHandle: databaseHandle)
+        sessionReference.removeObserver(withHandle: sessionsDatabaseHandle)
+        pieceReference.removeObserver(withHandle: piecesDatabaseHandle)
     }
 }
 

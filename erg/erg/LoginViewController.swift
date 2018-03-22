@@ -10,9 +10,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
-
-    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+class LoginViewController: BaseViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -24,22 +22,8 @@ class LoginViewController: UIViewController {
         
         view.backgroundColor = UIColor.tealWhite
         signInButton.backgroundColor = .darkTeal
-        
-//        picker = UIPickerView()
-//        picker.delegate = self
-//        picker.dataSource = self
-        
+    
         self.dismissLoading()
-    }
-    
-    private func showLoading() {
-        loadingView.startAnimating()
-        loadingView.isHidden = false
-    }
-    
-    private func dismissLoading() {
-        loadingView.stopAnimating()
-        loadingView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

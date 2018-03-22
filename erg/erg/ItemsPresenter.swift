@@ -148,8 +148,9 @@ class ItemsPresenter: NSObject {
                 
             }
             self.pieces = newPieces
+            self.viewDelegate?.reloadTable()
+
         })
-        self.viewDelegate?.reloadTable()
 
     }
     

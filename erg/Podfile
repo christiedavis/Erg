@@ -11,6 +11,9 @@ target 'erg' do
     pod 'Firebase/Database'
 	pod 'Firebase/Auth'
     
+    # Linting tool
+    pod 'SwiftLint'
+    
   target 'ergTests' do
     inherit! :search_paths
     # Pods for testing

@@ -15,7 +15,7 @@ protocol ItemsViewControllerDelegate: class {
     func signOut()
 }
 
-class ItemsTableViewController: UIViewController {
+class ItemsTableViewController: BaseViewController {
 
     @IBOutlet var tableView: UITableView!
     

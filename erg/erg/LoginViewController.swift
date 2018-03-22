@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
@@ -26,6 +28,18 @@ class LoginViewController: UIViewController {
 //        picker = UIPickerView()
 //        picker.delegate = self
 //        picker.dataSource = self
+        
+        self.dismissLoading()
+    }
+    
+    private func showLoading() {
+        loadingView.startAnimating()
+        loadingView.isHidden = false
+    }
+    
+    private func dismissLoading() {
+        loadingView.stopAnimating()
+        loadingView.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,10 +53,13 @@ class LoginViewController: UIViewController {
     @IBAction func didTapSignIn(_ sender: UIButton) {
         let email = emailField.text
         let password = passwordField.text
+        
+        self.showLoading()
         Auth.auth().signIn(withEmail: email!, password: password!, completion: { (user, error) in
             guard let _ = user else {
                 if let error = error {
                     if let errCode = AuthErrorCode(rawValue: error._code) {
+                        self.dismissLoading()
                         switch errCode {
                         case .userNotFound:
                             self.showAlert("User account not found. Try registering")
@@ -57,13 +74,13 @@ class LoginViewController: UIViewController {
                 assertionFailure("user and error are nil")
                 return
             }
-
+            self.dismissLoading()
             self.signIn()
         })
     }
 
     @IBAction func didRequestPasswordReset(_ sender: UIButton) {
-        let prompt = UIAlertController(title: "To Do App", message: "Email:", preferredStyle: .alert)
+        let prompt = UIAlertController(title: "Erg App", message: "Email:", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             let userInput = prompt.textFields![0].text
             if (userInput!.isEmpty) {

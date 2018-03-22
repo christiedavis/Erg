@@ -73,28 +73,38 @@
                                     <constraint firstAttribute="width" constant="240" id="GCO-4x-OHO"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TZu-UP-gDn">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <color key="backgroundColor" red="0.99527856250000002" green="0.98078748520000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ewS-VN-C9j" firstAttribute="top" secondItem="TZu-UP-gDn" secondAttribute="bottom" id="0MR-iU-7FD"/>
                             <constraint firstItem="xdD-69-5r8" firstAttribute="width" secondItem="Ncv-aZ-dZ2" secondAttribute="width" id="3Oo-cQ-HWv"/>
                             <constraint firstItem="xdD-69-5r8" firstAttribute="top" secondItem="Ncv-aZ-dZ2" secondAttribute="bottom" constant="20" id="8LB-HF-n4A"/>
                             <constraint firstItem="FjR-m2-RjP" firstAttribute="top" secondItem="j6U-e0-rWu" secondAttribute="bottom" constant="20" id="AKY-0S-7um"/>
                             <constraint firstItem="FjR-m2-RjP" firstAttribute="centerX" secondItem="tMq-az-e8P" secondAttribute="centerX" id="Bcc-Nh-cU8"/>
+                            <constraint firstItem="TZu-UP-gDn" firstAttribute="top" secondItem="LuZ-kY-Yrh" secondAttribute="bottom" id="I3B-Gq-UCz"/>
                             <constraint firstItem="xdD-69-5r8" firstAttribute="centerX" secondItem="tMq-az-e8P" secondAttribute="centerX" id="Pbs-FD-7ji"/>
                             <constraint firstItem="Ncv-aZ-dZ2" firstAttribute="centerX" secondItem="tMq-az-e8P" secondAttribute="centerX" id="TCT-sU-Bpy"/>
                             <constraint firstItem="EMw-Tm-axV" firstAttribute="width" secondItem="tMq-az-e8P" secondAttribute="width" multiplier="0.6" id="Wbu-8A-MNe"/>
                             <constraint firstItem="j6U-e0-rWu" firstAttribute="centerX" secondItem="tMq-az-e8P" secondAttribute="centerX" id="e3m-rl-GmT"/>
                             <constraint firstItem="Ncv-aZ-dZ2" firstAttribute="top" secondItem="EMw-Tm-axV" secondAttribute="bottom" constant="20" id="gTb-67-mtP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TZu-UP-gDn" secondAttribute="trailing" id="gvk-oy-VMb"/>
                             <constraint firstItem="j6U-e0-rWu" firstAttribute="top" secondItem="xdD-69-5r8" secondAttribute="bottom" constant="20" id="i7B-rn-7yE"/>
                             <constraint firstItem="EMw-Tm-axV" firstAttribute="top" secondItem="QXs-J9-UPR" secondAttribute="bottom" constant="37" id="ny5-X0-gYh"/>
                             <constraint firstItem="EMw-Tm-axV" firstAttribute="centerX" secondItem="tMq-az-e8P" secondAttribute="centerX" id="pc3-fh-Qll"/>
                             <constraint firstItem="QXs-J9-UPR" firstAttribute="top" secondItem="LuZ-kY-Yrh" secondAttribute="bottom" constant="47" id="rO5-Cd-orZ"/>
                             <constraint firstItem="QXs-J9-UPR" firstAttribute="centerX" secondItem="tMq-az-e8P" secondAttribute="centerX" id="uJu-4w-hOr"/>
+                            <constraint firstItem="TZu-UP-gDn" firstAttribute="leading" secondItem="tMq-az-e8P" secondAttribute="leadingMargin" id="yoE-cZ-epx"/>
                             <constraint firstItem="Ncv-aZ-dZ2" firstAttribute="width" secondItem="EMw-Tm-axV" secondAttribute="width" id="zhf-Be-kAf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailField" destination="EMw-Tm-axV" id="NSS-kw-VC4"/>
+                        <outlet property="loadingView" destination="TZu-UP-gDn" id="JLo-Ck-zwd"/>
                         <outlet property="passwordField" destination="Ncv-aZ-dZ2" id="Ou4-EL-drz"/>
                         <outlet property="signInButton" destination="xdD-69-5r8" id="UTw-8w-dpg"/>
                         <segue destination="xLs-tQ-tf9" kind="show" identifier="SignInFromLogin" id="HAi-rF-5yF">

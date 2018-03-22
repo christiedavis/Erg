@@ -27,16 +27,12 @@ class HeaderCell: UITableViewCell {
     
     func setUpAsSessionCell(workout: WorkoutDTO?) {
         if let first = workout?.pieceArray.first, let distance = first.distance, let time = first.time {
-            rightLabel?.text = "\(distance)"
-            leftLabel?.text  = "\(time)"
+            
+            rightLabel?.attributedText = "\(distance) km".apply(font: UIFont.regularFont(12))
+            leftLabel?.attributedText = "\(time) mins".apply(font: UIFont.regularFont(12))
         }
-        
-//        rightLabel.text = sessionDto?.title
-        
-        dateLabel.text = "\(workout?.session.date ?? Date())"
-        
-//    func setupWithErgSession(_ ergSession: ErgSe“ssionModel) {
-//        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))
-//        distanceLabel?.attributedText = (ergSess”ion.distance ?? "error").apply(font: UIFont.regularFont(size: 12))
+
+        dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.regularFont(12))
+    
     }
 }

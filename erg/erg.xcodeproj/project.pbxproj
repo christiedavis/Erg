@@ -33,6 +33,8 @@
 		878655D6203192FD0050D1BD /* ItemsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655D5203192FD0050D1BD /* ItemsDatasource.swift */; };
 		878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655D7203197B30050D1BD /* ItemsPresenter.swift */; };
 		878B56962063338A00E72849 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B56952063338A00E72849 /* BaseViewController.swift */; };
+		878B5698206343AB00E72849 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B5697206343AB00E72849 /* StringExtensions.swift */; };
+		878B569A2063443500E72849 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B56992063443500E72849 /* DateExtensions.swift */; };
 		87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */; };
 		87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */; };
 		87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */; };
@@ -89,6 +91,8 @@
 		878655D5203192FD0050D1BD /* ItemsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDatasource.swift; sourceTree = "<group>"; };
 		878655D7203197B30050D1BD /* ItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsPresenter.swift; sourceTree = "<group>"; };
 		878B56952063338A00E72849 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		878B5697206343AB00E72849 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		878B56992063443500E72849 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				87606DBD202C67F600261CF2 /* ColorExtensions.swift */,
 				87606DCC202CF00600261CF2 /* FontExtensions.swift */,
 				87E9CAFC2032874200CDF755 /* ArrayExtension.swift */,
+				878B5697206343AB00E72849 /* StringExtensions.swift */,
+				878B56992063443500E72849 /* DateExtensions.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -504,7 +510,9 @@
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,
+				878B5698206343AB00E72849 /* StringExtensions.swift in Sources */,
 				87606DCF202CFD8200261CF2 /* Session.swift in Sources */,
+				878B569A2063443500E72849 /* DateExtensions.swift in Sources */,
 				874A69AF20323F690009A83D /* Piece.swift in Sources */,
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
 				871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */,

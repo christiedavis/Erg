@@ -13,6 +13,9 @@ protocol ItemsViewControllerDelegate: class {
     func addWorkoutToView(workout: WorkoutDTO)
     func reloadTable()
     func signOut()
+    
+    func showLoading()
+    func dismissLoading()
 }
 
 class ItemsTableViewController: BaseViewController {
@@ -26,6 +29,7 @@ class ItemsTableViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showLoading()
 
         //TODO: crashed on sign up
         sessionPickerView.delegate = presenter!.datasource

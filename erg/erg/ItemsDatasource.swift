@@ -39,21 +39,30 @@ extension ItemsDatasource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell: SessionCell! = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
-//        if cell == nil {
-//            tableView.register(UINib(nibName: SessionCell.cellName, bundle: nil), forCellReuseIdentifier: SessionCell.cellName)
-//            cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
-//        }
-        var cell: HeaderCell! = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
-        if cell == nil {
-            tableView.register(UINib(nibName: HeaderCell.cellName, bundle: nil), forCellReuseIdentifier: HeaderCell.cellName)
-            cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
+
+        if indexPath.item == 0 {
+            var cell: HeaderCell! = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
+            if cell == nil {
+                tableView.register(UINib(nibName: HeaderCell.cellName, bundle: nil), forCellReuseIdentifier: HeaderCell.cellName)
+                cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
+            }
+            
+            let workout = presenter?.workoutViewModelForRow(indexPath.row)
+            cell.setUpAsSessionCell(workout: workout)
+            return cell
+            
+        } else {
+            
+            var cell: SessionCell! = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? SessionCell
+            if cell == nil {
+                tableView.register(UINib(nibName: SessionCell.cellName, bundle: nil), forCellReuseIdentifier: SessionCell.cellName)
+                cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
+            }
+            
+//            let workout = presenter?.workoutViewModelForRow(indexPath.row)
+//            cell.setUpAsSessionCell(workout: workout)
+            return cell
         }
-        
-        let workout = presenter?.workoutViewModelForRow(indexPath.row)
-//        cell.textLabel?.text = "\(piece?.distance) + \(piece?.time)"
-        cell.setUpAsSessionCell(workout: workout)
-        return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

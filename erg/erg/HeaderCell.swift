@@ -26,9 +26,9 @@ class HeaderCell: UITableViewCell {
     }
     
     func setUpAsSessionCell(workout: WorkoutDTO?) {
-        if let first = workout?.pieceArray.first {
-            rightLabel?.text = "\(first.distance)"
-            leftLabel?.text  = "\(first.time)"
+        if let first = workout?.pieceArray.first, let distance = first.distance, let time = first.time {
+            rightLabel?.text = "\(distance)"
+            leftLabel?.text  = "\(time)"
         }
         
 //        rightLabel.text = sessionDto?.title

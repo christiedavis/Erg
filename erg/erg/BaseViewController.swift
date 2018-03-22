@@ -10,11 +10,10 @@ import UIKit
 
 internal class BaseViewController: UIViewController {
 
-    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    @IBOutlet weak var loadingView: UIActivityIndicatorView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,12 +21,12 @@ internal class BaseViewController: UIViewController {
     }
     
     internal func showLoading() {
-        loadingView.startAnimating()
-        loadingView.isHidden = false
+        loadingView?.startAnimating()
+        loadingView?.isHidden = false
     }
     
     internal func dismissLoading() {
-        loadingView.stopAnimating()
-        loadingView.isHidden = true
+        loadingView?.stopAnimating()
+        loadingView?.isHidden = true
     }
 }

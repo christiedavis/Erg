@@ -151,7 +151,6 @@ class ItemsPresenter: NSObject {
             self.viewDelegate?.reloadTable()
             self.viewDelegate?.dismissLoading()
         })
-        
     }
     
     deinit {

@@ -63,6 +63,10 @@ extension ItemsDatasource: UITableViewDataSource {
 //            item.ref.removeValue()
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension ItemsDatasource: UITableViewDelegate {

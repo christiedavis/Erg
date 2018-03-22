@@ -256,9 +256,16 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBz-6Y-CuW">
                                 <rect key="frame" x="16" y="451" width="343" height="216"/>
                             </pickerView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-dp-xOH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.99527856250000002" green="0.98078748520000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JYx-dp-xOH" secondAttribute="trailing" id="7TT-Pi-RM8"/>
+                            <constraint firstItem="JYx-dp-xOH" firstAttribute="top" secondItem="jRS-bV-VJV" secondAttribute="bottom" id="9gJ-7Z-pjY"/>
                             <constraint firstItem="fZo-FJ-NxR" firstAttribute="centerX" secondItem="MPc-bg-edM" secondAttribute="centerX" id="Cqc-aT-LKB"/>
                             <constraint firstItem="Lh2-KU-hUh" firstAttribute="top" secondItem="fZo-FJ-NxR" secondAttribute="bottom" constant="50" id="EIA-jD-vOy"/>
                             <constraint firstItem="EBz-6Y-CuW" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leading" constant="16" id="FSz-Hf-JCR"/>
@@ -269,8 +276,10 @@
                             <constraint firstAttribute="trailing" secondItem="EBz-6Y-CuW" secondAttribute="trailing" constant="16" id="geq-zX-4me"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7vf-Rz-XFR" secondAttribute="trailing" constant="50" id="jMR-q8-Ldu"/>
                             <constraint firstItem="7vf-Rz-XFR" firstAttribute="centerX" secondItem="MPc-bg-edM" secondAttribute="centerX" id="sXZ-CR-LgU"/>
+                            <constraint firstItem="C3t-80-eRh" firstAttribute="top" secondItem="JYx-dp-xOH" secondAttribute="bottom" id="t3e-8Z-oZ7"/>
                             <constraint firstItem="fZo-FJ-NxR" firstAttribute="top" secondItem="PzM-WT-1gV" secondAttribute="bottom" constant="37" id="uVq-uY-q7h"/>
                             <constraint firstItem="C3t-80-eRh" firstAttribute="top" secondItem="Lh2-KU-hUh" secondAttribute="bottom" id="vjL-3L-BTW"/>
+                            <constraint firstItem="JYx-dp-xOH" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leading" id="x8C-mR-RY3"/>
                             <constraint firstItem="C3t-80-eRh" firstAttribute="top" secondItem="EBz-6Y-CuW" secondAttribute="bottom" id="yu2-md-P8B"/>
                         </constraints>
                     </view>
@@ -289,6 +298,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="filterButton" destination="fZo-FJ-NxR" id="GDk-nE-atv"/>
+                        <outlet property="loadingView" destination="JYx-dp-xOH" id="WAt-4b-ecw"/>
                         <outlet property="sessionPickerView" destination="EBz-6Y-CuW" id="K3q-7i-fpY"/>
                         <outlet property="tableView" destination="Lh2-KU-hUh" id="JJX-xq-1FG"/>
                         <segue destination="A1i-VZ-B1j" kind="presentation" identifier="SignOut" id="cux-R5-QKI"/>

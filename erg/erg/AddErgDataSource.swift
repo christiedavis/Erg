@@ -9,13 +9,13 @@
 import UIKit
 
 class AddErgDataSource: NSObject {
-    var presenter: AddErgPresenterDataDelegate?
+    var presenter: (AddErgPresenterDataDelegate & InputCellDelegate)?
     
     override init() {
         super.init()
     }
     
-    init(_ presenter: AddErgPresenterDataDelegate) {
+    init(_ presenter: AddErgPresenterDataDelegate & InputCellDelegate) {
         self.presenter = presenter
     }
 }
@@ -61,8 +61,8 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
         } else if indexPath.item == 3 {
             cell.setup(.rate)
         }
+        cell.cellDelegate = self.presenter
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -73,24 +73,3 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
         return 60
     }
 }
-//
-//extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1 //sessionPickerValueArray.count
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return presenter?.sessionPickerValueArray.count ?? 0
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return presenter?.sessionPickerValueArray[row] ?? "Error"
-//    }
-//    
-//    // Catpure the picker view selection
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        // The parameter named row and component represents what was selected.
-//        presenter?.setSessionTypeFromPicker(row) //presenter?.sessionPickerValueArray[row] ?? "filter")
-//    }
-//}
-//

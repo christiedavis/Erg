@@ -52,3 +52,7 @@ extension AddErgPresenter: AddErgPresenterDataDelegate {
 extension AddErgPresenter: AddErgPresenterDelegate {
     
 }
+
+extension AddErgPresenter: InputCellDelegate {
+    
+}

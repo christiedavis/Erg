@@ -50,6 +50,9 @@
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="haz-RF-12N"/>
+                        </connections>
                     </textField>
                 </subviews>
                 <constraints>

@@ -17,6 +17,10 @@ enum InputType {
         header
 }
 
+protocol InputCellDelegate: class {
+    
+}
+
 class InputCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel?
@@ -29,6 +33,8 @@ class InputCell: UITableViewCell {
     @IBOutlet var inputBottomConstraint: NSLayoutConstraint!
     
     static var cellName: String = "InputCell"
+    
+    weak var cellDelegate: InputCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,14 +54,12 @@ class InputCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         inputField?.isHidden = false
-
     }
     
     func setupheader(_ pieceNo: Int) {
         setup()
         inputField?.isHidden = true
         titleLabel?.text = "Piece \(pieceNo + 1)"
-        
         
         topDivider.isHidden = pieceNo == 0 ? true : false
         bottomDivider.isHidden = false
@@ -91,5 +95,10 @@ class InputCell: UITableViewCell {
             titleLabel?.text = "tile"
 
         }
+    }
+    
+    @IBAction func editingDidEnd(_ sender: Any) {
+        
+//        self.cellDelegate.setValueFor
     }
 }

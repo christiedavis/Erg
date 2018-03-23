@@ -83,6 +83,7 @@ extension ItemsDatasource: UITableViewDelegate {
 }
 
 extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1 //sessionPickerValueArray.count
     }
@@ -101,4 +102,3 @@ extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
         presenter?.setSessionTypeFromPicker(row) //presenter?.sessionPickerValueArray[row] ?? "filter")
     }
 }
-

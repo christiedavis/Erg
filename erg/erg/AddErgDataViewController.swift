@@ -13,6 +13,13 @@ enum SessionType: Int {
     case time
 }
 
+protocol AddErgViewControllerDelegate: class {
+    var segmentIndex: Int { get }
+    var presenter: AddErgPresenterDelegate? { get set }
+    
+    func reloadTable()
+}
+
 class AddErgDataViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -21,24 +28,16 @@ class AddErgDataViewController: UIViewController {
     @IBOutlet weak var noPiecesLabel: UILabel!
     @IBOutlet weak var noPiecesStepper: UIStepper!
     
-    var sessionType: SessionType {
-        return SessionType(rawValue: segmentView.selectedSegmentIndex) ?? .distance
-    }
-    
-    var noPieces: Int = 0 {
-        didSet {
-            if noPieces < 0 {
-                noPieces = 0
-            }
-            noPiecesLabel.text = "\(noPieces)"
-        }
-    }
-    
+    var presenter: AddErgPresenterDelegate?
     weak var delegate: ItemsViewControllerDelegate?
     
+    var segmentIndex: Int {
+        return self.segmentView.selectedSegmentIndex
+    }
+    
     override func viewDidLoad() {
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.dataSource = presenter!.datasource
+        tableView.delegate = presenter!.datasource
         
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSession)), animated: true)
         
@@ -50,14 +49,10 @@ class AddErgDataViewController: UIViewController {
     }
     
     @IBAction func stepperTapped(_ sender: Any) {
-        noPieces = Int(noPiecesStepper.value)
-        reloadTable()
+        presenter?.noPieces = Int(noPiecesStepper.value)
     }
     
-    func reloadTable() {
-        tableView.isHidden = false
-        tableView.reloadData()
-    }
+
     
     @objc
     func saveSession() {
@@ -75,50 +70,11 @@ class AddErgDataViewController: UIViewController {
     }
 }
 
-extension AddErgDataViewController: UITableViewDataSource, UITableViewDelegate {
- 
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return noPieces
-    }
+extension AddErgDataViewController: AddErgViewControllerDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
-        var cell: InputCell! = tableView.dequeueReusableCell(withIdentifier: InputCell.cellName) as? InputCell
-        if cell == nil {
-            tableView.register(UINib(nibName: InputCell.cellName, bundle: nil), forCellReuseIdentifier: InputCell.cellName)
-            cell = tableView.dequeueReusableCell(withIdentifier: InputCell.cellName) as? InputCell
-        }
-        
-        if indexPath.item == 0 {
-            cell.setupheader(indexPath.section)
-        } else if indexPath.item == 1 {
-            if sessionType == .distance {
-                cell.setup(.distance)
-            } else {
-                cell.setup(.time)
-            }
-        } else if indexPath.item == 2 {
-            if sessionType == .distance {
-                cell.setup(.time)
-            } else {
-                cell.setup(.distance)
-            }
-        } else if indexPath.item == 3 {
-            cell.setup(.rate)
-        }
-        return cell
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        if indexPath.row == 0 {
-            return 40
-        }
-        return 60
+    func reloadTable() {
+        tableView.isHidden = false
+        tableView.reloadData()
+        noPiecesLabel.text = "\(tableView.numberOfSections)"
     }
 }

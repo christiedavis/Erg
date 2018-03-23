@@ -56,6 +56,8 @@ class ItemsTableViewController: BaseViewController {
         if segue.identifier == "ShowAddErgData" {
             if let vc = segue.destination as? AddErgDataViewController {
                vc.delegate = self
+                vc.presenter = AddErgPresenter()
+                vc.presenter?.viewDelegate = vc
             }
         }
     }

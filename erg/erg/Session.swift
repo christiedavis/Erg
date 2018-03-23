@@ -25,8 +25,6 @@ class Session {
     var type: Int = 1
     var date: String?     // TODO: do i need this?
     var id: String?
-//    var pieces: [Piece] = []
-//    var anyPieces: Any?
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
@@ -36,41 +34,26 @@ class Session {
         type = data["type"] as? Int ?? 9
         date = data["date"] as? String
         id = snapshot.key
-//        pieces = data["pieces"] as? [Piece] ?? []
-//        anyPieces = data["pieces.*"] as? [Any] ?? []
     }
     
     init(session: SessionDTO) {
-       
-//        pieces = session.pieces.flatMap({ sessionPiece -> (Piece) in
-//            return Piece(sessionPiece, sessionType: session.sessionType)
-//        })
+
         type = session.sessionType.rawValue
         date = "\(session.date)"
-//        if pieces.count == 1 {
-//            title = pieces.first?.title ?? ""
-//        } else {
-//            if let firstPiece = pieces.first {
-//                title = firstPiece.title
-//            }
-//        }
-        
+
         self.ref = nil
     }
     
     func toAnyObject() -> Any {
-//        let pieceDict =  pieces.map({ $0.toAnyObject() })
         return [
             "title": title,
             "type": type,
             "date": date,
-//            "pieces": pieceDict,
             ]
     }
     
     func asSessionDTO() -> SessionDTO {
         return SessionDTO(id: id, title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date())
-        //, pieces: pieces.map({ $0.asPieceDTO() }), anyPieces: anyPieces )
     }
 }
 

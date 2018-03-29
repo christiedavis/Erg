@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7D27ED83C7C6E73D54D248C8 /* Pods_ergTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F97E9478BF077297B5DD12E /* Pods_ergTests.framework */; };
 		871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05B61EC6E4F7002933E6 /* AppDelegate.swift */; };
-		871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05B81EC6E4F7002933E6 /* ViewController.swift */; };
 		871E05BC1EC6E4F7002933E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05BA1EC6E4F7002933E6 /* Main.storyboard */; };
 		871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C01EC6E4F7002933E6 /* Assets.xcassets */; };
 		871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */; };
@@ -66,7 +65,6 @@
 		8610F3D26038AE783E702777 /* Pods-ergTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ergTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ergTests/Pods-ergTests.release.xcconfig"; sourceTree = "<group>"; };
 		871E05B31EC6E4F6002933E6 /* erg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E05B61EC6E4F7002933E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		871E05B81EC6E4F7002933E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		871E05BB1EC6E4F7002933E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		871E05C01EC6E4F7002933E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871E05C31EC6E4F7002933E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			children = (
 				878B56A02063488E00E72849 /* Items */,
 				878B569F2063488100E72849 /* AddErg */,
-				871E05B81EC6E4F7002933E6 /* ViewController.swift */,
 				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
 				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
 				878B56952063338A00E72849 /* BaseViewController.swift */,
@@ -538,7 +535,6 @@
 				878B569A2063443500E72849 /* DateExtensions.swift in Sources */,
 				874A69AF20323F690009A83D /* Piece.swift in Sources */,
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
-				871E05B91EC6E4F7002933E6 /* ViewController.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,
 				87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */,

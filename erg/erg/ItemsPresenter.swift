@@ -55,13 +55,13 @@ class ItemsPresenter: NSObject {
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
         if viewFilter == nil {
-            return sessions.flatMap({ $0.title })
+            return sessions.flatMap({ $0.id })
         }
         
         let filteredList = sessions.filter { session -> Bool in
             return session.type == viewFilter?.rawValue
             }.flatMap({ (session) -> String? in
-                return session.title
+                return session.id
             })
         
         return Array(Set(filteredList.map { $0 }))
@@ -192,5 +192,9 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
         } catch let error {
             assertionFailure("Error signing out: \(error)")
         }
+    }
+    
+    func filter() {
+        
     }
 }

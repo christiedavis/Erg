@@ -64,6 +64,7 @@ class ItemsTableViewController: BaseViewController {
     
     @IBAction func filterButtonTapped(_ sender: Any) {
         sessionPickerView.isHidden = false
+        sessionPickerView.reloadAllComponents()
     }
 }
 

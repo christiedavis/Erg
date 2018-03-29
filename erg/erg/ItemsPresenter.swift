@@ -14,6 +14,7 @@ import FirebaseAuth
 protocol ItemsPresenterViewDelegate: class {
     var viewDelegate: ItemsViewControllerDelegate? { get set }
     var datasource: ItemsDatasource { get }
+    var filterTitle: String? { get }
     
     func addWorkoutToDatabase(workout: WorkoutDTO)
     func setFilter(_ sessionType: SessionType?)
@@ -50,6 +51,7 @@ class ItemsPresenter: NSObject {
     var viewDelegate: ItemsViewControllerDelegate?
     var datasource: ItemsDatasource
     
+    var filterTitle: String? = ""
     private var viewFilter: SessionType?
     private var sessionViewFilter: String?
     private var expandedSessions: Set<Int> = Set<Int>()
@@ -163,6 +165,7 @@ extension ItemsPresenter : ItemsPresenterDataDelegate {
     
     func setSessionTypeFromPicker(_ rowSelected: Int) {
         sessionViewFilter = sessionPickerValueArray[rowSelected]
+        filterTitle = sessionPickerValueArray[rowSelected]
         viewDelegate?.reloadTable()
     }
 }
@@ -171,7 +174,6 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     
     func setFilter(_ sessionType: SessionType?) {
         self.viewFilter = sessionType
-        
     }
 
     func addWorkoutToDatabase(workout: WorkoutDTO) {

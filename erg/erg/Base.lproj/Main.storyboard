@@ -206,6 +206,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-dp-xOH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.99527856250000002" green="0.98078748520000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="color" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-KU-hUh">
                                 <rect key="frame" x="16" y="244" width="343" height="423"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -256,11 +261,6 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBz-6Y-CuW">
                                 <rect key="frame" x="16" y="451" width="343" height="216"/>
                             </pickerView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-dp-xOH">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.99527856250000002" green="0.98078748520000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="color" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -298,6 +298,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="filterButton" destination="fZo-FJ-NxR" id="GDk-nE-atv"/>
+                        <outlet property="filterTitleLabel" destination="ZfQ-j9-f4o" id="Ded-Yu-MDM"/>
+                        <outlet property="filterValueLabel" destination="GvK-TC-5LO" id="Ime-xS-Elu"/>
                         <outlet property="loadingView" destination="JYx-dp-xOH" id="WAt-4b-ecw"/>
                         <outlet property="sessionPickerView" destination="EBz-6Y-CuW" id="K3q-7i-fpY"/>
                         <outlet property="tableView" destination="Lh2-KU-hUh" id="JJX-xq-1FG"/>

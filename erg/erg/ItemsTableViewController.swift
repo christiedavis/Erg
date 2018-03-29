@@ -24,7 +24,10 @@ class ItemsTableViewController: BaseViewController {
     
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var sessionPickerView: UIPickerView!
-
+    
+    @IBOutlet weak var filterTitleLabel: UILabel!
+    @IBOutlet weak var filterValueLabel: UILabel!
+    
     var presenter: ItemsPresenterViewDelegate?
     
     override func viewDidLoad() {
@@ -72,6 +75,13 @@ extension ItemsTableViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
         tableView.reloadData()
+        if let filter = self.presenter?.filterTitle {
+            filterValueLabel.attributedText = filter.apply(font: UIFont.regularFont(14))
+            filterTitleLabel.attributedText = filter.apply(font: UIFont.boldFont(14))
+        } else {
+            filterValueLabel.text = ""
+            filterTitleLabel.text = ""
+        }
     }
     
     func addWorkoutToView(workout: WorkoutDTO) {

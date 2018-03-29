@@ -77,7 +77,7 @@ extension ItemsTableViewController: ItemsViewControllerDelegate {
         tableView.reloadData()
         if let filter = self.presenter?.filterTitle {
             filterValueLabel.attributedText = filter.apply(font: UIFont.regularFont(14))
-            filterTitleLabel.attributedText = filter.apply(font: UIFont.boldFont(14))
+            filterTitleLabel.attributedText = "Current Filter:".apply(font: UIFont.boldFont(14))
         } else {
             filterValueLabel.text = ""
             filterTitleLabel.text = ""

@@ -259,6 +259,13 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EBz-6Y-CuW">
                                 <rect key="frame" x="16" y="451" width="343" height="216"/>
                             </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OLX-yS-g15">
+                                <rect key="frame" x="97" y="192" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -301,6 +308,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="filterButton" destination="fZo-FJ-NxR" id="GDk-nE-atv"/>
+                        <outlet property="filterTextView" destination="OLX-yS-g15" id="kgk-kt-uzA"/>
                         <outlet property="filterTitleLabel" destination="ZfQ-j9-f4o" id="Ded-Yu-MDM"/>
                         <outlet property="filterValueLabel" destination="GvK-TC-5LO" id="Ime-xS-Elu"/>
                         <outlet property="loadingView" destination="JYx-dp-xOH" id="WAt-4b-ecw"/>

@@ -40,6 +40,7 @@ class Session {
 
         type = session.sessionType.rawValue
         date = "\(session.date)"
+        title = session.title ?? "NO TITLE"
 
         self.ref = nil
     }

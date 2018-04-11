@@ -27,6 +27,7 @@ class ItemsTableViewController: BaseViewController {
     
     @IBOutlet weak var filterTitleLabel: UILabel!
     @IBOutlet weak var filterValueLabel: UILabel!
+    @IBOutlet var filterTextView: UITextField!
     
     var presenter: ItemsPresenterViewDelegate?
     
@@ -35,13 +36,44 @@ class ItemsTableViewController: BaseViewController {
         self.showLoading()
 
         //TODO: crashed on sign up
-        sessionPickerView.delegate = presenter!.datasource
-        sessionPickerView.dataSource = presenter!.datasource
+//        sessionPickerView.delegate = presenter!.datasource
+//        sessionPickerView.dataSource = presenter!.datasource
         sessionPickerView.isHidden = true
-        sessionPickerView.backgroundColor = UIColor.lightGray
+//        sessionPickerView.showsSelectionIndicator = true
+//        sessionPickerView.backgroundColor = UIColor.lightGray
 
+        let picker: UIPickerView
+        picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
+        picker.backgroundColor = .white
+
+        picker.showsSelectionIndicator = true
+        picker.delegate = self.presenter!.datasource
+        picker.dataSource = self.presenter!.datasource
+    
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = .red
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: "donePicker")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: "donePicker")
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+
+        filterTextView.inputView = picker
+        filterTextView.inputAccessoryView = toolBar
+        
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
+    }
+    
+    func donePicker() {
+        
+        filterTextView.resignFirstResponder()
+        
     }
 
     // MARK: - Table view data source

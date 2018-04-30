@@ -71,10 +71,9 @@ class ItemsTableViewController: BaseViewController {
         tableView.dataSource = presenter!.datasource
     }
     
+    @objc
     func donePicker() {
-        
         filterTextView.resignFirstResponder()
-        
     }
 
     // MARK: - Table view data source

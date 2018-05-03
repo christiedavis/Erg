@@ -29,7 +29,7 @@ class HeaderCell: UITableViewCell {
         if let first = workout?.pieceArray.first {
             
             rightLabel?.attributedText = "\(first.distance) km".apply(font: UIFont.regularFont(12))
-            leftLabel?.attributedText = "\(time) mins".apply(font: UIFont.regularFont(12))
+            leftLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(12))
         }
 
         dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.regularFont(12))

@@ -21,8 +21,5 @@ class SessionCell: UITableViewCell {
     func setUpAsSessionCell(sessionDto: SessionDTO) {
         timeLabel?.text = sessionDto.title
         distanceLabel?.text  = "\(sessionDto.date)"
-//    func setupWithErgSession(_ ergSession: ErgSessionModel) {
-//        timeLabel?.attributedText = (ergSession.time ?? "error").apply(font: UIFont.regularFont(size: 12))
-//        distanceLabel?.attributedText = (ergSession.distance ?? "error").apply(font: UIFont.regularFont(size: 12))
     }
 }

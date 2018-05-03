@@ -47,7 +47,7 @@ extension ItemsDatasource: UITableViewDataSource {
                 cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.cellName) as? HeaderCell
             }
             
-            let workout = presenter?.workoutViewModelForRow(indexPath.row)
+            let workout = presenter?.workoutViewModelForSection(indexPath.section)
             cell.setUpAsSessionCell(workout: workout)
             return cell
             
@@ -59,7 +59,7 @@ extension ItemsDatasource: UITableViewDataSource {
                 cell = tableView.dequeueReusableCell(withIdentifier: SessionCell.cellName) as? SessionCell
             }
             
-//            let workout = presenter?.workoutViewModelForRow(indexPath.row)
+//            let workout = presenter?.workoutViewModelForSection(indexPath.row)
 //            cell.setUpAsSessionCell(workout: workout)
             return cell
         }

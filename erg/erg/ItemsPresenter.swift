@@ -28,7 +28,7 @@ protocol ItemsPresenterDataDelegate {
     var numberOfSessions: Int { get }
     func rowsForSession(_ sessionIndex: Int) -> Int
     func setSessionTypeFromPicker(_ rowSelected: Int)
-    func workoutViewModelForRow(_ row: Int) -> WorkoutDTO?
+    func workoutViewModelForSection(_ row: Int) -> WorkoutDTO?
 }
 
 class ItemsPresenter: NSObject {
@@ -113,11 +113,11 @@ class ItemsPresenter: NSObject {
         return filteredSessions[row].asSessionDTO()
     }
     
-    func workoutViewModelForRow(_ row: Int) -> WorkoutDTO? {
+    func workoutViewModelForSection(_ section: Int) -> WorkoutDTO? {
 //        return nil
-        let sessionId = filteredSessions[row].id ?? ""
+        let sessionId = filteredSessions[section].id ?? ""
         let pieceArray = pieces[sessionId] ?? []
-        let session = filteredSessions[row]
+        let session = filteredSessions[section]
         
         let workoutDto = WorkoutDTO(pieceArray, session)
         return workoutDto

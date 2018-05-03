@@ -21,14 +21,6 @@ protocol InputCellDelegate: class {
     func updatePiece(pieceDTO: PieceDTO)
 }
 
-struct Constants {
-    struct InputTags {
-        static let primaryInput: Int = 0
-        static let secondaryInput: Int = 1
-        static let rateInput: Int = 2
-    }
-}
-
 class InputCell: UITableViewCell {
 
     @IBOutlet weak var primaryLabel: UILabel?
@@ -91,7 +83,6 @@ class InputCell: UITableViewCell {
                 primaryLabel?.attributedText = "Distance:".apply(font: UIFont.regularFont(14))
                 
                 secondaryLabel?.attributedText = "Time:".apply(font: UIFont.regularFont(14))
-
         }
     }
 
@@ -99,22 +90,22 @@ class InputCell: UITableViewCell {
         if let inputType = self.inputType, let textInput = sender as? UITextField {
             
             if textInput.tag == Constants.InputTags.rateInput {
-                pieceDto?.rate = Int(textInput.text ?? "-1")
+                pieceDto?.rate = Int(rateInput?.text ?? "-1")
             }
             
             switch inputType {
             case .time:
                 if textInput.tag == Constants.InputTags.primaryInput {
-                    pieceDto?.time = textInput.text ?? ""
+                    pieceDto?.time = primaryInput?.text ?? ""
                 } else {
-                    pieceDto?.distance = textInput.text ?? ""
+                    pieceDto?.distance = secondaryInput?.text ?? ""
                 }
                 
             case .distance:
                 if textInput.tag == Constants.InputTags.primaryInput {
-                    pieceDto?.distance = textInput.text ?? ""
+                    pieceDto?.distance = primaryInput?.text ?? ""
                 } else {
-                    pieceDto?.time = textInput.text ?? ""
+                    pieceDto?.time = secondaryInput?.text ?? ""
                     
                 }
             }

@@ -22,6 +22,7 @@
 		87606DCA202CECFD00261CF2 /* Sofia-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */; };
 		87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCC202CF00600261CF2 /* FontExtensions.swift */; };
 		87606DCF202CFD8200261CF2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCE202CFD8200261CF2 /* Session.swift */; };
+		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
 		8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* InputCell.xib */; };
@@ -81,6 +82,7 @@
 		87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia-Regular.ttf"; sourceTree = "<group>"; };
 		87606DCC202CF00600261CF2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		87606DCE202CFD8200261CF2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		878022681EC6E9CB00D6A867 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				87E9CAFC2032874200CDF755 /* ArrayExtension.swift */,
 				878B5697206343AB00E72849 /* StringExtensions.swift */,
 				878B56992063443500E72849 /* DateExtensions.swift */,
+				877D42EE209B2F4B00892A5C /* Constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				878B56962063338A00E72849 /* BaseViewController.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
+				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
 				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
 				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,

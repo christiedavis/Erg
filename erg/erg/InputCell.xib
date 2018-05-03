@@ -51,6 +51,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingChanged" id="DId-Ne-UnW"/>
                             <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="haz-RF-12N"/>
                         </connections>
                     </textField>
@@ -66,6 +67,7 @@
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="BFL-KH-20v"/>
                             <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="vHg-IP-uho"/>
                         </connections>
                     </textField>
@@ -75,12 +77,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EqM-Lb-SwC">
-                        <rect key="frame" x="88" y="16" width="181" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EqM-Lb-SwC">
+                        <rect key="frame" x="59" y="16" width="210" height="30"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="uFN-z6-TeX"/>
                             <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="FzU-p3-yoh"/>
                         </connections>
                     </textField>

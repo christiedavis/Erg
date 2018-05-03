@@ -218,10 +218,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZo-FJ-NxR">
-                                <rect key="frame" x="162.5" y="149" width="50" height="45"/>
+                                <rect key="frame" x="170" y="149" width="35" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="23D-Bh-VGv"/>
-                                    <constraint firstAttribute="width" constant="50" id="gkg-tI-3UU"/>
                                 </constraints>
                                 <state key="normal" title="Filter"/>
                                 <connections>
@@ -369,8 +368,10 @@
                             <constraint firstItem="36T-QA-adJ" firstAttribute="top" secondItem="V5u-0J-d5e" secondAttribute="bottom" constant="15" id="88y-2W-VgA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Auh-1M-DnH" secondAttribute="trailing" id="BxZ-1g-s14"/>
                             <constraint firstItem="ncw-vY-pzG" firstAttribute="leading" secondItem="dBK-1t-XIh" secondAttribute="leadingMargin" id="ErM-wB-xC8"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ywM-f9-f2W" secondAttribute="trailingMargin" id="JGU-n9-wHB"/>
                             <constraint firstItem="Auh-1M-DnH" firstAttribute="leading" secondItem="jPQ-GR-NCe" secondAttribute="trailing" constant="8" id="KPA-KC-apn"/>
                             <constraint firstItem="ncw-vY-pzG" firstAttribute="top" secondItem="Auh-1M-DnH" secondAttribute="bottom" constant="5" id="L7f-oc-J0a"/>
+                            <constraint firstItem="jPQ-GR-NCe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dBK-1t-XIh" secondAttribute="leading" constant="20" symbolic="YES" id="MF3-Kt-EZO"/>
                             <constraint firstItem="36T-QA-adJ" firstAttribute="leading" secondItem="dBK-1t-XIh" secondAttribute="leadingMargin" id="bhi-AY-YYs"/>
                             <constraint firstItem="ywM-f9-f2W" firstAttribute="leading" secondItem="dBK-1t-XIh" secondAttribute="leadingMargin" constant="17" id="cbz-k9-gdd"/>
                             <constraint firstItem="36T-QA-adJ" firstAttribute="trailing" secondItem="dBK-1t-XIh" secondAttribute="trailingMargin" id="dAc-AK-lxg"/>

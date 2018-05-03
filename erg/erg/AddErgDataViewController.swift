@@ -18,6 +18,7 @@ protocol AddErgViewControllerDelegate: class {
     var presenter: AddErgPresenterDelegate? { get set }
     
     func reloadTable()
+    func dismissView()
 }
 
 class AddErgDataViewController: UIViewController {
@@ -29,7 +30,6 @@ class AddErgDataViewController: UIViewController {
     @IBOutlet weak var noPiecesStepper: UIStepper!
     
     var presenter: AddErgPresenterDelegate?
-    weak var delegate: ItemsViewControllerDelegate?
     
     var segmentIndex: Int {
         return self.segmentView.selectedSegmentIndex
@@ -63,19 +63,12 @@ class AddErgDataViewController: UIViewController {
     
     @objc
     func saveSession() {
-        // todo: actually add item
-        
-        
-//        let pieces0 = PieceDTO(distance: 23, time: 32, rate: 23)
-//        let pieces1 = PieceDTO(distance: 23, time: 32, rate: 23)
-//        let pieces2 = PieceDTO(distance: 23, time: 32, rate: 23)
-//        let pieces3 = PieceDTO(distance: 23, time: 32, rate: 23)
+        presenter?.saveSession()
+    }
+    
+    func dismissView() {
+        self.navigationController?.popViewController(animated: true)
 
-//        let newSession = SessionDTO(id: nil, title: "hello", sessionType: .time, date: Date())
-//        let workout = WorkoutDTO([pieces0, pieces1, pieces2, pieces3], newSession)
-//
-//        delegate?.addWorkoutToView(workout: workout)
-//        self.navigationController?.popViewController(animated: true)
     }
 }
 

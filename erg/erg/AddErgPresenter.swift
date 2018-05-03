@@ -15,6 +15,8 @@ protocol AddErgPresenterDelegate: class {
     var noPieces: Int { get }
     func addPiece()
     func removePiece()
+    
+    func saveSession()
 }
 
 protocol AddErgPresenterDataDelegate: class {
@@ -25,7 +27,8 @@ protocol AddErgPresenterDataDelegate: class {
 }
 
 class AddErgPresenter: NSObject {
-
+    
+    weak var delegate: ItemsViewControllerDelegate?
     var viewDelegate: AddErgViewControllerDelegate?
     var datasource: AddErgDataSource
     
@@ -33,9 +36,10 @@ class AddErgPresenter: NSObject {
         return SessionType(rawValue: viewDelegate?.segmentIndex ?? 0) ?? .distance
     }
     
-    override init() {
-        datasource = AddErgDataSource()
+    init(itemsControllerDelegate: ItemsViewControllerDelegate) {
+        datasource = AddErgDataSource() // I hate this
         super.init()
+        self.delegate = itemsControllerDelegate
         addPiece()
         datasource = AddErgDataSource(self)
     }
@@ -63,10 +67,23 @@ extension AddErgPresenter: AddErgPresenterDelegate {
         pieces[pieces.count] = PieceDTO(rowId: pieces.count)
         viewDelegate?.reloadTable()
     }
+    
     func removePiece() {
         pieces.removeValue(forKey: pieces.count - 1)
         viewDelegate?.reloadTable()
+    }
+    
+    func saveSession() {
+        
+        let pieceArray = self.pieces.map { (key: Int, value: PieceDTO) in
+            return value
+        }
+        
+        let newSession = SessionDTO(id: nil, title: "hello", sessionType: self.sessionType, date: Date())
+        let workout = WorkoutDTO(pieceArray, newSession)
 
+        delegate?.addWorkoutToView(workout: workout)
+        viewDelegate?.dismissView()
     }
 }
 

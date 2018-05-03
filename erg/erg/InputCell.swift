@@ -94,13 +94,12 @@ class InputCell: UITableViewCell {
 
         }
     }
-    
-    @IBAction func editingDidEnd(_ sender: Any) {
-    
+
+    @IBAction func editingDidChange(_ sender: Any) {
         if let inputType = self.inputType, let textInput = sender as? UITextField {
             
             if textInput.tag == Constants.InputTags.rateInput {
-                 pieceDto?.rate = Int(textInput.text ?? "-1")
+                pieceDto?.rate = Int(textInput.text ?? "-1")
             }
             
             switch inputType {
@@ -110,7 +109,7 @@ class InputCell: UITableViewCell {
                 } else {
                     pieceDto?.distance = textInput.text ?? ""
                 }
-               
+                
             case .distance:
                 if textInput.tag == Constants.InputTags.primaryInput {
                     pieceDto?.distance = textInput.text ?? ""
@@ -118,8 +117,11 @@ class InputCell: UITableViewCell {
                     pieceDto?.time = textInput.text ?? ""
                     
                 }
-//            cellDelegate?.updatePiece(pieceDTO: self.pieceDto)
             }
         }
+    }
+    
+    @IBAction func editingDidEnd(_ sender: Any) {
+       
     }
 }

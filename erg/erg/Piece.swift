@@ -40,7 +40,7 @@ class Piece {
         let data = snapshot.value as! Dictionary<String, AnyObject>
         distance = data["distance"]! as? String
         time = data["time"]! as? String
-        rate = data["rate"]! as? Int
+        rate = data["rate"] as? Int
     }
     init(_ piece: PieceDTO, sessionType: SessionType) {
         
@@ -59,9 +59,9 @@ class Piece {
     
     func toAnyObject() -> Any {
         return [
-            "distance": distance,
-            "time": time,
-            "rate": rate
+            "distance": distance as Any,
+            "time": time as Any,
+            "rate": rate as Any
         ]
     }
     

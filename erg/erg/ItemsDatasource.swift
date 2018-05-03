@@ -48,6 +48,7 @@ extension ItemsDatasource: UITableViewDataSource {
             }
             
             let workout = presenter?.workoutViewModelForSection(indexPath.section)
+            // TODO: this is nt working
             cell.setUpAsSessionCell(workout: workout)
             return cell
             

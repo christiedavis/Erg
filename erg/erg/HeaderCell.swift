@@ -26,9 +26,9 @@ class HeaderCell: UITableViewCell {
     }
     
     func setUpAsSessionCell(workout: WorkoutDTO?) {
-        if let first = workout?.pieceArray.first, let distance = first.distance, let time = first.time {
+        if let first = workout?.pieceArray.first {
             
-            rightLabel?.attributedText = "\(distance) km".apply(font: UIFont.regularFont(12))
+            rightLabel?.attributedText = "\(first.distance) km".apply(font: UIFont.regularFont(12))
             leftLabel?.attributedText = "\(time) mins".apply(font: UIFont.regularFont(12))
         }
 

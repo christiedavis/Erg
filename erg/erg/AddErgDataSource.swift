@@ -29,7 +29,7 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,31 +45,17 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
         }
         
         if indexPath.item == 0 {
-            cell.setupheader(indexPath.section)
-        } else if indexPath.item == 1 {
             if presenter.sessionType == .distance {
                 cell.setup(.distance, presenter.pieceForRow(indexPath.row))
             } else {
                 cell.setup(.time, presenter.pieceForRow(indexPath.row))
             }
-        } else if indexPath.item == 2 {
-            if presenter.sessionType == .distance {
-                cell.setup(.time, presenter.pieceForRow(indexPath.row))
-            } else {
-                cell.setup(.distance, presenter.pieceForRow(indexPath.row))
-            }
-        } else if indexPath.item == 3 {
-            cell.setup(.rate, presenter.pieceForRow(indexPath.row))
-        }
+        } 
         cell.cellDelegate = self.presenter
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.row == 0 {
-            return 40
-        }
-        return 60
+        return 160
     }
 }

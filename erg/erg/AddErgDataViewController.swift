@@ -38,10 +38,13 @@ class AddErgDataViewController: UIViewController {
     override func viewDidLoad() {
         tableView.dataSource = presenter!.datasource
         tableView.delegate = presenter!.datasource
-        
+        noPiecesStepper.tag = Int(noPiecesStepper.value)
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSession)), animated: true)
         
-        tableView.isHidden = true
+//        tableView.isHidden = true
+        
+        noPiecesLabel.text = "\(tableView.numberOfSections)"
+
     }
     
     @IBAction func segmentTapped(_ sender: Any) {
@@ -49,22 +52,30 @@ class AddErgDataViewController: UIViewController {
     }
     
     @IBAction func stepperTapped(_ sender: Any) {
- //       presenter?.noPieces = Int(noPiecesStepper.value)
+        if noPiecesStepper.tag > Int(noPiecesStepper.value) {
+            // they've tapped -
+            presenter?.removePiece()
+        } else {
+            presenter?.addPiece()
+        }
+        noPiecesStepper.tag = Int(noPiecesStepper.value)
     }
     
     @objc
     func saveSession() {
         // todo: actually add item
-        let pieces0 = PieceDTO(distance: 23, time: 32, rate: 23)
-        let pieces1 = PieceDTO(distance: 23, time: 32, rate: 23)
-        let pieces2 = PieceDTO(distance: 23, time: 32, rate: 23)
-        let pieces3 = PieceDTO(distance: 23, time: 32, rate: 23)
-
-        let newSession = SessionDTO(id: nil, title: "hello", sessionType: .time, date: Date())
-        let workout = WorkoutDTO([pieces0, pieces1, pieces2, pieces3], newSession)
         
-        delegate?.addWorkoutToView(workout: workout)
-        self.navigationController?.popViewController(animated: true)
+        
+//        let pieces0 = PieceDTO(distance: 23, time: 32, rate: 23)
+//        let pieces1 = PieceDTO(distance: 23, time: 32, rate: 23)
+//        let pieces2 = PieceDTO(distance: 23, time: 32, rate: 23)
+//        let pieces3 = PieceDTO(distance: 23, time: 32, rate: 23)
+
+//        let newSession = SessionDTO(id: nil, title: "hello", sessionType: .time, date: Date())
+//        let workout = WorkoutDTO([pieces0, pieces1, pieces2, pieces3], newSession)
+//
+//        delegate?.addWorkoutToView(workout: workout)
+//        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A1i-VZ-B1j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A1i-VZ-B1j">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,9 +107,7 @@
                         <outlet property="loadingView" destination="TZu-UP-gDn" id="JLo-Ck-zwd"/>
                         <outlet property="passwordField" destination="Ncv-aZ-dZ2" id="Ou4-EL-drz"/>
                         <outlet property="signInButton" destination="xdD-69-5r8" id="UTw-8w-dpg"/>
-                        <segue destination="xLs-tQ-tf9" kind="show" identifier="SignInFromLogin" id="HAi-rF-5yF">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="xLs-tQ-tf9" kind="show" identifier="SignInFromLogin" id="HAi-rF-5yF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIa-sM-4Vr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,9 +183,7 @@
                     <connections>
                         <outlet property="emailField" destination="VP6-7x-rWx" id="ZF7-st-JM0"/>
                         <outlet property="passwordField" destination="c7s-F9-FW3" id="qyA-Jl-xCf"/>
-                        <segue destination="xLs-tQ-tf9" kind="show" identifier="SignInFromSignUp" id="M3s-Ve-SH7">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="xLs-tQ-tf9" kind="show" identifier="SignInFromSignUp" id="M3s-Ve-SH7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWJ-5j-DGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -343,7 +339,7 @@
                                     <action selector="segmentTapped:" destination="5EU-2m-tU6" eventType="valueChanged" id="rHs-0d-Cx1"/>
                                 </connections>
                             </segmentedControl>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-1M-DnH">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-1M-DnH">
                                 <rect key="frame" x="265" y="128" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperTapped:" destination="5EU-2m-tU6" eventType="touchUpInside" id="8cI-pa-Reu"/>

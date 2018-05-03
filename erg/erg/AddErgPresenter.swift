@@ -14,6 +14,7 @@ protocol AddErgPresenterDelegate: class {
     
     var noPieces: Int { get }
     func addPiece()
+    func removePiece()
 }
 
 protocol AddErgPresenterDataDelegate: class {
@@ -35,37 +36,42 @@ class AddErgPresenter: NSObject {
     override init() {
         datasource = AddErgDataSource()
         super.init()
-        pieces.append(PieceDTO(rowId: 0))
+        addPiece()
         datasource = AddErgDataSource(self)
     }
     
-    var pieces: [PieceDTO] = []
+    private var pieces: [Int :PieceDTO] = [:]
     var noPieces: Int {
         return pieces.count
-//        didSet {
-//            if noPieces < 0 {
-//                noPieces = 0
-//            }
-//            self.viewDelegate?.reloadTable()
-//        }
     }
 }
 
 extension AddErgPresenter: AddErgPresenterDataDelegate {
     func pieceForRow(_ row: Int) -> PieceDTO {
-        return pieces[row - 1]
+        if let piece = pieces[row] {
+            return piece
+        } else {
+            let piece = PieceDTO(rowId: pieces.count)
+            pieces[pieces.count] = piece
+            return piece
+        }
     }
 }
 
 extension AddErgPresenter: AddErgPresenterDelegate {
     func addPiece() {
-        pieces.append(PieceDTO(rowId: pieces.count))
+        pieces[pieces.count] = PieceDTO(rowId: pieces.count)
+        viewDelegate?.reloadTable()
     }
     func removePiece() {
-        pieces.removeLast()
+        pieces.removeValue(forKey: pieces.count - 1)
+        viewDelegate?.reloadTable()
+
     }
 }
 
 extension AddErgPresenter: InputCellDelegate {
-    
+    func updatePiece(pieceDTO: PieceDTO) {
+        pieces[pieceDTO.rowId] = pieceDTO
+    }
 }

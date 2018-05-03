@@ -11,19 +11,26 @@ import FirebaseDatabase
 
 struct PieceDTO {
     var rowId: Int = -1
-    var distance: Int = -1
-    var time: Int = -1
+    var distance: String = ""
+    var time: String = ""
     var rate: Int?
     
     init(rowId: Int) {
         self.rowId = rowId
     }
+    
+    init(rowId: Int, distance: String, time: String, rate: Int) {
+        self.rowId = rowId
+        self.distance = distance
+        self.time = time
+        self.rate = rate
+    }
 }
 
 class Piece {
     var ref: DatabaseReference?
-    var distance: Int?
-    var time: Int?
+    var distance: String?
+    var time: String?
     var rate: Int?
     
     var title: String = "piece" // This is used by the session object
@@ -31,8 +38,8 @@ class Piece {
         ref = snapshot.ref
         
         let data = snapshot.value as! Dictionary<String, AnyObject>
-        distance = data["distance"]! as? Int
-        time = data["time"]! as? Int
+        distance = data["distance"]! as? String
+        time = data["time"]! as? String
         rate = data["rate"]! as? Int
     }
     init(_ piece: PieceDTO, sessionType: SessionType) {
@@ -42,9 +49,9 @@ class Piece {
         self.rate = piece.rate
         
         if sessionType == .distance {
-            title = "\(piece.distance)"
+            title = "piece.distance"
         } else {
-            title = "\(piece.time)"
+            title = "piece.time"
         }
         
         self.ref = nil
@@ -59,6 +66,6 @@ class Piece {
     }
     
     func asPieceDTO() -> PieceDTO {
-//        return PieceDTO(distance: self.distance, time: self.time, rate: self.rate)
+        return PieceDTO(rowId: -1, distance: self.distance ?? "", time: self.time ?? "", rate: self.rate ?? 0)
     }
 }

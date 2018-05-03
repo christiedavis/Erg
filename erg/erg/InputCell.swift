@@ -18,7 +18,7 @@ enum InputType {
 }
 
 protocol InputCellDelegate: class {
-    
+    func updatePiece(pieceDTO: PieceDTO)
 }
 
 class InputCell: UITableViewCell {
@@ -32,6 +32,8 @@ class InputCell: UITableViewCell {
     
     @IBOutlet var inputBottomConstraint: NSLayoutConstraint!
     
+    var inputType: InputType?
+    var pieceDto: PieceDTO?
     static var cellName: String = "InputCell"
     
     weak var cellDelegate: InputCellDelegate?
@@ -67,9 +69,11 @@ class InputCell: UITableViewCell {
         inputBottomConstraint.constant = 5
     }
     
-    func setup(_ inputType: InputType) {
+    func setup(_ inputType: InputType, _ piece: PieceDTO) {
         setup()
-       
+        self.pieceDto = piece
+        self.inputType = inputType
+        
         switch inputType {
             case .time:
             titleLabel?.text = "Total time"
@@ -98,7 +102,34 @@ class InputCell: UITableViewCell {
     }
     
     @IBAction func editingDidEnd(_ sender: Any) {
-        
-//        self.cellDelegate.setValueFor
+        if let inputType = self.inputType {
+            switch inputType {
+            case .time:
+//                pieceDto?.time =
+                titleLabel?.text = "Total time"
+                unitLabel?.text = "m"
+                
+            case .distance:
+                titleLabel?.text = "Distance"
+                unitLabel?.text = "m"
+                
+            case .split:
+                titleLabel?.text = "Split"
+                unitLabel?.text = "m/s"
+                
+            case .rate:
+                titleLabel?.text = "Rate"
+                unitLabel?.text = "spm"
+                
+            case .heartRate:
+                titleLabel?.text = "Heart Rate"
+                unitLabel?.text = "Bpm"
+                
+            case .header:
+                titleLabel?.text = "tile"
+                
+//            cellDelegate?.updatePiece(pieceDTO: self.pieceDto)
+            }
+        }
     }
 }

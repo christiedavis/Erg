@@ -48,18 +48,18 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
             cell.setupheader(indexPath.section)
         } else if indexPath.item == 1 {
             if presenter.sessionType == .distance {
-                cell.setup(.distance)
+                cell.setup(.distance, presenter.pieceForRow(indexPath.row))
             } else {
-                cell.setup(.time)
+                cell.setup(.time, presenter.pieceForRow(indexPath.row))
             }
         } else if indexPath.item == 2 {
             if presenter.sessionType == .distance {
-                cell.setup(.time)
+                cell.setup(.time, presenter.pieceForRow(indexPath.row))
             } else {
-                cell.setup(.distance)
+                cell.setup(.distance, presenter.pieceForRow(indexPath.row))
             }
         } else if indexPath.item == 3 {
-            cell.setup(.rate)
+            cell.setup(.rate, presenter.pieceForRow(indexPath.row))
         }
         cell.cellDelegate = self.presenter
         return cell

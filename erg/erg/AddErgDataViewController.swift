@@ -49,14 +49,12 @@ class AddErgDataViewController: UIViewController {
     }
     
     @IBAction func stepperTapped(_ sender: Any) {
-        presenter?.noPieces = Int(noPiecesStepper.value)
+ //       presenter?.noPieces = Int(noPiecesStepper.value)
     }
-    
-
     
     @objc
     func saveSession() {
-        // todo actually add item
+        // todo: actually add item
         let pieces0 = PieceDTO(distance: 23, time: 32, rate: 23)
         let pieces1 = PieceDTO(distance: 23, time: 32, rate: 23)
         let pieces2 = PieceDTO(distance: 23, time: 32, rate: 23)

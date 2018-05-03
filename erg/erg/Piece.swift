@@ -10,9 +10,14 @@ import Foundation
 import FirebaseDatabase
 
 struct PieceDTO {
-    var distance: Int!
-    var time: Int!
+    var rowId: Int = -1
+    var distance: Int = -1
+    var time: Int = -1
     var rate: Int?
+    
+    init(rowId: Int) {
+        self.rowId = rowId
+    }
 }
 
 class Piece {
@@ -54,6 +59,6 @@ class Piece {
     }
     
     func asPieceDTO() -> PieceDTO {
-        return PieceDTO(distance: self.distance, time: self.time, rate: self.rate)
+//        return PieceDTO(distance: self.distance, time: self.time, rate: self.rate)
     }
 }

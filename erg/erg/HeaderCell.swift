@@ -20,19 +20,17 @@ class HeaderCell: UITableViewCell {
     
     override func setNeedsLayout() {
         super.setNeedsLayout()
-        
-//        rightLabel.attributedText = "Time".apply(font: .boldFont(size: 16))
-//        leftLabel.attributedText = "Distance".apply(font: .boldFont(size: 16))
+       
     }
     
     func setUpAsSessionCell(workout: WorkoutDTO?) {
         if let first = workout?.pieceArray.first {
             
-            rightLabel?.attributedText = "\(first.distance) km".apply(font: UIFont.regularFont(12))
-            leftLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(12))
+            rightLabel?.attributedText = "\(first.distance) km".apply(font: UIFont.regularFont(16))
+            leftLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(16))
         }
 
-        dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.regularFont(12))
+        dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.boldFont(16))
     
     }
 }

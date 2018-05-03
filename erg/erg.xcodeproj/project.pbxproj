@@ -171,7 +171,6 @@
 				87606DCB202CED1700261CF2 /* Utilities */,
 				87606DBF202CECAC00261CF2 /* Resources */,
 				878022661EC6E99F00D6A867 /* Cells */,
-				878655D4203192D00050D1BD /* Datasources */,
 				878022611EC6E59800D6A867 /* ViewControllers */,
 				871E05B61EC6E4F7002933E6 /* AppDelegate.swift */,
 				871E05BA1EC6E4F7002933E6 /* Main.storyboard */,
@@ -258,13 +257,6 @@
 				878022681EC6E9CB00D6A867 /* InputCell.xib */,
 			);
 			name = Cells;
-			sourceTree = "<group>";
-		};
-		878655D4203192D00050D1BD /* Datasources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Datasources;
 			sourceTree = "<group>";
 		};
 		878B569F2063488100E72849 /* AddErg */ = {

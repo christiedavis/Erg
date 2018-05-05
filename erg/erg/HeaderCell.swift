@@ -30,7 +30,7 @@ class HeaderCell: UITableViewCell {
             leftLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(16))
         }
 
-        dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.boldFont(16))
+        dateLabel.attributedText = workout?.session.date?.asFullDate()?.apply(font: UIFont.boldFont(16))
         layoutCell()
     }
     

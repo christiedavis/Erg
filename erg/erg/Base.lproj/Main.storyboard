@@ -208,7 +208,7 @@
                                 <color key="color" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-KU-hUh">
-                                <rect key="frame" x="16" y="244" width="343" height="423"/>
+                                <rect key="frame" x="0.0" y="244" width="375" height="423"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfQ-j9-f4o">
@@ -294,10 +294,10 @@
                             <constraint firstItem="Lh2-KU-hUh" firstAttribute="top" secondItem="fZo-FJ-NxR" secondAttribute="bottom" constant="50" id="EIA-jD-vOy"/>
                             <constraint firstItem="EBz-6Y-CuW" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leading" constant="16" id="FSz-Hf-JCR"/>
                             <constraint firstItem="RmG-A7-g8T" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leading" id="Gwh-AW-GzH"/>
-                            <constraint firstItem="Lh2-KU-hUh" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leadingMargin" id="JXP-7u-wfh"/>
+                            <constraint firstItem="Lh2-KU-hUh" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leading" id="JXP-7u-wfh"/>
                             <constraint firstItem="7vf-Rz-XFR" firstAttribute="top" secondItem="jRS-bV-VJV" secondAttribute="bottom" constant="20" id="KKW-7M-HOH"/>
                             <constraint firstItem="7vf-Rz-XFR" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leadingMargin" constant="50" id="Ysg-S4-Keu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lh2-KU-hUh" secondAttribute="trailing" id="ZT9-3l-z1F"/>
+                            <constraint firstAttribute="trailing" secondItem="Lh2-KU-hUh" secondAttribute="trailing" id="ZT9-3l-z1F"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GvK-TC-5LO" secondAttribute="trailing" constant="10" id="elk-25-wA4"/>
                             <constraint firstAttribute="trailing" secondItem="EBz-6Y-CuW" secondAttribute="trailing" constant="16" id="geq-zX-4me"/>
                             <constraint firstItem="GvK-TC-5LO" firstAttribute="leading" secondItem="ZfQ-j9-f4o" secondAttribute="trailing" constant="16" id="hwp-jh-8iW"/>

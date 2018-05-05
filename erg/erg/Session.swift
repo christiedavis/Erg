@@ -13,7 +13,7 @@ struct SessionDTO {
     var id: String?
     var title: String?
     var sessionType: SessionType = .time
-    var date: Date = Date()
+    var date: Date?
 //    var pieces: [PieceDTO] = []
 //    var anyPieces: Any?
 }

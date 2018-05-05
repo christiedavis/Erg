@@ -10,6 +10,6 @@ import UIKit
 
 extension String {
     func apply(font: UIFont) -> NSAttributedString {
-        return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font : font])
+        return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : UIColor.textNavy])
     }
 }

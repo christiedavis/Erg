@@ -31,5 +31,10 @@ class HeaderCell: UITableViewCell {
         }
 
         dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.boldFont(16))
+        layoutCell()
+    }
+    
+    private func layoutCell() {
+        backgroundColor = UIColor.white.withAlphaComponent(0.5)
     }
 }

@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vR9-OL-wey">
-                        <rect key="frame" x="253" y="12" width="36" height="21"/>
+                        <rect key="frame" x="35" y="12" width="36" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -45,8 +45,8 @@
                     <constraint firstAttribute="trailingMargin" secondItem="8mz-hp-UvR" secondAttribute="trailing" constant="11" id="GhM-Hw-rGE"/>
                     <constraint firstItem="AF1-IX-HET" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="19" id="ZWO-ln-1dI"/>
                     <constraint firstItem="8mz-hp-UvR" firstAttribute="top" secondItem="vR9-OL-wey" secondAttribute="bottom" id="c8G-5f-WbS"/>
+                    <constraint firstItem="vR9-OL-wey" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="19" id="vRC-gD-lNo"/>
                     <constraint firstItem="vR9-OL-wey" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="xRq-1E-lvJ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="vR9-OL-wey" secondAttribute="trailing" constant="15" id="zBi-G1-Dm0"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

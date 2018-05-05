@@ -31,6 +31,5 @@ class HeaderCell: UITableViewCell {
         }
 
         dateLabel.attributedText = workout?.session.date.asFullDate()?.apply(font: UIFont.boldFont(16))
-    
     }
 }

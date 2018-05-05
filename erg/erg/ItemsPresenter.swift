@@ -123,38 +123,6 @@ class ItemsPresenter: NSObject {
         return workoutDto
     }
     
-    
-    func startObservingDatabase () {
-        sessionsDatabaseHandle = sessionReference.observe(.value, with: { snapshot in
-            var newSessions = [Session]()
-
-            for sessionSnapshot in snapshot.children {
-                let session = Session(snapshot: sessionSnapshot as! DataSnapshot)
-                newSessions.append(session)
-            }
-            self.sessions = newSessions
-        })
-            
-            
-        piecesDatabaseHandle = pieceReference.observe(.value, with: { snapshot in
-            var newPieces = [String : [Piece]]()
-            var pieceArray = [Piece]()
-            
-            for pieceSnapshot in snapshot.children {
-                let dataSnapshot = pieceSnapshot as! DataSnapshot
-                for  child in dataSnapshot.children {
-                    let piece = Piece(snapshot: child as! DataSnapshot)
-                    pieceArray.append(piece)
-                }
-                newPieces[dataSnapshot.key] = pieceArray
-                
-            }
-            self.pieces = newPieces
-            self.viewDelegate?.reloadTable()
-            self.viewDelegate?.dismissLoading()
-        })
-    }
-    
     deinit {
         sessionReference.removeObserver(withHandle: sessionsDatabaseHandle)
         pieceReference.removeObserver(withHandle: piecesDatabaseHandle)
@@ -198,5 +166,41 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     
     func filter() {
         
+    }
+}
+
+// Mark: Database monitoring stuff
+extension ItemsPresenter {
+    
+    func startObservingDatabase () {
+        sessionsDatabaseHandle = sessionReference.observe(.value, with: { snapshot in
+            var newSessions = [Session]()
+            
+            for sessionSnapshot in snapshot.children {
+                let session = Session(snapshot: sessionSnapshot as! DataSnapshot)
+                newSessions.append(session)
+            }
+            self.sessions = newSessions
+        })
+        
+        
+        piecesDatabaseHandle = pieceReference.observe(.value, with: { snapshot in
+            var newPieces = [String : [Piece]]()
+            
+            for pieceSnapshot in snapshot.children {
+                var pieceArray = [Piece]()
+
+                let dataSnapshot = pieceSnapshot as! DataSnapshot
+                for  child in dataSnapshot.children {
+                    let piece = Piece(snapshot: child as! DataSnapshot)
+                    pieceArray.append(piece)
+                }
+                newPieces[dataSnapshot.key] = pieceArray
+                
+            }
+            self.pieces = newPieces
+            self.viewDelegate?.reloadTable()
+            self.viewDelegate?.dismissLoading()
+        })
     }
 }

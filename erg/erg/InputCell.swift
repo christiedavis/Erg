@@ -70,7 +70,8 @@ class InputCell: UITableViewCell {
         setup()
         self.pieceDto = piece
         self.inputType = inputType
-        
+    
+
         rateLabel?.attributedText = "Rate".apply(font: UIFont.regularFont(14))
         
         switch inputType {

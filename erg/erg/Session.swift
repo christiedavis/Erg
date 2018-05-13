@@ -25,6 +25,8 @@ class Session {
     var type: Int = 1
     var date: String?     // TODO: do i need this?
     var id: String?
+//    var dateOfErg: Date?     // TODO: do i need this?
+
     
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
@@ -33,14 +35,17 @@ class Session {
         title = data["title"] as? String ?? ""
         type = data["type"] as? Int ?? 9
         date = data["date"] as? String
+//        dateOfErg = data["dateOfErg"] as? Date
+
         id = snapshot.key
     }
     
     init(session: SessionDTO) {
 
         type = session.sessionType.rawValue
-        date = "\(session.date)"
+        date = session.date?.asDatabaseString()
         title = session.title ?? "NO TITLE"
+//        dateOfErg = session.date
 
         self.ref = nil
     }
@@ -50,11 +55,14 @@ class Session {
             "title": title,
             "type": type,
             "date": date,
+//            "dateOfErg": dateOfErg
             ]
     }
     
     func asSessionDTO() -> SessionDTO {
-        return SessionDTO(id: id, title: title, sessionType: SessionType(rawValue: type) ?? .time, date: Date())
+        
+        print(date?.databaseStringToDate())
+        return SessionDTO(id: id, title: title, sessionType: SessionType(rawValue: type) ?? .time, date: date?.databaseStringToDate())
     }
 }
 

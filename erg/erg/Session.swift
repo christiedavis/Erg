@@ -14,8 +14,6 @@ struct SessionDTO {
     var title: String?
     var sessionType: SessionType = .time
     var date: Date?
-//    var pieces: [PieceDTO] = []
-//    var anyPieces: Any?
 }
 
 class Session {
@@ -25,7 +23,6 @@ class Session {
     var type: Int = 1
     var date: String?     // TODO: do i need this?
     var id: String?
-//    var dateOfErg: Date?     // TODO: do i need this?
 
     
     init (snapshot: DataSnapshot) {
@@ -35,7 +32,6 @@ class Session {
         title = data["title"] as? String ?? ""
         type = data["type"] as? Int ?? 9
         date = data["date"] as? String
-//        dateOfErg = data["dateOfErg"] as? Date
 
         id = snapshot.key
     }
@@ -45,7 +41,6 @@ class Session {
         type = session.sessionType.rawValue
         date = session.date?.asDatabaseString()
         title = session.title ?? "NO TITLE"
-//        dateOfErg = session.date
 
         self.ref = nil
     }
@@ -55,13 +50,11 @@ class Session {
             "title": title,
             "type": type,
             "date": date,
-//            "dateOfErg": dateOfErg
             ]
     }
     
     func asSessionDTO() -> SessionDTO {
         
-        print(date?.databaseStringToDate())
         return SessionDTO(id: id, title: title, sessionType: SessionType(rawValue: type) ?? .time, date: date?.databaseStringToDate())
     }
 }

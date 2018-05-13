@@ -20,7 +20,7 @@ extension Date {
     
     private static let databaseDateFormatter: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        df.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
         return df
     }()
 
@@ -35,12 +35,13 @@ extension Date {
 
 extension String {
     public func databaseStringToDate() -> Date? {
-        let isoDate = "yyyy-MM-dd HH:mm:ssZ"
+        let isoDate = "yyyy-MM-dd HH:mm:ss Z"
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = isoDate
         guard let date = dateFormatter.date(from: self) else {
-            fatalError("ERROR: Date conversion failed due to mismatched format.")
+//            fatalError("ERROR: Date conversion failed due to mismatched format.")
+            return nil
         }
         
         return date

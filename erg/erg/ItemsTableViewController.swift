@@ -29,6 +29,8 @@ class ItemsTableViewController: BaseViewController {
     @IBOutlet weak var filterValueLabel: UILabel!
     @IBOutlet var filterTextView: UITextField!
     
+    @IBOutlet var typeFilter: UISegmentedControl!
+    
     var presenter: ItemsPresenterViewDelegate?
     
     override func viewDidLoad() {
@@ -95,6 +97,19 @@ class ItemsTableViewController: BaseViewController {
                 vc.presenter = AddErgPresenter(itemsControllerDelegate: self)
                 vc.presenter?.viewDelegate = vc
             }
+        }
+    }
+    
+    @IBAction func segmentValueChanged(_ sender: Any) {
+    
+        if typeFilter.selectedSegmentIndex == 0 {
+            presenter?.setFilter(nil)
+            
+        } else if typeFilter.selectedSegmentIndex == 1 {
+            presenter?.setFilter(.distance)
+            
+        } else if typeFilter.selectedSegmentIndex == 2 {
+            presenter?.setFilter(.time)
         }
     }
     

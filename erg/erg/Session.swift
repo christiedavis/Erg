@@ -24,7 +24,6 @@ class Session {
     var date: String?     // TODO: do i need this?
     var id: String?
 
-    
     init (snapshot: DataSnapshot) {
         ref = snapshot.ref
         

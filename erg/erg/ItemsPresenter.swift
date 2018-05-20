@@ -142,6 +142,7 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     
     func setFilter(_ sessionType: SessionType?) {
         self.viewFilter = sessionType
+        viewDelegate?.reloadTable()
     }
 
     func addWorkoutToDatabase(workout: WorkoutDTO) {

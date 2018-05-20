@@ -262,6 +262,9 @@
                                                     <segment title="Distance"/>
                                                     <segment title="Time"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="segmentValueChanged:" destination="8pU-t1-VdL" eventType="valueChanged" id="Jtl-QL-7zB"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
@@ -334,6 +337,7 @@
                         <outlet property="loadingView" destination="JYx-dp-xOH" id="WAt-4b-ecw"/>
                         <outlet property="sessionPickerView" destination="EBz-6Y-CuW" id="K3q-7i-fpY"/>
                         <outlet property="tableView" destination="Lh2-KU-hUh" id="JJX-xq-1FG"/>
+                        <outlet property="typeFilter" destination="PzM-WT-1gV" id="cRL-Bf-liZ"/>
                         <segue destination="A1i-VZ-B1j" kind="presentation" identifier="SignOut" id="cux-R5-QKI"/>
                     </connections>
                 </viewController>

@@ -79,10 +79,23 @@ extension AddErgPresenter: AddErgPresenterDelegate {
             return value
         }
         
-        let newSession = SessionDTO(id: nil, title: "hello", sessionType: self.sessionType, date: Date())
-        let workout = WorkoutDTO(pieceArray, newSession)
+        var newSession: SessionDTO?
+        
+        if self.sessionType == .distance {
+            newSession = SessionDTO(id: nil, title: pieceArray.first?.distance, sessionType: self.sessionType, date: Date())
+            
+        } else {
+            newSession = SessionDTO(id: nil, title: pieceArray.first?.time, sessionType: self.sessionType, date: Date())
 
-        delegate?.addWorkoutToView(workout: workout)
+        }
+        
+        if let newSession = newSession {
+            let workout = WorkoutDTO(pieceArray, newSession)
+            
+            delegate?.addWorkoutToView(workout: workout)
+        } else {
+            print("Errror")
+        }
         viewDelegate?.dismissView()
     }
 }

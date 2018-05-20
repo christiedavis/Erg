@@ -57,13 +57,13 @@ class ItemsPresenter: NSObject {
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
         if viewFilter == nil {
-            return sessions.compactMap({ $0.id })
+            return sessions.compactMap({ $0.title })
         }
         
         let filteredList = sessions.filter { session -> Bool in
             return session.type == viewFilter?.rawValue
             }.compactMap({ (session) -> String? in
-                return session.id
+                return session.title
             })
         
         return Array(Set(filteredList.map { $0 }))
@@ -84,7 +84,7 @@ class ItemsPresenter: NSObject {
         }
         
         return sessions.filter({ (session) -> Bool in
-            return session.id == sessionViewFilter
+            return session.title == sessionViewFilter
         })
     }
 

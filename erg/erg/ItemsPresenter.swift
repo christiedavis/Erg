@@ -84,7 +84,7 @@ class ItemsPresenter: NSObject {
         }
         
         return sessions.filter({ (session) -> Bool in
-            return session.title == sessionViewFilter
+            return session.id == sessionViewFilter
         })
     }
 

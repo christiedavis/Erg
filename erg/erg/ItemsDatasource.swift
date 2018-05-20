@@ -86,7 +86,7 @@ extension ItemsDatasource: UITableViewDelegate {
 extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1 //sessionPickerValueArray.count
+        return 1 ///sessionPickerValueArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -100,6 +100,6 @@ extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
     // Catpure the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // The parameter named row and component represents what was selected.
-        presenter?.setSessionTypeFromPicker(row) //presenter?.sessionPickerValueArray[row] ?? "filter")
+        presenter?.setSessionTypeFromPicker(row)
     }
 }

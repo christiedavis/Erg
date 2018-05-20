@@ -38,11 +38,11 @@ class ItemsTableViewController: BaseViewController {
         self.showLoading()
 
         //TODO: crashed on sign up
-//        sessionPickerView.delegate = presenter!.datasource
-//        sessionPickerView.dataSource = presenter!.datasource
+        sessionPickerView.delegate = presenter!.datasource
+        sessionPickerView.dataSource = presenter!.datasource
         sessionPickerView.isHidden = true
-//        sessionPickerView.showsSelectionIndicator = true
-//        sessionPickerView.backgroundColor = UIColor.lightGray
+        sessionPickerView.showsSelectionIndicator = true
+        sessionPickerView.backgroundColor = UIColor.magenta
 
         let picker: UIPickerView
         picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
@@ -122,7 +122,10 @@ class ItemsTableViewController: BaseViewController {
 extension ItemsTableViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
+        sessionPickerView.isHidden = true
+        
         tableView.reloadData()
+        
         if let filter = self.presenter?.filterTitle {
             filterValueLabel.attributedText = filter.apply(font: UIFont.regularFont(14))
             filterTitleLabel.attributedText = "Current Filter:".apply(font: UIFont.boldFont(14))

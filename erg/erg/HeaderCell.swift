@@ -14,9 +14,9 @@ class HeaderCell: UITableViewCell {
     static var nibName: String! { return "HeaderCell" }
     static var cellName: String = "HeaderCell"
 
-    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
     @IBOutlet var rightLabel: UILabel!
-    @IBOutlet var leftLabel: UILabel!
+    @IBOutlet var subtitleLabel: UILabel!
     
     override func setNeedsLayout() {
         super.setNeedsLayout()
@@ -24,13 +24,24 @@ class HeaderCell: UITableViewCell {
     }
     
     func setUpAsSessionCell(workout: WorkoutDTO?) {
-        if let first = workout?.pieceArray.first {
+        
+        if workout?.session.sessionType == .time {
+            if let first = workout?.pieceArray.first {
+                
+                subtitleLabel?.attributedText = "\(first.distance) m".apply(font: UIFont.regularFont(16))
+                titleLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.boldFont(18))
+            }
+
             
-            rightLabel?.attributedText = "\(first.distance) km".apply(font: UIFont.regularFont(16))
-            leftLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(16))
+        } else if workout?.session.sessionType == .distance {
+            if let first = workout?.pieceArray.first {
+                
+                titleLabel?.attributedText = "\(first.distance) m".apply(font: UIFont.boldFont(18))
+                subtitleLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(16))
+            }
         }
 
-        dateLabel.attributedText = workout?.session.date?.asFullDate()?.apply(font: UIFont.boldFont(16))
+        rightLabel .attributedText = workout?.session.date?.asFullDate()?.apply(font: UIFont.regularFont(14))
         layoutCell()
     }
     

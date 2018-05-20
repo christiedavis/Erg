@@ -202,6 +202,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmG-A7-g8T">
+                                <rect key="frame" x="0.0" y="64" width="375" height="170"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DGP-oP-ThS">
+                                        <rect key="frame" x="39" y="75" width="296" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtering is coming but not here yet soz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBG-D8-1Ca">
+                                                <rect key="frame" x="0.0" y="0.0" width="296" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="DGP-oP-ThS" firstAttribute="centerX" secondItem="RmG-A7-g8T" secondAttribute="centerX" id="b7p-QG-oiD"/>
+                                    <constraint firstAttribute="height" constant="170" id="fD7-Fg-myS"/>
+                                    <constraint firstItem="DGP-oP-ThS" firstAttribute="centerY" secondItem="RmG-A7-g8T" secondAttribute="centerY" id="ofp-yq-kjV"/>
+                                </constraints>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JYx-dp-xOH">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.99527856250000002" green="0.98078748520000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -261,28 +283,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmG-A7-g8T">
-                                <rect key="frame" x="0.0" y="64" width="375" height="170"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DGP-oP-ThS">
-                                        <rect key="frame" x="39" y="75" width="296" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtering is coming but not here yet soz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBG-D8-1Ca">
-                                                <rect key="frame" x="0.0" y="0.0" width="296" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="DGP-oP-ThS" firstAttribute="centerX" secondItem="RmG-A7-g8T" secondAttribute="centerX" id="b7p-QG-oiD"/>
-                                    <constraint firstAttribute="height" constant="170" id="fD7-Fg-myS"/>
-                                    <constraint firstItem="DGP-oP-ThS" firstAttribute="centerY" secondItem="RmG-A7-g8T" secondAttribute="centerY" id="ofp-yq-kjV"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

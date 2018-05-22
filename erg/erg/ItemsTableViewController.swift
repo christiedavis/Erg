@@ -27,7 +27,6 @@ class ItemsTableViewController: BaseViewController {
     
     @IBOutlet weak var filterTitleLabel: UILabel!
     @IBOutlet weak var filterValueLabel: UILabel!
-    @IBOutlet var filterTextView: UITextField!
     
     @IBOutlet var typeFilter: UISegmentedControl!
     
@@ -65,9 +64,6 @@ class ItemsTableViewController: BaseViewController {
         
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
-
-        filterTextView.inputView = picker
-        filterTextView.inputAccessoryView = toolBar
         
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
@@ -77,7 +73,6 @@ class ItemsTableViewController: BaseViewController {
     
     @objc
     func donePicker() {
-        filterTextView.resignFirstResponder()
     }
 
     // MARK: - Table view data source

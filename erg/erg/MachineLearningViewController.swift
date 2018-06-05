@@ -20,6 +20,11 @@ struct Line {
     var words: [String] = []
 }
 
+struct Column {
+    var xPos: Int = 0
+    var value: [String] = []
+}
+
 class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -41,19 +46,39 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         let image = info[UIImagePickerControllerEditedImage]
         self.imageView.image = image as? UIImage
         let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
+        self.processImageData(textBlockFeatures)
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    private func simulatorPhoto() {
+        let image = UIImage(named: "imgErg")
+        DispatchQueue.main.async {
+            self.imageView.contentMode = .scaleAspectFit
+            self.imageView.image = image
+            
+            let textBlockFeatures = self.textDetector?.features(in: image, options: [:])
+            self.processImageData(textBlockFeatures)
+        }
+    }
+
+    private func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
         
         var lineArray: [String] = []
         var wordArray: [String] = []
-
+        
         var allArray: [Line] = []
+        
+        var xArray: [Int] = []
+        var columnData: [Column] = []
         
         // Iterate over each text block.
         textBlockFeatures?.forEach({ (feature: GMVFeature) in
             
             if let textBlock = feature as? GMVTextBlockFeature {
-            
+                
                 NSLog("Text Block: %@", NSStringFromCGRect(textBlock.bounds));
-                NSLog("language: \(textBlock.language) , value: \(textBlock.value)")
+                NSLog(" Text Block: language: \(textBlock.language) , value: \(textBlock.value)")
                 
                 // For each text block, iterate over each line.
                 textBlock.lines.forEach({ (textLine: GMVTextLineFeature) in
@@ -61,24 +86,23 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                     lineArray.append(textLine.value)
                     var line = Line(line: textLine.value, words: [])
                     
-                        NSLog("Text Line: %@", NSStringFromCGRect(textLine.bounds));
-                        NSLog("lang: %@ value: %@", textLine.language, textLine.value);
-                        
-                        // For each line, iterate over each word.
-                        textLine.elements.forEach({ (textElement: GMVTextElementFeature) in
-                            NSLog("Text Element: %@", NSStringFromCGRect(textElement.bounds));
-                            NSLog("value: %@", textElement.value);
-                            line.words.append(textElement.value)
-                        })
+                    NSLog("Text Line: %@", NSStringFromCGRect(textLine.bounds));
+                    NSLog("text line: lang: %@ value: %@", textLine.language, textLine.value);
+                    
+                    // For each line, iterate over each word.
+                    textLine.elements.forEach({ (textElement: GMVTextElementFeature) in
+                      
+                        wordArray.append(textElement.value)
+                        line.words.append(textElement.value)
+                    })
                     allArray.append(line)
                 })
             }
         })
         
         NSLog("\(allArray)")
-        picker.dismiss(animated: true, completion: nil)
     }
-
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
@@ -87,11 +111,11 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             if response {
                 if UIImagePickerController.isSourceTypeAvailable(.camera) == false {
-                    
-                    let alert =  UIAlertController(title: "ERROR", message: "No camera available", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-                    
-                    alert.show(self, sender: self)
+                    self.simulatorPhoto()
+//                    let alert =  UIAlertController(title: "ERROR", message: "No camera available", preferredStyle: UIAlertControllerStyle.alert)
+//                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
+//
+//                    alert.show(self, sender: self)
                     return
                 }
                 
@@ -103,7 +127,7 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                 self.present(picker, animated: true, completion: nil)
                 
             } else {
-                
+                self.simulatorPhoto()
             }
         }
     }

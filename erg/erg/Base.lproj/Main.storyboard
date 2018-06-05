@@ -451,17 +451,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vm1-hZ-NUa">
-                                <rect key="frame" x="16" y="64" width="343" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="0xQ-QY-Ero"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vm1-hZ-NUa" firstAttribute="top" secondItem="ULA-bJ-Cs0" secondAttribute="bottom" id="8KW-FQ-gCL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Vm1-hZ-NUa" secondAttribute="trailing" id="Rre-ah-sh2"/>
-                            <constraint firstItem="Vm1-hZ-NUa" firstAttribute="leading" secondItem="gL2-Fc-YfI" secondAttribute="leadingMargin" id="t83-j9-Wdf"/>
+                            <constraint firstAttribute="trailing" secondItem="Vm1-hZ-NUa" secondAttribute="trailing" id="Rre-ah-sh2"/>
+                            <constraint firstItem="4Sb-Ri-a1r" firstAttribute="top" secondItem="Vm1-hZ-NUa" secondAttribute="bottom" id="dyZ-FO-KvQ"/>
+                            <constraint firstItem="Vm1-hZ-NUa" firstAttribute="leading" secondItem="gL2-Fc-YfI" secondAttribute="leading" id="t83-j9-Wdf"/>
                         </constraints>
                     </view>
                     <connections>

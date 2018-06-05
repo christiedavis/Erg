@@ -15,7 +15,10 @@ import ARKit
 import GoogleMobileVision
 import Vision
 
-
+struct Line {
+    var line: String = ""
+    var words: [String] = []
+}
 
 class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -39,6 +42,11 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         self.imageView.image = image as? UIImage
         let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
         
+        var lineArray: [String] = []
+        var wordArray: [String] = []
+
+        var allArray: [Line] = []
+        
         // Iterate over each text block.
         textBlockFeatures?.forEach({ (feature: GMVFeature) in
             
@@ -50,6 +58,9 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                 // For each text block, iterate over each line.
                 textBlock.lines.forEach({ (textLine: GMVTextLineFeature) in
                     
+                    lineArray.append(textLine.value)
+                    var line = Line(line: textLine.value, words: [])
+                    
                         NSLog("Text Line: %@", NSStringFromCGRect(textLine.bounds));
                         NSLog("lang: %@ value: %@", textLine.language, textLine.value);
                         
@@ -57,11 +68,14 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                         textLine.elements.forEach({ (textElement: GMVTextElementFeature) in
                             NSLog("Text Element: %@", NSStringFromCGRect(textElement.bounds));
                             NSLog("value: %@", textElement.value);
+                            line.words.append(textElement.value)
                         })
+                    allArray.append(line)
                 })
             }
         })
         
+        NSLog("\(allArray)")
         picker.dismiss(animated: true, completion: nil)
     }
 

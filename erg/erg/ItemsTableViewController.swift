@@ -41,15 +41,7 @@ class ItemsTableViewController: BaseViewController {
         sessionPickerView.dataSource = presenter!.datasource
         sessionPickerView.isHidden = true
         sessionPickerView.showsSelectionIndicator = true
-        sessionPickerView.backgroundColor = UIColor.magenta
-
-        let picker: UIPickerView
-        picker = UIPickerView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 300))
-        picker.backgroundColor = .white
-
-        picker.showsSelectionIndicator = true
-        picker.delegate = self.presenter!.datasource
-        picker.dataSource = self.presenter!.datasource
+        sessionPickerView.backgroundColor = UIColor.black
     
         let toolBar = UIToolbar()
         toolBar.barStyle = UIBarStyle.default

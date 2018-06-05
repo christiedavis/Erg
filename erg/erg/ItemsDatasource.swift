@@ -97,6 +97,14 @@ extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
         return presenter?.sessionPickerValueArray[row] ?? "Error"
     }
     
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let attributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: (presenter?.sessionPickerValueArray[row] ?? "").apply(font: UIFont.regularFont(16)))
+    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attributedString.length))
+
+        return attributedString
+    }
+    
     // Catpure the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // The parameter named row and component represents what was selected.

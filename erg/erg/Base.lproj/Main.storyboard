@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A1i-VZ-B1j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A1i-VZ-B1j">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -206,7 +204,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="170"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DGP-oP-ThS">
-                                        <rect key="frame" x="39" y="75" width="296" height="20.5"/>
+                                        <rect key="frame" x="39.5" y="75" width="296" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtering is coming but not here yet soz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBG-D8-1Ca">
                                                 <rect key="frame" x="0.0" y="0.0" width="296" height="20.5"/>
@@ -281,6 +279,14 @@
                                     <action selector="filterButtonTapped:" destination="8pU-t1-VdL" eventType="touchUpInside" id="l7Z-Jd-VL1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAk-tf-zJW">
+                                <rect key="frame" x="285" y="135" width="74" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ML here"/>
+                                <connections>
+                                    <action selector="machineLearningTapped:" destination="8pU-t1-VdL" eventType="touchUpInside" id="v5r-jI-Kz6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -332,11 +338,12 @@
                         <outlet property="tableView" destination="Lh2-KU-hUh" id="JJX-xq-1FG"/>
                         <outlet property="typeFilter" destination="PzM-WT-1gV" id="cRL-Bf-liZ"/>
                         <segue destination="A1i-VZ-B1j" kind="presentation" identifier="SignOut" id="cux-R5-QKI"/>
+                        <segue destination="fhm-dz-uTH" kind="show" identifier="ShowML" id="w99-KQ-r8d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COH-93-cXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1432.8" y="1659.2203898050975"/>
+            <point key="canvasLocation" x="1324" y="1669"/>
         </scene>
         <!--Add Erg Data View Controller-->
         <scene sceneID="sJ5-P5-qU0">
@@ -387,18 +394,18 @@
                         <constraints>
                             <constraint firstItem="jPQ-GR-NCe" firstAttribute="top" secondItem="ywM-f9-f2W" secondAttribute="top" id="1I7-ay-Uja"/>
                             <constraint firstItem="ywM-f9-f2W" firstAttribute="top" secondItem="36T-QA-adJ" secondAttribute="bottom" constant="25" id="1hk-ql-EbV"/>
-                            <constraint firstItem="36T-QA-adJ" firstAttribute="top" secondItem="V5u-0J-d5e" secondAttribute="bottom" constant="15" id="88y-2W-VgA"/>
+                            <constraint firstItem="36T-QA-adJ" firstAttribute="top" secondItem="V5u-0J-d5e" secondAttribute="bottom" constant="15" id="4X6-NE-r52"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Auh-1M-DnH" secondAttribute="trailing" id="BxZ-1g-s14"/>
                             <constraint firstItem="ncw-vY-pzG" firstAttribute="leading" secondItem="dBK-1t-XIh" secondAttribute="leadingMargin" id="ErM-wB-xC8"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ywM-f9-f2W" secondAttribute="trailingMargin" id="JGU-n9-wHB"/>
                             <constraint firstItem="Auh-1M-DnH" firstAttribute="leading" secondItem="jPQ-GR-NCe" secondAttribute="trailing" constant="8" id="KPA-KC-apn"/>
                             <constraint firstItem="ncw-vY-pzG" firstAttribute="top" secondItem="Auh-1M-DnH" secondAttribute="bottom" constant="5" id="L7f-oc-J0a"/>
                             <constraint firstItem="jPQ-GR-NCe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dBK-1t-XIh" secondAttribute="leading" constant="20" symbolic="YES" id="MF3-Kt-EZO"/>
+                            <constraint firstItem="8GJ-1d-MEG" firstAttribute="top" secondItem="ncw-vY-pzG" secondAttribute="bottom" id="MjU-PC-qUV"/>
                             <constraint firstItem="36T-QA-adJ" firstAttribute="leading" secondItem="dBK-1t-XIh" secondAttribute="leadingMargin" id="bhi-AY-YYs"/>
                             <constraint firstItem="ywM-f9-f2W" firstAttribute="leading" secondItem="dBK-1t-XIh" secondAttribute="leadingMargin" constant="17" id="cbz-k9-gdd"/>
                             <constraint firstItem="36T-QA-adJ" firstAttribute="trailing" secondItem="dBK-1t-XIh" secondAttribute="trailingMargin" id="dAc-AK-lxg"/>
                             <constraint firstItem="Auh-1M-DnH" firstAttribute="centerY" secondItem="ywM-f9-f2W" secondAttribute="centerY" id="lop-dI-g4T"/>
-                            <constraint firstItem="8GJ-1d-MEG" firstAttribute="top" secondItem="ncw-vY-pzG" secondAttribute="bottom" id="u8b-b0-9ZJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ncw-vY-pzG" secondAttribute="trailing" id="xha-hR-qEQ"/>
                         </constraints>
                     </view>
@@ -430,6 +437,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SNq-Wg-1CD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="458" y="1637"/>
+        </scene>
+        <!--Machine Learning View Controller-->
+        <scene sceneID="xsS-pl-s1i">
+            <objects>
+                <viewController id="fhm-dz-uTH" customClass="MachineLearningViewController" customModule="erg" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ULA-bJ-Cs0"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Sb-Ri-a1r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gL2-Fc-YfI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vm1-hZ-NUa">
+                                <rect key="frame" x="16" y="64" width="343" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0xQ-QY-Ero"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vm1-hZ-NUa" firstAttribute="top" secondItem="ULA-bJ-Cs0" secondAttribute="bottom" id="8KW-FQ-gCL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vm1-hZ-NUa" secondAttribute="trailing" id="Rre-ah-sh2"/>
+                            <constraint firstItem="Vm1-hZ-NUa" firstAttribute="leading" secondItem="gL2-Fc-YfI" secondAttribute="leadingMargin" id="t83-j9-Wdf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Vm1-hZ-NUa" id="fA7-XO-J4v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWY-n2-Xki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286" y="2381"/>
         </scene>
     </scenes>
     <resources>

@@ -86,6 +86,13 @@ class ItemsTableViewController: BaseViewController {
         performSegue(withIdentifier: "ShowAddErgData", sender: self)
     }
     
+    @IBAction func machineLearningTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "ShowML", sender: self)
+
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowAddErgData" {
             if let vc = segue.destination as? AddErgDataViewController {

@@ -173,6 +173,7 @@
 		871E05B51EC6E4F6002933E6 /* erg */ = {
 			isa = PBXGroup;
 			children = (
+				875292EE20C703800072821B /* MNIST.mlmodel */,
 				87606DD0202CFD8600261CF2 /* Models */,
 				87606DCB202CED1700261CF2 /* Utilities */,
 				87606DBF202CECAC00261CF2 /* Resources */,

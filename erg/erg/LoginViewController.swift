@@ -22,6 +22,9 @@ class LoginViewController: BaseViewController {
         
         view.backgroundColor = UIColor.tealWhite
         signInButton.backgroundColor = .darkTeal
+        
+        emailField.textContentType = .username
+        passwordField.textContentType = .password
     
         self.dismissLoading()
     }

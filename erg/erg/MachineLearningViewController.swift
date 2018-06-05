@@ -11,7 +11,7 @@ import AVFoundation
 
 import UIKit
 import AVFoundation
-
+import ARKit
 class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var error: NSError?
@@ -34,14 +34,13 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
             return
         }
         
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        picker.sourceType = .camera
-                picker.modalPresentationStyle = .fullScreen
-        self.present(picker, animated: true, completion: nil)
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = .camera
+                    picker.modalPresentationStyle = .fullScreen
+            self.present(picker, animated: true, completion: nil)
                 
-                //access granted
             } else {
                 
             }
@@ -50,17 +49,14 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerEditedImage]
-        self.imageView.image = image
+        self.imageView.image = image as? UIImage
         picker.dismiss(animated: true, completion: nil)
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-
-    
 }
-
 
 //
 //        let devices = AVCaptureDevice.DiscoverySession(deviceTypes: [], mediaType: nil, position: .back).devices.filter{ $0.hasMediaType(AVMediaType.video) && $0.position == AVCaptureDevice.Position.back }

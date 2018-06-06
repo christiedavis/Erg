@@ -53,7 +53,11 @@ class ItemsPresenter: NSObject {
     
     var filterTitle: String? = ""
     private var viewFilter: SessionType?
-    private var sessionViewFilter: String?
+    private var sessionViewFilter: String? {
+        didSet {
+            
+        }
+    }
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
         if viewFilter == nil {
@@ -114,7 +118,7 @@ class ItemsPresenter: NSObject {
     }
     
     func workoutViewModelForSection(_ section: Int) -> WorkoutDTO? {
-//        return nil
+
         let sessionId = filteredSessions[section].id ?? ""
         let pieceArray = pieces[sessionId] ?? []
         let session = filteredSessions[section]

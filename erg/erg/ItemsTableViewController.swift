@@ -22,6 +22,8 @@ class ItemsTableViewController: BaseViewController {
 
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet weak var backButton: UIButton!
+    
     @IBOutlet var filterButton: UIButton!
     @IBOutlet var sessionPickerView: UIPickerView!
     
@@ -69,20 +71,24 @@ class ItemsTableViewController: BaseViewController {
 
     // MARK: - Table view data source
 
-    @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
-        presenter?.signOut()
-    }
-
-    @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
-        
-        performSegue(withIdentifier: "ShowAddErgData", sender: self)
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func machineLearningTapped(_ sender: Any) {
-        
-        performSegue(withIdentifier: "ShowML", sender: self)
-
-    }
+//    @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
+//        presenter?.signOut()
+//    }
+//
+//    @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
+//
+//        performSegue(withIdentifier: "ShowAddErgData", sender: self)
+//    }
+//
+//    @IBAction func machineLearningTapped(_ sender: Any) {
+//
+//        performSegue(withIdentifier: "ShowML", sender: self)
+//
+//    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

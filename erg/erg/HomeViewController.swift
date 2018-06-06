@@ -18,7 +18,6 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         filterMenuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToFilter)))
         addErgButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAddErg)))
         cameraButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCamera)))
@@ -26,6 +25,16 @@ class HomeViewController: BaseViewController {
         settingsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSettings)))
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToFilter" {
+            
+            if let targetController = segue.destination as? ItemsTableViewController {
+                    let itemPresenter = ItemsPresenter()
+                    itemPresenter.viewDelegate = targetController
+                    targetController.presenter = itemPresenter
+            }
+        }
+    }
 }
 
 extension HomeViewController { // Menu Actions

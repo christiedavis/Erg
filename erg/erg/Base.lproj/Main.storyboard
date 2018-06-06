@@ -542,6 +542,19 @@
                                     <action selector="machineLearningTapped:" destination="8pU-t1-VdL" eventType="touchUpInside" id="v5r-jI-Kz6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gt-fk-HS1">
+                                <rect key="frame" x="0.0" y="20" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.39189995659999999" blue="0.68483970390000004" alpha="0.85477311639999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Tn5-Mq-ihK"/>
+                                    <constraint firstAttribute="width" constant="44" id="nXm-GB-RfA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backAction:" destination="8pU-t1-VdL" eventType="touchUpInside" id="0NS-oF-nqc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -562,6 +575,8 @@
                             <constraint firstAttribute="trailing" secondItem="EBz-6Y-CuW" secondAttribute="trailing" constant="16" id="geq-zX-4me"/>
                             <constraint firstItem="GvK-TC-5LO" firstAttribute="leading" secondItem="ZfQ-j9-f4o" secondAttribute="trailing" constant="16" id="hwp-jh-8iW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7vf-Rz-XFR" secondAttribute="trailing" constant="50" id="jMR-q8-Ldu"/>
+                            <constraint firstItem="2gt-fk-HS1" firstAttribute="top" secondItem="jRS-bV-VJV" secondAttribute="bottom" id="mlc-WC-1Jv"/>
+                            <constraint firstItem="2gt-fk-HS1" firstAttribute="leading" secondItem="MPc-bg-edM" secondAttribute="leading" id="ofJ-Yy-BxU"/>
                             <constraint firstAttribute="trailing" secondItem="RmG-A7-g8T" secondAttribute="trailing" id="pc4-Nv-o4c"/>
                             <constraint firstItem="RmG-A7-g8T" firstAttribute="top" secondItem="jRS-bV-VJV" secondAttribute="bottom" id="rcI-VK-DHc"/>
                             <constraint firstItem="7vf-Rz-XFR" firstAttribute="centerX" secondItem="MPc-bg-edM" secondAttribute="centerX" id="sXZ-CR-LgU"/>
@@ -584,6 +599,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="2gt-fk-HS1" id="8PT-gg-2pi"/>
                         <outlet property="filterButton" destination="fZo-FJ-NxR" id="GDk-nE-atv"/>
                         <outlet property="filterTitleLabel" destination="ZfQ-j9-f4o" id="Ded-Yu-MDM"/>
                         <outlet property="filterValueLabel" destination="GvK-TC-5LO" id="Ime-xS-Elu"/>

@@ -14,6 +14,7 @@
 		871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */; };
 		871E05CF1EC6E4F7002933E6 /* ergTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05CE1EC6E4F7002933E6 /* ergTests.swift */; };
 		8749D6BF20C83C720090E68B /* StringProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749D6BE20C83C720090E68B /* StringProcessor.swift */; };
+		8749D6C120C878860090E68B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749D6C020C878860090E68B /* HomeViewController.swift */; };
 		874A69AF20323F690009A83D /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A69AE20323F690009A83D /* Piece.swift */; };
 		874AA69020C72C38009EA9F0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AA68F20C72C38009EA9F0 /* Notes.swift */; };
 		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
@@ -77,6 +78,7 @@
 		871E05CE1EC6E4F7002933E6 /* ergTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ergTests.swift; sourceTree = "<group>"; };
 		871E05D01EC6E4F7002933E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8749D6BE20C83C720090E68B /* StringProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProcessor.swift; sourceTree = "<group>"; };
+		8749D6C020C878860090E68B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		874A69AE20323F690009A83D /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		874AA68F20C72C38009EA9F0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
 				874AA68F20C72C38009EA9F0 /* Notes.swift */,
+				8749D6C020C878860090E68B /* HomeViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
+				8749D6C120C878860090E68B /* HomeViewController.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,
 				878B5698206343AB00E72849 /* StringExtensions.swift in Sources */,

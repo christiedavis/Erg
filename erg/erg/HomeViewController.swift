@@ -10,23 +10,49 @@ import UIKit
 
 class HomeViewController: BaseViewController {
 
+    @IBOutlet weak var filterMenuButton: HomeButtonView!
+    @IBOutlet weak var addErgButton: HomeButtonView!
+    @IBOutlet weak var cameraButton: HomeButtonView!
+    @IBOutlet weak var predictButton: HomeButtonView!
+    @IBOutlet weak var settingsButton: HomeButtonView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        filterMenuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToFilter)))
+        addErgButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAddErg)))
+        cameraButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCamera)))
+        predictButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToPredict)))
+        settingsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSettings)))
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension HomeViewController { // Menu Actions
+    @objc
+    func goToFilter() {
+        self.performSegue(withIdentifier: "goToFilter", sender: self)
     }
-    */
-
+    
+    @objc
+    func goToAddErg() {
+        self.performSegue(withIdentifier: "goToAddErg", sender: self)
+    }
+    
+    @objc
+    func goToCamera() {
+        self.performSegue(withIdentifier: "goToCamera", sender: self)
+    }
+    
+    @objc
+    func goToPredict() {
+        self.performSegue(withIdentifier: "goToPredict", sender: self)
+    }
+    
+    @objc
+    func goToSettings() {
+        self.performSegue(withIdentifier: "goToSettings", sender: self)
+    }
 }
 
 class HomeButtonView: UIView {

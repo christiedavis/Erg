@@ -261,6 +261,35 @@
                                             <outlet property="titleLabel" destination="JvV-PG-hl1" id="y8k-16-8yd"/>
                                         </connections>
                                     </view>
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGk-ls-pPl" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
+                                        <rect key="frame" x="225.5" y="0.0" width="74.5" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCl-vA-n96">
+                                                <rect key="frame" x="19.5" y="35" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="UXf-zB-clO"/>
+                                                    <constraint firstAttribute="width" constant="35" id="zPB-hC-Jbv"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predict" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-uk-2Dc">
+                                                <rect key="frame" x="9.5" y="5" width="55" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="oCl-vA-n96" secondAttribute="bottom" constant="10" id="2yd-WK-2qt"/>
+                                            <constraint firstItem="6dr-uk-2Dc" firstAttribute="top" secondItem="iGk-ls-pPl" secondAttribute="top" constant="5" id="ba6-M4-Iex"/>
+                                            <constraint firstItem="oCl-vA-n96" firstAttribute="centerX" secondItem="iGk-ls-pPl" secondAttribute="centerX" id="iuq-2m-GVb"/>
+                                            <constraint firstItem="6dr-uk-2Dc" firstAttribute="centerX" secondItem="iGk-ls-pPl" secondAttribute="centerX" id="jc4-4i-yTG"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="oCl-vA-n96" id="gw6-ON-TaU"/>
+                                            <outlet property="titleLabel" destination="6dr-uk-2Dc" id="H3S-Qh-kP7"/>
+                                        </connections>
+                                    </view>
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIq-HK-chc" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="74.5" height="80"/>
                                         <subviews>
@@ -290,8 +319,8 @@
                                             <outlet property="titleLabel" destination="egd-zB-U0G" id="elG-fb-gj6"/>
                                         </connections>
                                     </view>
-                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-EN-DOe" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
-                                        <rect key="frame" x="150.5" y="0.0" width="74" height="80"/>
+                                    <view tag="2" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-EN-DOe" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
+                                        <rect key="frame" x="150" y="0.0" width="100" height="80"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-7C-Uqd">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
@@ -317,35 +346,6 @@
                                         <connections>
                                             <outlet property="imageView" destination="wQe-7C-Uqd" id="MHt-PD-ovl"/>
                                             <outlet property="titleLabel" destination="KxB-NO-kP7" id="xGz-2K-0Fp"/>
-                                        </connections>
-                                    </view>
-                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGk-ls-pPl" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
-                                        <rect key="frame" x="225.5" y="0.0" width="74.5" height="80"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCl-vA-n96">
-                                                <rect key="frame" x="19.5" y="35" width="35" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="UXf-zB-clO"/>
-                                                    <constraint firstAttribute="width" constant="35" id="zPB-hC-Jbv"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Predict" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dr-uk-2Dc">
-                                                <rect key="frame" x="9.5" y="5" width="55" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.95903664700000002" green="0.32818114510000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="oCl-vA-n96" secondAttribute="bottom" constant="10" id="2yd-WK-2qt"/>
-                                            <constraint firstItem="6dr-uk-2Dc" firstAttribute="top" secondItem="iGk-ls-pPl" secondAttribute="top" constant="5" id="ba6-M4-Iex"/>
-                                            <constraint firstItem="oCl-vA-n96" firstAttribute="centerX" secondItem="iGk-ls-pPl" secondAttribute="centerX" id="iuq-2m-GVb"/>
-                                            <constraint firstItem="6dr-uk-2Dc" firstAttribute="centerX" secondItem="iGk-ls-pPl" secondAttribute="centerX" id="jc4-4i-yTG"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="imageView" destination="oCl-vA-n96" id="gw6-ON-TaU"/>
-                                            <outlet property="titleLabel" destination="6dr-uk-2Dc" id="H3S-Qh-kP7"/>
                                         </connections>
                                     </view>
                                 </subviews>
@@ -405,6 +405,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uhW-Qg-fb7"/>
+                    <connections>
+                        <outlet property="addErgButton" destination="RIq-HK-chc" id="bw4-pC-yhU"/>
+                        <outlet property="cameraButton" destination="0Ek-EN-DOe" id="rn8-eg-RAO"/>
+                        <outlet property="filterMenuButton" destination="gdz-Tv-5n6" id="bHk-Ra-cee"/>
+                        <outlet property="predictButton" destination="iGk-ls-pPl" id="RJr-Qa-Ue6"/>
+                        <outlet property="settingsButton" destination="c4A-Kl-H6u" id="31G-uY-Yy5"/>
+                        <segue destination="8pU-t1-VdL" kind="show" identifier="goToFilter" id="7ek-0K-6cs"/>
+                        <segue destination="fhm-dz-uTH" kind="show" identifier="goToCamera" id="vde-h0-wMj"/>
+                        <segue destination="5EU-2m-tU6" kind="show" identifier="goToAddErg" id="XIW-Ow-twt"/>
+                        <segue destination="Gtr-dp-ncd" kind="show" identifier="goToPredict" id="E4Y-jh-4R0"/>
+                        <segue destination="fkx-Fo-O0B" kind="show" identifier="goToSettings" id="Th1-zu-HSE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DRI-mk-70X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -583,7 +595,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COH-93-cXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="2553"/>
+            <point key="canvasLocation" x="-1137" y="2525"/>
         </scene>
         <!--Add Erg Data View Controller-->
         <scene sceneID="sJ5-P5-qU0">
@@ -658,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cHC-XZ-bFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-420" y="2553"/>
+            <point key="canvasLocation" x="476" y="2552"/>
         </scene>
         <!--Machine Learning View Controller-->
         <scene sceneID="xsS-pl-s1i">
@@ -690,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWY-n2-Xki" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234" y="2552"/>
+            <point key="canvasLocation" x="-338" y="2552"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aJk-Fd-pI1">

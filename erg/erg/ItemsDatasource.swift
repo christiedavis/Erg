@@ -96,7 +96,7 @@ extension ItemsDatasource: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         let attributedString: NSMutableAttributedString = NSMutableAttributedString(attributedString: (presenter?.sessionPickerValueArray[row] ?? "").apply(font: UIFont.regularFont(16)))
-    attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attributedString.length))
+    attributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attributedString.length))
 
         return attributedString
     }

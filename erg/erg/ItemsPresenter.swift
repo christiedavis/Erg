@@ -52,12 +52,13 @@ class ItemsPresenter: NSObject {
     var datasource: ItemsDatasource
     
     var filterTitle: String? = ""
-    private var viewFilter: SessionType?
-    private var sessionViewFilter: String? {
+    private var viewFilter: SessionType? {
         didSet {
-            
+            NSLog("hi")
+            sessionViewFilter = nil 
         }
     }
+    private var sessionViewFilter: String?
     private var expandedSessions: Set<Int> = Set<Int>()
     var sessionPickerValueArray: [String] {
         if viewFilter == nil {

@@ -63,44 +63,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     }
 
     private func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
-        
-        var lineArray: [String] = []
-        var wordArray: [String] = []
-        
-        var allArray: [Line] = []
-        
-        var xArray: [Int] = []
-        var columnData: [Column] = []
-        
-        // Iterate over each text block.
-        textBlockFeatures?.forEach({ (feature: GMVFeature) in
-            
-            if let textBlock = feature as? GMVTextBlockFeature {
-                
-                NSLog("Text Block: %@", NSStringFromCGRect(textBlock.bounds));
-                NSLog(" Text Block: language: \(textBlock.language) , value: \(textBlock.value)")
-                
-                // For each text block, iterate over each line.
-                textBlock.lines.forEach({ (textLine: GMVTextLineFeature) in
-                    
-                    lineArray.append(textLine.value)
-                    var line = Line(line: textLine.value, words: [])
-                    
-                    NSLog("Text Line: %@", NSStringFromCGRect(textLine.bounds));
-                    NSLog("text line: lang: %@ value: %@", textLine.language, textLine.value);
-                    
-                    // For each line, iterate over each word.
-                    textLine.elements.forEach({ (textElement: GMVTextElementFeature) in
-                      
-                        wordArray.append(textElement.value)
-                        line.words.append(textElement.value)
-                    })
-                    allArray.append(line)
-                })
-            }
-        })
-        
-        NSLog("\(allArray)")
+        let processor = StringProcessor()
+        processor.processImageData(textBlockFeatures)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -114,7 +78,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                     self.simulatorPhoto()
 //                    let alert =  UIAlertController(title: "ERROR", message: "No camera available", preferredStyle: UIAlertControllerStyle.alert)
 //                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-//
 //                    alert.show(self, sender: self)
                     return
                 }

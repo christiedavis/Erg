@@ -13,6 +13,7 @@
 		871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C01EC6E4F7002933E6 /* Assets.xcassets */; };
 		871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */; };
 		871E05CF1EC6E4F7002933E6 /* ergTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05CE1EC6E4F7002933E6 /* ergTests.swift */; };
+		8749D6BF20C83C720090E68B /* StringProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749D6BE20C83C720090E68B /* StringProcessor.swift */; };
 		874A69AF20323F690009A83D /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A69AE20323F690009A83D /* Piece.swift */; };
 		874AA69020C72C38009EA9F0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AA68F20C72C38009EA9F0 /* Notes.swift */; };
 		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
@@ -75,6 +76,7 @@
 		871E05CA1EC6E4F7002933E6 /* ergTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ergTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E05CE1EC6E4F7002933E6 /* ergTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ergTests.swift; sourceTree = "<group>"; };
 		871E05D01EC6E4F7002933E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8749D6BE20C83C720090E68B /* StringProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringProcessor.swift; sourceTree = "<group>"; };
 		874A69AE20323F690009A83D /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		874AA68F20C72C38009EA9F0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				878B5697206343AB00E72849 /* StringExtensions.swift */,
 				878B56992063443500E72849 /* DateExtensions.swift */,
 				877D42EE209B2F4B00892A5C /* Constants.swift */,
+				8749D6BE20C83C720090E68B /* StringProcessor.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -246,9 +249,9 @@
 			children = (
 				878B56A02063488E00E72849 /* Items */,
 				878B569F2063488100E72849 /* AddErg */,
+				878B56952063338A00E72849 /* BaseViewController.swift */,
 				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
 				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
-				878B56952063338A00E72849 /* BaseViewController.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
 				874AA68F20C72C38009EA9F0 /* Notes.swift */,
 			);
@@ -546,6 +549,7 @@
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,
+				8749D6BF20C83C720090E68B /* StringProcessor.swift in Sources */,
 				87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */,
 				878B569C2063486600E72849 /* AddErgPresenter.swift in Sources */,
 			);

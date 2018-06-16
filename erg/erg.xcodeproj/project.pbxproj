@@ -250,17 +250,33 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		878022611EC6E59800D6A867 /* ViewControllers */ = {
+		8766A21D20D49EC70044AA9C /* tbc */ = {
 			isa = PBXGroup;
 			children = (
-				878B56A02063488E00E72849 /* Items */,
-				878B569F2063488100E72849 /* AddErg */,
-				878B56952063338A00E72849 /* BaseViewController.swift */,
-				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
-				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
 				8766A21B20D498820044AA9C /* CameraViewController.swift */,
 				8766A21920D498690044AA9C /* SettingsViewController.swift */,
+			);
+			name = tbc;
+			sourceTree = "<group>";
+		};
+		8766A21E20D49ED60044AA9C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
+				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		878022611EC6E59800D6A867 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8766A21E20D49ED60044AA9C /* Login */,
+				8766A21D20D49EC70044AA9C /* tbc */,
+				878B56A02063488E00E72849 /* Items */,
+				878B569F2063488100E72849 /* AddErg */,
+				878B56952063338A00E72849 /* BaseViewController.swift */,
 				874AA68F20C72C38009EA9F0 /* Notes.swift */,
 				8749D6C020C878860090E68B /* HomeViewController.swift */,
 			);

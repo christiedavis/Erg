@@ -66,8 +66,12 @@ class AddErgDataViewController: UIViewController {
         presenter?.saveSession()
     }
     
+    @IBAction func dismissView(_ sender: Any) {
+        dismissView()
+    }
+    
     func dismissView() {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
 
     }
 }

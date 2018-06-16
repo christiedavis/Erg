@@ -50,6 +50,11 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         
         picker.dismiss(animated: true, completion: nil)
     }
+   
+    @IBAction func dismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
+    }
     
     private func simulatorPhoto() {
         let image = UIImage(named: "imgErg")

@@ -33,8 +33,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: [:])
-        self.takePhoto()
+//        self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: [:])
+//        self.takePhoto()
 
     }
     

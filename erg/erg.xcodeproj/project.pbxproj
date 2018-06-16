@@ -26,7 +26,7 @@
 		87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCC202CF00600261CF2 /* FontExtensions.swift */; };
 		87606DCF202CFD8200261CF2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCE202CFD8200261CF2 /* Session.swift */; };
 		8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21920D498690044AA9C /* SettingsViewController.swift */; };
-		8766A21C20D498820044AA9C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21B20D498820044AA9C /* CameraViewController.swift */; };
+		8766A22020D49F330044AA9C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21F20D49F330044AA9C /* CameraViewController.swift */; };
 		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
@@ -92,7 +92,7 @@
 		87606DCC202CF00600261CF2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		87606DCE202CFD8200261CF2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		8766A21920D498690044AA9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		8766A21B20D498820044AA9C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "/Users/christie/personal/test-erg/erg/erg/CameraViewController.swift"; sourceTree = "<absolute>"; };
+		8766A21F20D49F330044AA9C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "/Users/christie/personal/test-erg/erg/erg/CameraViewController.swift"; sourceTree = "<absolute>"; };
 		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
@@ -253,8 +253,8 @@
 		8766A21D20D49EC70044AA9C /* tbc */ = {
 			isa = PBXGroup;
 			children = (
+				8766A21F20D49F330044AA9C /* CameraViewController.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
-				8766A21B20D498820044AA9C /* CameraViewController.swift */,
 				8766A21920D498690044AA9C /* SettingsViewController.swift */,
 			);
 			name = tbc;
@@ -562,10 +562,10 @@
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
 				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
+				8766A22020D49F330044AA9C /* CameraViewController.swift in Sources */,
 				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
-				8766A21C20D498820044AA9C /* CameraViewController.swift in Sources */,
 				8749D6C120C878860090E68B /* HomeViewController.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,

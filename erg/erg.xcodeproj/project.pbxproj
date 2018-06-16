@@ -25,6 +25,8 @@
 		87606DCA202CECFD00261CF2 /* Sofia-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */; };
 		87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCC202CF00600261CF2 /* FontExtensions.swift */; };
 		87606DCF202CFD8200261CF2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCE202CFD8200261CF2 /* Session.swift */; };
+		8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21920D498690044AA9C /* SettingsViewController.swift */; };
+		8766A21C20D498820044AA9C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21B20D498820044AA9C /* CameraViewController.swift */; };
 		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
@@ -89,6 +91,8 @@
 		87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia-Regular.ttf"; sourceTree = "<group>"; };
 		87606DCC202CF00600261CF2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		87606DCE202CFD8200261CF2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		8766A21920D498690044AA9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8766A21B20D498820044AA9C /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = "/Users/christie/personal/test-erg/erg/erg/CameraViewController.swift"; sourceTree = "<absolute>"; };
 		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
 				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
+				8766A21B20D498820044AA9C /* CameraViewController.swift */,
+				8766A21920D498690044AA9C /* SettingsViewController.swift */,
 				874AA68F20C72C38009EA9F0 /* Notes.swift */,
 				8749D6C020C878860090E68B /* HomeViewController.swift */,
 			);
@@ -350,7 +356,7 @@
 				TargetAttributes = {
 					871E05B21EC6E4F6002933E6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = P9H7299LZ6;
+						DevelopmentTeam = RU5SGBJGGX;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -543,6 +549,7 @@
 				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
+				8766A21C20D498820044AA9C /* CameraViewController.swift in Sources */,
 				8749D6C120C878860090E68B /* HomeViewController.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,
@@ -552,6 +559,7 @@
 				874A69AF20323F690009A83D /* Piece.swift in Sources */,
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
+				8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,
 				8749D6BF20C83C720090E68B /* StringProcessor.swift in Sources */,
 				87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */,
@@ -716,11 +724,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RU5SGBJGGX;
 				INFOPLIST_FILE = erg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = star.erg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starboating.irow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -738,11 +746,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = RU5SGBJGGX;
 				INFOPLIST_FILE = erg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = star.erg;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starboating.irow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

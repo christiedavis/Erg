@@ -20,14 +20,17 @@ extension UIFont {
     }
     
     static func boldFont(_ size: Int = 12) -> UIFont {
-        return UIFont(name: boldFontName, size: CGFloat(size))!
+        return boldSystemFont(ofSize: CGFloat(size))
+//        return UIFont(name: boldFontName, size: CGFloat(size))!
     }
     
     static func regularFont(_ size: Int = 12) -> UIFont {
-        return UIFont(name: regularFontName, size: CGFloat(size))!
+        return systemFont(ofSize: CGFloat(size))
+//        return UIFont(name: regularFontName, size: CGFloat(size))!
     }
     
     static func curlyFontLarge(_ size: Int = 12) -> UIFont {
-        return UIFont(name: curlyFontName, size: CGFloat(size))!
+        return systemFont(ofSize: CGFloat(size))
+//        return UIFont(name: curlyFontName, size: CGFloat(size))!
     }
 }

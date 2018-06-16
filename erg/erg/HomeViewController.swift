@@ -16,6 +16,10 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var predictButton: HomeButtonView!
     @IBOutlet weak var settingsButton: HomeButtonView!
     
+    @IBOutlet weak var tableview: UITableView!
+    
+    var presenter: ItemsPresenterViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         filterMenuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToFilter)))
@@ -33,6 +37,21 @@ class HomeViewController: BaseViewController {
                     itemPresenter.viewDelegate = targetController
                     targetController.presenter = itemPresenter
             }
+        } else if segue.identifier == "goToAddErg" {
+            if let targetController = segue.destination as? AddErgDataViewController {
+                let itemPresenter = AddErgPresenter(itemsControllerDelegate: self)
+                itemPresenter.viewDelegate = targetController
+                targetController.presenter = itemPresenter
+            }
+        } else if segue.identifier == "goToCamera" {
+            if let targetController = segue.destination as? CameraViewController {
+                // no set up reqd yet
+            }
+        } else if segue.identifier == "goToPredict" {
+            // no set up reqd yet
+
+        } else if segue.identifier == "goToSettings" {
+          // no set up reqd yet
         }
     }
 }
@@ -61,6 +80,21 @@ extension HomeViewController { // Menu Actions
     @objc
     func goToSettings() {
         self.performSegue(withIdentifier: "goToSettings", sender: self)
+    }
+}
+
+extension HomeViewController: ItemsViewControllerDelegate {
+    
+    func reloadTable() {
+        tableview.reloadData()
+    }
+    
+    func addWorkoutToView(workout: WorkoutDTO) {
+//        presenter?.addWorkoutToDatabase(workout: workout)
+    }
+    
+    func signOut() {
+        performSegue(withIdentifier: "SignOut", sender: nil)
     }
 }
 

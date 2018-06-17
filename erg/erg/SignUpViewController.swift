@@ -14,11 +14,18 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var createAccountButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.tealWhite
-
+        emailField.addBorder()
+        emailField.styleText(placeHolderText: "email")
+        emailField.textContentType = .username
+        passwordField.addBorder()
+        passwordField.styleText(placeHolderText: "password")
+        passwordField.textContentType = .password
+        
+        createAccountButton.addBorder()
     }
     
     @IBAction func didTapSignUp(_ sender: UIButton) {

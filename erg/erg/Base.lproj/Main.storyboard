@@ -209,6 +209,8 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nlK-Wo-ZlT">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="78y-il-v33"/>
                                                     <constraint firstAttribute="height" constant="35" id="CDF-gF-DGr"/>
@@ -238,6 +240,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-y6-TlM">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="ITS-Wi-J9L"/>
                                                     <constraint firstAttribute="width" constant="35" id="Wa1-hY-pUI"/>
@@ -267,6 +270,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCl-vA-n96">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="UXf-zB-clO"/>
                                                     <constraint firstAttribute="width" constant="35" id="zPB-hC-Jbv"/>
@@ -296,6 +300,8 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-dT-osG">
                                                 <rect key="frame" x="20" y="35" width="35" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="X2G-fZ-iNg"/>
                                                     <constraint firstAttribute="width" constant="35" id="tt9-1W-Z8i"/>
@@ -325,6 +331,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-7C-Uqd">
                                                 <rect key="frame" x="20" y="35" width="35" height="35"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="F3p-8j-wzy"/>
                                                     <constraint firstAttribute="height" constant="35" id="rtm-jq-gfT"/>

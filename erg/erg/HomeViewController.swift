@@ -124,7 +124,7 @@ class HomeButtonView: UIView {
     
     func setup(_ title: String, _ image: UIImage) {
         imageView.image = image
-        titleLabel.attributedText = title.uppercased().apply(font: UIFont.boldFont(14))
+        titleLabel.attributedText = title.uppercased().apply(font: UIFont.boldFont(13))
         self.backgroundColor = UIColor.black.withAlphaComponent(0.1)
     }
 }

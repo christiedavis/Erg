@@ -207,7 +207,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdz-Tv-5n6" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="74" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nlK-Wo-ZlT">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFilter" translatesAutoresizingMaskIntoConstraints="NO" id="nlK-Wo-ZlT">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -238,7 +238,7 @@
                                     <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-Kl-H6u" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
                                         <rect key="frame" x="301" y="0.0" width="74" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-y6-TlM">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSettings" translatesAutoresizingMaskIntoConstraints="NO" id="lp4-y6-TlM">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -268,7 +268,7 @@
                                     <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGk-ls-pPl" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
                                         <rect key="frame" x="225.5" y="0.0" width="74.5" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCl-vA-n96">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icComputer" translatesAutoresizingMaskIntoConstraints="NO" id="oCl-vA-n96">
                                                 <rect key="frame" x="19.5" y="35" width="35" height="35"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -298,7 +298,7 @@
                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIq-HK-chc" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="74.5" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-dT-osG">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icAdd" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-dT-osG">
                                                 <rect key="frame" x="20" y="35" width="35" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -326,10 +326,10 @@
                                             <outlet property="titleLabel" destination="egd-zB-U0G" id="elG-fb-gj6"/>
                                         </connections>
                                     </view>
-                                    <view tag="2" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-EN-DOe" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="0.0" width="100" height="80"/>
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-EN-DOe" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
+                                        <rect key="frame" x="150" y="0.0" width="74.5" height="80"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-7C-Uqd">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCamera" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-7C-Uqd">
                                                 <rect key="frame" x="20" y="35" width="35" height="35"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -870,7 +870,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icClose" width="18" height="18"/>
+        <image name="icAdd" width="24" height="24"/>
+        <image name="icCamera" width="24" height="24"/>
+        <image name="icClose" width="24" height="24"/>
+        <image name="icComputer" width="24" height="24"/>
+        <image name="icFilter" width="24" height="24"/>
+        <image name="icSettings" width="24" height="24"/>
         <image name="logo" width="666" height="476"/>
     </resources>
     <inferredMetricsTieBreakers>

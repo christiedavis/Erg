@@ -22,8 +22,12 @@ extension UIColor {
 //    text blue: #003266;
 //    grey 858585
     
+    static var borderGrey: UIColor {
+        return UIColor(red: 112.0/255.0, green: 112.0/255.0, blue: 112.0/255.0, alpha: 1.0)
+    }
+    
     static var highlightGreen: UIColor {
-        return UIColor(red: 172.0/255.0, green: 191.0/255.0, blue: 24.0/255.0, alpha: 1.0)
+        return UIColor(red: 117.0/255.0, green: 142.0/255.0, blue: 79.0/255.0, alpha: 1.0)
     }
 
     static var teal: UIColor {

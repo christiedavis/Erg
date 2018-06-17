@@ -16,16 +16,25 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var passwordField: UITextField!
 
     @IBOutlet var signInButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
+    @IBOutlet weak var forgotPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.tealWhite
-        signInButton.backgroundColor = .darkTeal
-        
+                
         emailField.textContentType = .username
         passwordField.textContentType = .password
-    
+        
+        // styling
+        signInButton.addBorder()
+        signupButton.addBorder()
+       
+        emailField.addBorder()
+        emailField.styleText(placeHolderText: "username")
+        passwordField.addBorder()
+        passwordField.styleText(placeHolderText: "password")
+        
         self.dismissLoading()
     }
     
@@ -37,6 +46,10 @@ class LoginViewController: BaseViewController {
         }
     }
 
+    @IBAction func didTapSignup(_ sender: Any) {
+        self.performSegue(withIdentifier: "SignUp", sender: self)
+        
+    }
     @IBAction func didTapSignIn(_ sender: UIButton) {
         let email = emailField.text
         let password = passwordField.text
@@ -67,7 +80,7 @@ class LoginViewController: BaseViewController {
     }
 
     @IBAction func didRequestPasswordReset(_ sender: UIButton) {
-        let prompt = UIAlertController(title: "Erg App", message: "Email:", preferredStyle: .alert)
+        let prompt = UIAlertController(title: "Reset your password", message: "Enter your email to reset your password", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             let userInput = prompt.textFields![0].text
             if (userInput!.isEmpty) {

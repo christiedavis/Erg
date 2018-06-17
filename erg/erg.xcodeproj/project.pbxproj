@@ -27,6 +27,7 @@
 		87606DCF202CFD8200261CF2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCE202CFD8200261CF2 /* Session.swift */; };
 		8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21920D498690044AA9C /* SettingsViewController.swift */; };
 		8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22120D60D250044AA9C /* CameraViewController.swift */; };
+		8766A22420D624100044AA9C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22320D624100044AA9C /* UIExtensions.swift */; };
 		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
 		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
@@ -93,6 +94,7 @@
 		87606DCE202CFD8200261CF2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		8766A21920D498690044AA9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8766A22120D60D250044AA9C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		8766A22320D624100044AA9C /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
 		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				878B56992063443500E72849 /* DateExtensions.swift */,
 				877D42EE209B2F4B00892A5C /* Constants.swift */,
 				8749D6BE20C83C720090E68B /* StringProcessor.swift */,
+				8766A22320D624100044AA9C /* UIExtensions.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */,
 				874AA69020C72C38009EA9F0 /* Notes.swift in Sources */,
 				878655D6203192FD0050D1BD /* ItemsDatasource.swift in Sources */,
+				8766A22420D624100044AA9C /* UIExtensions.swift in Sources */,
 				8793A47420C61BEE00770C58 /* MachineLearningViewController.swift in Sources */,
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,

@@ -9,6 +9,11 @@
 import UIKit
 
 extension String {
+    
+    func apply(font: UIFont, color: UIColor) -> NSAttributedString {
+        return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : color])
+    }
+    
     func apply(font: UIFont) -> NSAttributedString {
         return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : UIColor.textNavy])
     }

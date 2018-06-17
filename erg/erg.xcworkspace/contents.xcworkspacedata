@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/christie/personal/test-erg/erg/erg/CameraViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:erg.xcodeproj">
    </FileRef>
    <FileRef

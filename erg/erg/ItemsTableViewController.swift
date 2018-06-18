@@ -61,8 +61,6 @@ class ItemsTableViewController: BaseViewController {
         
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
-        
-        self.view.backgroundColor = UIColor.backgroundGrey
     }
     
     @objc

@@ -11,10 +11,6 @@ import UIKit
 enum InputType {
    case time
    case distance
-//        split,
-//        rate,
-//        heartRate,
-//        header
 }
 
 protocol InputCellDelegate: class {
@@ -35,7 +31,8 @@ class AddSessionCell: UITableViewCell {
     @IBOutlet weak var topDivider: UIView!
     @IBOutlet weak var bottomDivider: UIView!
     
-    @IBOutlet var inputBottomConstraint: NSLayoutConstraint?
+//    @IBOutlet var inputBottomConstraint: NSLayoutConstraint?
+    
     
     var inputType: InputType?
     var pieceDto: PieceDTO? {
@@ -43,7 +40,7 @@ class AddSessionCell: UITableViewCell {
             cellDelegate?.updatePiece(pieceDTO: self.pieceDto!)
         }
     }
-    static var cellName: String = "InputCell"
+    static var cellName: String = "AddSessionCell"
     
     weak var cellDelegate: InputCellDelegate?
     
@@ -53,13 +50,13 @@ class AddSessionCell: UITableViewCell {
     }
     
     private func setup() {
-        bottomDivider.backgroundColor = UIColor.gray
-        topDivider.backgroundColor = .gray
+//        bottomDivider.backgroundColor = UIColor.gray
+//        topDivider.backgroundColor = .gray
+//        
+//        topDivider.isHidden = true
+//        bottomDivider.isHidden = true
         
-        topDivider.isHidden = true
-        bottomDivider.isHidden = true
-        
-        inputBottomConstraint?.constant = 15
+//        inputBottomConstraint?.constant = 15
     }
 
     override func prepareForReuse() {

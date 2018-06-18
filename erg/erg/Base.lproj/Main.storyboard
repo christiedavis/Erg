@@ -46,9 +46,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjR-m2-RjP">
-                                <rect key="frame" x="198" y="191.5" width="133" height="44"/>
+                                <rect key="frame" x="186" y="191.5" width="145" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ajg-or-3c3"/>
+                                    <constraint firstAttribute="width" constant="145" id="bye-vA-bxa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="forgotten password?">
@@ -115,7 +116,6 @@
                             <constraint firstItem="MhZ-eH-9dg" firstAttribute="trailing" secondItem="TZu-UP-gDn" secondAttribute="trailing" id="gvk-oy-VMb"/>
                             <constraint firstItem="BOg-bV-ClQ" firstAttribute="trailing" secondItem="FjR-m2-RjP" secondAttribute="trailing" id="hgf-eH-hz0"/>
                             <constraint firstItem="Tpd-gb-1ll" firstAttribute="leading" secondItem="tMq-az-e8P" secondAttribute="leadingMargin" constant="10" id="iCp-Mr-CdY"/>
-                            <constraint firstItem="EMw-Tm-axV" firstAttribute="centerX" secondItem="MhZ-eH-9dg" secondAttribute="centerX" id="pc3-fh-Qll"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Tpd-gb-1ll" secondAttribute="trailing" constant="10" id="ygx-2e-o5Y"/>
                             <constraint firstItem="TZu-UP-gDn" firstAttribute="leading" secondItem="MhZ-eH-9dg" secondAttribute="leading" id="yoE-cZ-epx"/>
                             <constraint firstItem="Ncv-aZ-dZ2" firstAttribute="width" secondItem="EMw-Tm-axV" secondAttribute="width" id="zhf-Be-kAf"/>

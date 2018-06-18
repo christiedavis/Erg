@@ -1,5 +1,5 @@
 //
-//  InputCell.swift
+//  AddSessionCell.swift
 //  erg
 //
 //  Created by Christie on 13/05/17.
@@ -21,7 +21,7 @@ protocol InputCellDelegate: class {
     func updatePiece(pieceDTO: PieceDTO)
 }
 
-class InputCell: UITableViewCell {
+class AddSessionCell: UITableViewCell {
 
     @IBOutlet weak var primaryLabel: UILabel?
     @IBOutlet weak var primaryInput: UITextField?

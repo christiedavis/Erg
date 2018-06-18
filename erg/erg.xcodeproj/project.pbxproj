@@ -30,8 +30,8 @@
 		8766A22420D624100044AA9C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22320D624100044AA9C /* UIExtensions.swift */; };
 		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
-		878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* InputCell.swift */; };
-		8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* InputCell.xib */; };
+		878022691EC6E9CB00D6A867 /* AddSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* AddSessionCell.swift */; };
+		8780226A1EC6E9CB00D6A867 /* AddSessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* AddSessionCell.xib */; };
 		878655CE203184AF0050D1BD /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655C8203184AE0050D1BD /* SessionCell.swift */; };
 		878655CF203184AF0050D1BD /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655C9203184AF0050D1BD /* SessionCell.xib */; };
 		878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655CB203184AF0050D1BD /* HeaderCell.swift */; };
@@ -97,8 +97,8 @@
 		8766A22320D624100044AA9C /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
-		878022671EC6E9CB00D6A867 /* InputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
-		878022681EC6E9CB00D6A867 /* InputCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
+		878022671EC6E9CB00D6A867 /* AddSessionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSessionCell.swift; sourceTree = "<group>"; };
+		878022681EC6E9CB00D6A867 /* AddSessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddSessionCell.xib; sourceTree = "<group>"; };
 		878655C8203184AE0050D1BD /* SessionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		878655C9203184AF0050D1BD /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		878655CB203184AF0050D1BD /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -293,8 +293,8 @@
 				878655CC203184AF0050D1BD /* HeaderCell.xib */,
 				878655C8203184AE0050D1BD /* SessionCell.swift */,
 				878655C9203184AF0050D1BD /* SessionCell.xib */,
-				878022671EC6E9CB00D6A867 /* InputCell.swift */,
-				878022681EC6E9CB00D6A867 /* InputCell.xib */,
+				878022671EC6E9CB00D6A867 /* AddSessionCell.swift */,
+				878022681EC6E9CB00D6A867 /* AddSessionCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -412,7 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8780226A1EC6E9CB00D6A867 /* InputCell.xib in Resources */,
+				8780226A1EC6E9CB00D6A867 /* AddSessionCell.xib in Resources */,
 				871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */,
 				87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */,
 				87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */,
@@ -565,7 +565,7 @@
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
-				878022691EC6E9CB00D6A867 /* InputCell.swift in Sources */,
+				878022691EC6E9CB00D6A867 /* AddSessionCell.swift in Sources */,
 				8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */,
 				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,

@@ -38,10 +38,10 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        var cell: InputCell! = tableView.dequeueReusableCell(withIdentifier: InputCell.cellName) as? InputCell
+        var cell: AddSessionCell! = tableView.dequeueReusableCell(withIdentifier: AddSessionCell.cellName) as? AddSessionCell
         if cell == nil {
-            tableView.register(UINib(nibName: InputCell.cellName, bundle: nil), forCellReuseIdentifier: InputCell.cellName)
-            cell = tableView.dequeueReusableCell(withIdentifier: InputCell.cellName) as? InputCell
+            tableView.register(UINib(nibName: AddSessionCell.cellName, bundle: nil), forCellReuseIdentifier: AddSessionCell.cellName)
+            cell = tableView.dequeueReusableCell(withIdentifier: AddSessionCell.cellName) as? AddSessionCell
         }
         
         if indexPath.item == 0 {

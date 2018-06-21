@@ -14,6 +14,10 @@ struct PieceDTO {
     var distance: String = ""
     var time: String = ""
     var rate: Int?
+    var aveSplit: String {
+        return "TODO"
+//        return distance / time
+    }
     
     init(rowId: Int) {
         self.rowId = rowId

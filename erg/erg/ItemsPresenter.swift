@@ -23,6 +23,7 @@ protocol ItemsPresenterViewDelegate: class {
 protocol ItemsPresenterDataDelegate {
     
     var sessionPickerValueArray: [String] { get }
+    var filter: SessionType? { get }
     
     var numberOfSessions: Int { get }
     func rowsForSession(_ sessionIndex: Int) -> Int
@@ -47,6 +48,9 @@ class ItemsPresenter: NSObject {
     var datasource: ItemsDatasource
     
     var filterTitle: String? = ""
+    var filter: SessionType? {
+        return viewFilter
+    }
     private var viewFilter: SessionType? {
         didSet {
             NSLog("hi")
@@ -141,10 +145,6 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     func addWorkoutToDatabase(workout: WorkoutDTO) {
         DatabaseRepo.shared.addWorkoutToDatabase(workout: workout)
         self.viewDelegate?.reloadTable()
-    }
-    
-    func filter() {
-        
     }
 }
 

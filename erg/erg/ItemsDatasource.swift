@@ -49,7 +49,7 @@ extension ItemsDatasource: UITableViewDataSource {
             
             let workout = presenter?.workoutViewModelForSection(indexPath.section)
             // TODO: this is nt working
-            cell.setUpAsSessionCell(workout: workout)
+            cell.setUpAsSessionCell(workout: workout, filterType: presenter?.filter, row: indexPath.row)
             return cell
             
         } else {
@@ -68,9 +68,9 @@ extension ItemsDatasource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-//            presenter.delete()
-//            let item = items[indexPath.row]
-//            item.ref.removeValue()
+            
+            let workout = presenter?.workoutViewModelForSection(indexPath.row)
+            DatabaseRepo.shared.delete(workout)
         }
     }
     

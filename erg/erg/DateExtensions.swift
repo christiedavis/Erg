@@ -14,7 +14,7 @@ extension Date {
     
     private static let fullDateFormatter: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat = "d MMMM YYYY"
+        df.dateFormat = "d MMMM YY"
         return df
     }()
     

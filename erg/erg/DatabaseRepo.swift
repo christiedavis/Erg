@@ -46,7 +46,12 @@ class DatabaseRepo {
         
         sessionID.setValue(sessionDBO)
         pieceReference.child(sessionID.key).setValue(workout.pieces)
-        
+    
+    }
+    
+    func delete(_ workout: WorkoutDTO?) {
+//        sessionReference.value(forKey: workout.session.id)
+//        item.ref.removeValue()
     }
     
     func signOut() -> Error? {

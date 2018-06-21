@@ -28,20 +28,20 @@ class HeaderCell: UITableViewCell {
         if workout?.session.sessionType == .time {
             if let first = workout?.pieceArray.first {
                 
-                subtitleLabel?.attributedText = "\(first.distance) m".apply(font: UIFont.regularFont(16))
-                titleLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.boldFont(18))
+                subtitleLabel?.text = "\(first.distance) m" //.apply(font: UIFont.regularFont(16))
+                titleLabel?.text = "\(first.time) mins"//.apply(font: UIFont.boldFont(18))
             }
 
             
         } else if workout?.session.sessionType == .distance {
             if let first = workout?.pieceArray.first {
                 
-                titleLabel?.attributedText = "\(first.distance) m".apply(font: UIFont.boldFont(18))
-                subtitleLabel?.attributedText = "\(first.time) mins".apply(font: UIFont.regularFont(16))
+                titleLabel?.text = "\(first.distance) m"//.apply(font: UIFont.boldFont(18))
+                subtitleLabel?.text = "\(first.time) mins"//.apply(font: UIFont.regularFont(16))
             }
         }
 
-        rightLabel .attributedText = workout?.session.date?.asFullDate()?.apply(font: UIFont.regularFont(14))
+        rightLabel .text = workout?.session.date?.asFullDate()//.apply(font: UIFont.regularFont(14))
         layoutCell()
     }
     

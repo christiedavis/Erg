@@ -28,6 +28,7 @@ class AddErgDataViewController: UIViewController {
     @IBOutlet weak var segmentView: UISegmentedControl!
     @IBOutlet weak var noPiecesLabel: UILabel!
     @IBOutlet weak var noPiecesStepper: UIStepper!
+    @IBOutlet weak var submitButton: UIButton!
     
     var presenter: AddErgPresenterDelegate?
     
@@ -41,10 +42,9 @@ class AddErgDataViewController: UIViewController {
         noPiecesStepper.tag = Int(noPiecesStepper.value)
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSession)), animated: true)
         
-//        tableView.isHidden = true
-        
         noPiecesLabel.text = "\(tableView.numberOfSections)"
 
+        submitButton.layer.cornerRadius = 5
     }
     
     @IBAction func segmentTapped(_ sender: Any) {
@@ -69,10 +69,15 @@ class AddErgDataViewController: UIViewController {
     @IBAction func dismissView(_ sender: Any) {
         dismissView()
     }
-    
-    func dismissView() {
-        self.dismiss(animated: true, completion: nil)
 
+    @IBAction func submittButtonTapped(_ sender: Any) {
+        presenter?.saveSession()
+        dismissView()
+    }
+    
+    internal func dismissView() {
+        self.dismiss(animated: true, completion: nil)
+        
     }
 }
 

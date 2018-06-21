@@ -69,18 +69,18 @@ class AddSessionCell: UITableViewCell {
         self.inputType = inputType
     
 
-        rateLabel?.attributedText = "Rate".apply(font: UIFont.regularFont(14))
+        rateLabel?.text = "Rate"
         
         switch inputType {
             case .time:
-                primaryLabel?.attributedText = "Time:".apply(font: UIFont.regularFont(14))
+                primaryLabel?.text = "Time:"
                 
-                secondaryLabel?.attributedText = "Distance:".apply(font: UIFont.regularFont(14))
+                secondaryLabel?.text = "Distance:"
                 
             case .distance:
-                primaryLabel?.attributedText = "Distance:".apply(font: UIFont.regularFont(14))
+                primaryLabel?.text = "Distance:"
                 
-                secondaryLabel?.attributedText = "Time:".apply(font: UIFont.regularFont(14))
+                secondaryLabel?.text = "Time:"
         }
     }
 

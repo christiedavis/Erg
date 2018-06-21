@@ -11,20 +11,25 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        logoutButton.layer.cornerRadius = 5
+        
     }
     
-
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        self.signOut()
+    }
+    
+    func signOut() {
+        
     }
 }

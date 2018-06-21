@@ -18,7 +18,6 @@ protocol ItemsPresenterViewDelegate: class {
     
     func addWorkoutToDatabase(workout: WorkoutDTO)
     func setFilter(_ sessionType: SessionType?)
-    func signOut()
 }
 
 protocol ItemsPresenterDataDelegate {
@@ -33,20 +32,16 @@ protocol ItemsPresenterDataDelegate {
 
 class ItemsPresenter: NSObject {
 
-    private var rootReference: DatabaseReference! = Database.database().reference()
-    private var sessionReference: DatabaseReference {
-        return rootReference.child("users/\(self.user.uid)/sessions")
+//    private var user: User!
+    private var sessions: [Session] {
+        return DatabaseRepo.shared.sessions
     }
-    private var pieceReference: DatabaseReference {
-        return rootReference.child("users/\(self.user.uid)/pieces")
+    private var pieces: [String: [Piece]] {
+        return DatabaseRepo.shared.pieces
     }
-    
-    private var user: User!
-    private var sessions = [Session]()
-    private var pieces = [String: [Piece]]()
-    private var ref: DatabaseReference!
-    private var sessionsDatabaseHandle: DatabaseHandle!
-    private var piecesDatabaseHandle: DatabaseHandle!
+//    private varref: DatabaseReference!
+//    private var se ssionsDatabaseHandle: DatabaseHandle!
+//    private var piecesDatabaseHandle: DatabaseHandle!
 
     var viewDelegate: ItemsViewControllerDelegate?
     var datasource: ItemsDatasource
@@ -110,8 +105,6 @@ class ItemsPresenter: NSObject {
         super.init()
         datasource = ItemsDatasource(self)
     
-        user = Auth.auth().currentUser
-        startObservingDatabase()
     }
     
     func sessionViewModelForRow(_ row: Int) -> SessionDTO? {
@@ -127,14 +120,9 @@ class ItemsPresenter: NSObject {
         let workoutDto = WorkoutDTO(pieceArray, session)
         return workoutDto
     }
-    
-    deinit {
-        sessionReference.removeObserver(withHandle: sessionsDatabaseHandle)
-        pieceReference.removeObserver(withHandle: piecesDatabaseHandle)
-    }
 }
 
-extension ItemsPresenter : ItemsPresenterDataDelegate {
+extension ItemsPresenter: ItemsPresenterDataDelegate {
     
     func setSessionTypeFromPicker(_ rowSelected: Int) {
         sessionViewFilter = sessionPickerValueArray[rowSelected]
@@ -151,23 +139,8 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     }
 
     func addWorkoutToDatabase(workout: WorkoutDTO) {
-        
-        let sessionDBO = workout.sessionDBO
-        let sessionID = sessionReference.childByAutoId()
-        
-        sessionID.setValue(sessionDBO)
-        pieceReference.child(sessionID.key).setValue(workout.pieces)
-        
+        DatabaseRepo.shared.addWorkoutToDatabase(workout: workout)
         self.viewDelegate?.reloadTable()
-    }
-    
-    func signOut() {
-        do {
-            try Auth.auth().signOut()
-            viewDelegate?.signOut()
-        } catch let error {
-            assertionFailure("Error signing out: \(error)")
-        }
     }
     
     func filter() {
@@ -175,38 +148,3 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     }
 }
 
-// Mark: Database monitoring stuff
-extension ItemsPresenter {
-    
-    func startObservingDatabase () {
-        sessionsDatabaseHandle = sessionReference.observe(.value, with: { snapshot in
-            var newSessions = [Session]()
-            
-            for sessionSnapshot in snapshot.children {
-                let session = Session(snapshot: sessionSnapshot as! DataSnapshot)
-                newSessions.append(session)
-            }
-            self.sessions = newSessions
-        })
-        
-        
-        piecesDatabaseHandle = pieceReference.observe(.value, with: { snapshot in
-            var newPieces = [String : [Piece]]()
-            
-            for pieceSnapshot in snapshot.children {
-                var pieceArray = [Piece]()
-
-                let dataSnapshot = pieceSnapshot as! DataSnapshot
-                for  child in dataSnapshot.children {
-                    let piece = Piece(snapshot: child as! DataSnapshot)
-                    pieceArray.append(piece)
-                }
-                newPieces[dataSnapshot.key] = pieceArray
-                
-            }
-            self.pieces = newPieces
-            self.viewDelegate?.reloadTable()
-            self.viewDelegate?.dismissLoading()
-        })
-    }
-}

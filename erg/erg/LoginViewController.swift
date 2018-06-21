@@ -43,6 +43,7 @@ class LoginViewController: BaseViewController {
 
         if let _ = Auth.auth().currentUser {
             self.signIn()
+            
         }
     }
 
@@ -120,6 +121,7 @@ class LoginViewController: BaseViewController {
     }
 
     func signIn() {
+        DatabaseRepo.init()
         performSegue(withIdentifier: "SignInFromLogin", sender: nil)
     }
 
@@ -136,8 +138,3 @@ class LoginViewController: BaseViewController {
         }
     }
 }
-
-//extension LoginViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-//
-//}
-

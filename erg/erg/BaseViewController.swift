@@ -21,8 +21,9 @@ internal class BaseViewController: UIViewController {
     }
     
     internal func showLoading() {
-        loadingView?.startAnimating()
-        loadingView?.isHidden = false
+//        loadingView?.startAnimating()
+//        loadingView?.isHidden = false
+        dismissLoading()
     }
     
     internal func dismissLoading() {

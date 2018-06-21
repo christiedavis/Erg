@@ -36,9 +36,8 @@ class ItemsTableViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showLoading()
+//        self.showLoading()
 
-        //TODO: crashed on sign up
         sessionPickerView.delegate = presenter!.datasource
         sessionPickerView.dataSource = presenter!.datasource
         sessionPickerView.isHidden = true
@@ -61,6 +60,7 @@ class ItemsTableViewController: BaseViewController {
         
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
+        tableView.reloadData()
     }
     
     @objc
@@ -72,22 +72,6 @@ class ItemsTableViewController: BaseViewController {
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-//    @IBAction func didTapSignOut(_ sender: UIBarButtonItem) {
-//        presenter?.signOut()
-//    }
-//
-//    @IBAction func didTapAddItem(_ sender: UIBarButtonItem) {
-//
-//        performSegue(withIdentifier: "ShowAddErgData", sender: self)
-//    }
-//
-//    @IBAction func machineLearningTapped(_ sender: Any) {
-//
-//        performSegue(withIdentifier: "ShowML", sender: self)
-//
-//    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowAddErgData" {

@@ -50,6 +50,8 @@
 		87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */; };
 		87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF111F8DEA1E00FE12E8 /* Item.swift */; };
 		87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CDA2292043F2DA00E2D86B /* Workout.swift */; };
+		87CF635620DB919C0030F744 /* DatabaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF635520DB919C0030F744 /* DatabaseRepo.swift */; };
+		87CF635820DBA2BB0030F744 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF635720DBA2BB0030F744 /* Extensions.swift */; };
 		87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9CAFC2032874200CDF755 /* ArrayExtension.swift */; };
 		FFF3A9DD99EF72337C9B79BD /* Pods_erg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCB5CE723B2FEAD15EC34FB /* Pods_erg.framework */; };
 /* End PBXBuildFile section */
@@ -117,6 +119,8 @@
 		87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87B5CF111F8DEA1E00FE12E8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		87CDA2292043F2DA00E2D86B /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		87CF635520DB919C0030F744 /* DatabaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepo.swift; sourceTree = "<group>"; };
+		87CF635720DBA2BB0030F744 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87E9CAFC2032874200CDF755 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,6 +215,7 @@
 			children = (
 				87606DC0202CECBE00261CF2 /* Fonts */,
 				87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */,
+				87CF635720DBA2BB0030F744 /* Extensions.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				878B56952063338A00E72849 /* BaseViewController.swift */,
 				874AA68F20C72C38009EA9F0 /* Notes.swift */,
 				8749D6C020C878860090E68B /* HomeViewController.swift */,
+				87CF635520DB919C0030F744 /* DatabaseRepo.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */,
+				87CF635620DB919C0030F744 /* DatabaseRepo.swift in Sources */,
 				874AA69020C72C38009EA9F0 /* Notes.swift in Sources */,
 				878655D6203192FD0050D1BD /* ItemsDatasource.swift in Sources */,
 				8766A22420D624100044AA9C /* UIExtensions.swift in Sources */,
@@ -580,6 +587,7 @@
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */,
+				87CF635820DBA2BB0030F744 /* Extensions.swift in Sources */,
 				87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */,
 				8749D6BF20C83C720090E68B /* StringProcessor.swift in Sources */,
 				87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */,

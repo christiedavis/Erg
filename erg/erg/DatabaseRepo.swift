@@ -98,8 +98,7 @@ extension DatabaseRepo {
             self.pieces = newPieces
             
             NotificationCenter.default.post(name: .databaseLoaded, object: nil)
-//            self.viewDelegate?.reloadTable()
-//            self.viewDelegate?.dismissLoading()
+
         })
     }
 }

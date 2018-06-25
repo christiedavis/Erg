@@ -58,7 +58,7 @@ class HeaderCell: UITableViewCell {
     
     private func layoutCell() {
         if row % 2 == 0 {
-            backgroundColor = UIColor.white.withAlphaComponent(0.5)
+            backgroundColor = UIColor.white.withAlphaComponent(0.6)
         } else {
             backgroundColor = UIColor.white.withAlphaComponent(0.7)
         }

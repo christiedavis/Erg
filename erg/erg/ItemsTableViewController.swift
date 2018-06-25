@@ -39,8 +39,9 @@ class ItemsTableViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.showLoading()
+        self.showLoading()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(databaseLoaded), name: .databaseLoaded, object: nil)
         sessionPickerView.delegate = presenter!.datasource
         sessionPickerView.dataSource = presenter!.datasource
         sessionPickerView.isHidden = true
@@ -71,6 +72,12 @@ class ItemsTableViewController: BaseViewController {
     
     @objc
     func donePicker() {
+    }
+    
+    @objc
+    func databaseLoaded() {
+        tableView.reloadData()
+        self.dismissLoading()
     }
 
     // MARK: - Table view data source
@@ -108,8 +115,8 @@ class ItemsTableViewController: BaseViewController {
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
-        sessionPickerView.isHidden = false
-        sessionPickerView.reloadAllComponents()
+//        sessionPickerView.isHidden = false
+//        sessionPickerView.reloadAllComponents()
     }
 }
 

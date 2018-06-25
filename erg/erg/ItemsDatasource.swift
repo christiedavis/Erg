@@ -49,7 +49,7 @@ extension ItemsDatasource: UITableViewDataSource {
             
             let workout = presenter?.workoutViewModelForSection(indexPath.section)
             // TODO: this is nt working
-            cell.setUpAsSessionCell(workout: workout, filterType: presenter?.filter, row: indexPath.row)
+            cell.setUpAsSessionCell(workout: workout, filterType: presenter?.filter, row: indexPath.section)
             return cell
             
         } else {

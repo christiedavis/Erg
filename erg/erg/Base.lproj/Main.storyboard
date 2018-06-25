@@ -771,6 +771,8 @@
                         <outlet property="filterButton" destination="fZo-FJ-NxR" id="GDk-nE-atv"/>
                         <outlet property="filterTitleLabel" destination="ZfQ-j9-f4o" id="Ded-Yu-MDM"/>
                         <outlet property="filterValueLabel" destination="GvK-TC-5LO" id="Ime-xS-Elu"/>
+                        <outlet property="primaryLabel" destination="Ikd-qP-gFQ" id="Ovt-UC-u8J"/>
+                        <outlet property="secondaryLabel" destination="6zt-Wg-U8D" id="HBG-OT-nv3"/>
                         <outlet property="sessionPickerView" destination="EBz-6Y-CuW" id="K3q-7i-fpY"/>
                         <outlet property="tableView" destination="Lh2-KU-hUh" id="JJX-xq-1FG"/>
                         <outlet property="typeFilter" destination="PzM-WT-1gV" id="cRL-Bf-liZ"/>

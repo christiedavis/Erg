@@ -30,6 +30,9 @@ class ItemsTableViewController: BaseViewController {
     @IBOutlet weak var filterTitleLabel: UILabel!
     @IBOutlet weak var filterValueLabel: UILabel!
     
+    @IBOutlet weak var primaryLabel: UILabel!
+    @IBOutlet weak var secondaryLabel: UILabel!
+    
     @IBOutlet var typeFilter: UISegmentedControl!
     
     var presenter: ItemsPresenterViewDelegate?
@@ -61,6 +64,9 @@ class ItemsTableViewController: BaseViewController {
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
         tableView.reloadData()
+        
+        primaryLabel.text = "Metres"
+        secondaryLabel.text = "Time"
     }
     
     @objc
@@ -86,12 +92,18 @@ class ItemsTableViewController: BaseViewController {
     
         if typeFilter.selectedSegmentIndex == 0 {
             presenter?.setFilter(nil)
+            primaryLabel.text = "Metres"
+            secondaryLabel.text = "Time"
             
         } else if typeFilter.selectedSegmentIndex == 1 {
             presenter?.setFilter(.distance)
+            primaryLabel.text = "Metres"
+            secondaryLabel.text = "Time"
             
         } else if typeFilter.selectedSegmentIndex == 2 {
             presenter?.setFilter(.time)
+            primaryLabel.text = "Time"
+            secondaryLabel.text = "Metres"
         }
     }
     

@@ -28,11 +28,10 @@ class AddSessionCell: UITableViewCell {
     @IBOutlet weak var rateLabel: UILabel?
     @IBOutlet weak var rateInput: UITextField?
     
+    @IBOutlet weak var splitInput: UITextField!
+    
     @IBOutlet weak var topDivider: UIView!
     @IBOutlet weak var bottomDivider: UIView!
-    
-//    @IBOutlet var inputBottomConstraint: NSLayoutConstraint?
-    
     
     var inputType: InputType?
     var pieceDto: PieceDTO? {
@@ -43,32 +42,15 @@ class AddSessionCell: UITableViewCell {
     static var cellName: String = "AddSessionCell"
     
     weak var cellDelegate: InputCellDelegate?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // not called
-    }
-    
-    private func setup() {
-//        bottomDivider.backgroundColor = UIColor.gray
-//        topDivider.backgroundColor = .gray
-//        
-//        topDivider.isHidden = true
-//        bottomDivider.isHidden = true
-        
-//        inputBottomConstraint?.constant = 15
-    }
 
     override func prepareForReuse() {
         super.prepareForReuse()
     }
     
     func setup(_ inputType: InputType, _ piece: PieceDTO) {
-        setup()
         self.pieceDto = piece
         self.inputType = inputType
     
-
         rateLabel?.text = "Rate"
         
         switch inputType {
@@ -88,7 +70,11 @@ class AddSessionCell: UITableViewCell {
         if let inputType = self.inputType, let textInput = sender as? UITextField {
             
             if textInput.tag == Constants.InputTags.rateInput {
-                pieceDto?.rate = Int(rateInput?.text ?? "-1")
+                pieceDto?.rate = rateInput?.text ?? ""
+            }
+            
+            if textInput.tag == Constants.InputTags.aveSplitInput {
+                pieceDto?.aveSplit = splitInput.text ?? ""
             }
             
             switch inputType {

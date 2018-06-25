@@ -34,7 +34,7 @@ class HeaderCell: UITableViewCell {
 
             self.dateLabel.text = workout?.session.date?.asFullDate()//.apply(font: UIFont.regularFont(14))
             self.splitLabel.text = first.aveSplit
-            self.rateLabel.text = "\(first.rate ?? 0)"
+            self.rateLabel.text = first.rate
 
             if let filterType = filterType {
                 if filterType == .distance {

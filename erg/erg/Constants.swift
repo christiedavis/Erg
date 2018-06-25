@@ -13,5 +13,6 @@ struct Constants {
         static let primaryInput: Int = 0
         static let secondaryInput: Int = 1
         static let rateInput: Int = 2
+        static let aveSplitInput: Int = 3
     }
 }

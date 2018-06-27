@@ -60,6 +60,7 @@ class SignUpViewController: UIViewController {
     }
     
     func signIn() {
+        DatabaseRepo.init()
         performSegue(withIdentifier: "SignInFromSignUp", sender: nil)
     }
 

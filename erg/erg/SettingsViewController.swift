@@ -31,6 +31,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     
     @IBAction func logoutTapped(_ sender: Any) {
         self.signOut()
+        
     }
     
     @IBAction func formTapped(_ sender: Any) {
@@ -54,6 +55,10 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     func signOut() {
+        if DatabaseRepo.shared.signOut() == nil {
+            performSegue(withIdentifier: "SignOut", sender: nil)
+
+        }
         
     }
 }

@@ -16,17 +16,45 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var predictButton: HomeButtonView!
     @IBOutlet weak var settingsButton: HomeButtonView!
     
-    @IBOutlet weak var tableview: UITableView!
+    @IBOutlet var lifetimeMetersLabel: UILabel!
+    @IBOutlet var lifetimeTimeLbel: UILabel!
+    //    @IBOutlet weak var tableview: UITableView!
     
     var presenter: ItemsPresenterViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        NotificationCenter.default.addObserver(self, selector: #selector(databaseLoaded), name: .databaseLoaded, object: nil)
+        
         filterMenuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToFilter)))
         addErgButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAddErg)))
         cameraButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCamera)))
         predictButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToPredict)))
         settingsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSettings)))
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc
+    func databaseLoaded() {
+        var lifetimeMeters: Double = 0
+        var lifetimeTime: Double = 0
+        DatabaseRepo.shared.pieces.forEach { (key, value) in
+            value.forEach({ (piece) in
+                if let distance = piece.distance {
+                    lifetimeMeters += Double(distance) ?? 0
+                }
+                
+                if let time = piece.time {
+                    lifetimeTime += Double(time) ?? 0
+                }
+            })
+        }
+        lifetimeMetersLabel.text = "\(lifetimeMeters) meters"
+        lifetimeTimeLbel.text = "\(lifetimeTime) minutes"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,7 +114,7 @@ extension HomeViewController { // Menu Actions
 extension HomeViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
-        tableview.reloadData()
+//        tableview.reloadData()
     }
     
     func addWorkoutToView(workout: WorkoutDTO) {

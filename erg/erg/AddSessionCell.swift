@@ -47,6 +47,11 @@ class AddSessionCell: UITableViewCell {
         super.prepareForReuse()
     }
     
+    func setup() {
+        rateInput?.delegate = self
+        
+    }
+    
     func setup(_ inputType: InputType, _ piece: PieceDTO) {
         self.pieceDto = piece
         self.inputType = inputType
@@ -67,6 +72,7 @@ class AddSessionCell: UITableViewCell {
     }
 
     @IBAction func editingDidChange(_ sender: Any) {
+        
         if let inputType = self.inputType, let textInput = sender as? UITextField {
             
             if textInput.tag == Constants.InputTags.rateInput {
@@ -100,3 +106,52 @@ class AddSessionCell: UITableViewCell {
        
     }
 }
+
+extension AddSessionCell: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+    return true
+    }
+}
+//        let digits = NSCharacterSet.decimalDigits
+//        let punctuation = NSCharacterSet.punctuationCharacters
+//
+//        let textFieldValue: NSString? = textField.text as NSString?
+//        if let newText = textFieldValue?.replacingCharacters(in: range, with: string) {
+//            if let unicodeScalar = text.unicodeScalars.first {
+//                if letters.contains(unicodeScalar) {
+//                    log.debug("line number")
+//                    return false
+//
+//                } else if digits.contains(unicodeScalar) {
+//                    log.debug("work order number")
+//                    return true
+//                }
+//            }
+//            return nil
+//            let letters = NSCharacterSet.letters
+//            let digits = NSCharacterSet.decimalDigits
+//
+//            var invalidSearchText = false
+//            let textFieldValue: NSString? = textField.text as NSString?
+//            if let newText = textFieldValue?.replacingCharacters(in: range, with: string) {
+//
+//                self.searchButton.isEnabled = newText.isNotEmpty
+//
+//                if newText.count > 20 {
+//                    return false
+//                }
+//
+//                if textField.text?.count ?? 0 < newText.count, let formattedText = presenter?.formatTextEntry(text: newText) {
+//                    textField.text = formattedText
+//                    return false
+//                }
+//
+//                invalidSearchText = newText.isEmpty == true
+//
+//            } else {
+//                invalidSearchText = true
+//            }
+//            clearTextButton?.isHidden = invalidSearchText
+//
+//            return true

@@ -21,9 +21,11 @@ class AddSessionCell: UITableViewCell {
 
     @IBOutlet weak var primaryLabel: UILabel?
     @IBOutlet weak var primaryInput: UITextField?
-
+    @IBOutlet var primaryUnits: UILabel!
+    
     @IBOutlet weak var secondaryLabel: UILabel?
     @IBOutlet weak var secondaryInput: UITextField?
+    @IBOutlet var secondaryUnits: UILabel!
     
     @IBOutlet weak var rateLabel: UILabel?
     @IBOutlet weak var rateInput: UITextField?
@@ -61,13 +63,14 @@ class AddSessionCell: UITableViewCell {
         switch inputType {
             case .time:
                 primaryLabel?.text = "Time:"
-                
+                primaryUnits.text = "mins"
                 secondaryLabel?.text = "Distance:"
-                
+                secondaryUnits.text = "meters"
             case .distance:
                 primaryLabel?.text = "Distance:"
-                
+                primaryUnits.text = "meters"
                 secondaryLabel?.text = "Time:"
+                secondaryUnits.text = "mins"
         }
     }
 

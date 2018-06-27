@@ -91,8 +91,8 @@ extension AddErgPresenter: AddErgPresenterDelegate {
         
         if let newSession = newSession {
             let workout = WorkoutDTO(pieceArray, newSession)
+            DatabaseRepo.shared.addWorkoutToDatabase(workout: workout)
             
-            delegate?.addWorkoutToView(workout: workout)
         } else {
             print("Errror")
         }

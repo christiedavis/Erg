@@ -47,6 +47,11 @@ class AddErgDataViewController: UIViewController {
         submitButton.layer.cornerRadius = 5
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     @IBAction func segmentTapped(_ sender: Any) {
         reloadTable()
     }

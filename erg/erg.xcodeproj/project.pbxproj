@@ -121,6 +121,7 @@
 		87CDA2292043F2DA00E2D86B /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		87CF635520DB919C0030F744 /* DatabaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepo.swift; sourceTree = "<group>"; };
 		87CF635720DBA2BB0030F744 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		87E7A2CD20E59ACA00322E00 /* erg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = erg.entitlements; sourceTree = "<group>"; };
 		87E9CAFC2032874200CDF755 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +188,7 @@
 		871E05B51EC6E4F6002933E6 /* erg */ = {
 			isa = PBXGroup;
 			children = (
+				87E7A2CD20E59ACA00322E00 /* erg.entitlements */,
 				87606DD0202CFD8600261CF2 /* Models */,
 				87606DCB202CED1700261CF2 /* Utilities */,
 				87606DBF202CECAC00261CF2 /* Resources */,
@@ -381,9 +383,14 @@
 				TargetAttributes = {
 					871E05B21EC6E4F6002933E6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = RU5SGBJGGX;
+						DevelopmentTeam = 77B4XKLPCN;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					871E05C91EC6E4F7002933E6 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -749,14 +756,15 @@
 			baseConfigurationReference = 7E7DD50F3F7701A26348AE83 /* Pods-erg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = erg/erg.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RU5SGBJGGX;
+				DEVELOPMENT_TEAM = 77B4XKLPCN;
 				INFOPLIST_FILE = erg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.starboatingclub.erg;
+				PRODUCT_BUNDLE_IDENTIFIER = star.erg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -771,14 +779,15 @@
 			baseConfigurationReference = 30790E637379AEB011944A81 /* Pods-erg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = erg/erg.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RU5SGBJGGX;
+				DEVELOPMENT_TEAM = 77B4XKLPCN;
 				INFOPLIST_FILE = erg/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.starboatingclub.erg;
+				PRODUCT_BUNDLE_IDENTIFIER = star.erg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

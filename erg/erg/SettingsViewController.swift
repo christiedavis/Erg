@@ -10,7 +10,7 @@
 import UIKit
 import MessageUI
 
-class SettingsViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class SettingsViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet var emailButton: UIButton!
@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
             let mailVc = MFMailComposeViewController()
             mailVc.mailComposeDelegate = self
             mailVc.setSubject("iRow app feedback")
-            mailVc.setToRecipients(["christiedavis22@gmail.com", "Valerie.m.chan@gmail.com"])
+            mailVc.setToRecipients(["irowapp@gmail.com"])
             
             self.present(mailVc, animated: true, completion: nil)
         }
@@ -59,6 +59,12 @@ class SettingsViewController: UIViewController, MFMailComposeViewControllerDeleg
             performSegue(withIdentifier: "SignOut", sender: nil)
 
         }
+    }
+}
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
+        self.dismissView(self)
     }
 }

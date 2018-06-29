@@ -35,6 +35,9 @@ class LoginViewController: BaseViewController {
         passwordField.addBorder()
         passwordField.styleText(placeHolderText: "password")
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+
+        
         self.dismissLoading()
     }
     
@@ -121,7 +124,7 @@ class LoginViewController: BaseViewController {
     }
 
     func signIn() {
-        DatabaseRepo.init()
+        _ = DatabaseRepo()
         performSegue(withIdentifier: "SignInFromLogin", sender: nil)
     }
 
@@ -135,6 +138,17 @@ class LoginViewController: BaseViewController {
                     targetController.presenter = itemPresenter
                 }
             }
+        }
+    }
+    
+    @objc
+    func dismissKeyboard() {
+        
+        if emailField.isFirstResponder {
+            emailField.resignFirstResponder()
+        }
+        if passwordField.isFirstResponder {
+            passwordField.resignFirstResponder()
         }
     }
 }

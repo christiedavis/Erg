@@ -26,6 +26,8 @@ class SignUpViewController: UIViewController {
         passwordField.textContentType = .password
         
         createAccountButton.addBorder()
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
     @IBAction func didTapSignUp(_ sender: UIButton) {
@@ -60,7 +62,7 @@ class SignUpViewController: UIViewController {
     }
     
     func signIn() {
-        DatabaseRepo.init()
+        _ = DatabaseRepo()
         performSegue(withIdentifier: "SignInFromSignUp", sender: nil)
     }
 
@@ -74,6 +76,17 @@ class SignUpViewController: UIViewController {
                     targetController.presenter = itemPresenter
                 }
             }
+        }
+    }
+    
+    @objc
+    func dismissKeyboard() {
+        
+        if emailField.isFirstResponder {
+            emailField.resignFirstResponder()
+        }
+        if passwordField.isFirstResponder {
+            passwordField.resignFirstResponder()
         }
     }
 }

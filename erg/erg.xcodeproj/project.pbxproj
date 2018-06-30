@@ -43,7 +43,6 @@
 		878B5698206343AB00E72849 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B5697206343AB00E72849 /* StringExtensions.swift */; };
 		878B569A2063443500E72849 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B56992063443500E72849 /* DateExtensions.swift */; };
 		878B569C2063486600E72849 /* AddErgPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B569B2063486600E72849 /* AddErgPresenter.swift */; };
-		878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878B569D2063487600E72849 /* AddErgDataSource.swift */; };
 		8793A47420C61BEE00770C58 /* MachineLearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */; };
 		87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */; };
 		87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */; };
@@ -112,7 +111,6 @@
 		878B5697206343AB00E72849 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		878B56992063443500E72849 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		878B569B2063486600E72849 /* AddErgPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddErgPresenter.swift; sourceTree = "<group>"; };
-		878B569D2063487600E72849 /* AddErgDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddErgDataSource.swift; sourceTree = "<group>"; };
 		8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineLearningViewController.swift; sourceTree = "<group>"; };
 		87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 		878B569F2063488100E72849 /* AddErg */ = {
 			isa = PBXGroup;
 			children = (
-				878B569D2063487600E72849 /* AddErgDataSource.swift */,
 				878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */,
 				878B569B2063486600E72849 /* AddErgPresenter.swift */,
 			);
@@ -580,7 +577,6 @@
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
 				8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */,
-				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
 				8749D6C120C878860090E68B /* HomeViewController.swift in Sources */,

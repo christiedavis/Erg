@@ -21,11 +21,7 @@ class HeaderCell: UITableViewCell {
     @IBOutlet var rateLabel: UILabel!
     
     var row: Int = 0
-    
-    override func setNeedsLayout() {
-        super.setNeedsLayout()
-       
-    }
+
     
     func setUpAsSessionCell(workout: WorkoutDTO?, filterType: SessionType?, row: Int) {
         self.row = row

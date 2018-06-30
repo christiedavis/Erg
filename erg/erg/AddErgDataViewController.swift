@@ -46,6 +46,7 @@ class AddErgDataViewController: UIViewController {
         
 //        noPiecesLabel.text = "\(tableView.numberOfSections)"
 
+        addSessionView.cellDelegate = presenter
         submitButton.layer.cornerRadius = 5
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
         if let presenter = presenter {
@@ -64,9 +65,9 @@ class AddErgDataViewController: UIViewController {
     @IBAction func stepperTapped(_ sender: Any) {
         if noPiecesStepper.tag > Int(noPiecesStepper.value) {
             // they've tapped -
-            presenter?.removePiece()
+//            presenter?.removePiece()
         } else {
-            presenter?.addPiece()
+//            presenter?.addPiece()
         }
         noPiecesStepper.tag = Int(noPiecesStepper.value)
     }
@@ -102,5 +103,13 @@ extension AddErgDataViewController: AddErgViewControllerDelegate {
 //        tableView.isHidden = false
 //        tableView.reloadData()
 //        noPiecesLabel.text = "\(tableView.numberOfSections)"
+        if let presenter = presenter {
+
+            if presenter.sessionType == .distance {
+                self.addSessionView.setup(.distance, presenter.piece)
+            } else {
+                self.addSessionView.setup(.time, presenter.piece)
+        }
+        }
     }
 }

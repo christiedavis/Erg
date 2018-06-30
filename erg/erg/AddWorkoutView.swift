@@ -72,6 +72,9 @@ class AddWorkoutView: BaseView {
         rateInput?.delegate = self
         distanceInput.delegate = self
         splitInput.delegate = self
+        secondInput.delegate = self
+        minuteInout.delegate = self
+        hoursInput.delegate = self
         
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
@@ -109,6 +112,34 @@ class AddWorkoutView: BaseView {
 
 extension AddWorkoutView: UITextFieldDelegate {
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.tag == Constants.InputTags.rateInput {
+            pieceDto?.rate = rateInput?.text ?? ""
+        }
+        
+        if textField.tag == Constants.InputTags.aveSplitInput {
+            pieceDto?.aveSplit = splitInput.text ?? ""
+        }
+        
+        if textField.tag == Constants.InputTags.distanceInput {
+            pieceDto?.distance = distanceInput?.text ?? ""
+        }
+        
+        if textField.tag == Constants.InputTags.hourInput || textField.tag == Constants.InputTags.minsInput || textField.tag == Constants.InputTags.secInput {
+            
+            let minsToSave: String = self.minuteInout.text ?? "00"
+            let secondsToSave: String = self.secondInput.text ?? "00"
+
+            if let myHours = self.hoursInput.text, !myHours.isEmpty {
+                pieceDto?.time = "\(myHours):\(minsToSave).\(secondsToSave)"
+
+            } else {
+                pieceDto?.time = "\(minsToSave).\(secondsToSave)"
+
+            }
+        }
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField.tag == Constants.InputTags.rateInput {
@@ -128,18 +159,15 @@ extension AddWorkoutView: UITextFieldDelegate {
         
         if textField.tag == Constants.InputTags.hourInput {
             hours = getNewText(textField, range: range, string: string)
-            formatTimeEntry()
-            return true
+            return formatTimeEntry()
         }
         if textField.tag == Constants.InputTags.minsInput {
             mins = getNewText(textField, range: range, string: string)
-            formatTimeEntry()
-            return true
+            return formatTimeEntry()
         }
         if textField.tag == Constants.InputTags.secInput {
             secs = getNewText(textField, range: range, string: string)
-            formatTimeEntry()
-            return true
+            return formatTimeEntry()
         }
         return true
     }
@@ -176,12 +204,20 @@ extension AddWorkoutView: UITextFieldDelegate {
                 return false
             }
         }
+        pieceDto?.aveSplit = textField.text ?? ""
         return true
     }
     
     func formatTimeEntry() -> Bool {
-        // TODO:  make it so it only takes numbers and the correct punctiation
-        pieceDto?.time = "\(self.hours):\(self.mins).\(self.secs)"
+        let minsToSave: String = self.minuteInout.text ?? "00"
+        let secondsToSave: String = self.secondInput.text ?? "00"
+        
+        if let myHours = self.hoursInput.text {
+            pieceDto?.time = "\(myHours):\(minsToSave).\(secondsToSave)"
+            
+        } else {
+            pieceDto?.time = "\(minsToSave).\(secondsToSave)"
+        }
         return true
     }
     

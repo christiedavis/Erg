@@ -45,6 +45,7 @@ class AddErgDataViewController: UIViewController {
         noPiecesLabel.text = "\(tableView.numberOfSections)"
 
         submitButton.layer.cornerRadius = 5
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,8 +82,18 @@ class AddErgDataViewController: UIViewController {
     }
     
     internal func dismissView() {
+        dismissKeyboard()
         self.dismiss(animated: true, completion: nil)
         
+    }
+    
+    @objc
+    private func dismissKeyboard() {
+        tableView.visibleCells.forEach { (cell) in
+            if let sessionCell = cell as? AddSessionCell {
+                sessionCell.dismissKeyboard()
+            }
+        }
     }
 }
 

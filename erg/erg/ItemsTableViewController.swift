@@ -35,6 +35,8 @@ class ItemsTableViewController: BaseViewController {
     
     @IBOutlet var typeFilter: UISegmentedControl!
     
+    @IBOutlet var errorMessageLabel: UILabel!
+    
     var presenter: ItemsPresenterViewDelegate?
     
     override func viewDidLoad() {
@@ -64,7 +66,7 @@ class ItemsTableViewController: BaseViewController {
         
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
-        tableView.reloadData()
+        reloadTable()
         
         primaryLabel.text = "Metres"
         secondaryLabel.text = "Time"
@@ -124,16 +126,24 @@ extension ItemsTableViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
         sessionPickerView.isHidden = true
-        
         tableView.reloadData()
         
-        if let filter = self.presenter?.filterTitle {
-            filterValueLabel.attributedText = filter.apply(font: UIFont.regularFont(14))
-            filterTitleLabel.attributedText = "Current Filter:".apply(font: UIFont.boldFont(14))
+        if tableView.numberOfSections == 0 {
+            tableView.isHidden = true
+            errorMessageLabel.text = "You have no workouts logged yet"
+            errorMessageLabel.isHidden = false
         } else {
-            filterValueLabel.text = ""
-            filterTitleLabel.text = ""
+            tableView.isHidden = false
+            errorMessageLabel.isHidden = true
         }
+        
+//        if let filter = self.presenter?.filterTitle {
+//            filterValueLabel.attributedText = filter.apply(font: UIFont.regularFont(14))
+//            filterTitleLabel.attributedText = "Current Filter:".apply(font: UIFont.boldFont(14))
+//        } else {
+//            filterValueLabel.text = ""
+//            filterTitleLabel.text = ""
+//        }
     }
     
     func addWorkoutToView(workout: WorkoutDTO) {

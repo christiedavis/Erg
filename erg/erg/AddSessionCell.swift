@@ -72,6 +72,8 @@ class AddSessionCell: UITableViewCell {
                 secondaryLabel?.text = "Time:"
                 secondaryUnits.text = "mins"
         }
+        
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
 
     @IBAction func editingDidChange(_ sender: Any) {
@@ -107,6 +109,28 @@ class AddSessionCell: UITableViewCell {
     
     @IBAction func editingDidEnd(_ sender: Any) {
        
+    }
+    
+    @objc
+    func dismissKeyboard() {
+        if primaryInput?.isFirstResponder ?? false {
+            primaryInput?.resignFirstResponder()
+            return
+        }
+        
+        if secondaryInput?.isFirstResponder ?? false {
+            secondaryInput?.resignFirstResponder()
+            return
+        }
+        
+        if rateInput?.isFirstResponder ?? false {
+            rateInput?.resignFirstResponder()
+            return
+        }
+        
+        if splitInput?.isFirstResponder ?? false {
+            splitInput?.resignFirstResponder()
+        }
     }
 }
 

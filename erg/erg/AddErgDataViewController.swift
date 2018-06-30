@@ -84,7 +84,6 @@ class AddErgDataViewController: UIViewController {
     internal func dismissView() {
         dismissKeyboard()
         self.dismiss(animated: true, completion: nil)
-        
     }
     
     @objc

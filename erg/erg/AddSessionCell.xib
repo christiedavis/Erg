@@ -47,8 +47,7 @@
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         <connections>
-                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingChanged" id="DId-Ne-UnW"/>
-                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="zpy-5d-YFG"/>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="9y5-zs-8a0"/>
                         </connections>
                     </textField>
                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hvb-2H-eLz">
@@ -60,8 +59,7 @@
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         <connections>
-                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingChanged" id="VgC-Pc-OAD"/>
-                            <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="arv-XE-o68"/>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="oAT-bL-XYJ"/>
                         </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCQ-ff-XnU">
@@ -79,8 +77,7 @@
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         <connections>
-                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="BFL-KH-20v"/>
-                            <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="vHg-IP-uho"/>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="o6b-ka-Elk"/>
                         </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ja-AY-jNK">
@@ -131,8 +128,7 @@
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                         <connections>
-                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="uFN-z6-TeX"/>
-                            <action selector="editingDidEnd:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="FzU-p3-yoh"/>
+                            <action selector="editingDidChange:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="9xO-rT-DZ3"/>
                         </connections>
                     </textField>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWQ-dV-lcc">

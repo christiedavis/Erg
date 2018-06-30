@@ -17,4 +17,11 @@ extension String {
     func apply(font: UIFont) -> NSAttributedString {
         return NSAttributedString(string: self, attributes: [NSAttributedStringKey.font : font, NSAttributedStringKey.foregroundColor : UIColor.textNavy])
     }
+    
+    func stringAtIndex(_ index: Int) -> String {
+        
+        let newIndex = self.index(startIndex, offsetBy: index)
+        let stringToRetrun = String(self[newIndex])
+        return stringToRetrun
+    }
 }

@@ -11,6 +11,8 @@ import UIKit
 protocol AddErgPresenterDelegate: class {
     var viewDelegate: AddErgViewControllerDelegate? { get set }
     var datasource: AddErgDataSource { get }
+    var sessionType: SessionType { get }
+    var piece: PieceDTO { get }
     
     var noPieces: Int { get }
     func addPiece()
@@ -44,9 +46,12 @@ class AddErgPresenter: NSObject {
         datasource = AddErgDataSource(self)
     }
     
-    private var pieces: [Int :PieceDTO] = [:]
+    private var pieces: [Int: PieceDTO] = [:]
     var noPieces: Int {
         return pieces.count
+    }
+    var piece: PieceDTO {
+        return pieceForRow(0)
     }
 }
 

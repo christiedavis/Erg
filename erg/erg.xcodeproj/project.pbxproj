@@ -17,6 +17,9 @@
 		8749D6C120C878860090E68B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749D6C020C878860090E68B /* HomeViewController.swift */; };
 		874A69AF20323F690009A83D /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A69AE20323F690009A83D /* Piece.swift */; };
 		874AA69020C72C38009EA9F0 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AA68F20C72C38009EA9F0 /* Notes.swift */; };
+		8758065720E74EB90082B6D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8758065620E74EB90082B6D9 /* GoogleService-Info.plist */; };
+		8758065920E750D10082B6D9 /* AddWorkoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8758065820E750D10082B6D9 /* AddWorkoutView.xib */; };
+		8758065B20E750DD0082B6D9 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758065A20E750DD0082B6D9 /* AddWorkoutView.swift */; };
 		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
 		87606DC5202CECEC00261CF2 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */; };
 		87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */; };
@@ -30,8 +33,6 @@
 		8766A22420D624100044AA9C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22320D624100044AA9C /* UIExtensions.swift */; };
 		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
-		878022691EC6E9CB00D6A867 /* AddSessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022671EC6E9CB00D6A867 /* AddSessionCell.swift */; };
-		8780226A1EC6E9CB00D6A867 /* AddSessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878022681EC6E9CB00D6A867 /* AddSessionCell.xib */; };
 		878655CE203184AF0050D1BD /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655C8203184AE0050D1BD /* SessionCell.swift */; };
 		878655CF203184AF0050D1BD /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655C9203184AF0050D1BD /* SessionCell.xib */; };
 		878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655CB203184AF0050D1BD /* HeaderCell.swift */; };
@@ -47,7 +48,6 @@
 		87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */; };
 		87B5CF0D1F8DE9C000FE12E8 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */; };
 		87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */; };
-		87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */; };
 		87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B5CF111F8DEA1E00FE12E8 /* Item.swift */; };
 		87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CDA2292043F2DA00E2D86B /* Workout.swift */; };
 		87CF635620DB919C0030F744 /* DatabaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF635520DB919C0030F744 /* DatabaseRepo.swift */; };
@@ -86,6 +86,9 @@
 		8749D6C020C878860090E68B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		874A69AE20323F690009A83D /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		874AA68F20C72C38009EA9F0 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
+		8758065620E74EB90082B6D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8758065820E750D10082B6D9 /* AddWorkoutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkoutView.xib; sourceTree = "<group>"; };
+		8758065A20E750DD0082B6D9 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
 		87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
@@ -99,8 +102,6 @@
 		8766A22320D624100044AA9C /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
-		878022671EC6E9CB00D6A867 /* AddSessionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSessionCell.swift; sourceTree = "<group>"; };
-		878022681EC6E9CB00D6A867 /* AddSessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddSessionCell.xib; sourceTree = "<group>"; };
 		878655C8203184AE0050D1BD /* SessionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		878655C9203184AF0050D1BD /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		878655CB203184AF0050D1BD /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		87B5CF0A1F8DE9C000FE12E8 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87B5CF111F8DEA1E00FE12E8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		87CDA2292043F2DA00E2D86B /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		87CF635520DB919C0030F744 /* DatabaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepo.swift; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				87606DC0202CECBE00261CF2 /* Fonts */,
-				87B5CF0F1F8DEA0F00FE12E8 /* GoogleService-Info.plist */,
 				87CF635720DBA2BB0030F744 /* Extensions.swift */,
+				8758065620E74EB90082B6D9 /* GoogleService-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -301,8 +301,8 @@
 				878655CC203184AF0050D1BD /* HeaderCell.xib */,
 				878655C8203184AE0050D1BD /* SessionCell.swift */,
 				878655C9203184AF0050D1BD /* SessionCell.xib */,
-				878022671EC6E9CB00D6A867 /* AddSessionCell.swift */,
-				878022681EC6E9CB00D6A867 /* AddSessionCell.xib */,
+				8758065A20E750DD0082B6D9 /* AddWorkoutView.swift */,
+				8758065820E750D10082B6D9 /* AddWorkoutView.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -425,12 +425,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8780226A1EC6E9CB00D6A867 /* AddSessionCell.xib in Resources */,
+				8758065920E750D10082B6D9 /* AddWorkoutView.xib in Resources */,
 				871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */,
-				87B5CF101F8DEA0F00FE12E8 /* GoogleService-Info.plist in Resources */,
 				87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */,
 				878655D2203184AF0050D1BD /* HeaderCell.xib in Resources */,
 				87606DC7202CECEC00261CF2 /* Lora-Italic.ttf in Resources */,
+				8758065720E74EB90082B6D9 /* GoogleService-Info.plist in Resources */,
 				878655CF203184AF0050D1BD /* SessionCell.xib in Resources */,
 				87606DC5202CECEC00261CF2 /* Lora-Bold.ttf in Resources */,
 				871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */,
@@ -579,7 +579,6 @@
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
-				878022691EC6E9CB00D6A867 /* AddSessionCell.swift in Sources */,
 				8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */,
 				878B569E2063487600E72849 /* AddErgDataSource.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
@@ -592,6 +591,7 @@
 				878B569A2063443500E72849 /* DateExtensions.swift in Sources */,
 				874A69AF20323F690009A83D /* Piece.swift in Sources */,
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
+				8758065B20E750DD0082B6D9 /* AddWorkoutView.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */,
 				87CF635820DBA2BB0030F744 /* Extensions.swift in Sources */,

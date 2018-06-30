@@ -34,25 +34,25 @@ extension AddErgDataSource: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let presenter = self.presenter else {
+//        guard let presenter = self.presenter else {
             return UITableViewCell()
-        }
-        
-        var cell: AddSessionCell! = tableView.dequeueReusableCell(withIdentifier: AddSessionCell.cellName) as? AddSessionCell
-        if cell == nil {
-            tableView.register(UINib(nibName: AddSessionCell.cellName, bundle: nil), forCellReuseIdentifier: AddSessionCell.cellName)
-            cell = tableView.dequeueReusableCell(withIdentifier: AddSessionCell.cellName) as? AddSessionCell
-        }
-        
-        if indexPath.item == 0 {
-            if presenter.sessionType == .distance {
-                cell.setup(.distance, presenter.pieceForRow(indexPath.row))
-            } else {
-                cell.setup(.time, presenter.pieceForRow(indexPath.row))
-            }
-        } 
-        cell.cellDelegate = self.presenter
-        return cell
+//        }
+//        
+//        var cell: AddSessionView! = tableView.dequeueReusableCell(withIdentifier: AddSessionView.cellName) as? AddSessionView
+//        if cell == nil {
+//            tableView.register(UINib(nibName: AddSessionView.cellName, bundle: nil), forCellReuseIdentifier: AddSessionView.cellName)
+//            cell = tableView.dequeueReusableCell(withIdentifier: AddSessionView.cellName) as? AddSessionView
+//        }
+//        
+//        if indexPath.item == 0 {
+//            if presenter.sessionType == .distance {
+//                cell.setup(.distance, presenter.pieceForRow(indexPath.row))
+//            } else {
+//                cell.setup(.time, presenter.pieceForRow(indexPath.row))
+//            }
+//        } 
+//        cell.cellDelegate = self.presenter
+//        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

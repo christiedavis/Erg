@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>353316488130-kr2598a33sp069sr3me0uqbp01kjqu46.apps.googleusercontent.com</string>
+	<string>353316488130-hvdsirml96adot23qulj5hjmofa9shht.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.353316488130-kr2598a33sp069sr3me0uqbp01kjqu46</string>
+	<string>com.googleusercontent.apps.353316488130-hvdsirml96adot23qulj5hjmofa9shht</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCGfK2_oNq6n5RbYs4wzYq_Wce_XBoUQik</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +17,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.starboatingclub.erg</string>
+	<string>star.erg</string>
 	<key>PROJECT_ID</key>
 	<string>ergapp-49f52</string>
 	<key>STORAGE_BUCKET</key>
 	<string>ergapp-49f52.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:353316488130:ios:9ba93937f0025303</string>
+	<string>1:353316488130:ios:91b75cfd6464acc9</string>
 	<key>DATABASE_URL</key>
 	<string>https://ergapp-49f52.firebaseio.com</string>
 </dict>

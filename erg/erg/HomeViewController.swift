@@ -136,23 +136,22 @@ class HomeButtonView: UIView {
     
         switch self.tag {
         case 0:
-            setup("Filter", UIImage(imageLiteralResourceName: "icFilter"))
+            setup("WORKOUTS", #imageLiteral(resourceName: "Workout"))
         case 1:
-            setup("Add", UIImage(imageLiteralResourceName: "icAdd"))
+            setup("ADD", #imageLiteral(resourceName: "Add"))
         case 2:
-            setup("Camera", UIImage(imageLiteralResourceName: "icCamera"))
+            setup("CAMERA", #imageLiteral(resourceName: "Camera"))
         case 3:
-            setup("Predict", UIImage(imageLiteralResourceName: "icComputer"))
+            setup("PREDICT", #imageLiteral(resourceName: "Predictions"))
         case 4:
-            setup("Settings", UIImage(imageLiteralResourceName: "icSettings"))
+            setup("SETTINGS", #imageLiteral(resourceName: "Settings"))
         default:
             break
         }
     }
     
     func setup(_ title: String, _ image: UIImage) {
-     //   imageView.image = image
-        titleLabel.attributedText = title.uppercased().apply(font: UIFont.boldFont(13))
+        self.backgroundColor = UIColor.burntYellow
 //        self.backgroundColor = UIColor.black.withAlphaComponent(0.1)
     }
 }

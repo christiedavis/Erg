@@ -23,13 +23,7 @@ class ItemsTableViewController: BaseViewController {
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet weak var backButton: UIButton!
-    
-    @IBOutlet var filterButton: UIButton!
-    @IBOutlet var sessionPickerView: UIPickerView!
-    
-    @IBOutlet weak var filterTitleLabel: UILabel!
-    @IBOutlet weak var filterValueLabel: UILabel!
-    
+
     @IBOutlet weak var primaryLabel: UILabel!
     @IBOutlet weak var secondaryLabel: UILabel!
     
@@ -44,26 +38,7 @@ class ItemsTableViewController: BaseViewController {
         self.showLoading()
 
         NotificationCenter.default.addObserver(self, selector: #selector(databaseLoaded), name: .databaseLoaded, object: nil)
-        sessionPickerView.delegate = presenter!.datasource
-        sessionPickerView.dataSource = presenter!.datasource
-        sessionPickerView.isHidden = true
-        sessionPickerView.showsSelectionIndicator = true
-        sessionPickerView.backgroundColor = UIColor.black
-    
-        let toolBar = UIToolbar()
-        toolBar.barStyle = UIBarStyle.default
-        toolBar.isTranslucent = true
-        toolBar.tintColor = .red
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector
-            (donePicker))
-        
-        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
-        toolBar.isUserInteractionEnabled = true
-        
+     
         tableView.delegate = presenter!.datasource
         tableView.dataSource = presenter!.datasource
         reloadTable()
@@ -101,8 +76,8 @@ class ItemsTableViewController: BaseViewController {
     
         if typeFilter.selectedSegmentIndex == 0 {
             presenter?.setFilter(nil)
-            primaryLabel.text = "Metres"
-            secondaryLabel.text = "Time"
+            primaryLabel.text = "Time"
+            secondaryLabel.text = "Metres"
             
         } else if typeFilter.selectedSegmentIndex == 1 {
             presenter?.setFilter(.distance)
@@ -117,15 +92,12 @@ class ItemsTableViewController: BaseViewController {
     }
     
     @IBAction func filterButtonTapped(_ sender: Any) {
-//        sessionPickerView.isHidden = false
-//        sessionPickerView.reloadAllComponents()
     }
 }
 
 extension ItemsTableViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
-        sessionPickerView.isHidden = true
         tableView.reloadData()
         
         if tableView.numberOfSections == 0 {

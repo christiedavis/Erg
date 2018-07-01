@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import YXWaveView
 
 class LoginViewController: BaseViewController {
     
@@ -17,6 +18,8 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet var signInButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    
+    @IBOutlet var waveView: UIView!
     
     @IBOutlet weak var forgotPasswordButton: UIButton!
     
@@ -27,8 +30,7 @@ class LoginViewController: BaseViewController {
         passwordField.textContentType = .password
         
         // styling
-        signInButton.addBorder()
-        signupButton.addBorder()
+     
        
         emailField.addBorder()
         emailField.styleText(placeHolderText: "username")
@@ -37,6 +39,15 @@ class LoginViewController: BaseViewController {
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
 
+
+        let waterView = YXWaveView(frame: waveView.frame, color: UIColor.darkBlue)
+        waterView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
+        
+        // Add WaveView
+        self.view.addSubview(waterView)
+        
+        // Start wave
+        waterView.start()
         
         self.dismissLoading()
     }

@@ -46,6 +46,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - Protobuf (3.6.0)
   - SwiftLint (0.25.1)
+  - YXWaveView (0.5.0)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - Firebase/Database
   - GoogleMobileVision/TextDetector
   - SwiftLint
+  - YXWaveView
 
 SPEC CHECKSUMS:
   Firebase: 25ed0412036d7d008568d1fb4d2e9d81ea8a0a2c
@@ -68,7 +70,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
+  YXWaveView: 3570d7244b08effd077a5c63b0693aa44b7cd369
 
-PODFILE CHECKSUM: d398121b2f6979b63be1529b2f83a70e5f476d4c
+PODFILE CHECKSUM: 0b536cd4b23015677a3db0127f0780e402030ac9
 
 COCOAPODS: 1.4.0

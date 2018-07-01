@@ -76,10 +76,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffY-NZ-i00">
-                                <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="527" width="375" height="140"/>
                                 <color key="backgroundColor" red="0.062745098039215685" green="0.20000000000000001" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="EYv-6j-RiE"/>
+                                    <constraint firstAttribute="height" constant="140" id="EYv-6j-RiE"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4Z-nl-5s1">
@@ -116,6 +116,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVn-sc-2yM">
+                                <rect key="frame" x="0.0" y="487" width="375" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Eb-DE-6lh"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.69019607843137254" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -128,6 +135,7 @@
                             <constraint firstItem="FjR-m2-RjP" firstAttribute="top" secondItem="E4Z-nl-5s1" secondAttribute="bottom" constant="16" id="J5l-Wl-TCZ"/>
                             <constraint firstItem="Tpd-gb-1ll" firstAttribute="top" secondItem="MhZ-eH-9dg" secondAttribute="top" constant="42" id="Klf-5V-kuo"/>
                             <constraint firstItem="FjR-m2-RjP" firstAttribute="trailing" secondItem="E4Z-nl-5s1" secondAttribute="trailing" id="L8f-ST-MlY"/>
+                            <constraint firstItem="jVn-sc-2yM" firstAttribute="leading" secondItem="MhZ-eH-9dg" secondAttribute="leading" id="LBH-Qd-8Ir"/>
                             <constraint firstItem="E4Z-nl-5s1" firstAttribute="leading" secondItem="Ncv-aZ-dZ2" secondAttribute="leading" id="MxP-oO-98T"/>
                             <constraint firstItem="Ncv-aZ-dZ2" firstAttribute="trailing" secondItem="EMw-Tm-axV" secondAttribute="trailing" id="Pp0-Jd-Sld"/>
                             <constraint firstItem="ffY-NZ-i00" firstAttribute="leading" secondItem="MhZ-eH-9dg" secondAttribute="leading" id="Qv1-tv-Vma"/>
@@ -141,9 +149,11 @@
                             <constraint firstItem="qcB-cy-cpw" firstAttribute="centerX" secondItem="xdD-69-5r8" secondAttribute="centerX" id="apK-tG-3Ez"/>
                             <constraint firstItem="EMw-Tm-axV" firstAttribute="top" secondItem="8XR-vn-GuC" secondAttribute="bottom" constant="50" id="cZI-d3-hbz"/>
                             <constraint firstItem="E4Z-nl-5s1" firstAttribute="trailing" secondItem="Ncv-aZ-dZ2" secondAttribute="trailing" id="cjz-bf-omS"/>
+                            <constraint firstItem="ffY-NZ-i00" firstAttribute="top" secondItem="jVn-sc-2yM" secondAttribute="bottom" id="edO-9R-KYX"/>
                             <constraint firstItem="Ncv-aZ-dZ2" firstAttribute="top" secondItem="EMw-Tm-axV" secondAttribute="bottom" constant="16" id="gTb-67-mtP"/>
                             <constraint firstItem="8XR-vn-GuC" firstAttribute="top" secondItem="Tpd-gb-1ll" secondAttribute="bottom" constant="12" id="he0-uz-oLM"/>
                             <constraint firstItem="MhZ-eH-9dg" firstAttribute="trailing" secondItem="ffY-NZ-i00" secondAttribute="trailing" id="iZy-w6-QFC"/>
+                            <constraint firstItem="jVn-sc-2yM" firstAttribute="trailing" secondItem="MhZ-eH-9dg" secondAttribute="trailing" id="t1Z-XV-McX"/>
                             <constraint firstItem="Tpd-gb-1ll" firstAttribute="leading" secondItem="MhZ-eH-9dg" secondAttribute="leading" constant="46" id="v9B-cI-RIv"/>
                             <constraint firstItem="MhZ-eH-9dg" firstAttribute="trailing" secondItem="EMw-Tm-axV" secondAttribute="trailing" constant="32" id="w3J-cq-9wE"/>
                             <constraint firstItem="MhZ-eH-9dg" firstAttribute="bottom" secondItem="ffY-NZ-i00" secondAttribute="bottom" id="zXL-hI-XnQ"/>
@@ -157,6 +167,7 @@
                         <outlet property="passwordField" destination="Ncv-aZ-dZ2" id="Ou4-EL-drz"/>
                         <outlet property="signInButton" destination="E4Z-nl-5s1" id="5xx-cD-1Hd"/>
                         <outlet property="signupButton" destination="xdD-69-5r8" id="Vwe-7z-6Lz"/>
+                        <outlet property="waveView" destination="jVn-sc-2yM" id="z7m-jg-yXl"/>
                         <segue destination="4Yr-2n-yjl" kind="show" identifier="SignInFromLogin" id="gt2-CX-5lJ"/>
                         <segue destination="yhL-en-rYE" kind="show" identifier="SignUp" id="mlo-zm-Dl2"/>
                     </connections>

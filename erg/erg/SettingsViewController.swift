@@ -9,12 +9,14 @@
 
 import UIKit
 import MessageUI
+import YXWaveView
 
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet var emailButton: UIButton!
     @IBOutlet var formButton: UIButton!
+    @IBOutlet var waterView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,15 @@ class SettingsViewController: UIViewController {
         logoutButton.layer.cornerRadius = 5
         emailButton.layer.cornerRadius = 5
         formButton.layer.cornerRadius = 5
-        // https://goo.gl/forms/73NLNyTfXk5Vfzwj2
+        
+        let waveView = YXWaveView(frame: waterView.frame, color: UIColor.darkBlue)
+        waveView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
+        
+        // Add WaveView
+        self.view.addSubview(waveView)
+        
+        // Start wave
+        waveView.start()
     }
     
     @IBAction func dismissView(_ sender: Any) {

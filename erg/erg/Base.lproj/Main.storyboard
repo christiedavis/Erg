@@ -609,21 +609,6 @@
                                     <action selector="dismissView:" destination="fkx-Fo-O0B" eventType="touchUpInside" id="gC3-h1-mCR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks8-KE-kI8">
-                                <rect key="frame" x="20" y="592" width="335" height="55"/>
-                                <color key="backgroundColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="5WO-8w-jmc"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="LOG OUT">
-                                    <color key="titleColor" red="0.52549019610000003" green="0.73333333329999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutTapped:" destination="fkx-Fo-O0B" eventType="touchUpInside" id="Ipv-5i-DHy"/>
-                                    <action selector="submittButtonTapped:" destination="5EU-2m-tU6" eventType="touchUpInside" id="l72-ze-yQc"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information about this project, contact christiedavis22@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqg-8B-9zO">
                                 <rect key="frame" x="40" y="195.5" width="295" height="72.5"/>
                                 <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="20"/>
@@ -652,6 +637,7 @@
                                         <connections>
                                             <action selector="didTapBackToLogin:" destination="yhL-en-rYE" eventType="touchUpInside" id="bce-Cm-GVu"/>
                                             <action selector="didTapSignup:" destination="A1i-VZ-B1j" eventType="touchUpInside" id="DHK-16-7ru"/>
+                                            <action selector="logoutTapped:" destination="fkx-Fo-O0B" eventType="touchUpInside" id="lkm-5r-Yog"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9W-ik-mqh">
@@ -717,13 +703,10 @@
                             <constraint firstItem="Thp-IQ-onf" firstAttribute="leading" secondItem="vME-UA-ZYn" secondAttribute="leading" id="Qss-nj-RMK"/>
                             <constraint firstItem="ouq-Oc-xzS" firstAttribute="centerY" secondItem="WSI-Nn-MBR" secondAttribute="centerY" id="X0S-aD-ahI"/>
                             <constraint firstAttribute="trailing" secondItem="zqg-8B-9zO" secondAttribute="trailing" constant="40" id="Ztf-ar-we9"/>
-                            <constraint firstItem="Ks8-KE-kI8" firstAttribute="leading" secondItem="vME-UA-ZYn" secondAttribute="leading" constant="20" id="al1-cE-7fB"/>
                             <constraint firstItem="zqg-8B-9zO" firstAttribute="leading" secondItem="vME-UA-ZYn" secondAttribute="leading" constant="40" id="bBh-aJ-to1"/>
                             <constraint firstItem="Thp-IQ-onf" firstAttribute="leading" secondItem="vME-UA-ZYn" secondAttribute="leading" id="iaR-NJ-kjU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hJt-E1-cVT" secondAttribute="trailing" id="lHY-NZ-jyb"/>
                             <constraint firstAttribute="trailing" secondItem="1Yz-B0-Bip" secondAttribute="trailing" constant="40" id="m0p-EH-pFB"/>
-                            <constraint firstItem="vME-UA-ZYn" firstAttribute="trailing" secondItem="Ks8-KE-kI8" secondAttribute="trailing" constant="20" id="on9-dg-6j8"/>
-                            <constraint firstItem="vME-UA-ZYn" firstAttribute="bottom" secondItem="Ks8-KE-kI8" secondAttribute="bottom" constant="20" id="rJg-iW-dVt"/>
                             <constraint firstItem="ouq-Oc-xzS" firstAttribute="top" secondItem="zqg-8B-9zO" secondAttribute="bottom" constant="18" id="tFq-P2-rJg"/>
                             <constraint firstItem="Thp-IQ-onf" firstAttribute="top" secondItem="3be-Rn-weB" secondAttribute="bottom" id="tSI-LI-80X"/>
                             <constraint firstItem="Thp-IQ-onf" firstAttribute="trailing" secondItem="vME-UA-ZYn" secondAttribute="trailing" id="tT1-Iy-Gfy"/>
@@ -733,7 +716,8 @@
                     <connections>
                         <outlet property="emailButton" destination="R9W-ik-mqh" id="yLP-s3-rfU"/>
                         <outlet property="formButton" destination="vBg-1x-YM5" id="xsw-go-MAh"/>
-                        <outlet property="logoutButton" destination="Ks8-KE-kI8" id="LQP-Hq-zJ4"/>
+                        <outlet property="logoutButton" destination="xPM-UN-ICY" id="hll-QD-SLN"/>
+                        <outlet property="waterView" destination="3be-Rn-weB" id="Sp9-Nr-neb"/>
                         <segue destination="A1i-VZ-B1j" kind="presentation" identifier="SignOut" id="LCb-Ui-e17"/>
                     </connections>
                 </viewController>

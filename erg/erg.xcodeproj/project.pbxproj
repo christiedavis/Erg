@@ -21,11 +21,6 @@
 		8758065920E750D10082B6D9 /* AddWorkoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8758065820E750D10082B6D9 /* AddWorkoutView.xib */; };
 		8758065B20E750DD0082B6D9 /* AddWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8758065A20E750DD0082B6D9 /* AddWorkoutView.swift */; };
 		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
-		87606DC5202CECEC00261CF2 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */; };
-		87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */; };
-		87606DC7202CECEC00261CF2 /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC3202CECEC00261CF2 /* Lora-Italic.ttf */; };
-		87606DC8202CECEC00261CF2 /* Lora-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC4202CECEC00261CF2 /* Lora-BoldItalic.ttf */; };
-		87606DCA202CECFD00261CF2 /* Sofia-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */; };
 		87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCC202CF00600261CF2 /* FontExtensions.swift */; };
 		87606DCF202CFD8200261CF2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCE202CFD8200261CF2 /* Session.swift */; };
 		8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21920D498690044AA9C /* SettingsViewController.swift */; };
@@ -33,6 +28,22 @@
 		8766A22420D624100044AA9C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22320D624100044AA9C /* UIExtensions.swift */; };
 		877D42EF209B2F4B00892A5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877D42EE209B2F4B00892A5C /* Constants.swift */; };
 		878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */; };
+		8782F62920E8AA49008D10D0 /* Averta-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61920E8AA47008D10D0 /* Averta-LightItalic.otf */; };
+		8782F62A20E8AA49008D10D0 /* Averta-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61A20E8AA47008D10D0 /* Averta-ThinItalic.otf */; };
+		8782F62B20E8AA49008D10D0 /* Averta-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61B20E8AA47008D10D0 /* Averta-RegularItalic.otf */; };
+		8782F62C20E8AA49008D10D0 /* Averta-Extrathin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61C20E8AA47008D10D0 /* Averta-Extrathin.otf */; };
+		8782F62D20E8AA49008D10D0 /* Averta-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61D20E8AA47008D10D0 /* Averta-Black.otf */; };
+		8782F62E20E8AA49008D10D0 /* Averta-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61E20E8AA48008D10D0 /* Averta-ExtraBoldItalic.otf */; };
+		8782F62F20E8AA49008D10D0 /* Averta-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F61F20E8AA48008D10D0 /* Averta-BlackItalic.otf */; };
+		8782F63020E8AA49008D10D0 /* Averta-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62020E8AA48008D10D0 /* Averta-Regular.otf */; };
+		8782F63120E8AA49008D10D0 /* Averta-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62120E8AA48008D10D0 /* Averta-Semibold.otf */; };
+		8782F63220E8AA49008D10D0 /* Averta-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62220E8AA48008D10D0 /* Averta-SemiboldItalic.otf */; };
+		8782F63320E8AA49008D10D0 /* Averta-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62320E8AA48008D10D0 /* Averta-Bold.otf */; };
+		8782F63420E8AA49008D10D0 /* Averta-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62420E8AA48008D10D0 /* Averta-BoldItalic.otf */; };
+		8782F63520E8AA49008D10D0 /* Averta-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62520E8AA48008D10D0 /* Averta-ExtraBold.otf */; };
+		8782F63620E8AA49008D10D0 /* Averta-ExtrathinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62620E8AA48008D10D0 /* Averta-ExtrathinItalic.otf */; };
+		8782F63720E8AA49008D10D0 /* Averta-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62720E8AA48008D10D0 /* Averta-Light.otf */; };
+		8782F63820E8AA49008D10D0 /* Averta-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8782F62820E8AA49008D10D0 /* Averta-Thin.otf */; };
 		878655CE203184AF0050D1BD /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655C8203184AE0050D1BD /* SessionCell.swift */; };
 		878655CF203184AF0050D1BD /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878655C9203184AF0050D1BD /* SessionCell.xib */; };
 		878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878655CB203184AF0050D1BD /* HeaderCell.swift */; };
@@ -89,11 +100,6 @@
 		8758065820E750D10082B6D9 /* AddWorkoutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddWorkoutView.xib; sourceTree = "<group>"; };
 		8758065A20E750DD0082B6D9 /* AddWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutView.swift; sourceTree = "<group>"; };
 		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
-		87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
-		87606DC3202CECEC00261CF2 /* Lora-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Italic.ttf"; sourceTree = "<group>"; };
-		87606DC4202CECEC00261CF2 /* Lora-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-BoldItalic.ttf"; sourceTree = "<group>"; };
-		87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia-Regular.ttf"; sourceTree = "<group>"; };
 		87606DCC202CF00600261CF2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		87606DCE202CFD8200261CF2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		8766A21920D498690044AA9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,22 @@
 		8766A22320D624100044AA9C /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		877D42EE209B2F4B00892A5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		878022621EC6E6B200D6A867 /* AddErgDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddErgDataViewController.swift; sourceTree = "<group>"; };
+		8782F61920E8AA47008D10D0 /* Averta-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-LightItalic.otf"; sourceTree = "<group>"; };
+		8782F61A20E8AA47008D10D0 /* Averta-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-ThinItalic.otf"; sourceTree = "<group>"; };
+		8782F61B20E8AA47008D10D0 /* Averta-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-RegularItalic.otf"; sourceTree = "<group>"; };
+		8782F61C20E8AA47008D10D0 /* Averta-Extrathin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Extrathin.otf"; sourceTree = "<group>"; };
+		8782F61D20E8AA47008D10D0 /* Averta-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Black.otf"; sourceTree = "<group>"; };
+		8782F61E20E8AA48008D10D0 /* Averta-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		8782F61F20E8AA48008D10D0 /* Averta-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-BlackItalic.otf"; sourceTree = "<group>"; };
+		8782F62020E8AA48008D10D0 /* Averta-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Regular.otf"; sourceTree = "<group>"; };
+		8782F62120E8AA48008D10D0 /* Averta-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Semibold.otf"; sourceTree = "<group>"; };
+		8782F62220E8AA48008D10D0 /* Averta-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-SemiboldItalic.otf"; sourceTree = "<group>"; };
+		8782F62320E8AA48008D10D0 /* Averta-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Bold.otf"; sourceTree = "<group>"; };
+		8782F62420E8AA48008D10D0 /* Averta-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-BoldItalic.otf"; sourceTree = "<group>"; };
+		8782F62520E8AA48008D10D0 /* Averta-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-ExtraBold.otf"; sourceTree = "<group>"; };
+		8782F62620E8AA48008D10D0 /* Averta-ExtrathinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-ExtrathinItalic.otf"; sourceTree = "<group>"; };
+		8782F62720E8AA48008D10D0 /* Averta-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Light.otf"; sourceTree = "<group>"; };
+		8782F62820E8AA49008D10D0 /* Averta-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Averta-Thin.otf"; sourceTree = "<group>"; };
 		878655C8203184AE0050D1BD /* SessionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCell.swift; sourceTree = "<group>"; };
 		878655C9203184AF0050D1BD /* SessionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionCell.xib; sourceTree = "<group>"; };
 		878655CB203184AF0050D1BD /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
@@ -223,11 +245,22 @@
 		87606DC0202CECBE00261CF2 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				87606DC9202CECFD00261CF2 /* Sofia-Regular.ttf */,
-				87606DC1202CECEC00261CF2 /* Lora-Bold.ttf */,
-				87606DC4202CECEC00261CF2 /* Lora-BoldItalic.ttf */,
-				87606DC3202CECEC00261CF2 /* Lora-Italic.ttf */,
-				87606DC2202CECEC00261CF2 /* Lora-Regular.ttf */,
+				8782F61D20E8AA47008D10D0 /* Averta-Black.otf */,
+				8782F61F20E8AA48008D10D0 /* Averta-BlackItalic.otf */,
+				8782F62320E8AA48008D10D0 /* Averta-Bold.otf */,
+				8782F62420E8AA48008D10D0 /* Averta-BoldItalic.otf */,
+				8782F62520E8AA48008D10D0 /* Averta-ExtraBold.otf */,
+				8782F61E20E8AA48008D10D0 /* Averta-ExtraBoldItalic.otf */,
+				8782F61C20E8AA47008D10D0 /* Averta-Extrathin.otf */,
+				8782F62620E8AA48008D10D0 /* Averta-ExtrathinItalic.otf */,
+				8782F62720E8AA48008D10D0 /* Averta-Light.otf */,
+				8782F61920E8AA47008D10D0 /* Averta-LightItalic.otf */,
+				8782F62020E8AA48008D10D0 /* Averta-Regular.otf */,
+				8782F61B20E8AA47008D10D0 /* Averta-RegularItalic.otf */,
+				8782F62120E8AA48008D10D0 /* Averta-Semibold.otf */,
+				8782F62220E8AA48008D10D0 /* Averta-SemiboldItalic.otf */,
+				8782F62820E8AA49008D10D0 /* Averta-Thin.otf */,
+				8782F61A20E8AA47008D10D0 /* Averta-ThinItalic.otf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -422,17 +455,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8782F62D20E8AA49008D10D0 /* Averta-Black.otf in Resources */,
+				8782F63420E8AA49008D10D0 /* Averta-BoldItalic.otf in Resources */,
+				8782F62E20E8AA49008D10D0 /* Averta-ExtraBoldItalic.otf in Resources */,
+				8782F62C20E8AA49008D10D0 /* Averta-Extrathin.otf in Resources */,
 				8758065920E750D10082B6D9 /* AddWorkoutView.xib in Resources */,
+				8782F63020E8AA49008D10D0 /* Averta-Regular.otf in Resources */,
 				871E05C41EC6E4F7002933E6 /* LaunchScreen.storyboard in Resources */,
-				87606DC6202CECEC00261CF2 /* Lora-Regular.ttf in Resources */,
+				8782F62A20E8AA49008D10D0 /* Averta-ThinItalic.otf in Resources */,
+				8782F63220E8AA49008D10D0 /* Averta-SemiboldItalic.otf in Resources */,
 				878655D2203184AF0050D1BD /* HeaderCell.xib in Resources */,
-				87606DC7202CECEC00261CF2 /* Lora-Italic.ttf in Resources */,
+				8782F62920E8AA49008D10D0 /* Averta-LightItalic.otf in Resources */,
+				8782F63120E8AA49008D10D0 /* Averta-Semibold.otf in Resources */,
+				8782F63520E8AA49008D10D0 /* Averta-ExtraBold.otf in Resources */,
+				8782F62B20E8AA49008D10D0 /* Averta-RegularItalic.otf in Resources */,
 				8758065720E74EB90082B6D9 /* GoogleService-Info.plist in Resources */,
+				8782F62F20E8AA49008D10D0 /* Averta-BlackItalic.otf in Resources */,
 				878655CF203184AF0050D1BD /* SessionCell.xib in Resources */,
-				87606DC5202CECEC00261CF2 /* Lora-Bold.ttf in Resources */,
+				8782F63720E8AA49008D10D0 /* Averta-Light.otf in Resources */,
+				8782F63320E8AA49008D10D0 /* Averta-Bold.otf in Resources */,
 				871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */,
-				87606DC8202CECEC00261CF2 /* Lora-BoldItalic.ttf in Resources */,
-				87606DCA202CECFD00261CF2 /* Sofia-Regular.ttf in Resources */,
+				8782F63820E8AA49008D10D0 /* Averta-Thin.otf in Resources */,
+				8782F63620E8AA49008D10D0 /* Averta-ExtrathinItalic.otf in Resources */,
 				871E05BC1EC6E4F7002933E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

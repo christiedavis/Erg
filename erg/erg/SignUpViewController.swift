@@ -8,24 +8,31 @@
 
 import UIKit
 import FirebaseAuth
+import YXWaveView
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet var waveView: UIView!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
+
+    @IBOutlet var loginButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailField.addBorder()
-        emailField.styleText(placeHolderText: "email")
         emailField.textContentType = .username
-        passwordField.addBorder()
-        passwordField.styleText(placeHolderText: "password")
         passwordField.textContentType = .password
+        emailField.layer.cornerRadius = 3
+        passwordField.layer.cornerRadius = 3
         
-        createAccountButton.addBorder()
+        createAccountButton.layer.cornerRadius = 5
+        createAccountButton.layer.cornerRadius = 5
+
+        let waterView = YXWaveView(frame: waveView.frame, color: UIColor.darkBlue)
+        waterView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
+        self.view.addSubview(waterView)
+        waterView.start()
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }

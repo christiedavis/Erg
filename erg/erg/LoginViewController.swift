@@ -28,17 +28,13 @@ class LoginViewController: BaseViewController {
                 
         emailField.textContentType = .username
         passwordField.textContentType = .password
+        emailField.layer.cornerRadius = 3
+        passwordField.layer.cornerRadius = 3
         
-        // styling
-     
-       
-        emailField.addBorder()
-        emailField.styleText(placeHolderText: "username")
-        passwordField.addBorder()
-        passwordField.styleText(placeHolderText: "password")
-        
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        signInButton.layer.cornerRadius = 5
+        signupButton.layer.cornerRadius = 5
 
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
 
         let waterView = YXWaveView(frame: waveView.frame, color: UIColor.darkBlue)
         waterView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
@@ -129,7 +125,7 @@ class LoginViewController: BaseViewController {
     }
 
     func showAlert(_ message: String) {
-        let alertController = UIAlertController(title: "To Do App", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "iRow", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }

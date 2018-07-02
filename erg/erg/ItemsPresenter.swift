@@ -35,7 +35,7 @@ protocol ItemsPresenterDataDelegate {
 class ItemsPresenter: NSObject {
 
     private var sessions: [Session] {
-        return DatabaseRepo.shared.sessions
+        return DatabaseRepo.shared.sortedSessions
     }
     private var pieces: [String: [Piece]] {
         return DatabaseRepo.shared.pieces

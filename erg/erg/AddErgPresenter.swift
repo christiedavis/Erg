@@ -56,6 +56,14 @@ class AddErgPresenter: NSObject, AddErgPresenterDelegate {
     
     func updatePiece(pieceDTO: PieceDTO) {
         self.piece = pieceDTO
+        updateSaveButtonValidation()
     }
     
+    func updateSaveButtonValidation() {
+        if piece.rate != "", piece.distance != "", piece.time != "", piece.aveSplit != "" {
+            viewDelegate?.setButtonValid(true)
+        } else {
+            viewDelegate?.setButtonValid(false)
+        }
+    }
 }

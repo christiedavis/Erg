@@ -17,6 +17,7 @@ protocol AddErgViewControllerDelegate: class {
     var segmentIndex: Int { get }
     var presenter: AddErgPresenterDelegate? { get set }
     
+    func setButtonValid(_ valid: Bool)
     func reloadTable()
     func dismissView()
 }
@@ -44,8 +45,7 @@ class AddErgDataViewController: UIViewController {
 //        noPiecesStepper.tag = Int(noPiecesStepper.value)
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSession)), animated: true)
         
-//        noPiecesLabel.text = "\(tableView.numberOfSections)"
-
+        self.setButtonValid(false)
         addSessionView.cellDelegate = presenter
         submitButton.layer.cornerRadius = 5
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
@@ -100,16 +100,22 @@ class AddErgDataViewController: UIViewController {
 extension AddErgDataViewController: AddErgViewControllerDelegate {
     
     func reloadTable() {
-//        tableView.isHidden = false
-//        tableView.reloadData()
-//        noPiecesLabel.text = "\(tableView.numberOfSections)"
         if let presenter = presenter {
 
             if presenter.sessionType == .distance {
                 self.addSessionView.setup(.distance, presenter.piece)
             } else {
                 self.addSessionView.setup(.time, presenter.piece)
+            }
         }
+    }
+    
+    func setButtonValid(_ valid: Bool) {
+        self.submitButton.isEnabled = valid
+        if valid {
+            self.submitButton.alpha = 1.0
+        } else {
+            self.submitButton.alpha = 0.5
         }
     }
 }

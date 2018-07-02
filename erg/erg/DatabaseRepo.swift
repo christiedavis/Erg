@@ -15,7 +15,7 @@ class DatabaseRepo {
     static var shared: DatabaseRepo = DatabaseRepo()
     
     private var user: User!
-    public private(set) var sessions: [Session] = []
+    private var sessions: [Session] = []
     public private(set) var pieces: [String: [Piece]] = [:]
     private var ref: DatabaseReference!
     private var sessionsDatabaseHandle: DatabaseHandle!
@@ -39,6 +39,17 @@ class DatabaseRepo {
         pieceReference.removeObserver(withHandle: piecesDatabaseHandle)
     }
     
+    var sortedSessions: [Session] {
+        return self.sessions.sorted { (first, second) -> Bool in
+            guard
+                let firstDate = first.date,
+                let secondDate = second.date
+                else {
+                    return false
+            }
+            return firstDate.compare(secondDate) == ComparisonResult.orderedDescending
+        }
+    }
     
     func addWorkoutToDatabase(workout: WorkoutDTO) {
         let sessionDBO = workout.sessionDBO

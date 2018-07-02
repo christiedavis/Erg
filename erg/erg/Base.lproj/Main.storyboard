@@ -713,20 +713,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnA-ow-bba">
-                                <rect key="frame" x="0.0" y="226" width="375" height="32"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="32"/>
                                 <color key="backgroundColor" red="0.062745098039215685" green="0.20000000000000001" blue="0.56470588235294117" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="QwJ-Ed-Gdd"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some awesome copy that sets the tone and explains why I’m showing you this ish below" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdg-p8-6Je">
-                                <rect key="frame" x="24" y="96" width="261" height="58"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdg-p8-6Je">
+                                <rect key="frame" x="24" y="98" width="261" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="16"/>
                                 <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lh2-KU-hUh">
-                                <rect key="frame" x="0.0" y="258" width="375" height="409"/>
+                                <rect key="frame" x="0.0" y="178" width="375" height="489"/>
                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98431372549019602" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gt-fk-HS1">
@@ -762,31 +762,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikd-qP-gFQ">
-                                <rect key="frame" x="95" y="234" width="28" height="15"/>
+                                <rect key="frame" x="95" y="153.5" width="28" height="15"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zt-Wg-U8D">
-                                <rect key="frame" x="168" y="234" width="39" height="15"/>
+                                <rect key="frame" x="168" y="153.5" width="39" height="15"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-ki-MSD">
-                                <rect key="frame" x="327.5" y="234" width="37.5" height="14.5"/>
+                                <rect key="frame" x="327.5" y="153.5" width="37.5" height="14.5"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-5J-2AV">
-                                <rect key="frame" x="261.5" y="234" width="25.5" height="14.5"/>
+                                <rect key="frame" x="261.5" y="153.5" width="25.5" height="14.5"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PzM-WT-1gV">
-                                <rect key="frame" x="24" y="178" width="203" height="33"/>
+                                <rect key="frame" x="24" y="98" width="203" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="gWe-S8-oN8"/>
                                 </constraints>
@@ -821,7 +821,7 @@
                             <constraint firstItem="vqf-44-iwq" firstAttribute="trailing" secondItem="7tm-ki-MSD" secondAttribute="trailing" constant="10" id="bwN-sF-jQu"/>
                             <constraint firstItem="vqf-44-iwq" firstAttribute="trailing" secondItem="z84-kg-tPN" secondAttribute="trailing" constant="10" id="c2J-gu-nlf"/>
                             <constraint firstItem="V1l-9F-OaE" firstAttribute="centerX" secondItem="MPc-bg-edM" secondAttribute="centerX" id="c6h-29-R57"/>
-                            <constraint firstItem="wdg-p8-6Je" firstAttribute="top" secondItem="V1l-9F-OaE" secondAttribute="bottom" constant="10" id="gP0-bz-INo"/>
+                            <constraint firstItem="wdg-p8-6Je" firstAttribute="top" secondItem="V1l-9F-OaE" secondAttribute="bottom" constant="12" id="gP0-bz-INo"/>
                             <constraint firstItem="wdg-p8-6Je" firstAttribute="leading" secondItem="vqf-44-iwq" secondAttribute="leading" constant="24" id="hnd-Oh-aXI"/>
                             <constraint firstItem="z84-kg-tPN" firstAttribute="centerX" secondItem="MPc-bg-edM" secondAttribute="centerXWithinMargins" id="jMh-O2-9du"/>
                             <constraint firstItem="6zt-Wg-U8D" firstAttribute="top" secondItem="U8n-5J-2AV" secondAttribute="top" id="jmX-wq-ncg"/>
@@ -832,7 +832,7 @@
                             <constraint firstItem="dnA-ow-bba" firstAttribute="leading" secondItem="vqf-44-iwq" secondAttribute="leading" id="tbh-Jw-tRy"/>
                             <constraint firstItem="4r7-36-kkb" firstAttribute="leading" secondItem="vqf-44-iwq" secondAttribute="leading" constant="20" id="uQk-0i-Jo9"/>
                             <constraint firstItem="Ikd-qP-gFQ" firstAttribute="top" secondItem="6zt-Wg-U8D" secondAttribute="top" id="uuA-vX-F2U"/>
-                            <constraint firstItem="PzM-WT-1gV" firstAttribute="top" secondItem="wdg-p8-6Je" secondAttribute="bottom" constant="24" id="vDK-Mb-czT"/>
+                            <constraint firstItem="PzM-WT-1gV" firstAttribute="top" secondItem="wdg-p8-6Je" secondAttribute="bottom" id="vDK-Mb-czT"/>
                             <constraint firstItem="vqf-44-iwq" firstAttribute="bottom" secondItem="Lh2-KU-hUh" secondAttribute="bottom" id="vjL-3L-BTW"/>
                             <constraint firstItem="dnA-ow-bba" firstAttribute="top" secondItem="PzM-WT-1gV" secondAttribute="bottom" constant="16" id="x8r-fR-I0s"/>
                             <constraint firstItem="z84-kg-tPN" firstAttribute="leading" secondItem="vqf-44-iwq" secondAttribute="leading" constant="10" id="zgq-GY-9jB"/>

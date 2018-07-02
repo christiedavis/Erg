@@ -30,4 +30,8 @@ internal class BaseViewController: UIViewController {
         loadingView?.stopAnimating()
         loadingView?.isHidden = true
     }
+    
+    func showAlert(_ alertVc: UIAlertController) {
+        self.show(alertVc, sender: self)
+    }
 }

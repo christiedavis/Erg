@@ -50,8 +50,10 @@ class DatabaseRepo {
     }
     
     func delete(_ workout: WorkoutDTO?) {
-//        sessionReference.value(forKey: workout.session.id)
-//        item.ref.removeValue()
+        if let id = workout?.session.id {
+            pieceReference.child(id).removeValue()
+            sessionReference.child(id).removeValue()
+        }
     }
     
     func signOut() -> Error? {

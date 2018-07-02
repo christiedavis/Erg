@@ -45,8 +45,8 @@ class HeaderCell: UITableViewCell {
                 
             } else {
     //            default layout
-                subtitle?.text = "\(first.distance) m" //.apply(font: UIFont.regularFont(16))
-                titleLabel?.text = "\(first.time) mins"//.apply(font: UIFont.regularFont(16))
+                subtitle?.text = "\(first.time) mins"//.apply(font: UIFont.regularFont(16))
+                titleLabel?.text = "\(first.distance) m" //.apply(font: UIFont.regularFont(16))
             }
         }
         layoutCell()

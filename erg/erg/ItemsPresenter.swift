@@ -24,11 +24,12 @@ protocol ItemsPresenterDataDelegate {
     
     var sessionPickerValueArray: [String] { get }
     var filter: SessionType? { get }
-    
     var numberOfSessions: Int { get }
+    
     func rowsForSession(_ sessionIndex: Int) -> Int
     func setSessionTypeFromPicker(_ rowSelected: Int)
     func workoutViewModelForSection(_ row: Int) -> WorkoutDTO?
+    func deleteWorkout(_ section: Int)
 }
 
 class ItemsPresenter: NSObject {
@@ -117,12 +118,17 @@ class ItemsPresenter: NSObject {
     
     func workoutViewModelForSection(_ section: Int) -> WorkoutDTO? {
 
-        let sessionId = filteredSessions[section].id ?? ""
-        let pieceArray = pieces[sessionId] ?? []
-        let session = filteredSessions[section]
+        if section < filteredSessions.count && section >= 0 {
         
-        let workoutDto = WorkoutDTO(pieceArray, session)
-        return workoutDto
+            let sessionId = filteredSessions[section].id ?? ""
+            let pieceArray = pieces[sessionId] ?? []
+            let session = filteredSessions[section]
+            
+            let workoutDto = WorkoutDTO(pieceArray, session)
+            return workoutDto
+        } else {
+            return nil
+        }
     }
 }
 
@@ -132,6 +138,21 @@ extension ItemsPresenter: ItemsPresenterDataDelegate {
         sessionViewFilter = sessionPickerValueArray[rowSelected]
         filterTitle = sessionPickerValueArray[rowSelected]
         viewDelegate?.reloadTable()
+    }
+    
+    func deleteWorkout(_ section: Int) {
+        let alert = UIAlertController(title: "Are you sure?", message: "Deleting this session can not be undone", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
+            
+        }))
+        alert.addAction( UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] (action) in
+            let workout = self?.workoutViewModelForSection(section)
+            DatabaseRepo.shared.delete(workout)
+        }))
+ 
+        
+        self.viewDelegate?.showAlert(alert)
+       
     }
 }
 

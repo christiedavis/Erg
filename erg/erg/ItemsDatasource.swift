@@ -69,8 +69,8 @@ extension ItemsDatasource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let workout = presenter?.workoutViewModelForSection(indexPath.row)
-            DatabaseRepo.shared.delete(workout)
+            presenter?.deleteWorkout(indexPath.section)
+           
         }
     }
     

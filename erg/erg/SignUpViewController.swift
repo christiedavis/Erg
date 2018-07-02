@@ -29,6 +29,8 @@ class SignUpViewController: UIViewController {
         createAccountButton.layer.cornerRadius = 5
         createAccountButton.layer.cornerRadius = 5
 
+        self.view.layoutIfNeeded()
+        
         let waterView = YXWaveView(frame: waveView.frame, color: UIColor.darkBlue)
         waterView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
         self.view.addSubview(waterView)

@@ -13,6 +13,8 @@ protocol ItemsViewControllerDelegate: class {
     func addWorkoutToView(workout: WorkoutDTO)
     func reloadTable()
     func signOut()
+    func showAlert(_ alertVc: UIAlertController) 
+
     
     func showLoading()
     func dismissLoading()

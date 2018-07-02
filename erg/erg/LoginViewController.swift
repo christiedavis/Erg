@@ -35,7 +35,9 @@ class LoginViewController: BaseViewController {
         signupButton.layer.cornerRadius = 5
 
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
-
+        
+        self.view.layoutIfNeeded()
+        
         let waterView = YXWaveView(frame: waveView.frame, color: UIColor.darkBlue)
         waterView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
         

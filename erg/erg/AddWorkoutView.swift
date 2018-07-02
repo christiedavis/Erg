@@ -68,7 +68,7 @@ class AddWorkoutView: BaseView {
         
         rateInput?.keyboardType = .numberPad
         distanceInput.keyboardType = .numberPad
-        splitInput.keyboardType = .decimalPad
+        splitInput.keyboardType = .numberPad
         rateInput?.delegate = self
         distanceInput.delegate = self
         splitInput.delegate = self
@@ -128,13 +128,13 @@ extension AddWorkoutView: UITextFieldDelegate {
         if textField.tag == Constants.InputTags.hourInput || textField.tag == Constants.InputTags.minsInput || textField.tag == Constants.InputTags.secInput {
             
             let minsToSave: String = self.minuteInout.text ?? "00"
-            let secondsToSave: String = self.secondInput.text ?? "00"
+            let secondsToSave: String? = self.secondInput.text
 
             if let myHours = self.hoursInput.text, !myHours.isEmpty {
-                pieceDto?.time = "\(myHours):\(minsToSave).\(secondsToSave)"
+                pieceDto?.time = "\(myHours):\(minsToSave):\(secondsToSave ?? "00")"
 
             } else {
-                pieceDto?.time = "\(minsToSave).\(secondsToSave)"
+                pieceDto?.time = "\(minsToSave):\(secondsToSave ?? "00")"
 
             }
         }

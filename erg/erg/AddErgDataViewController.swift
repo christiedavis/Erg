@@ -40,9 +40,7 @@ class AddErgDataViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-//        tableView.dataSource = presenter!.datasource
-//        tableView.delegate = presenter!.datasource
-//        noPiecesStepper.tag = Int(noPiecesStepper.value)
+        
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveSession)), animated: true)
         
         self.setButtonValid(false)
@@ -63,13 +61,6 @@ class AddErgDataViewController: UIViewController {
     }
     
     @IBAction func stepperTapped(_ sender: Any) {
-        if noPiecesStepper.tag > Int(noPiecesStepper.value) {
-            // they've tapped -
-//            presenter?.removePiece()
-        } else {
-//            presenter?.addPiece()
-        }
-        noPiecesStepper.tag = Int(noPiecesStepper.value)
     }
     
     @objc

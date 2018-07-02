@@ -34,16 +34,12 @@ protocol ItemsPresenterDataDelegate {
 
 class ItemsPresenter: NSObject {
 
-//    private var user: User!
     private var sessions: [Session] {
         return DatabaseRepo.shared.sessions
     }
     private var pieces: [String: [Piece]] {
         return DatabaseRepo.shared.pieces
     }
-//    private varref: DatabaseReference!
-//    private var se ssionsDatabaseHandle: DatabaseHandle!
-//    private var piecesDatabaseHandle: DatabaseHandle!
 
     var viewDelegate: ItemsViewControllerDelegate?
     var datasource: ItemsDatasource
@@ -150,9 +146,7 @@ extension ItemsPresenter: ItemsPresenterDataDelegate {
             DatabaseRepo.shared.delete(workout)
         }))
  
-        
         self.viewDelegate?.showAlert(alert)
-       
     }
 }
 

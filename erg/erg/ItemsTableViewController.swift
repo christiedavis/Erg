@@ -55,12 +55,11 @@ class ItemsTableViewController: BaseViewController {
     
     @objc
     func databaseLoaded() {
-        tableView.reloadData()
+        reloadTable()
         self.dismissLoading()
     }
 
     // MARK: - Table view data source
-
     @IBAction func backAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -101,23 +100,16 @@ extension ItemsTableViewController: ItemsViewControllerDelegate {
     
     func reloadTable() {
         tableView.reloadData()
-        
+
         if tableView.numberOfSections == 0 {
             tableView.isHidden = true
             errorMessageLabel.text = "You have no workouts logged yet"
             errorMessageLabel.isHidden = false
         } else {
+
             tableView.isHidden = false
             errorMessageLabel.isHidden = true
         }
-        
-//        if let filter = self.presenter?.filterTitle {
-//            filterValueLabel.attributedText = filter.apply(font: UIFont.regularFont(14))
-//            filterTitleLabel.attributedText = "Current Filter:".apply(font: UIFont.boldFont(14))
-//        } else {
-//            filterValueLabel.text = ""
-//            filterTitleLabel.text = ""
-//        }
     }
     
     func addWorkoutToView(workout: WorkoutDTO) {

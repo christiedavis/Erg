@@ -34,19 +34,19 @@ class HeaderCell: UITableViewCell {
 
             if let filterType = filterType {
                 if filterType == .distance {
-                    titleLabel?.text = "\(first.distance) m"//.apply(font: UIFont.regularFont(16))
-                    subtitle.text = "\(first.time) mins"
+                    titleLabel?.text = "\(first.distance)"//.apply(font: UIFont.regularFont(16))
+                    subtitle.text = "\(first.time)"
                     
                 } else {
                     // time
-                    titleLabel?.text = "\(first.time) mins" //.apply(font: UIFont.regularFont(16))
-                    subtitle?.text = "\(first.distance) m" //.apply(font: UIFont.regularFont(16))
+                    titleLabel?.text = "\(first.time)" //.apply(font: UIFont.regularFont(16))
+                    subtitle?.text = "\(first.distance)" //.apply(font: UIFont.regularFont(16))
                 }
                 
             } else {
     //            default layout
-                subtitle?.text = "\(first.time) mins"//.apply(font: UIFont.regularFont(16))
-                titleLabel?.text = "\(first.distance) m" //.apply(font: UIFont.regularFont(16))
+                subtitle?.text = "\(first.time)"//.apply(font: UIFont.regularFont(16))
+                titleLabel?.text = "\(first.distance)" //.apply(font: UIFont.regularFont(16))
             }
         }
         layoutCell()

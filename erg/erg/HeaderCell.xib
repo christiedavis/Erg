@@ -23,31 +23,31 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vR9-OL-wey">
-                        <rect key="frame" x="8" y="12" width="32.5" height="21.5"/>
+                        <rect key="frame" x="8" y="12" width="30" height="21.5"/>
                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                         <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF1-IX-HET">
-                        <rect key="frame" x="95" y="12" width="27.5" height="18.5"/>
+                        <rect key="frame" x="95" y="12" width="24.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                         <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mz-hp-UvR">
-                        <rect key="frame" x="175" y="12" width="52.5" height="18.5"/>
+                        <rect key="frame" x="175" y="12" width="49" height="17.5"/>
                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                         <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGD-9p-5JO">
-                        <rect key="frame" x="270" y="12" width="40" height="18.5"/>
+                        <rect key="frame" x="268" y="12" width="37" height="17.5"/>
                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                         <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3o-ty-Rmh">
-                        <rect key="frame" x="350" y="12" width="40" height="18.5"/>
+                        <rect key="frame" x="353" y="12" width="37" height="17.5"/>
                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                         <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -57,14 +57,18 @@
                 <constraints>
                     <constraint firstItem="AF1-IX-HET" firstAttribute="top" secondItem="vR9-OL-wey" secondAttribute="top" id="7J3-WL-tQs"/>
                     <constraint firstItem="8mz-hp-UvR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="175" id="8sW-gf-enH"/>
+                    <constraint firstItem="KGD-9p-5JO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8mz-hp-UvR" secondAttribute="trailing" id="EPC-Gp-f3e"/>
                     <constraint firstItem="AF1-IX-HET" firstAttribute="centerY" secondItem="8mz-hp-UvR" secondAttribute="centerY" id="GIa-3O-1Bb"/>
-                    <constraint firstAttribute="trailing" secondItem="KGD-9p-5JO" secondAttribute="trailing" constant="88" id="GpQ-em-t2Y"/>
                     <constraint firstItem="KGD-9p-5JO" firstAttribute="top" secondItem="AF1-IX-HET" secondAttribute="top" id="Gup-2d-EWm"/>
+                    <constraint firstAttribute="trailing" secondItem="KGD-9p-5JO" secondAttribute="leading" constant="130" id="IQw-EV-suE"/>
+                    <constraint firstItem="8mz-hp-UvR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AF1-IX-HET" secondAttribute="trailing" constant="2" id="Sjh-PB-s4h"/>
                     <constraint firstItem="8mz-hp-UvR" firstAttribute="top" secondItem="AF1-IX-HET" secondAttribute="top" id="Xof-Nm-lbk"/>
                     <constraint firstAttribute="trailing" secondItem="R3o-ty-Rmh" secondAttribute="trailing" constant="8" id="aFC-U1-I5m"/>
                     <constraint firstItem="R3o-ty-Rmh" firstAttribute="top" secondItem="KGD-9p-5JO" secondAttribute="top" id="evS-rz-cjJ"/>
                     <constraint firstAttribute="bottom" secondItem="vR9-OL-wey" secondAttribute="bottom" constant="12" id="iS2-Ow-rem"/>
+                    <constraint firstItem="AF1-IX-HET" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vR9-OL-wey" secondAttribute="trailing" id="pCo-wM-YWh"/>
                     <constraint firstItem="AF1-IX-HET" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="95" id="pMc-eC-WJh"/>
+                    <constraint firstItem="R3o-ty-Rmh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KGD-9p-5JO" secondAttribute="trailing" id="sLF-FK-lpU"/>
                     <constraint firstItem="vR9-OL-wey" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vRC-gD-lNo"/>
                     <constraint firstItem="vR9-OL-wey" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="xRq-1E-lvJ"/>
                 </constraints>

@@ -60,13 +60,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="secs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAr-va-NhJ">
-                    <rect key="frame" x="312" y="34.5" width="30" height="18.5"/>
+                    <rect key="frame" x="294" y="34.5" width="30" height="18.5"/>
                     <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                     <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uXa-fU-dun">
-                    <rect key="frame" x="120" y="18" width="44" height="50"/>
+                    <rect key="frame" x="102" y="18" width="44" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="AWg-oA-wIb"/>
                         <constraint firstAttribute="width" constant="44" id="Bdz-vS-rL7"/>
@@ -76,7 +76,7 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-va-NBp">
-                    <rect key="frame" x="189" y="18" width="44" height="50"/>
+                    <rect key="frame" x="171" y="18" width="44" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="FLG-pN-mXv"/>
@@ -87,19 +87,19 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="hrs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXy-JP-yNO">
-                    <rect key="frame" x="166" y="34" width="21.5" height="18.5"/>
+                    <rect key="frame" x="148" y="34" width="21.5" height="18.5"/>
                     <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                     <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="mins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byG-g0-f1V">
-                    <rect key="frame" x="235" y="34" width="33.5" height="18.5"/>
+                    <rect key="frame" x="217" y="34" width="33.5" height="18.5"/>
                     <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                     <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sXs-pK-8dU">
-                    <rect key="frame" x="266" y="18.5" width="44" height="50"/>
+                    <rect key="frame" x="248" y="18.5" width="44" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="LEO-PP-u9L"/>
@@ -112,13 +112,14 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="zV3-e4-8ac" firstAttribute="trailing" secondItem="PAr-va-NhJ" secondAttribute="trailing" constant="25" id="1ja-XM-8bu"/>
                 <constraint firstItem="PAr-va-NhJ" firstAttribute="leading" secondItem="sXs-pK-8dU" secondAttribute="trailing" constant="2" id="3IS-h8-q5a"/>
                 <constraint firstItem="hFC-uV-ekj" firstAttribute="centerY" secondItem="LCg-zY-Aq7" secondAttribute="centerY" id="4y7-5F-ooh"/>
                 <constraint firstItem="byG-g0-f1V" firstAttribute="centerY" secondItem="kqO-va-NBp" secondAttribute="centerY" id="6i6-B5-Uay"/>
                 <constraint firstItem="kqO-va-NBp" firstAttribute="centerY" secondItem="LCg-zY-Aq7" secondAttribute="centerY" id="AOj-YB-JS8"/>
                 <constraint firstItem="kqO-va-NBp" firstAttribute="leading" secondItem="uXa-fU-dun" secondAttribute="trailing" constant="25" id="GUi-hj-ALM"/>
                 <constraint firstItem="PAr-va-NhJ" firstAttribute="centerY" secondItem="sXs-pK-8dU" secondAttribute="centerY" id="JzH-LJ-XRc"/>
-                <constraint firstItem="uXa-fU-dun" firstAttribute="leading" secondItem="LCg-zY-Aq7" secondAttribute="leading" constant="120" id="L1B-Ac-49q"/>
+                <constraint firstItem="uXa-fU-dun" firstAttribute="leading" secondItem="LCg-zY-Aq7" secondAttribute="leading" priority="700" constant="120" id="L1B-Ac-49q"/>
                 <constraint firstItem="sXs-pK-8dU" firstAttribute="leading" secondItem="kqO-va-NBp" secondAttribute="trailing" constant="33" id="PUf-tf-7As"/>
                 <constraint firstItem="byG-g0-f1V" firstAttribute="leading" secondItem="kqO-va-NBp" secondAttribute="trailing" constant="2" id="df1-Jr-yqJ"/>
                 <constraint firstItem="sXs-pK-8dU" firstAttribute="centerY" secondItem="LCg-zY-Aq7" secondAttribute="centerY" id="jEO-8M-dmk"/>

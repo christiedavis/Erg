@@ -192,15 +192,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il9-2g-6my">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il9-2g-6my">
                                 <rect key="frame" x="44" y="62" width="287" height="34"/>
                                 <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUU-kN-ip5">
-                                <rect key="frame" x="104" y="550" width="184" height="19"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUU-kN-ip5">
+                                <rect key="frame" x="95.5" y="550" width="184" height="19"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -255,31 +254,43 @@
                                     <action selector="didTapSignUp:" destination="yhL-en-rYE" eventType="touchUpInside" id="who-6N-JSS"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BRk-8y-3y6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aUU-kN-ip5" firstAttribute="centerX" secondItem="vIl-43-uzm" secondAttribute="centerX" id="4MO-hm-hKi"/>
                             <constraint firstItem="hbi-d5-vBC" firstAttribute="leading" secondItem="lqP-65-NVm" secondAttribute="leading" id="Aqw-uD-DuH"/>
                             <constraint firstItem="zWA-W3-g3s" firstAttribute="trailing" secondItem="il9-2g-6my" secondAttribute="trailing" constant="44" id="DUh-2p-ib2"/>
                             <constraint firstItem="zWA-W3-g3s" firstAttribute="bottom" secondItem="vIl-43-uzm" secondAttribute="bottom" constant="38" id="H6f-oM-yDA"/>
                             <constraint firstItem="lqP-65-NVm" firstAttribute="leading" secondItem="HG5-i3-Ii8" secondAttribute="leading" id="MNs-kF-vJW"/>
                             <constraint firstItem="il9-2g-6my" firstAttribute="leading" secondItem="zWA-W3-g3s" secondAttribute="leading" constant="44" id="Ojv-2T-XXY"/>
+                            <constraint firstItem="aUU-kN-ip5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hbi-d5-vBC" secondAttribute="bottom" constant="20" id="PPj-0m-iEm"/>
                             <constraint firstItem="il9-2g-6my" firstAttribute="top" secondItem="zWA-W3-g3s" secondAttribute="top" constant="42" id="TOg-4g-Usr"/>
                             <constraint firstItem="HG5-i3-Ii8" firstAttribute="leading" secondItem="zWA-W3-g3s" secondAttribute="leading" constant="32" id="Tyv-QV-Mxq"/>
                             <constraint firstItem="lqP-65-NVm" firstAttribute="top" secondItem="HG5-i3-Ii8" secondAttribute="bottom" constant="16" id="UwY-yh-1Ke"/>
                             <constraint firstItem="zWA-W3-g3s" firstAttribute="trailing" secondItem="HG5-i3-Ii8" secondAttribute="trailing" constant="32" id="Vqv-9i-Hf1"/>
                             <constraint firstItem="vIl-43-uzm" firstAttribute="leading" secondItem="hbi-d5-vBC" secondAttribute="leading" id="ZJo-S4-Npq"/>
+                            <constraint firstItem="zWA-W3-g3s" firstAttribute="trailing" secondItem="BRk-8y-3y6" secondAttribute="trailing" id="fvJ-Ds-j4k"/>
+                            <constraint firstItem="BRk-8y-3y6" firstAttribute="leading" secondItem="zWA-W3-g3s" secondAttribute="leading" id="hMV-ZE-lpY"/>
                             <constraint firstItem="hbi-d5-vBC" firstAttribute="top" secondItem="lqP-65-NVm" secondAttribute="bottom" constant="16" id="kRB-km-5hg"/>
                             <constraint firstItem="lqP-65-NVm" firstAttribute="width" secondItem="HG5-i3-Ii8" secondAttribute="width" id="nL8-8g-Si3"/>
+                            <constraint firstItem="BRk-8y-3y6" firstAttribute="top" secondItem="zWA-W3-g3s" secondAttribute="top" id="pYf-mo-pPJ"/>
                             <constraint firstItem="lqP-65-NVm" firstAttribute="trailing" secondItem="HG5-i3-Ii8" secondAttribute="trailing" id="pam-5y-VvL"/>
                             <constraint firstItem="vIl-43-uzm" firstAttribute="trailing" secondItem="hbi-d5-vBC" secondAttribute="trailing" id="pi3-9t-lqR"/>
+                            <constraint firstItem="zWA-W3-g3s" firstAttribute="bottom" secondItem="BRk-8y-3y6" secondAttribute="bottom" id="tCj-Id-nch"/>
                             <constraint firstItem="hbi-d5-vBC" firstAttribute="trailing" secondItem="lqP-65-NVm" secondAttribute="trailing" id="vFV-Ja-zQM"/>
-                            <constraint firstItem="HG5-i3-Ii8" firstAttribute="top" secondItem="il9-2g-6my" secondAttribute="bottom" constant="100" id="z4n-6R-0Bf"/>
+                            <constraint firstItem="vIl-43-uzm" firstAttribute="top" secondItem="aUU-kN-ip5" secondAttribute="bottom" constant="16" id="yAL-e0-E12"/>
+                            <constraint firstItem="HG5-i3-Ii8" firstAttribute="top" secondItem="il9-2g-6my" secondAttribute="bottom" priority="700" constant="100" id="z4n-6R-0Bf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zWA-W3-g3s"/>
                     </view>
                     <connections>
                         <outlet property="createAccountButton" destination="hbi-d5-vBC" id="hVc-GG-phH"/>
                         <outlet property="emailField" destination="HG5-i3-Ii8" id="GeA-6O-ogg"/>
+                        <outlet property="loadingView" destination="BRk-8y-3y6" id="vVf-Ey-F3x"/>
                         <outlet property="loginButton" destination="vIl-43-uzm" id="3jI-DN-NCo"/>
                         <outlet property="passwordField" destination="lqP-65-NVm" id="0Lu-qa-8g8"/>
                         <segue destination="4Yr-2n-yjl" kind="show" identifier="SignInFromSignUp" id="xma-wZ-3LB"/>
@@ -1148,6 +1159,6 @@
         <image name="icClose" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gt2-CX-5lJ"/>
+        <segue reference="xma-wZ-3LB"/>
     </inferredMetricsTieBreakers>
 </document>

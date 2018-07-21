@@ -57,6 +57,10 @@ class DatabaseRepo {
         
         sessionID.setValue(sessionDBO)
         pieceReference.child(sessionID.key).setValue(workout.pieces)
+  
+        //TODO: check if i need to update this to go here
+//        NotificationCenter.default.post(name: .databaseLoaded, object: nil)
+
     
     }
     

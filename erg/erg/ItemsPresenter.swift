@@ -11,6 +11,14 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
+enum OrderingByType: Int {
+    case date
+    case time
+    case distance
+    case split
+    case rate
+}
+
 protocol ItemsPresenterViewDelegate: class {
     var viewDelegate: ItemsViewControllerDelegate? { get set }
     var datasource: ItemsDatasource { get }
@@ -18,6 +26,7 @@ protocol ItemsPresenterViewDelegate: class {
     
     func addWorkoutToDatabase(workout: WorkoutDTO)
     func setFilter(_ sessionType: SessionType?)
+    func setOrderingBy(_ orderType: OrderingByType)
 }
 
 protocol ItemsPresenterDataDelegate {
@@ -44,13 +53,13 @@ class ItemsPresenter: NSObject {
     var viewDelegate: ItemsViewControllerDelegate?
     var datasource: ItemsDatasource
     
+    var orderByType: OrderingByType = .date
     var filterTitle: String? = ""
     var filter: SessionType? {
         return viewFilter
     }
     private var viewFilter: SessionType? {
         didSet {
-            NSLog("hi")
             sessionViewFilter = nil 
         }
     }
@@ -152,6 +161,10 @@ extension ItemsPresenter: ItemsPresenterDataDelegate {
 
 extension ItemsPresenter: ItemsPresenterViewDelegate {
     
+    func setOrderingBy(_ orderType: OrderingByType) {
+        self.orderByType = orderType
+    }
+
     func setFilter(_ sessionType: SessionType?) {
         self.viewFilter = sessionType
         viewDelegate?.reloadTable()

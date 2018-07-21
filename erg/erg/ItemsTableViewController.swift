@@ -73,6 +73,11 @@ class ItemsTableViewController: BaseViewController {
         }
     }
     
+    func headerLabelTapped(tag: Int) {
+        self.presenter.setOrderingBy(OrderingByType(rawValue: tag))
+    }
+    
+    
     @IBAction func segmentValueChanged(_ sender: Any) {
     
         if typeFilter.selectedSegmentIndex == 0 {

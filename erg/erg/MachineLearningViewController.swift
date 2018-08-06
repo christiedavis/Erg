@@ -27,14 +27,44 @@ struct Column {
 
 class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    @IBOutlet var errorMessage: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+
+    private(set) lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+    
+    private lazy var captureSession: AVCaptureSession = {
+        let session = AVCaptureSession()
+        session.sessionPreset = AVCaptureSession.Preset.photo
+        
+        guard
+            let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+            let input = try? AVCaptureDeviceInput(device: backCamera)
+            else {
+                return session
+        }
+        
+        session.addInput(input)
+        return session
+    }()
+    
   
     var textDetector: GMVDetector?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: [:])
-//        self.takePhoto()
+        
+        cameraLayer.videoGravity = .resizeAspectFill
+        view.layer.addSublayer(cameraLayer)
+        
+        // register to receive buffers from the camera
+        let videoOutput = AVCaptureVideoDataOutput()
+//        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
+        self.captureSession.addOutput(videoOutput)
+        
+        // begin the session
+        self.captureSession.startRunning()
+        self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: [:])
+        self.takePhoto()
 
     }
     
@@ -64,12 +94,14 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
             
             let textBlockFeatures = self.textDetector?.features(in: image, options: [:])
             self.processImageData(textBlockFeatures)
+            
         }
     }
 
     private func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
         let processor = StringProcessor()
         processor.processImageData(textBlockFeatures)
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -81,9 +113,9 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
             if response {
                 if UIImagePickerController.isSourceTypeAvailable(.camera) == false {
                     self.simulatorPhoto()
-//                    let alert =  UIAlertController(title: "ERROR", message: "No camera available", preferredStyle: UIAlertControllerStyle.alert)
-//                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
-//                    alert.show(self, sender: self)
+                    let alert =  UIAlertController(title: "ERROR", message: "No camera available", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
+                    alert.show(self, sender: self)
                     return
                 }
                 
@@ -99,4 +131,18 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GoToAddWorkout" {
+            if let destinationVc = segue.destination as? AddErgDataViewController {
+                
+                let piece = PieceDTO(rowId: 0)
+                destinationVc.presenter = AddErgPresenter(piece: piece)
+                destinationVc.presenter?.viewDelegate = destinationVc
+            
+            }
+        }
+    }
 }
+
+

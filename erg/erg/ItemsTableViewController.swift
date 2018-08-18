@@ -74,7 +74,7 @@ class ItemsTableViewController: BaseViewController {
     }
     
     func headerLabelTapped(tag: Int) {
-        self.presenter.setOrderingBy(OrderingByType(rawValue: tag))
+        self.presenter?.setOrderingBy(OrderingByType(rawValue: tag)!)
     }
     
     

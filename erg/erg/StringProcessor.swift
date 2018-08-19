@@ -9,11 +9,35 @@
 import Foundation
 import GoogleMobileVision
 
+struct TextValue {
+    var value: String?
+    var type: InputStringType?
+    
+    var point1: CGPoint?
+    var point2: CGPoint?
+    var point3: CGPoint?
+    var point4: CGPoint?
+    
+    init(value: String?, type: InputStringType?, cornerPoints: [NSValue]?) {
+        
+        self.value = value
+        self.type = type
+        let cgarray = cornerPoints?.map { (value: NSValue) -> CGPoint in
+            return value.cgPointValue
+        }
+        point1 = cgarray?[0]
+        point2 = cgarray?[1]
+        point3 = cgarray?[2]
+        point4 = cgarray?[3]
+    }
+}
+
 enum InputStringType {
     case other
     case time
     case distance
     case rate
+    case split
 }
 
 extension String {
@@ -88,7 +112,7 @@ class StringProcessor {
         }
     }
     
-    func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
+    func processImageData(_ textBlockFeatures:  [GMVFeature]?) -> PieceDTO {
 
         var lineArray: [String] = []
         var lineArrayProcessed: [String] = []
@@ -100,6 +124,8 @@ class StringProcessor {
         var xArray: [Int] = []
         var columnData: [Column] = []
         
+        var arrayOfData: [TextValue] = []
+        
         // Iterate over each text block.
         textBlockFeatures?.forEach({ (feature: GMVFeature) in
             
@@ -108,46 +134,88 @@ class StringProcessor {
                 NSLog("Text Block: %@", NSStringFromCGRect(textBlock.bounds));
                 NSLog(" Text Block: language: \(textBlock.language) , value: \(textBlock.value)")
                 
+                
+//                if let firstLine = textBlock.lines.first, let isFirstANumber = self.processLine(firstLine) {
                 // For each text block, iterate over each line.
-                textBlock.lines.forEach({ (textLine: GMVTextLineFeature) in
-                    
-                    lineArray.append(textLine.value)
-                    if let newLine = self.processLine(textLine) {
+                    textBlock.lines.forEach({ (textLine: GMVTextLineFeature) in
                         
-                        lineArrayProcessed.append(newLine.value)
-                        var line = Line(line: newLine.value, words: [])
-                        
-                        NSLog("Text Line: %@", NSStringFromCGRect(newLine.bounds));
-                        NSLog("text line: lang: %@ value: %@", newLine.language, newLine.value);
-                        
-                        // For each line, iterate over each word.
-                        newLine.elements.forEach({ (textElement: GMVTextElementFeature) in
-                            columnArray.append(Int(textElement.bounds.minX))
-                            let inputType = self.determineInputType(textElement)
-                            switch inputType {
-                            case .rate:
-                                NSLog("RATE \(textElement.value)")
+                        lineArray.append(textLine.value)
+                        if let newLine = self.processLine(textLine) {
+                            
+                            lineArrayProcessed.append(newLine.value)
+                            var line = Line(line: newLine.value, words: [])
+                            
+                            NSLog("Text Line: %@", NSStringFromCGRect(newLine.bounds));
+                            NSLog("text line: lang: %@ value: %@", newLine.language, newLine.value);
+                            
+                            // For each line, iterate over each word.
+                            newLine.elements.forEach({ (textElement: GMVTextElementFeature) in
                                 
-                            case .distance:
-                                NSLog("DISTANCE \(textElement.value)")
+                                
+                                
+                                
+                                columnArray.append(Int(textElement.bounds.minX))
+                                let inputType = self.determineInputType(textElement)
+                                let value = TextValue(value: textElement.value, type: inputType, cornerPoints: textElement.cornerPoints)
+                                arrayOfData.append(value)
+                                switch inputType {
+                                case .rate:
+                                    NSLog("RATE \(textElement.value)")
+                                    
+                                case .distance:
+                                    NSLog("DISTANCE \(textElement.value)")
 
-                            case .time:
-                                NSLog("TIME \(textElement.value)")
+                                case .time:
+                                    NSLog("TIME \(textElement.value)")
 
-                            case .other:
-                                NSLog("OTHER \(textElement.value)")
-                            }
-                            wordArray.append(textElement.value)
-                            line.words.append(textElement.value)
-                        })
-                        allArray.append(line)
-                        
-                    }
-                })
+                                case .split:
+                                    NSLog("TIME \(textElement.value)")
+
+                                case .other:
+                                    NSLog("OTHER \(textElement.value)")
+                                }
+                                
+                                wordArray.append(textElement.value)
+                                line.words.append(textElement.value)
+                            })
+                            allArray.append(line)
+                            
+                        }
+                    })
+//                }
             }
         })
         
         NSLog("\(allArray)")
         NSLog("\(columnArray)")
+        
+        return self.processDataArray(arrayOfData)
+    }
+    
+    private func processDataArray(_ array: [TextValue]) -> PieceDTO {
+        
+        let timeArray = array.filter({ $0.type == .time })
+        let distanceArray = array.filter({ $0.type == .distance })
+        let rateArray = array.filter({ $0.type == .rate })
+
+        
+        var distance = "", split = "", rate = "", time = ""
+        var distancey: CGFloat = 1000, splity: CGFloat = 1000, ratey: CGFloat = 0, timey: CGFloat = 1000
+
+        let maxxxx = distanceArray.max { (val1, val2) -> Bool in
+            return (Int(val1.value ?? "0") ?? 0) <= (Int(val2.value ?? "0") ?? 0)
+        }
+        
+        for rateValue in rateArray {
+            
+            if (rateValue.point1?.y)! > ratey {
+                rate =  rateValue.value ?? ""
+            }
+        }
+        
+        
+        let newPeice = PieceDTO(rowId: 0, distance: maxxxx?.value ?? "", time: "", rate: rate, aveSplit: "")
+        return newPeice
+        
     }
 }

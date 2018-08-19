@@ -77,6 +77,13 @@ class AddWorkoutView: BaseView {
         hoursInput.delegate = self
         
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
+        
+        if piece.distance != "" {
+            distanceInput.text = piece.distance
+        }
+        if piece.rate != "" {
+            rateInput?.text = piece.rate
+        }
     }
     
     @objc

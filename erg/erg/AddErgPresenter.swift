@@ -25,13 +25,13 @@ class AddErgPresenter: NSObject, AddErgPresenterDelegate {
         return SessionType(rawValue: viewDelegate?.segmentIndex ?? 0) ?? .distance
     }
     
-    init(piece: PieceDTO) {
-        self.piece = piece
+    init(piece: PieceDTO?) {
+        self.piece = piece ?? PieceDTO(rowId: 0)
         super.init()
     }
     
     init(itemsControllerDelegate: ItemsViewControllerDelegate) {
-       piece = PieceDTO(rowId: 0)
+        piece = PieceDTO(rowId: 0)
         super.init()
         self.delegate = itemsControllerDelegate
     }

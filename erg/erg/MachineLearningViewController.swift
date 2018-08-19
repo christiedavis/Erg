@@ -29,6 +29,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
+    private var pieceDTO: PieceDTO?
 
     private(set) lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
     
@@ -100,7 +102,7 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
 
     private func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
         let processor = StringProcessor()
-        processor.processImageData(textBlockFeatures)
+        self.pieceDTO = processor.processImageData(textBlockFeatures)
         
     }
     
@@ -136,8 +138,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         if segue.identifier == "GoToAddWorkout" {
             if let destinationVc = segue.destination as? AddErgDataViewController {
                 
-                let piece = PieceDTO(rowId: 0)
-                destinationVc.presenter = AddErgPresenter(piece: piece)
+//                let piece = PieceDTO(rowId: 0)
+                destinationVc.presenter = AddErgPresenter(piece: pieceDTO)
                 destinationVc.presenter?.viewDelegate = destinationVc
             
             }

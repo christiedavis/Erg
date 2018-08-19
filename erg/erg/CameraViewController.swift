@@ -31,26 +31,29 @@ class CameraViewController: BaseViewController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 //        fatalError("init(coder:) has not been implemented")
-        videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")//    dispatch_queue_create("VideoDataOutputQueue", DispatchQue  ue)
 
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set up default camera settings.
-        self.session = AVCaptureSession()
-        self.session?.sessionPreset = AVCaptureSession.Preset.medium;
-        self.updateCameraSelection()
+//        self.session = AVCaptureSession()
+//        self.session?.sessionPreset = AVCaptureSession.Preset.medium;
+//        self.updateCameraSelection()
         
         // Set up video processing pipeline.
-        self.setUpVideoProcessing()
-        
-        // Set up camera preview.
-        self.setUpCameraPreview()
-        
-        // Initialize text detector.
-        self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: nil)
+//        self.setUpVideoProcessing()
+//        
+//        // Set up camera preview.
+//        self.setUpCameraPreview()
+//        
+//        // Initialize text detector.
+//        self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: nil)
         
     }
     
@@ -268,16 +271,16 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         }
             
     func setUpCameraPreview() {
-        if let session = self.session {
-            self.previewLayer = AVCaptureVideoPreviewLayer(session: session)
-            self.previewLayer?.backgroundColor = UIColor.white.cgColor
-            self.previewLayer?.videoGravity = .resizeAspect
-            let rootLayer: CALayer? = self.placeHolderView?.layer
-            
-            rootLayer?.masksToBounds = true
-            self.previewLayer?.frame = (rootLayer?.bounds)!
-            rootLayer?.addSublayer(self.previewLayer!)
-            }
+//        if let session = self.session {
+//            self.previewLayer = AVCaptureVideoPreviewLayer(session: session)
+//            self.previewLayer?.backgroundColor = UIColor.white.cgColor
+//            self.previewLayer?.videoGravity = .resizeAspect
+//            let rootLayer: CALayer? = self.placeHolderView?.layer
+//
+//            rootLayer?.masksToBounds = true
+//            self.previewLayer?.frame = (rootLayer?.bounds)!
+//            rootLayer?.addSublayer(self.previewLayer!)
+//            }
     }
                 
         func updateCameraSelection() {

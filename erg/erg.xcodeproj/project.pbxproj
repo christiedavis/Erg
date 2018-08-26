@@ -63,13 +63,6 @@
 		87CF635620DB919C0030F744 /* DatabaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF635520DB919C0030F744 /* DatabaseRepo.swift */; };
 		87CF635820DBA2BB0030F744 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF635720DBA2BB0030F744 /* Extensions.swift */; };
 		87E9CAFD2032874200CDF755 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E9CAFC2032874200CDF755 /* ArrayExtension.swift */; };
-		87FF620F210D57ED00BF1D7B /* VisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF620E210D57EC00BF1D7B /* VisionService.swift */; };
-		87FF6215210D581800BF1D7B /* BoxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF6210210D581700BF1D7B /* BoxService.swift */; };
-		87FF6216210D581800BF1D7B /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF6211210D581700BF1D7B /* Image+Extension.swift */; };
-		87FF6217210D581800BF1D7B /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF6212210D581700BF1D7B /* MusicService.swift */; };
-		87FF6218210D581800BF1D7B /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF6213210D581700BF1D7B /* Array+Extensions.swift */; };
-		87FF6219210D581800BF1D7B /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF6214210D581700BF1D7B /* OCRService.swift */; };
-		87FF621B210D593400BF1D7B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FF621A210D593400BF1D7B /* CameraController.swift */; };
 		FFF3A9DD99EF72337C9B79BD /* Pods_erg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CCB5CE723B2FEAD15EC34FB /* Pods_erg.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,13 +143,6 @@
 		87CF635720DBA2BB0030F744 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		87E7A2CD20E59ACA00322E00 /* erg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = erg.entitlements; sourceTree = "<group>"; };
 		87E9CAFC2032874200CDF755 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
-		87FF620E210D57EC00BF1D7B /* VisionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisionService.swift; sourceTree = "<group>"; };
-		87FF6210210D581700BF1D7B /* BoxService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxService.swift; sourceTree = "<group>"; };
-		87FF6211210D581700BF1D7B /* Image+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
-		87FF6212210D581700BF1D7B /* MusicService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicService.swift; sourceTree = "<group>"; };
-		87FF6213210D581700BF1D7B /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
-		87FF6214210D581700BF1D7B /* OCRService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
-		87FF621A210D593400BF1D7B /* CameraController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,13 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				8766A22120D60D250044AA9C /* CameraViewController.swift */,
-				87FF621A210D593400BF1D7B /* CameraController.swift */,
-				87FF620E210D57EC00BF1D7B /* VisionService.swift */,
-				87FF6213210D581700BF1D7B /* Array+Extensions.swift */,
-				87FF6210210D581700BF1D7B /* BoxService.swift */,
-				87FF6211210D581700BF1D7B /* Image+Extension.swift */,
-				87FF6212210D581700BF1D7B /* MusicService.swift */,
-				87FF6214210D581700BF1D7B /* OCRService.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
 				8766A21920D498690044AA9C /* SettingsViewController.swift */,
 			);
@@ -608,27 +587,20 @@
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				878B56962063338A00E72849 /* BaseViewController.swift in Sources */,
-				87FF6216210D581800BF1D7B /* Image+Extension.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
 				8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,
-				87FF621B210D593400BF1D7B /* CameraController.swift in Sources */,
 				8749D6C120C878860090E68B /* HomeViewController.swift in Sources */,
 				878022641EC6E6B200D6A867 /* AddErgDataViewController.swift in Sources */,
 				87B5CF0E1F8DE9C000FE12E8 /* LoginViewController.swift in Sources */,
-				87FF6218210D581800BF1D7B /* Array+Extensions.swift in Sources */,
 				878B5698206343AB00E72849 /* StringExtensions.swift in Sources */,
 				87606DCF202CFD8200261CF2 /* Session.swift in Sources */,
-				87FF6219210D581800BF1D7B /* OCRService.swift in Sources */,
 				878B569A2063443500E72849 /* DateExtensions.swift in Sources */,
 				874A69AF20323F690009A83D /* Piece.swift in Sources */,
-				87FF6215210D581800BF1D7B /* BoxService.swift in Sources */,
 				878655CE203184AF0050D1BD /* SessionCell.swift in Sources */,
-				87FF620F210D57ED00BF1D7B /* VisionService.swift in Sources */,
-				87FF6217210D581800BF1D7B /* MusicService.swift in Sources */,
 				8758065B20E750DD0082B6D9 /* AddWorkoutView.swift in Sources */,
 				871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */,
 				8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */,

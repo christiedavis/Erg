@@ -88,6 +88,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerEditedImage]
         self.imageView.image = image as? UIImage
+        // todo add image classifier here
+        
         let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
         self.processImageData(textBlockFeatures)
         
@@ -97,18 +99,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
-    }
-    
-    private func simulatorPhoto() {
-        let image = UIImage(named: "imgErg")
-        DispatchQueue.main.async {
-            self.imageView.contentMode = .scaleAspectFit
-            self.imageView.image = image
-            
-            let textBlockFeatures = self.textDetector?.features(in: image, options: [:])
-            self.processImageData(textBlockFeatures)
-            
-        }
     }
 
     private func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
@@ -125,7 +115,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             if response {
                 if UIImagePickerController.isSourceTypeAvailable(.camera) == false {
-                    self.simulatorPhoto()
                     let alert =  UIAlertController(title: "ERROR", message: "No camera available", preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: nil))
                     alert.show(self, sender: self)
@@ -138,9 +127,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                 picker.sourceType = .camera
                 picker.modalPresentationStyle = .fullScreen
                 self.present(picker, animated: true, completion: nil)
-                
-            } else {
-                self.simulatorPhoto()
             }
         }
     }

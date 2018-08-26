@@ -33,6 +33,8 @@ class AddErgDataViewController: UIViewController {
     
     @IBOutlet var addSessionView: AddWorkoutView!
     
+    weak var dissmissableCompletetionView: Dismissable?
+    
     var presenter: AddErgPresenterDelegate?
     
     var segmentIndex: Int {
@@ -74,6 +76,7 @@ class AddErgDataViewController: UIViewController {
 
     @IBAction func submittButtonTapped(_ sender: Any) {
         presenter?.saveSession()
+        dissmissableCompletetionView?.shouldDismissOnAppear = true
         dismissView()
     }
     

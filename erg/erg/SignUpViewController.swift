@@ -21,8 +21,11 @@ class SignUpViewController: BaseViewController {
         super.viewDidLoad()
         self.showLoading()
         
-        emailField.textContentType = .username
-        passwordField.textContentType = .password
+        if #available(iOS 11.0, *) {
+            emailField.textContentType = .username
+            passwordField.textContentType = .password
+
+        }
         emailField.layer.cornerRadius = 3
         passwordField.layer.cornerRadius = 3
         

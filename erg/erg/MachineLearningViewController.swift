@@ -25,14 +25,22 @@ struct Column {
     var value: [String] = []
 }
 
-class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+protocol Dismissable: class {
+    var shouldDismissOnAppear: Bool { get set }
+
+}
+
+class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, Dismissable {
     
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     private var pieceDTO: PieceDTO?
+    
+    var shouldDismissOnAppear: Bool = false
 
     private(set) lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+    
     
     private lazy var captureSession: AVCaptureSession = {
         let session = AVCaptureSession()
@@ -72,6 +80,9 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if self.shouldDismissOnAppear == true {
+            dismissView(self)
+        }
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -141,7 +152,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
 //                let piece = PieceDTO(rowId: 0)
                 destinationVc.presenter = AddErgPresenter(piece: pieceDTO)
                 destinationVc.presenter?.viewDelegate = destinationVc
-            
+                destinationVc.dissmissableCompletetionView = self
+                
             }
         }
     }

@@ -15,6 +15,7 @@ import ARKit
 import GoogleMobileVision
 import Vision
 
+
 struct Line {
     var line: String = ""
     var words: [String] = []
@@ -36,6 +37,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var imageView: UIImageView!
     
     private var pieceDTO: PieceDTO?
+    
+    @IBOutlet var classificationLabel: UILabel!
     
     var shouldDismissOnAppear: Bool = false
 
@@ -88,14 +91,72 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerEditedImage]
         self.imageView.image = image as? UIImage
-        // todo add image classifier here
+       
+        imageClassification(image: image as? UIImage)
         
+
         let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
         self.processImageData(textBlockFeatures)
-        
+
         picker.dismiss(animated: true, completion: nil)
+
     }
    
+    func imageClassification(image: UIImage?) {
+        
+        guard let classificationRequest = self.classificationRequest(), let image = image, let ciiMahe = CIImage(image: image) else {
+            return
+        }
+        
+        
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
+//            VNImageRequestHandler(cgImage: <#T##CGImage#>, options: <#T##[VNImageOption : Any]#>)
+            do {
+                try handler.perform([classificationRequest])
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func classificationRequest() -> VNCoreMLRequest? {
+        
+        if let model = try? VNCoreMLModel(for: MobileNet().model) {
+        
+            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                self?.processClassifications(for: request, error: error)
+            })
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        }
+        return nil
+    }
+    
+    func processClassifications(for request: VNRequest, error: Error?) {
+        DispatchQueue.main.async {
+            guard let results = request.results else {
+                print("Unable to classify image.\n\(error!.localizedDescription)")
+                return
+            }
+            // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+            let classifications = results as! [VNClassificationObservation]
+            print(results.count)
+            self.classificationLabel.text = classifications.first?.identifier
+       
+            
+        }
+            
+    }
+    
+    
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
@@ -144,5 +205,4 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         }
     }
 }
-
 

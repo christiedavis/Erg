@@ -23,6 +23,7 @@
 		87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DBD202C67F600261CF2 /* ColorExtensions.swift */; };
 		87606DCD202CF00600261CF2 /* FontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCC202CF00600261CF2 /* FontExtensions.swift */; };
 		87606DCF202CFD8200261CF2 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87606DCE202CFD8200261CF2 /* Session.swift */; };
+		87653EB72133E2D800381646 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 87653EB62133E2D800381646 /* MobileNet.mlmodel */; };
 		8766A21A20D498690044AA9C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A21920D498690044AA9C /* SettingsViewController.swift */; };
 		8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22120D60D250044AA9C /* CameraViewController.swift */; };
 		8766A22420D624100044AA9C /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8766A22320D624100044AA9C /* UIExtensions.swift */; };
@@ -102,6 +103,7 @@
 		87606DBD202C67F600261CF2 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		87606DCC202CF00600261CF2 /* FontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtensions.swift; sourceTree = "<group>"; };
 		87606DCE202CFD8200261CF2 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		87653EB62133E2D800381646 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 		8766A21920D498690044AA9C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8766A22120D60D250044AA9C /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		8766A22320D624100044AA9C /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 		8766A21D20D49EC70044AA9C /* tbc */ = {
 			isa = PBXGroup;
 			children = (
+				87653EB62133E2D800381646 /* MobileNet.mlmodel */,
 				8766A22120D60D250044AA9C /* CameraViewController.swift */,
 				8793A47320C61BEE00770C58 /* MachineLearningViewController.swift */,
 				8766A21920D498690044AA9C /* SettingsViewController.swift */,
@@ -585,6 +588,7 @@
 				8766A22420D624100044AA9C /* UIExtensions.swift in Sources */,
 				8793A47420C61BEE00770C58 /* MachineLearningViewController.swift in Sources */,
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
+				87653EB72133E2D800381646 /* MobileNet.mlmodel in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				878B56962063338A00E72849 /* BaseViewController.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,

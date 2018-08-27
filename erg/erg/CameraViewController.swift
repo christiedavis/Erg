@@ -11,9 +11,7 @@ import AVFoundation
 import Vision
 
 class CameraViewController: BaseViewController {
-    
-    @IBOutlet var placeHolderView: UIView?
-    @IBOutlet var overlayView: UIView?
+
     var requests = [VNRequest]()
     @IBOutlet var imageView: UIImageView!
 

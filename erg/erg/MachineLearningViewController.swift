@@ -15,6 +15,7 @@ import ARKit
 import GoogleMobileVision
 import Vision
 
+
 struct Line {
     var line: String = ""
     var words: [String] = []
@@ -89,6 +90,7 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         let image = info[UIImagePickerControllerEditedImage]
         self.imageView.image = image as? UIImage
         // todo add image classifier here
+        let classifier = Erg
         
         let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
         self.processImageData(textBlockFeatures)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D27ED83C7C6E73D54D248C8 /* Pods_ergTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F97E9478BF077297B5DD12E /* Pods_ergTests.framework */; };
+		870BA2442133E1770047352A /* Erg-Row-Classifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 870BA2432133E1770047352A /* Erg-Row-Classifier.mlmodel */; };
 		871E05B71EC6E4F7002933E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871E05B61EC6E4F7002933E6 /* AppDelegate.swift */; };
 		871E05BC1EC6E4F7002933E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871E05BA1EC6E4F7002933E6 /* Main.storyboard */; };
 		871E05C11EC6E4F7002933E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871E05C01EC6E4F7002933E6 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		7E5B8C580A6CF8432D275161 /* Pods-ergTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ergTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ergTests/Pods-ergTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7DD50F3F7701A26348AE83 /* Pods-erg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-erg.debug.xcconfig"; path = "Pods/Target Support Files/Pods-erg/Pods-erg.debug.xcconfig"; sourceTree = "<group>"; };
 		8610F3D26038AE783E702777 /* Pods-ergTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ergTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ergTests/Pods-ergTests.release.xcconfig"; sourceTree = "<group>"; };
+		870BA2432133E1770047352A /* Erg-Row-Classifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "Erg-Row-Classifier.mlmodel"; sourceTree = "<group>"; };
 		871E05B31EC6E4F6002933E6 /* erg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = erg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871E05B61EC6E4F7002933E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		871E05BB1EC6E4F7002933E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				878022661EC6E99F00D6A867 /* Cells */,
 				878022611EC6E59800D6A867 /* ViewControllers */,
 				871E05B61EC6E4F7002933E6 /* AppDelegate.swift */,
+				870BA2432133E1770047352A /* Erg-Row-Classifier.mlmodel */,
 				871E05BA1EC6E4F7002933E6 /* Main.storyboard */,
 				871E05C01EC6E4F7002933E6 /* Assets.xcassets */,
 				871E05C21EC6E4F7002933E6 /* LaunchScreen.storyboard */,
@@ -585,6 +588,7 @@
 				8766A22420D624100044AA9C /* UIExtensions.swift in Sources */,
 				8793A47420C61BEE00770C58 /* MachineLearningViewController.swift in Sources */,
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
+				870BA2442133E1770047352A /* Erg-Row-Classifier.mlmodel in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				878B56962063338A00E72849 /* BaseViewController.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,

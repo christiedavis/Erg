@@ -116,13 +116,9 @@ class StringProcessor {
 
         var lineArray: [String] = []
         var lineArrayProcessed: [String] = []
-
         var wordArray: [String] = []
-        
         var allArray: [Line] = []
         
-        var xArray: [Int] = []
-        var columnData: [Column] = []
         
         var arrayOfData: [TextValue] = []
         
@@ -133,7 +129,6 @@ class StringProcessor {
                 
                 NSLog("Text Block: %@", NSStringFromCGRect(textBlock.bounds));
                 NSLog(" Text Block: language: \(textBlock.language) , value: \(textBlock.value)")
-                
                 
 //                if let firstLine = textBlock.lines.first, let isFirstANumber = self.processLine(firstLine) {
                 // For each text block, iterate over each line.
@@ -150,9 +145,6 @@ class StringProcessor {
                             
                             // For each line, iterate over each word.
                             newLine.elements.forEach({ (textElement: GMVTextElementFeature) in
-                                
-                                
-                                
                                 
                                 columnArray.append(Int(textElement.bounds.minX))
                                 let inputType = self.determineInputType(textElement)
@@ -182,7 +174,6 @@ class StringProcessor {
                             
                         }
                     })
-//                }
             }
         })
         
@@ -194,13 +185,12 @@ class StringProcessor {
     
     private func processDataArray(_ array: [TextValue]) -> PieceDTO {
         
-        let timeArray = array.filter({ $0.type == .time })
+//        let timeArray = array.filter({ $0.type == .time })
         let distanceArray = array.filter({ $0.type == .distance })
         let rateArray = array.filter({ $0.type == .rate })
-
         
-        var distance = "", split = "", rate = "", time = ""
-        var distancey: CGFloat = 1000, splity: CGFloat = 1000, ratey: CGFloat = 0, timey: CGFloat = 1000
+        var rate = ""//, time = "", distance = "", split = ""
+        var  ratey: CGFloat = 0//, //timey: CGFloat = 1000, distancey: CGFloat = 1000, splity: CGFloat = 1000,
 
         let maxxxx = distanceArray.max { (val1, val2) -> Bool in
             return (Int(val1.value ?? "0") ?? 0) <= (Int(val2.value ?? "0") ?? 0)
@@ -212,7 +202,6 @@ class StringProcessor {
                 rate =  rateValue.value ?? ""
             }
         }
-        
         
         let newPeice = PieceDTO(rowId: 0, distance: maxxxx?.value ?? "", time: "", rate: rate, aveSplit: "")
         return newPeice

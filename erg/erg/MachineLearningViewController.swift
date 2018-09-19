@@ -21,11 +21,6 @@ struct Line {
     var words: [String] = []
 }
 
-struct Column {
-    var xPos: Int = 0
-    var value: [String] = []
-}
-
 protocol Dismissable: class {
     var shouldDismissOnAppear: Bool { get set }
 
@@ -94,7 +89,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
        
         imageClassification(image: image as? UIImage)
         
-
         let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
         self.processImageData(textBlockFeatures)
 
@@ -150,7 +144,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
             let classifications = results as! [VNClassificationObservation]
             print(results.count)
             self.classificationLabel.text = classifications.first?.identifier
-       
             
         }
             

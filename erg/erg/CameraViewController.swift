@@ -13,9 +13,9 @@ import Vision
 class CameraViewController: BaseViewController {
 
     var requests = [VNRequest]()
+    
     @IBOutlet var imageView: UIImageView!
 
-    
     var session = AVCaptureSession()
 
     func startTextDetection() {
@@ -28,6 +28,8 @@ class CameraViewController: BaseViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
+   
+    
     func detectTextHandler(request: VNRequest, error: Error?) {
         guard let observations = request.results else {
             print("no result")
@@ -42,9 +44,7 @@ class CameraViewController: BaseViewController {
                 guard let rg = region else {
                     continue
                 }
-                
                 self.highlightWord(box: rg)
-                
                 if let boxes = region?.characterBoxes {
                     for characterBox in boxes {
                         self.highlightLetters(box: characterBox)
@@ -134,12 +134,7 @@ class CameraViewController: BaseViewController {
         outline.borderColor = UIColor.blue.cgColor
         
         imageView.layer.addSublayer(outline)
-}
-
-
-
-
-
+    }
 }
 
 
@@ -154,7 +149,7 @@ extension CameraViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
         var requestOptions:[VNImageOption : Any] = [:]
         
         if let camData = CMGetAttachment(sampleBuffer, kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, nil) {
-            requestOptions = [.cameraIntrinsics:camData]
+            requestOptions = [.cameraIntrinsics: camData]
         }
         
         let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: CGImagePropertyOrientation(rawValue: 6)!, options: requestOptions)

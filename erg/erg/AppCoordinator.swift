@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FlowCoordinatorProtocol {
-    
+    func enterNextFlow(navigationController: UINavigationController, sender: Any?)
 }
 
 protocol AppCoordinatorDelegate: class {
@@ -28,6 +28,9 @@ class AppCoordinator {
     private var window: UIWindow?
     fileprivate weak var navigationController: UINavigationController?
     
+    fileprivate lazy var loginCoordinator: FlowCoordinatorProtocol = LoginCoordinator()
+    fileprivate lazy var dashboardCoordinator: FlowCoordinatorProtocol = DashboardCoordinator()
+    
     func enterNextFlow(currentCoordinator: FlowCoordinatorProtocol?, sender: Any?, with internalViewController: UINavigationController? = nil) {
         // check for access, log in
         
@@ -41,8 +44,8 @@ class AppCoordinator {
             navigationController = navController
             navigationController?.pushViewController(LaunchViewController(), animated: false)
             
-            determineLaunchNavigation()
-            return
+           // from launch
+            self.enterNextFlow(currentCoordinator: currentCoordinator, sender: sender)
         }
         
         if let navController = internalViewController ?? self.navigationController {
@@ -51,20 +54,14 @@ class AppCoordinator {
     }
     
     private func enterNextFlow(currentCoordinator: FlowCoordinatorProtocol?, navigationController: UINavigationController, sender: Any?) {
+        if RepositoryFactory.shared.authenticationRepo.isSignedIn {
+            self.dashboardCoordinator.enterNextFlow(navigationController: navigationController, sender: sender)
+        } else {
+            self.loginCoordinator.enterNextFlow(navigationController: navigationController, sender: sender)
+        }
     }
 }
 
 extension AppCoordinator: AppCoordinatorDelegate {
     
-}
-
-extension AppCoordinator {
-    // Detirmine launch navigation
-    func determineLaunchNavigation() {
-
-        guard let navController = self.navigationController else {
-
-            return
-        }
-    }
 }

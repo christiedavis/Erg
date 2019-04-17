@@ -69,6 +69,9 @@
 		F587541D2266F5860090211F /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F587541B2266F5860090211F /* LaunchViewController.xib */; };
 		F587541F2266F7AB0090211F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587541E2266F7AB0090211F /* AuthenticationService.swift */; };
 		F58754222266F9FE0090211F /* RepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58754212266F9FE0090211F /* RepositoryFactory.swift */; };
+		F5875424226731930090211F /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5875423226731930090211F /* LoginCoordinator.swift */; };
+		F5875426226732A30090211F /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5875425226732A30090211F /* DashboardCoordinator.swift */; };
+		F5875428226735160090211F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5875427226735160090211F /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +156,9 @@
 		F587541B2266F5860090211F /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		F587541E2266F7AB0090211F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		F58754212266F9FE0090211F /* RepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryFactory.swift; sourceTree = "<group>"; };
+		F5875423226731930090211F /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		F5875425226732A30090211F /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		F5875427226735160090211F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				87B5CF0B1F8DE9C000FE12E8 /* LoginViewController.swift */,
+				F5875427226735160090211F /* LoginViewController.xib */,
 				87B5CF091F8DE9C000FE12E8 /* SignUpViewController.swift */,
 			);
 			name = Login;
@@ -390,6 +397,8 @@
 			isa = PBXGroup;
 			children = (
 				F58754182266F4B80090211F /* AppCoordinator.swift */,
+				F5875425226732A30090211F /* DashboardCoordinator.swift */,
+				F5875423226731930090211F /* LoginCoordinator.swift */,
 			);
 			name = Coordinator;
 			sourceTree = "<group>";
@@ -515,6 +524,7 @@
 				F58754142266DB1B0090211F /* Localizable.strings in Resources */,
 				8782F62B20E8AA49008D10D0 /* Averta-RegularItalic.otf in Resources */,
 				8758065720E74EB90082B6D9 /* GoogleService-Info.plist in Resources */,
+				F5875428226735160090211F /* LoginViewController.xib in Resources */,
 				8782F62F20E8AA49008D10D0 /* Averta-BlackItalic.otf in Resources */,
 				878655CF203184AF0050D1BD /* SessionCell.xib in Resources */,
 				8782F63720E8AA49008D10D0 /* Averta-Light.otf in Resources */,
@@ -648,10 +658,12 @@
 				878655D6203192FD0050D1BD /* ItemsDatasource.swift in Sources */,
 				8766A22420D624100044AA9C /* UIExtensions.swift in Sources */,
 				8793A47420C61BEE00770C58 /* MachineLearningViewController.swift in Sources */,
+				F5875424226731930090211F /* LoginCoordinator.swift in Sources */,
 				F58754222266F9FE0090211F /* RepositoryFactory.swift in Sources */,
 				87B5CF0C1F8DE9C000FE12E8 /* SignUpViewController.swift in Sources */,
 				87606DBE202C67F600261CF2 /* ColorExtensions.swift in Sources */,
 				878B56962063338A00E72849 /* BaseViewController.swift in Sources */,
+				F5875426226732A30090211F /* DashboardCoordinator.swift in Sources */,
 				87B5CF121F8DEA1E00FE12E8 /* Item.swift in Sources */,
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,

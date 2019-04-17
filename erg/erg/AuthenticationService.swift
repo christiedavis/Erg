@@ -14,6 +14,8 @@ import FirebaseAuth
 protocol AuthServiceProtocol: class {
     var userId: String { get }
     
+    var isSignedIn: Bool { get }
+    
     func signIn(email: String?, password: String?, callback: @escaping (() -> Void))
     func signOut() -> Error?
 }
@@ -22,15 +24,18 @@ protocol AuthServiceProtocol: class {
 class AuthenticationService: AuthServiceProtocol {
     static var shared: AuthenticationService = AuthenticationService()
 
-    private var user: User!
+    private var user: User?
 
     init() {
         user = Auth.auth().currentUser
-
+    }
+    
+    var isSignedIn: Bool {
+        return self.user != nil
     }
     
     var userId: String {
-        return user.uid
+        return user?.uid ?? "NONE"
     }
     
     func signIn(email: String?, password: String?, callback: @escaping (() -> Void)) {
@@ -39,8 +44,14 @@ class AuthenticationService: AuthServiceProtocol {
                 return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password, completion: { (authDataResult, error) in
             
+            guard let authDataResult = authDataResult else {
+                // error
+                
+                return
+            }
+            self.user = authDataResult.user
             
             callback()
 //            guard let _ = user else {

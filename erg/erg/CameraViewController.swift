@@ -76,12 +76,19 @@ class CameraViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        #if targetEnvironment(simulator)
+
+        return
+        #else
+
         startLiveVideo()
         startTextDetection()
+        #endif
+     
     }
 
     override func viewDidLayoutSubviews() {
-        imageView.layer.sublayers?[0].frame = imageView.bounds
+        imageView.layer.sublayers?.first?.frame = imageView.bounds
     }
     
     func highlightWord(box: VNTextObservation) {

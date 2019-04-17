@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1i-VZ-B1j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1i-VZ-B1j">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ncv-aZ-dZ2">
-                                <rect key="frame" x="32" y="258" width="311" height="44"/>
+                                <rect key="frame" x="32" y="258.5" width="311" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="liz-9G-u0Z"/>
@@ -57,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjR-m2-RjP">
-                                <rect key="frame" x="32" y="378" width="311" height="44"/>
+                                <rect key="frame" x="32" y="378.5" width="311" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ajg-or-3c3"/>
                                 </constraints>
@@ -83,7 +82,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4Z-nl-5s1">
-                                <rect key="frame" x="32" y="318" width="311" height="44"/>
+                                <rect key="frame" x="32" y="318.5" width="311" height="44"/>
                                 <color key="backgroundColor" red="0.062745098039215685" green="0.20000000000000001" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5Xn-k9-49K"/>
@@ -309,7 +308,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZ0-HA-Mfn">
-                                <rect key="frame" x="24" y="52" width="327.5" height="34"/>
+                                <rect key="frame" x="24" y="52" width="327" height="34"/>
                                 <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -321,7 +320,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="80"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Workout" translatesAutoresizingMaskIntoConstraints="NO" id="nlK-Wo-ZlT">
-                                                <rect key="frame" x="20.5" y="10" width="35" height="35"/>
+                                                <rect key="frame" x="20" y="10" width="35" height="35"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -362,7 +361,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFh-Df-Jvr">
-                                                <rect key="frame" x="0.0" y="55" width="74.5" height="13"/>
+                                                <rect key="frame" x="0.0" y="55" width="75" height="13"/>
                                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="10"/>
                                                 <color key="textColor" red="0.75294117650000003" green="0.28235294119999998" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -445,7 +444,7 @@
                                         </connections>
                                     </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ek-EN-DOe" customClass="HomeButtonView" customModule="erg" customModuleProvider="target">
-                                        <rect key="frame" x="150.5" y="0.0" width="74.5" height="80"/>
+                                        <rect key="frame" x="150" y="0.0" width="75" height="80"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="wQe-7C-Uqd">
                                                 <rect key="frame" x="20" y="10" width="35" height="35"/>
@@ -456,7 +455,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMERA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXi-Ke-Iy2">
-                                                <rect key="frame" x="0.0" y="55" width="74.5" height="13"/>
+                                                <rect key="frame" x="0.0" y="55" width="75" height="13"/>
                                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="10"/>
                                                 <color key="textColor" red="0.75294117650000003" green="0.28235294119999998" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -508,13 +507,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total lifetime time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUq-4z-kMg">
-                                <rect key="frame" x="24" y="292" width="311.5" height="24.5"/>
+                                <rect key="frame" x="24" y="292" width="311" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcO-1d-qxb">
-                                <rect key="frame" x="24" y="326.5" width="311.5" height="24"/>
+                                <rect key="frame" x="24" y="326.5" width="311" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -651,7 +650,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBg-1x-YM5">
-                                        <rect key="frame" x="203" y="19" width="140" height="55"/>
+                                        <rect key="frame" x="202.5" y="19" width="140.5" height="55"/>
                                         <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="rCw-58-XGO"/>
@@ -741,7 +740,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r7-36-kkb">
-                                                        <rect key="frame" x="26" y="8" width="27.5" height="14.5"/>
+                                                        <rect key="frame" x="26.5" y="9" width="27.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -758,7 +757,7 @@
                                                 <rect key="frame" x="91.5" y="0.0" width="60" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ikd-qP-gFQ">
-                                                        <rect key="frame" x="15.5" y="8" width="28" height="14.5"/>
+                                                        <rect key="frame" x="16" y="9" width="28" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -775,7 +774,7 @@
                                                 <rect key="frame" x="162.5" y="0.0" width="70" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zt-Wg-U8D">
-                                                        <rect key="frame" x="15.5" y="8" width="38.5" height="14.5"/>
+                                                        <rect key="frame" x="16" y="9" width="38.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -792,7 +791,7 @@
                                                 <rect key="frame" x="244" y="0.0" width="70" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8n-5J-2AV">
-                                                        <rect key="frame" x="22" y="8" width="25.5" height="14.5"/>
+                                                        <rect key="frame" x="22" y="9" width="25.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -809,7 +808,7 @@
                                                 <rect key="frame" x="325" y="0.0" width="50" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tm-ki-MSD">
-                                                        <rect key="frame" x="6" y="8" width="37.5" height="14.5"/>
+                                                        <rect key="frame" x="6.5" y="9" width="37.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="12"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -861,13 +860,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1l-9F-OaE">
-                                <rect key="frame" x="24" y="52" width="327.5" height="34"/>
+                                <rect key="frame" x="24" y="52" width="327" height="34"/>
                                 <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z84-kg-tPN">
-                                <rect key="frame" x="10" y="334.5" width="355" height="19.5"/>
+                                <rect key="frame" x="10" y="334" width="355" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="16"/>
                                 <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>

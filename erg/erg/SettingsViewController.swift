@@ -25,11 +25,11 @@ class SettingsViewController: UIViewController {
         emailButton.layer.cornerRadius = 5
         formButton.layer.cornerRadius = 5
         
-        let waveView = YXWaveView(frame: waterView.frame, color: UIColor.darkBlue)
+        let waveView = YXWaveView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: waterView.frame.height), color: UIColor.darkBlue)
         waveView.backgroundColor = UIColor(red: 248/255, green: 64/255, blue: 87/255, alpha: 0)
         
         // Add WaveView
-        self.view.addSubview(waveView)
+        self.waterView.addSubview(waveView)
         
         // Start wave
         waveView.start()

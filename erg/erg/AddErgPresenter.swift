@@ -51,7 +51,8 @@ class AddErgPresenter: NSObject, AddErgPresenterDelegate {
         
         if let newSession = newSession {
             let workout = WorkoutDTO([piece], newSession)
-            DatabaseRepo.shared.addWorkoutToDatabase(workout: workout)
+           
+            RepositoryFactory.shared.databaseRepo.addWorkoutToDatabase(workout: workout)
             
         } else {
             print("Errror")

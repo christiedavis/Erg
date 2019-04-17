@@ -42,7 +42,7 @@ class HomeViewController: BaseViewController {
     func databaseLoaded() {
         var lifetimeMeters: Double = 0
         var lifetimeTime: Double = 0
-        DatabaseRepo.shared.pieces.forEach { (key, value) in
+        RepositoryFactory.shared.databaseRepo.pieces.forEach { (key, value) in
             value.forEach({ (piece) in
                 if let distance = piece.distance {
                     lifetimeMeters += Double(distance) ?? 0

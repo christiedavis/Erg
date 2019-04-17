@@ -41,11 +41,10 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logoutTapped(_ sender: Any) {
         self.signOut()
-        
     }
     
     @IBAction func formTapped(_ sender: Any) {
-        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScgi7g91EaJHDykxXr8mHinAx0R3htFi_MLQ6tNgVcbw2iyJg/viewform?usp=sf_link") {
+        if let url = URL(string: "settings.quiz.link".localized) {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
@@ -57,18 +56,18 @@ class SettingsViewController: UIViewController {
         if MFMailComposeViewController.canSendMail() {
             let mailVc = MFMailComposeViewController()
             mailVc.mailComposeDelegate = self
-            mailVc.setSubject("iRow app feedback")
-            mailVc.setToRecipients(["irowapp@gmail.com"])
+            mailVc.setSubject("settings.mail.subject".localized)
+            mailVc.setToRecipients(["settings.mail.recipient"])
             
             self.present(mailVc, animated: true, completion: nil)
         }
     }
     
     func signOut() {
-        if DatabaseRepo.shared.signOut() == nil {
-            performSegue(withIdentifier: "SignOut", sender: nil)
-
-        }
+//        if DatabaseRepo.shared.signOut() == nil {
+//            performSegue(withIdentifier: Constants.Segues.signout, sender: nil)
+//
+//        }
     }
 }
 

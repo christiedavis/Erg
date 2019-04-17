@@ -11,10 +11,20 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class DatabaseRepo {
-    static var shared: DatabaseRepo = DatabaseRepo()
+protocol DatabaseRepoProtocol {
+    // cached data
+    var sortedSessions: [Session] { get }
+    var pieces: [String:[Piece]] { get }
     
-    private var user: User!
+    func addWorkoutToDatabase(workout: WorkoutDTO)
+    func delete(_ workout: WorkoutDTO?)
+
+}
+
+class DatabaseRepo {
+    
+    private var authService: AuthServiceProtocol
+    
     private var sessions: [Session] = []
     public private(set) var pieces: [String: [Piece]] = [:]
     private var ref: DatabaseReference!
@@ -23,14 +33,14 @@ class DatabaseRepo {
     
     private var rootReference: DatabaseReference! = Database.database().reference()
     private var sessionReference: DatabaseReference {
-        return rootReference.child("users/\(self.user.uid)/sessions")
+        return rootReference.child("users/\(self.authService.userId)/sessions")
     }
     private var pieceReference: DatabaseReference {
-        return rootReference.child("users/\(self.user.uid)/pieces")
+        return rootReference.child("users/\(self.authService.userId)/pieces")
     }
     
-    init() {
-        user = Auth.auth().currentUser
+    init(_ authDelegate: AuthServiceProtocol) {
+        self.authService = authDelegate
         startObservingDatabase()
     }
 
@@ -60,7 +70,6 @@ class DatabaseRepo {
   
         //TODO: check if i need to update this to go here
 //        NotificationCenter.default.post(name: .databaseLoaded, object: nil)
-
     
     }
     
@@ -68,17 +77,6 @@ class DatabaseRepo {
         if let id = workout?.session.id {
             pieceReference.child(id).removeValue()
             sessionReference.child(id).removeValue()
-        }
-    }
-    
-    func signOut() -> Error? {
-        do {
-            try Auth.auth().signOut()
-            return nil
-            
-        } catch let error {
-            assertionFailure("Error signing out: \(error)")
-            return error
         }
     }
 }
@@ -120,3 +118,6 @@ extension DatabaseRepo {
     }
 }
 
+extension DatabaseRepo: DatabaseRepoProtocol {
+    
+}

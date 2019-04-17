@@ -68,6 +68,9 @@ class LoginViewController: BaseViewController {
         let password = passwordField.text
         
         self.showLoading()
+        
+        
+        
         Auth.auth().signIn(withEmail: email!, password: password!, completion: { (user, error) in
             guard let _ = user else {
                 if let error = error {
@@ -133,7 +136,7 @@ class LoginViewController: BaseViewController {
     }
 
     func signIn() {
-        _ = DatabaseRepo()
+//        _ = DatabaseRepo()
         performSegue(withIdentifier: "SignInFromLogin", sender: nil)
     }
 

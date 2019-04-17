@@ -18,4 +18,8 @@ struct Constants {
         static let secInput: Int = 5
 
     }
+    
+    struct Segues {
+        static let signout = "SignOut"
+    }
 }

@@ -44,10 +44,10 @@ protocol ItemsPresenterDataDelegate {
 class ItemsPresenter: NSObject {
 
     private var sessions: [Session] {
-        return DatabaseRepo.shared.sortedSessions
+        return RepositoryFactory.shared.databaseRepo.sortedSessions
     }
     private var pieces: [String: [Piece]] {
-        return DatabaseRepo.shared.pieces
+        return RepositoryFactory.shared.databaseRepo.pieces
     }
 
     var viewDelegate: ItemsViewControllerDelegate?
@@ -152,7 +152,8 @@ extension ItemsPresenter: ItemsPresenterDataDelegate {
         }))
         alert.addAction( UIAlertAction(title: "Delete", style: .destructive, handler: { [weak self] (action) in
             let workout = self?.workoutViewModelForSection(section)
-            DatabaseRepo.shared.delete(workout)
+           
+            RepositoryFactory.shared.databaseRepo.delete(workout) 
         }))
  
         self.viewDelegate?.showAlert(alert)
@@ -171,7 +172,7 @@ extension ItemsPresenter: ItemsPresenterViewDelegate {
     }
 
     func addWorkoutToDatabase(workout: WorkoutDTO) {
-        DatabaseRepo.shared.addWorkoutToDatabase(workout: workout)
+        RepositoryFactory.shared.databaseRepo.addWorkoutToDatabase(workout: workout)
         self.viewDelegate?.reloadTable()
     }
 }

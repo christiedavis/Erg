@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  erg
+
+  Created by Christie Davis on 17/04/19.
+  Copyright © 2019 star. All rights reserved.
+*/
+
+// SETTINGS
+"settings.quiz.link"="https://docs.google.com/forms/d/e/1FAIpQLScgi7g91EaJHDykxXr8mHinAx0R3htFi_MLQ6tNgVcbw2iyJg/viewform?usp=sf_link";
+"settings.mail.subject"="iRow app feedback";
+"settings.mail.recipient"="christiedavis22@gmail.com";

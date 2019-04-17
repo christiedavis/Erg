@@ -24,4 +24,9 @@ extension String {
         let stringToRetrun = String(self[newIndex])
         return stringToRetrun
     }
+    
+    var localized: String {
+        let localizedString = NSLocalizedString(self, comment: "")
+        return localizedString
+    }
 }

@@ -123,14 +123,14 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     
     func classificationRequest() -> VNCoreMLRequest? {
         
-        if let model = try? VNCoreMLModel(for: MobileNet().model) {
-        
-            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-                self?.processClassifications(for: request, error: error)
-            })
-            request.imageCropAndScaleOption = .centerCrop
-            return request
-        }
+//        if let model = try? VNCoreMLModel(for: MobileNet().model) {
+//        
+//            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+//                self?.processClassifications(for: request, error: error)
+//            })
+//            request.imageCropAndScaleOption = .centerCrop
+//            return request
+//        }
         return nil
     }
     

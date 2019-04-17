@@ -20,6 +20,6 @@ class SessionCell: UITableViewCell {
     
     func setUpAsSessionCell(sessionDto: SessionDTO) {
         timeLabel?.text = sessionDto.title
-        distanceLabel?.text  = "\(sessionDto.date)"
+        distanceLabel?.text  = "\(String(describing: sessionDto.date))"
     }
 }

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Averta-Bold.otf">
+            <string>Averta-Bold</string>
+        </array>
+        <array key="Averta-Regular.otf">
+            <string>Averta-Regular</string>
+        </array>
+        <array key="Averta-Semibold.otf">
+            <string>Averta-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="erg" customModuleProvider="target">
+            <connections>
+                <outlet property="createAccountButton" destination="x85-Ul-ybO" id="HOt-ko-VTt"/>
+                <outlet property="emailField" destination="3SP-pg-pdY" id="kOw-bO-qKI"/>
+                <outlet property="loadingView" destination="98P-Aw-fie" id="UsJ-1N-2Gt"/>
+                <outlet property="loginButton" destination="sC9-hS-pGg" id="YQs-19-ZPg"/>
+                <outlet property="passwordField" destination="hki-F3-EMz" id="Xrv-Cx-wvP"/>
+                <outlet property="view" destination="QX0-1b-fJs" id="fba-bz-wxX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="QX0-1b-fJs">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU2-WY-5iO">
+                    <rect key="frame" x="44" y="86" width="326" height="34"/>
+                    <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0P-pu-b4p">
+                    <rect key="frame" x="115" y="745" width="184" height="19"/>
+                    <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC9-hS-pGg">
+                    <rect key="frame" x="32" y="780" width="350" height="44"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="QgG-W2-orj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="15"/>
+                    <state key="normal" title="LOGIN HERE">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapBackToLogin:" destination="-1" eventType="touchUpInside" id="dHs-Hm-3K8"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3SP-pg-pdY">
+                    <rect key="frame" x="32" y="220" width="350" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ol0-eC-Z1E"/>
+                    </constraints>
+                    <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" alpha="0.40000000596046448" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hki-F3-EMz">
+                    <rect key="frame" x="32" y="280" width="350" height="44"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vDp-Ti-9Jf"/>
+                    </constraints>
+                    <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x85-Ul-ybO">
+                    <rect key="frame" x="32" y="340" width="350" height="44"/>
+                    <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="9DU-MJ-Fve"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="15"/>
+                    <state key="normal" title="CREATE ACCOUNT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapSignUp:" destination="-1" eventType="touchUpInside" id="uVY-VY-9kB"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="98P-Aw-fie">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="S9W-by-IAM" firstAttribute="trailing" secondItem="3SP-pg-pdY" secondAttribute="trailing" constant="32" id="4ZB-9O-v6C"/>
+                <constraint firstItem="sC9-hS-pGg" firstAttribute="trailing" secondItem="x85-Ul-ybO" secondAttribute="trailing" id="5xp-wh-oxf"/>
+                <constraint firstItem="hki-F3-EMz" firstAttribute="top" secondItem="3SP-pg-pdY" secondAttribute="bottom" constant="16" id="6H0-I0-AiF"/>
+                <constraint firstItem="S9W-by-IAM" firstAttribute="trailing" secondItem="98P-Aw-fie" secondAttribute="trailing" id="7FS-lg-SXs"/>
+                <constraint firstItem="sC9-hS-pGg" firstAttribute="top" secondItem="b0P-pu-b4p" secondAttribute="bottom" constant="16" id="7ZW-ou-9ZV"/>
+                <constraint firstItem="3SP-pg-pdY" firstAttribute="leading" secondItem="S9W-by-IAM" secondAttribute="leading" constant="32" id="9BE-fC-XQD"/>
+                <constraint firstItem="S9W-by-IAM" firstAttribute="bottom" secondItem="sC9-hS-pGg" secondAttribute="bottom" constant="38" id="9jm-jL-UN7"/>
+                <constraint firstItem="hki-F3-EMz" firstAttribute="width" secondItem="3SP-pg-pdY" secondAttribute="width" id="CQw-qQ-Jrl"/>
+                <constraint firstItem="x85-Ul-ybO" firstAttribute="top" secondItem="hki-F3-EMz" secondAttribute="bottom" constant="16" id="IUA-qf-4Pw"/>
+                <constraint firstItem="hki-F3-EMz" firstAttribute="leading" secondItem="3SP-pg-pdY" secondAttribute="leading" id="NYg-nn-410"/>
+                <constraint firstItem="x85-Ul-ybO" firstAttribute="trailing" secondItem="hki-F3-EMz" secondAttribute="trailing" id="NaP-SY-iCG"/>
+                <constraint firstItem="WU2-WY-5iO" firstAttribute="leading" secondItem="S9W-by-IAM" secondAttribute="leading" constant="44" id="OmC-AG-0hC"/>
+                <constraint firstItem="sC9-hS-pGg" firstAttribute="leading" secondItem="x85-Ul-ybO" secondAttribute="leading" id="Pac-9G-lK0"/>
+                <constraint firstItem="WU2-WY-5iO" firstAttribute="top" secondItem="S9W-by-IAM" secondAttribute="top" constant="42" id="UY2-bE-Y8h"/>
+                <constraint firstItem="b0P-pu-b4p" firstAttribute="top" relation="greaterThanOrEqual" secondItem="x85-Ul-ybO" secondAttribute="bottom" constant="20" id="Wy6-mk-0Cq"/>
+                <constraint firstItem="hki-F3-EMz" firstAttribute="trailing" secondItem="3SP-pg-pdY" secondAttribute="trailing" id="eOD-ye-YlM"/>
+                <constraint firstItem="3SP-pg-pdY" firstAttribute="top" secondItem="WU2-WY-5iO" secondAttribute="bottom" priority="700" constant="100" id="esn-xS-kBD"/>
+                <constraint firstItem="x85-Ul-ybO" firstAttribute="leading" secondItem="hki-F3-EMz" secondAttribute="leading" id="g7J-pb-Fl6"/>
+                <constraint firstItem="98P-Aw-fie" firstAttribute="leading" secondItem="S9W-by-IAM" secondAttribute="leading" id="nF7-UH-EGO"/>
+                <constraint firstItem="S9W-by-IAM" firstAttribute="bottom" secondItem="98P-Aw-fie" secondAttribute="bottom" id="rqg-xf-HEo"/>
+                <constraint firstItem="98P-Aw-fie" firstAttribute="top" secondItem="S9W-by-IAM" secondAttribute="top" id="v3i-E7-Ov4"/>
+                <constraint firstItem="b0P-pu-b4p" firstAttribute="centerX" secondItem="sC9-hS-pGg" secondAttribute="centerX" id="yU2-DK-4Uh"/>
+                <constraint firstItem="S9W-by-IAM" firstAttribute="trailing" secondItem="WU2-WY-5iO" secondAttribute="trailing" constant="44" id="zOL-tw-VH8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="S9W-by-IAM"/>
+        </view>
+    </objects>
+</document>

@@ -13,6 +13,8 @@ import YXWaveView
 
 class LoginViewController: BaseViewController {
     
+    var coordinator: LoginCoordinatorProtocol?
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
 
@@ -53,82 +55,91 @@ class LoginViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let _ = Auth.auth().currentUser {
-            self.signIn()
+    }
+
+    @IBAction func didTapSignup(_ sender: Any) {
+        self.coordinator?.signup()
+        
+    }
+    
+    @IBAction func didTapSignIn(_ sender: UIButton) {
+        
+        guard let email = emailField.text,
+            let password = passwordField.text else {
+                return
+        }
+        
+        self.showLoading()
+        
+        RepositoryFactory.shared.authenticationRepo.signIn(email: email, password: password) { (error) in
+            
+            self.dismissLoading()
+            self.showAlert("Incorrect username/password combination")
+
+            if error == nil {
+                self.coordinator?.signedIn()
+                return
+            }
+            if let error = error {
+                if let errCode = AuthErrorCode(rawValue: error._code) {
+                    self.dismissLoading()
+                    switch errCode {
+                    case .userNotFound:
+                        self.showAlert("User account not found. Try registering")
+                    case .wrongPassword:
+                        self.showAlert("Incorrect username/password combination")
+                    default:
+                        self.showAlert("Error: \(error.localizedDescription)")
+                    }
+                }
+                return
+            }
+            assertionFailure("user and error are nil")
+            return
             
         }
     }
 
-    @IBAction func didTapSignup(_ sender: Any) {
-        self.performSegue(withIdentifier: "SignUp", sender: self)
-        
-    }
-    @IBAction func didTapSignIn(_ sender: UIButton) {
-        let email = emailField.text
-        let password = passwordField.text
-        
-        self.showLoading()
-        
-        
-        
-        Auth.auth().signIn(withEmail: email!, password: password!, completion: { (user, error) in
-            guard let _ = user else {
-                if let error = error {
-                    if let errCode = AuthErrorCode(rawValue: error._code) {
-                        self.dismissLoading()
-                        switch errCode {
-                        case .userNotFound:
-                            self.showAlert("User account not found. Try registering")
-                        case .wrongPassword:
-                            self.showAlert("Incorrect username/password combination")
-                        default:
-                            self.showAlert("Error: \(error.localizedDescription)")
-                        }
-                    }
-                    return
-                }
-                assertionFailure("user and error are nil")
-                return
-            }
-            self.dismissLoading()
-            self.signIn()
-        })
-    }
-
     @IBAction func didRequestPasswordReset(_ sender: UIButton) {
         let prompt = UIAlertController(title: "Reset your password", message: "Enter your email to reset your password", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            let userInput = prompt.textFields![0].text
-            if (userInput!.isEmpty) {
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] (action) in
+            
+            guard let email = prompt.textFields?[0].text else {
                 return
             }
-            Auth.auth().sendPasswordReset(withEmail: userInput!, completion: { (error) in
-                if let error = error {
-                    if let errCode = AuthErrorCode(rawValue: error._code) {
-                        switch errCode {
-                        case .userNotFound:
-                            DispatchQueue.main.async {
-                                self.showAlert("User account not found. Try registering")
-                            }
-                        default:
-                            DispatchQueue.main.async {
-                                self.showAlert("Error: \(error.localizedDescription)")
-                            }
-                        }
-                    }
-                    return
-                } else {
-                    DispatchQueue.main.async {
-                        self.showAlert("You'll receive an email shortly to reset your password.")
-                    }
-                }
-            })
+            self?.doResetPassword(email: email)
+            
         }
         prompt.addTextField(configurationHandler: nil)
         prompt.addAction(okAction)
         present(prompt, animated: true, completion: nil)
     }
 
+    private func doResetPassword(email: String) {
+        RepositoryFactory.shared.authenticationRepo.resetPassword(email: email, callback: { (error) in
+            
+            if let error = error {
+                if let errCode = AuthErrorCode(rawValue: error._code) {
+                    switch errCode {
+                    case .userNotFound:
+                        DispatchQueue.main.async {
+                            self.showAlert("User account not found. Try registering")
+                        }
+                    default:
+                        DispatchQueue.main.async {
+                            self.showAlert("Error: \(error.localizedDescription)")
+                        }
+                    }
+                }
+                return
+            } else {
+                DispatchQueue.main.async {
+                    self.showAlert("You'll receive an email shortly to reset your password.")
+                }
+            }
+        })
+    }
+    
     func showAlert(_ message: String) {
         let alertController = UIAlertController(title: "iRow", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))

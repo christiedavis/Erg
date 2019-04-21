@@ -21,6 +21,12 @@ extension DashboardCoordinator: DashboardCoordinatorProtocol {
     func enterNextFlow(navigationController: UINavigationController, sender: Any?) {
       
         self.navigationController = navigationController
+        self.goToHome()
         
+    }
+    
+    private func goToHome() {
+        let loginVc = HomeViewController()
+        navigationController?.pushViewController(loginVc, animated: true)
     }
 }

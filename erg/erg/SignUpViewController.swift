@@ -11,6 +11,7 @@ import FirebaseAuth
 import YXWaveView
 
 class SignUpViewController: BaseViewController {
+    var coordinator: LoginCoordinatorProtocol?
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -37,27 +38,33 @@ class SignUpViewController: BaseViewController {
     }
     
     @IBAction func didTapSignUp(_ sender: UIButton) {
+        
+        guard let email = emailField.text,
+            let password = passwordField.text else {
+                return
+        }
+        
         self.showLoading()
-        let email = emailField.text
-        let password = passwordField.text
-        Auth.auth().createUser(withEmail: email!, password: password!, completion: { (user, error) in
-            self.dismissLoading()
+      
+        RepositoryFactory.shared.authenticationRepo.signUp(email: email, password: password) { [weak self] (error) in
+         
+            self?.dismissLoading()
             
             if let error = error {
                 if let errCode = AuthErrorCode(rawValue: error._code) {
                     switch errCode {
                     case .invalidEmail:
-                        self.showAlert("Enter a valid email.")
+                        self?.showAlert("Enter a valid email.")
                     case .emailAlreadyInUse:
-                        self.showAlert("Email already in use.")
+                        self?.showAlert("Email already in use.")
                     default:
-                        self.showAlert("Error: \(error.localizedDescription)")
+                        self?.showAlert("Error: \(error.localizedDescription)")
                     }
                 }
                 return
             }
-            self.signIn()
-        })
+            self?.signIn()
+        }
     }
     
     @IBAction func didTapBackToLogin(_ sender: UIButton) {
@@ -71,7 +78,6 @@ class SignUpViewController: BaseViewController {
     }
     
     func signIn() {
-//        _ = DatabaseRepo()
         performSegue(withIdentifier: "SignInFromSignUp", sender: nil)
     }
 

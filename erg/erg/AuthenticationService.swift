@@ -16,10 +16,12 @@ protocol AuthServiceProtocol: class {
     
     var isSignedIn: Bool { get }
     
-    func signIn(email: String?, password: String?, callback: @escaping (() -> Void))
+    func signIn(email: String, password: String, callback: @escaping ((Error?) -> Void))
+    func signUp(email: String, password: String, callback: @escaping ((Error?) -> Void))
+    
+    func resetPassword(email: String, callback: @escaping ((Error?) -> Void))
     func signOut() -> Error?
 }
-
 
 class AuthenticationService: AuthServiceProtocol {
     static var shared: AuthenticationService = AuthenticationService()
@@ -38,43 +40,27 @@ class AuthenticationService: AuthServiceProtocol {
         return user?.uid ?? "NONE"
     }
     
-    func signIn(email: String?, password: String?, callback: @escaping (() -> Void)) {
-        guard let email = email,
-            let password = password else {
-                return
-        }
+    func signIn(email: String, password: String, callback: @escaping ((Error?) -> Void)) {
         
         Auth.auth().signIn(withEmail: email, password: password, completion: { (authDataResult, error) in
             
-            guard let authDataResult = authDataResult else {
-                // error
-                
-                return
-            }
-            self.user = authDataResult.user
+            self.user = authDataResult?.user
             
-            callback()
-//            guard let _ = user else {
-//                if let error = error {
-//                    if let errCode = AuthErrorCode(rawValue: error._code) {
-//                        self.dismissLoading()
-//                        switch errCode {
-//                        case .userNotFound:
-//                            self.showAlert("User account not found. Try registering")
-//                        case .wrongPassword:
-//                            self.showAlert("Incorrect username/password combination")
-//                        default:
-//                            self.showAlert("Error: \(error.localizedDescription)")
-//                        }
-//                    }
-//                    return
-//                }
-//                assertionFailure("user and error are nil")
-//                return
-//            }
-//            self.dismissLoading()
-//            self.signIn()
+            callback(error)
         })
+    }
+    
+    func signUp(email: String, password: String, callback: @escaping ((Error?) -> Void)) {
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            callback(error)
+        })
+    }
+    
+    
+    func resetPassword(email: String, callback: @escaping ((Error?) -> Void)) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: { (error) in
+            callback(error)
+            })
     }
     
     func signOut() -> Error? {

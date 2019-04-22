@@ -20,7 +20,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ItemsTableViewController" customModule="erg" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="wtp-LF-ICM" id="z3t-kL-7Zs"/>
                 <outlet property="errorMessageLabel" destination="N52-wL-GAF" id="xIw-Lh-fiY"/>
                 <outlet property="primaryLabel" destination="kk9-6G-MmA" id="sBI-iE-Fd6"/>
                 <outlet property="secondaryLabel" destination="h7O-K1-zPK" id="Avx-bk-mKk"/>
@@ -149,24 +148,13 @@
                     <rect key="frame" x="0.0" y="202" width="414" height="660"/>
                     <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtp-LF-ICM">
-                    <rect key="frame" x="370" y="44" width="44" height="44"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="44" id="Bhd-y8-35Y"/>
-                        <constraint firstAttribute="height" constant="44" id="cfH-4p-QvQ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="icClose"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-rR-Rzl">
                     <rect key="frame" x="24" y="76" width="366" height="34"/>
                     <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N52-wL-GAF">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N52-wL-GAF">
                     <rect key="frame" x="10" y="443.5" width="394" height="19.5"/>
                     <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="16"/>
                     <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,7 +184,6 @@
                 <constraint firstItem="DY6-gy-t3k" firstAttribute="leading" secondItem="4sk-hp-dHp" secondAttribute="leading" id="GeQ-Jv-k5R"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DY6-gy-t3k" secondAttribute="trailing" constant="20" symbolic="YES" id="IIh-R9-Hmm"/>
                 <constraint firstItem="N52-wL-GAF" firstAttribute="centerX" secondItem="5Pr-Qo-d9a" secondAttribute="centerXWithinMargins" id="IUw-zX-CHF"/>
-                <constraint firstItem="arS-AR-L7c" firstAttribute="trailing" secondItem="wtp-LF-ICM" secondAttribute="trailing" id="Nkt-92-Gzp"/>
                 <constraint firstItem="N52-wL-GAF" firstAttribute="leading" secondItem="arS-AR-L7c" secondAttribute="leading" constant="10" id="PXL-27-I1a"/>
                 <constraint firstItem="4sk-hp-dHp" firstAttribute="top" secondItem="qQe-rR-Rzl" secondAttribute="bottom" constant="12" id="WZq-Nk-xs2"/>
                 <constraint firstItem="DY6-gy-t3k" firstAttribute="top" secondItem="4sk-hp-dHp" secondAttribute="bottom" id="WhM-4I-bJF"/>
@@ -205,7 +192,6 @@
                 <constraint firstItem="arS-AR-L7c" firstAttribute="trailing" secondItem="Hkf-sv-kqC" secondAttribute="trailing" id="ehC-Eg-dzz"/>
                 <constraint firstItem="arS-AR-L7c" firstAttribute="bottom" secondItem="OkH-ja-MGb" secondAttribute="bottom" id="lNG-w9-5ab"/>
                 <constraint firstItem="qQe-rR-Rzl" firstAttribute="centerX" secondItem="5Pr-Qo-d9a" secondAttribute="centerX" id="nbx-Yw-4N9"/>
-                <constraint firstItem="wtp-LF-ICM" firstAttribute="top" secondItem="arS-AR-L7c" secondAttribute="top" id="qaS-Cp-kHP"/>
                 <constraint firstItem="4sk-hp-dHp" firstAttribute="leading" secondItem="arS-AR-L7c" secondAttribute="leading" constant="24" id="tTR-ET-gle"/>
                 <constraint firstItem="arS-AR-L7c" firstAttribute="trailing" secondItem="OkH-ja-MGb" secondAttribute="trailing" id="vHV-IL-0HY"/>
                 <constraint firstItem="Hkf-sv-kqC" firstAttribute="top" secondItem="DY6-gy-t3k" secondAttribute="bottom" constant="16" id="xvE-aM-jOn"/>
@@ -213,7 +199,4 @@
             <viewLayoutGuide key="safeArea" id="arS-AR-L7c"/>
         </view>
     </objects>
-    <resources>
-        <image name="icClose" width="24" height="24"/>
-    </resources>
 </document>

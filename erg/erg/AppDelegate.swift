@@ -83,8 +83,8 @@ extension AppDelegate {
     func setupTabBar() {
         // Appearance options
         UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = UIColor.white
-//        UITabBar.appearance().tintColor = UIColor.burntYellow
+        UITabBar.appearance().barTintColor = UIColor.burntYellow
+        UITabBar.appearance().tintColor = UIColor.burntOrange
 //        UITabBar.appearance().unselectedItemTintColor = UIColor.steelDrive
         UITabBar.appearance().clipsToBounds = false
         

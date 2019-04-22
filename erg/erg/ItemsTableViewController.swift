@@ -59,11 +59,6 @@ class ItemsTableViewController: BaseViewController {
         reloadTable()
         self.dismissLoading()
     }
-
-    // MARK: - Table view data source
-    @IBAction func backAction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowAddErgData" {

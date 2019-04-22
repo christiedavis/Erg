@@ -21,17 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oH-A9-jSU">
-                    <rect key="frame" x="334" y="44" width="60" height="60"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="68r-Sx-HEs"/>
-                        <constraint firstAttribute="width" constant="60" id="Vgi-ZV-UuM"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="icClose"/>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TIy-En-GT1">
                     <rect key="frame" x="20" y="124" width="374" height="688"/>
                 </imageView>
@@ -41,14 +30,9 @@
                 <constraint firstItem="TIy-En-GT1" firstAttribute="leading" secondItem="6aS-LA-SCS" secondAttribute="leading" constant="20" id="AZ2-K9-frP"/>
                 <constraint firstItem="6aS-LA-SCS" firstAttribute="bottom" secondItem="TIy-En-GT1" secondAttribute="bottom" constant="50" id="Baf-R3-5W3"/>
                 <constraint firstItem="6aS-LA-SCS" firstAttribute="trailing" secondItem="TIy-En-GT1" secondAttribute="trailing" constant="20" id="CsR-iS-TlK"/>
-                <constraint firstItem="7oH-A9-jSU" firstAttribute="trailing" secondItem="7CO-RP-3sa" secondAttribute="trailingMargin" id="ehG-U7-NYs"/>
-                <constraint firstItem="TIy-En-GT1" firstAttribute="top" secondItem="7oH-A9-jSU" secondAttribute="bottom" constant="20" id="gFU-aZ-vtt"/>
-                <constraint firstItem="7oH-A9-jSU" firstAttribute="top" secondItem="6aS-LA-SCS" secondAttribute="top" id="jh7-3a-GKH"/>
+                <constraint firstItem="TIy-En-GT1" firstAttribute="top" secondItem="6aS-LA-SCS" secondAttribute="top" constant="80" id="DZd-ct-YWh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="6aS-LA-SCS"/>
         </view>
     </objects>
-    <resources>
-        <image name="icClose" width="24" height="24"/>
-    </resources>
 </document>

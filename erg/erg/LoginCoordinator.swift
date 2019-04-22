@@ -35,7 +35,8 @@ extension LoginCoordinator: LoginCoordinatorProtocol {
     func signup() {
         let signupVc = SignUpViewController()
         signupVc.coordinator = self
-        navigationController?.pushViewController(signupVc, animated: true)
+       
+       navigationController?.present(signupVc, animated: true, completion: nil)
     }
     
     func signedIn() {

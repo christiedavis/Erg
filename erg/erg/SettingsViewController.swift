@@ -35,10 +35,6 @@ class SettingsViewController: UIViewController {
         waveView.start()
     }
     
-    @IBAction func dismissView(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @IBAction func logoutTapped(_ sender: Any) {
         self.signOut()
     }
@@ -65,17 +61,10 @@ class SettingsViewController: UIViewController {
     
     func signOut() {
         RepositoryFactory.shared.authenticationRepo.signOut()
-        
-//        if DatabaseRepo.shared.signOut() == nil {
-//            performSegue(withIdentifier: Constants.Segues.signout, sender: nil)
-//
-//        }
     }
 }
 
 extension SettingsViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        
-        self.dismissView(self)
     }
 }

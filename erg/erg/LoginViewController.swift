@@ -145,23 +145,6 @@ class LoginViewController: BaseViewController {
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
-
-//    func signIn() {
-//        sel.
-//    }
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "SignInFromLogin" {
-//            
-//            if let destinationNavigationController = segue.destination as? UINavigationController {
-//                if let targetController = destinationNavigationController.topViewController as? ItemsTableViewController {
-//                    let itemPresenter = ItemsPresenter()
-//                    itemPresenter.viewDelegate = targetController
-//                    targetController.presenter = itemPresenter
-//                }
-//            }
-//        }
-//    }
     
     @objc
     func dismissKeyboard() {

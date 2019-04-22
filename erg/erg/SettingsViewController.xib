@@ -38,17 +38,6 @@
                     <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94N-o8-1jY">
-                    <rect key="frame" x="334" y="44" width="60" height="60"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="8ie-AE-3Sn"/>
-                        <constraint firstAttribute="width" constant="60" id="ypO-qL-v4K"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="icClose"/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information about this project, contact christiedavis22@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2M-kO-VHD">
                     <rect key="frame" x="40" y="371" width="334" height="34"/>
                     <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="14"/>
@@ -130,7 +119,6 @@
             <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="c3w-MW-QiS" firstAttribute="trailing" secondItem="q0X-ea-Jmy" secondAttribute="trailing" id="2FB-Rg-6aR"/>
-                <constraint firstAttribute="trailingMargin" secondItem="94N-o8-1jY" secondAttribute="trailing" id="8BO-R0-e5O"/>
                 <constraint firstItem="CyI-Lh-qYK" firstAttribute="leading" secondItem="q0X-ea-Jmy" secondAttribute="leading" id="8ez-I6-B8U"/>
                 <constraint firstItem="UtI-zj-Wdn" firstAttribute="centerY" secondItem="ptN-lO-xDN" secondAttribute="centerY" id="DUN-KU-kwv"/>
                 <constraint firstItem="UtI-zj-Wdn" firstAttribute="top" secondItem="O2M-kO-VHD" secondAttribute="bottom" constant="18" id="FjL-y0-MJ5"/>
@@ -138,7 +126,6 @@
                 <constraint firstItem="c3w-MW-QiS" firstAttribute="leading" secondItem="q0X-ea-Jmy" secondAttribute="leading" id="J6g-sF-Ikm"/>
                 <constraint firstItem="CyI-Lh-qYK" firstAttribute="bottom" secondItem="q0X-ea-Jmy" secondAttribute="bottom" id="Nxz-n1-3r8"/>
                 <constraint firstAttribute="trailing" secondItem="nM9-X7-KRQ" secondAttribute="trailing" constant="40" id="Rsd-v5-mmp"/>
-                <constraint firstItem="94N-o8-1jY" firstAttribute="top" secondItem="q0X-ea-Jmy" secondAttribute="top" id="UZ2-jd-ZKV"/>
                 <constraint firstAttribute="trailing" secondItem="O2M-kO-VHD" secondAttribute="trailing" constant="40" id="att-mL-NNc"/>
                 <constraint firstItem="O2M-kO-VHD" firstAttribute="top" secondItem="nM9-X7-KRQ" secondAttribute="bottom" constant="20" id="cxL-R8-C4J"/>
                 <constraint firstItem="CyI-Lh-qYK" firstAttribute="trailing" secondItem="q0X-ea-Jmy" secondAttribute="trailing" id="g3X-W3-N6Z"/>
@@ -152,7 +139,4 @@
             <viewLayoutGuide key="safeArea" id="q0X-ea-Jmy"/>
         </view>
     </objects>
-    <resources>
-        <image name="icClose" width="24" height="24"/>
-    </resources>
 </document>

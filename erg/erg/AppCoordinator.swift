@@ -8,7 +8,8 @@
 
 import UIKit
 
-protocol FlowCoordinatorProtocol {
+protocol FlowCoordinatorProtocol: class {
+    var appCoordinator: AppCoordinatorDelegate? { get set }
     func enterNextFlow(navigationController: UINavigationController, sender: Any?)
 }
 
@@ -30,6 +31,10 @@ class AppCoordinator {
     
     fileprivate lazy var loginCoordinator: FlowCoordinatorProtocol = LoginCoordinator()
     fileprivate lazy var dashboardCoordinator: FlowCoordinatorProtocol = DashboardCoordinator()
+    
+    init() {        self.dashboardCoordinator.appCoordinator = self
+        self.loginCoordinator.appCoordinator = self
+    }
     
     func enterNextFlow(currentCoordinator: FlowCoordinatorProtocol?, sender: Any?, with internalViewController: UINavigationController? = nil) {
         // check for access, log in

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Averta-Bold.otf">
+            <string>Averta-Bold</string>
+        </array>
+        <array key="Averta-Regular.otf">
+            <string>Averta-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="erg" customModuleProvider="target">
+            <connections>
+                <outlet property="emailButton" destination="oC2-oX-DXi" id="gGy-rR-wyB"/>
+                <outlet property="formButton" destination="Tsr-ne-8zn" id="X6Z-lt-7Ok"/>
+                <outlet property="logoutButton" destination="4SS-o5-L9u" id="7gg-Pd-gI5"/>
+                <outlet property="view" destination="ptN-lO-xDN" id="5bY-y9-09U"/>
+                <outlet property="waterView" destination="c3w-MW-QiS" id="tYd-EY-K6b"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ptN-lO-xDN">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This screen will be released as part of future app updates" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM9-X7-KRQ">
+                    <rect key="frame" x="40" y="302.5" width="334" height="48.5"/>
+                    <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="20"/>
+                    <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94N-o8-1jY">
+                    <rect key="frame" x="334" y="44" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="8ie-AE-3Sn"/>
+                        <constraint firstAttribute="width" constant="60" id="ypO-qL-v4K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="icClose"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For more information about this project, contact christiedavis22@gmail.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2M-kO-VHD">
+                    <rect key="frame" x="40" y="371" width="334" height="34"/>
+                    <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="14"/>
+                    <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The findings from the machine learning aspect of this project will be made available at Mobile Refresh 2018" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtI-zj-Wdn">
+                    <rect key="frame" x="40" y="423" width="334" height="50.5"/>
+                    <fontDescription key="fontDescription" name="Averta-Regular" family="Averta" pointSize="14"/>
+                    <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CyI-Lh-qYK">
+                    <rect key="frame" x="0.0" y="684" width="414" height="178"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SS-o5-L9u">
+                            <rect key="frame" x="32" y="90" width="350" height="50"/>
+                            <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CQe-W9-w8t"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="16"/>
+                            <state key="normal" title="LOG OUT">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="logoutTapped:" destination="-1" eventType="touchUpInside" id="JPA-8o-0c4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oC2-oX-DXi">
+                            <rect key="frame" x="32" y="19" width="160" height="55"/>
+                            <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="axN-XR-Qld"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="16"/>
+                            <state key="normal" title="Email us"/>
+                            <connections>
+                                <action selector="emailTapped:" destination="-1" eventType="touchUpInside" id="S3V-gg-kh1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsr-ne-8zn">
+                            <rect key="frame" x="222" y="19" width="160" height="55"/>
+                            <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="MeO-cn-dco"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="16"/>
+                            <state key="normal" title="About you">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="formTapped:" destination="-1" eventType="touchUpInside" id="gYt-UR-5eM"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.062745098040000002" green="0.20000000000000001" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="4SS-o5-L9u" firstAttribute="leading" secondItem="CyI-Lh-qYK" secondAttribute="leading" constant="32" id="AAz-Ye-bmP"/>
+                        <constraint firstAttribute="bottom" secondItem="4SS-o5-L9u" secondAttribute="bottom" constant="38" id="Xb8-EK-wuu"/>
+                        <constraint firstAttribute="height" constant="178" id="YZh-sV-Djr"/>
+                        <constraint firstItem="4SS-o5-L9u" firstAttribute="top" secondItem="oC2-oX-DXi" secondAttribute="bottom" constant="16" id="c1g-5l-lOY"/>
+                        <constraint firstItem="Tsr-ne-8zn" firstAttribute="width" secondItem="oC2-oX-DXi" secondAttribute="width" id="g5Y-PO-xWv"/>
+                        <constraint firstItem="oC2-oX-DXi" firstAttribute="leading" secondItem="4SS-o5-L9u" secondAttribute="leading" id="hdr-Ea-TIo"/>
+                        <constraint firstItem="Tsr-ne-8zn" firstAttribute="leading" secondItem="oC2-oX-DXi" secondAttribute="trailing" constant="30" id="kqQ-xM-0es"/>
+                        <constraint firstAttribute="trailing" secondItem="4SS-o5-L9u" secondAttribute="trailing" constant="32" id="mg8-E6-LcF"/>
+                        <constraint firstItem="Tsr-ne-8zn" firstAttribute="trailing" secondItem="4SS-o5-L9u" secondAttribute="trailing" id="pYg-AV-Tt7"/>
+                        <constraint firstItem="4SS-o5-L9u" firstAttribute="top" secondItem="Tsr-ne-8zn" secondAttribute="bottom" constant="16" id="sMa-6Z-K7X"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3w-MW-QiS">
+                    <rect key="frame" x="0.0" y="644" width="414" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ug0-2i-TCn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="c3w-MW-QiS" firstAttribute="trailing" secondItem="q0X-ea-Jmy" secondAttribute="trailing" id="2FB-Rg-6aR"/>
+                <constraint firstAttribute="trailingMargin" secondItem="94N-o8-1jY" secondAttribute="trailing" id="8BO-R0-e5O"/>
+                <constraint firstItem="CyI-Lh-qYK" firstAttribute="leading" secondItem="q0X-ea-Jmy" secondAttribute="leading" id="8ez-I6-B8U"/>
+                <constraint firstItem="UtI-zj-Wdn" firstAttribute="centerY" secondItem="ptN-lO-xDN" secondAttribute="centerY" id="DUN-KU-kwv"/>
+                <constraint firstItem="UtI-zj-Wdn" firstAttribute="top" secondItem="O2M-kO-VHD" secondAttribute="bottom" constant="18" id="FjL-y0-MJ5"/>
+                <constraint firstItem="O2M-kO-VHD" firstAttribute="leading" secondItem="q0X-ea-Jmy" secondAttribute="leading" constant="40" id="GN2-Fb-CHf"/>
+                <constraint firstItem="c3w-MW-QiS" firstAttribute="leading" secondItem="q0X-ea-Jmy" secondAttribute="leading" id="J6g-sF-Ikm"/>
+                <constraint firstItem="CyI-Lh-qYK" firstAttribute="bottom" secondItem="q0X-ea-Jmy" secondAttribute="bottom" id="Nxz-n1-3r8"/>
+                <constraint firstAttribute="trailing" secondItem="nM9-X7-KRQ" secondAttribute="trailing" constant="40" id="Rsd-v5-mmp"/>
+                <constraint firstItem="94N-o8-1jY" firstAttribute="top" secondItem="q0X-ea-Jmy" secondAttribute="top" id="UZ2-jd-ZKV"/>
+                <constraint firstAttribute="trailing" secondItem="O2M-kO-VHD" secondAttribute="trailing" constant="40" id="att-mL-NNc"/>
+                <constraint firstItem="O2M-kO-VHD" firstAttribute="top" secondItem="nM9-X7-KRQ" secondAttribute="bottom" constant="20" id="cxL-R8-C4J"/>
+                <constraint firstItem="CyI-Lh-qYK" firstAttribute="trailing" secondItem="q0X-ea-Jmy" secondAttribute="trailing" id="g3X-W3-N6Z"/>
+                <constraint firstItem="UtI-zj-Wdn" firstAttribute="leading" secondItem="O2M-kO-VHD" secondAttribute="leading" id="k75-YJ-fXb"/>
+                <constraint firstItem="CyI-Lh-qYK" firstAttribute="top" secondItem="c3w-MW-QiS" secondAttribute="bottom" id="m2P-tX-FjL"/>
+                <constraint firstItem="CyI-Lh-qYK" firstAttribute="trailing" secondItem="q0X-ea-Jmy" secondAttribute="trailing" id="q3G-8P-MhJ"/>
+                <constraint firstItem="nM9-X7-KRQ" firstAttribute="leading" secondItem="ptN-lO-xDN" secondAttribute="leading" constant="40" id="rDo-xq-kz8"/>
+                <constraint firstItem="UtI-zj-Wdn" firstAttribute="trailing" secondItem="O2M-kO-VHD" secondAttribute="trailing" id="uCf-AP-1XF"/>
+                <constraint firstItem="CyI-Lh-qYK" firstAttribute="leading" secondItem="q0X-ea-Jmy" secondAttribute="leading" id="wNZ-R0-w1M"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="q0X-ea-Jmy"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icClose" width="24" height="24"/>
+    </resources>
+</document>

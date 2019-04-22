@@ -146,23 +146,22 @@ class LoginViewController: BaseViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 
-    func signIn() {
-//        _ = DatabaseRepo()
-        performSegue(withIdentifier: "SignInFromLogin", sender: nil)
-    }
+//    func signIn() {
+//        sel.
+//    }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SignInFromLogin" {
-            
-            if let destinationNavigationController = segue.destination as? UINavigationController {
-                if let targetController = destinationNavigationController.topViewController as? ItemsTableViewController {
-                    let itemPresenter = ItemsPresenter()
-                    itemPresenter.viewDelegate = targetController
-                    targetController.presenter = itemPresenter
-                }
-            }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "SignInFromLogin" {
+//            
+//            if let destinationNavigationController = segue.destination as? UINavigationController {
+//                if let targetController = destinationNavigationController.topViewController as? ItemsTableViewController {
+//                    let itemPresenter = ItemsPresenter()
+//                    itemPresenter.viewDelegate = targetController
+//                    targetController.presenter = itemPresenter
+//                }
+//            }
+//        }
+//    }
     
     @objc
     func dismissKeyboard() {

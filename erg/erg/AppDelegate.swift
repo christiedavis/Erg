@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-
+        self.setupTabBar()
+        
         self.coordinator.enterNextFlow(currentCoordinator: nil, sender: nil)
 
         return true
@@ -75,5 +76,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+}
+
+extension AppDelegate {
+    func setupTabBar() {
+        // Appearance options
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = UIColor.white
+//        UITabBar.appearance().tintColor = UIColor.burntYellow
+//        UITabBar.appearance().unselectedItemTintColor = UIColor.steelDrive
+        UITabBar.appearance().clipsToBounds = false
+        
+//        UITabBar.appearance().backgroundImage = UIImage.colorForNavBar(color: UIColor.white)
+//        UITabBar.appearance().shadowImage = UIImage(named: Constants.Image.rectangle)
+        
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.steelDrive, NSAttributedString.Key.font: UIFont.fineprint2Font()], for: UIControl.State.normal)
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black, NSAttributedString.Key.font: UIFont.fineprint1Font()], for: UIControl.State.selected)
     }
 }

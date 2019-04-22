@@ -18,8 +18,8 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet var lifetimeMetersLabel: UILabel!
     @IBOutlet var lifetimeTimeLbel: UILabel!
-    //    @IBOutlet weak var tableview: UITableView!
     
+    weak var coordinator: DashboardCoordinatorProtocol?
     var presenter: ItemsPresenterViewDelegate?
     
     override func viewDidLoad() {
@@ -27,11 +27,11 @@ class HomeViewController: BaseViewController {
        
         NotificationCenter.default.addObserver(self, selector: #selector(databaseLoaded), name: .databaseLoaded, object: nil)
         
-        filterMenuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToFilter)))
-        addErgButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAddErg)))
-        cameraButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCamera)))
-        predictButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToPredict)))
-        settingsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSettings)))
+//        filterMenuButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToFilter)))
+//        addErgButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToAddErg)))
+//        cameraButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToCamera)))
+//        predictButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToPredict)))
+//        settingsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToSettings)))
     }
     
     deinit {
@@ -57,57 +57,34 @@ class HomeViewController: BaseViewController {
         lifetimeTimeLbel.text = "\(lifetimeTime) minutes"
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToFilter" {
-            
-            if let targetController = segue.destination as? ItemsTableViewController {
-                    let itemPresenter = ItemsPresenter()
-                    itemPresenter.viewDelegate = targetController
-                    targetController.presenter = itemPresenter
-            }
-        } else if segue.identifier == "goToAddErg" {
-            if let targetController = segue.destination as? AddErgDataViewController {
-                let itemPresenter = AddErgPresenter(itemsControllerDelegate: self)
-                itemPresenter.viewDelegate = targetController
-                targetController.presenter = itemPresenter
-            }
-        } else if segue.identifier == "goToCamera" {
-            if let targetController = segue.destination as? CameraViewController {
-                // no set up reqd yet
-            }
-        } else if segue.identifier == "goToPredict" {
-            // no set up reqd yet
-
-        } else if segue.identifier == "goToSettings" {
-          // no set up reqd yet
-        }
-    }
+    
 }
 
 extension HomeViewController { // Menu Actions
     @objc
     func goToFilter() {
-        self.performSegue(withIdentifier: "goToFilter", sender: self)
+        self.coordinator?.goToFilter()
     }
     
     @objc
     func goToAddErg() {
-        self.performSegue(withIdentifier: "goToAddErg", sender: self)
+        self.coordinator?.goToAddErg()
     }
     
     @objc
     func goToCamera() {
-        self.performSegue(withIdentifier: "goToCamera", sender: self)
+        self.coordinator?.goToCamera()
+        
     }
     
     @objc
     func goToPredict() {
-        self.performSegue(withIdentifier: "goToPredict", sender: self)
+        self.coordinator?.goToPredict()
     }
     
     @objc
     func goToSettings() {
-        self.performSegue(withIdentifier: "goToSettings", sender: self)
+       self.goToSettings()
     }
 }
 
@@ -118,11 +95,10 @@ extension HomeViewController: ItemsViewControllerDelegate {
     }
     
     func addWorkoutToView(workout: WorkoutDTO) {
-//        presenter?.addWorkoutToDatabase(workout: workout)
     }
     
     func signOut() {
-        performSegue(withIdentifier: "SignOut", sender: nil)
+        self.coordinator?.signOut()
     }
 }
 

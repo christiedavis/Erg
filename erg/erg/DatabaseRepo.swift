@@ -16,6 +16,9 @@ protocol DatabaseRepoProtocol {
     var sortedSessions: [Session] { get }
     var pieces: [String:[Piece]] { get }
     
+    var lifetimeMeters: Double? { get }
+    var lifetimeTime: Double? { get }
+    
     func addWorkoutToDatabase(workout: WorkoutDTO)
     func delete(_ workout: WorkoutDTO?)
 
@@ -119,5 +122,30 @@ extension DatabaseRepo {
 }
 
 extension DatabaseRepo: DatabaseRepoProtocol {
+    var lifetimeMeters: Double? {
+        var meters: Double = 0
+        
+        self.pieces.forEach { (key, value) in
+            value.forEach({ (piece) in
+                if let distance = piece.distance {
+                    meters += Double(distance) ?? 0
+                }
+            })
+        }
+        return meters
+    }
     
+    var lifetimeTime: Double? {
+        var times: Double = 0
+        
+        self.pieces.forEach { (key, value) in
+            value.forEach({ (piece) in
+                
+                if let time = piece.time {
+                    times += Double(time) ?? 0
+                }
+            })
+        }
+        return times
+    }
 }

@@ -41,10 +41,11 @@ class ItemsTableViewController: BaseViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(databaseLoaded), name: .databaseLoaded, object: nil)
      
-        tableView.delegate = presenter!.datasource
-        tableView.dataSource = presenter!.datasource
-        reloadTable()
-        
+        if let presenter = self.presenter {
+            tableView.delegate = presenter.datasource
+            tableView.dataSource = presenter.datasource
+            reloadTable()
+        }
         primaryLabel.text = "Metres"
         secondaryLabel.text = "Time"
     }

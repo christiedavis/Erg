@@ -20,6 +20,7 @@ enum OrderingByType: Int {
 }
 
 protocol ItemsPresenterViewDelegate: class {
+
     var viewDelegate: ItemsViewControllerDelegate? { get set }
     var datasource: ItemsDatasource { get }
     var filterTitle: String? { get }

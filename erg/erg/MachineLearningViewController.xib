@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MachineLearningViewController" customModule="erg" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="YoX-3o-Qu0" id="PsG-VV-lci"/>
+                <outlet property="view" destination="d6f-Rk-fS1" id="51M-PU-zdg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="d6f-Rk-fS1">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YoX-3o-Qu0">
+                    <rect key="frame" x="0.0" y="44" width="414" height="718"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ag-6N-kYO">
+                    <rect key="frame" x="354" y="44" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="5CT-6x-D41"/>
+                        <constraint firstAttribute="width" constant="60" id="UOW-K9-8At"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="icClose"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASi-WK-T42">
+                    <rect key="frame" x="20" y="782" width="177" height="60"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Retake">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pI-9x-6c3">
+                    <rect key="frame" x="217" y="782" width="177" height="60"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Add Erg">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-qd-aru">
+                    <rect key="frame" x="10" y="762" width="394" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="l9p-qd-aru" firstAttribute="centerX" secondItem="d6f-Rk-fS1" secondAttribute="centerX" id="173-dQ-aHa"/>
+                <constraint firstItem="YoX-3o-Qu0" firstAttribute="top" secondItem="RfC-H5-CAR" secondAttribute="top" id="1CB-ae-bfY"/>
+                <constraint firstItem="7Ag-6N-kYO" firstAttribute="top" secondItem="RfC-H5-CAR" secondAttribute="top" id="2bo-K2-xHY"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="bottom" secondItem="ASi-WK-T42" secondAttribute="bottom" constant="20" id="A0D-Vw-XwY"/>
+                <constraint firstItem="6pI-9x-6c3" firstAttribute="leading" secondItem="ASi-WK-T42" secondAttribute="trailing" constant="20" id="E55-YK-QmU"/>
+                <constraint firstItem="l9p-qd-aru" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" constant="10" id="FUA-6s-XSY"/>
+                <constraint firstItem="ASi-WK-T42" firstAttribute="width" secondItem="6pI-9x-6c3" secondAttribute="width" id="GzR-as-BMB"/>
+                <constraint firstItem="YoX-3o-Qu0" firstAttribute="top" secondItem="RfC-H5-CAR" secondAttribute="top" id="Qll-jp-1yR"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="l9p-qd-aru" secondAttribute="trailing" constant="10" id="QnV-nu-Q8F"/>
+                <constraint firstItem="YoX-3o-Qu0" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" id="R8O-Y6-rIb"/>
+                <constraint firstItem="ASi-WK-T42" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" constant="20" id="TsU-VW-JBD"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="bottom" secondItem="YoX-3o-Qu0" secondAttribute="bottom" constant="100" id="bxv-iZ-vop"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="6pI-9x-6c3" secondAttribute="trailing" constant="20" id="dgP-zE-Hhb"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="7Ag-6N-kYO" secondAttribute="trailing" id="e56-FJ-vXw"/>
+                <constraint firstItem="ASi-WK-T42" firstAttribute="top" secondItem="YoX-3o-Qu0" secondAttribute="bottom" constant="20" id="iv6-pQ-TMf"/>
+                <constraint firstItem="6pI-9x-6c3" firstAttribute="top" secondItem="YoX-3o-Qu0" secondAttribute="bottom" constant="20" id="tj4-dg-0wR"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="bottom" secondItem="6pI-9x-6c3" secondAttribute="bottom" constant="20" id="vQ8-07-KYN"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="YoX-3o-Qu0" secondAttribute="trailing" id="w9P-Gt-02j"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="YoX-3o-Qu0" secondAttribute="trailing" id="x93-cd-1Tp"/>
+                <constraint firstItem="ASi-WK-T42" firstAttribute="top" secondItem="l9p-qd-aru" secondAttribute="bottom" constant="20" id="y2f-FD-oXq"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="RfC-H5-CAR"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icClose" width="24" height="24"/>
+    </resources>
+</document>

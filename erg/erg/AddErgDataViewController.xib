@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Averta-Bold.otf">
+            <string>Averta-Bold</string>
+        </array>
+        <array key="Averta-Semibold.otf">
+            <string>Averta-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddErgDataViewController" customModule="erg" customModuleProvider="target">
+            <connections>
+                <outlet property="addSessionView" destination="jra-kH-B7f" id="Rqj-CL-toP"/>
+                <outlet property="submitButton" destination="c1Z-wm-W1E" id="3Zm-k9-Xyj"/>
+                <outlet property="view" destination="zzb-c9-lTe" id="1KS-I7-pC7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="zzb-c9-lTe">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-8P-XHZ">
+                    <rect key="frame" x="370" y="44" width="44" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="EUI-4G-ptL"/>
+                        <constraint firstAttribute="height" constant="44" id="R3V-Lw-mFr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="icClose"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSN-N3-0cn">
+                    <rect key="frame" x="24" y="76" width="167" height="34"/>
+                    <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1Z-wm-W1E">
+                    <rect key="frame" x="20" y="469.5" width="374" height="50"/>
+                    <color key="backgroundColor" red="0.094117647060000004" green="0.85490196080000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="PJC-AO-JC8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Averta-Bold" family="Averta" pointSize="15"/>
+                    <state key="normal" title="SUBMIT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of erg workout?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nct-NK-IOY">
+                    <rect key="frame" x="24" y="142" width="300" height="19.5"/>
+                    <fontDescription key="fontDescription" name="Averta-Semibold" family="Averta" pointSize="16"/>
+                    <color key="textColor" red="0.062745098040000002" green="0.28627450980000002" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Swb-VR-gR3">
+                    <rect key="frame" x="24" y="171.5" width="300" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="LX0-2h-ld6"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Distance"/>
+                        <segment title="Time"/>
+                    </segments>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jra-kH-B7f" customClass="AddWorkoutView" customModule="erg" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="229.5" width="414" height="220"/>
+                    <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="220" id="lxj-Ll-yci"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cmQ-xS-lIV" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="c1Z-wm-W1E" secondAttribute="bottom" id="06g-Y5-W1O"/>
+                <constraint firstItem="Swb-VR-gR3" firstAttribute="centerX" secondItem="zzb-c9-lTe" secondAttribute="centerX" constant="-33" id="3VZ-4N-Ogy"/>
+                <constraint firstItem="cmQ-xS-lIV" firstAttribute="trailing" secondItem="c1Z-wm-W1E" secondAttribute="trailing" constant="20" id="6RR-Gi-Dad"/>
+                <constraint firstItem="Swb-VR-gR3" firstAttribute="leading" secondItem="Nct-NK-IOY" secondAttribute="leading" id="HLF-zy-xap"/>
+                <constraint firstItem="c1Z-wm-W1E" firstAttribute="leading" secondItem="cmQ-xS-lIV" secondAttribute="leading" constant="20" id="M0P-mh-Bz3"/>
+                <constraint firstItem="xSN-N3-0cn" firstAttribute="top" secondItem="cmQ-xS-lIV" secondAttribute="top" priority="700" constant="32" id="Qw8-Y2-pQg"/>
+                <constraint firstItem="c1Z-wm-W1E" firstAttribute="top" secondItem="jra-kH-B7f" secondAttribute="bottom" constant="20" id="RDv-po-VVW"/>
+                <constraint firstItem="Swb-VR-gR3" firstAttribute="trailing" secondItem="Nct-NK-IOY" secondAttribute="trailing" id="aHd-92-zAv"/>
+                <constraint firstItem="cmQ-xS-lIV" firstAttribute="trailing" secondItem="jra-kH-B7f" secondAttribute="trailing" id="aRY-F2-LBp"/>
+                <constraint firstItem="cmQ-xS-lIV" firstAttribute="trailing" secondItem="F4v-8P-XHZ" secondAttribute="trailing" id="cU8-JM-Yub"/>
+                <constraint firstItem="xSN-N3-0cn" firstAttribute="leading" secondItem="cmQ-xS-lIV" secondAttribute="leading" constant="24" id="dPO-GY-3sh"/>
+                <constraint firstItem="jra-kH-B7f" firstAttribute="top" secondItem="Swb-VR-gR3" secondAttribute="bottom" constant="26" id="jts-mD-jho"/>
+                <constraint firstItem="Nct-NK-IOY" firstAttribute="top" secondItem="xSN-N3-0cn" secondAttribute="bottom" priority="700" constant="32" id="oLj-Pj-usD"/>
+                <constraint firstItem="jra-kH-B7f" firstAttribute="leading" secondItem="cmQ-xS-lIV" secondAttribute="leading" id="qym-5I-gCG"/>
+                <constraint firstItem="Swb-VR-gR3" firstAttribute="top" secondItem="Nct-NK-IOY" secondAttribute="bottom" constant="10" id="vfu-eD-ov4"/>
+                <constraint firstItem="F4v-8P-XHZ" firstAttribute="top" secondItem="zzb-c9-lTe" secondAttribute="topMargin" id="wKU-cF-p6d"/>
+                <constraint firstItem="Nct-NK-IOY" firstAttribute="leading" secondItem="xSN-N3-0cn" secondAttribute="leading" id="yJT-4C-Jq7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="cmQ-xS-lIV"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icClose" width="24" height="24"/>
+    </resources>
+</document>

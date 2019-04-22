@@ -64,6 +64,8 @@ class SettingsViewController: UIViewController {
     }
     
     func signOut() {
+        RepositoryFactory.shared.authenticationRepo.signOut()
+        
 //        if DatabaseRepo.shared.signOut() == nil {
 //            performSegue(withIdentifier: Constants.Segues.signout, sender: nil)
 //

@@ -6,6 +6,13 @@
   Copyright © 2019 star. All rights reserved.
 */
 
+// TAB BAR
+"dashboards.tabs.workouts"="WORKOUTS";
+"dashboards.tabs.adderg"="ADD ERG";
+"dashboards.tabs.camera"="CAMERA";
+"dashboards.tabs.predict"="PREDICT";
+"dashboards.tabs.settings"="SETTINGS";
+
 // SETTINGS
 "settings.quiz.link"="https://docs.google.com/forms/d/e/1FAIpQLScgi7g91EaJHDykxXr8mHinAx0R3htFi_MLQ6tNgVcbw2iyJg/viewform?usp=sf_link";
 "settings.mail.subject"="iRow app feedback";

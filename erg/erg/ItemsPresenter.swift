@@ -19,7 +19,7 @@ enum OrderingByType: Int {
     case rate
 }
 
-protocol ItemsPresenterViewDelegate: class {
+protocol WorkoutPresenterViewDelegate: class {
 
     var viewDelegate: ItemsViewControllerDelegate? { get set }
     var datasource: ItemsDatasource { get }
@@ -30,7 +30,7 @@ protocol ItemsPresenterViewDelegate: class {
     func setOrderingBy(_ orderType: OrderingByType)
 }
 
-protocol ItemsPresenterDataDelegate {
+protocol WorkoutPresenterDataDelegate {
     
     var sessionPickerValueArray: [String] { get }
     var filter: SessionType? { get }
@@ -138,7 +138,7 @@ class ItemsPresenter: NSObject {
     }
 }
 
-extension ItemsPresenter: ItemsPresenterDataDelegate {
+extension ItemsPresenter: WorkoutPresenterDataDelegate {
     
     func setSessionTypeFromPicker(_ rowSelected: Int) {
         sessionViewFilter = sessionPickerValueArray[rowSelected]
@@ -161,7 +161,7 @@ extension ItemsPresenter: ItemsPresenterDataDelegate {
     }
 }
 
-extension ItemsPresenter: ItemsPresenterViewDelegate {
+extension ItemsPresenter: WorkoutPresenterViewDelegate {
     
     func setOrderingBy(_ orderType: OrderingByType) {
         self.orderByType = orderType

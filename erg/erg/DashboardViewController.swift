@@ -11,7 +11,7 @@ import UIKit
 class DashboardViewController: UITabBarController {
 
     var coordinator: DashboardCoordinatorProtocol?
-    var presenter: ItemsPresenterViewDelegate?
+    var presenter: WorkoutPresenterViewDelegate?
     
 //    @IBOutlet var lifetimeMetersLabel: UILabel!
 //    @IBOutlet var lifetimeTimeLbel: UILabel!

@@ -51,15 +51,9 @@ class LoginViewController: BaseViewController {
         
         self.dismissLoading()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-    }
 
     @IBAction func didTapSignup(_ sender: Any) {
         self.coordinator?.signup()
-        
     }
     
     @IBAction func didTapSignIn(_ sender: UIButton) {
@@ -143,6 +137,7 @@ class LoginViewController: BaseViewController {
     func showAlert(_ message: String) {
         let alertController = UIAlertController(title: "iRow", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        
         self.present(alertController, animated: true, completion: nil)
     }
     

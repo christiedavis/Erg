@@ -9,13 +9,13 @@
 import UIKit
 
 class ItemsDatasource: NSObject {
-    var presenter: ItemsPresenterDataDelegate?
+    var presenter: WorkoutPresenterDataDelegate?
     
     override init() {
         super.init()
     }
     
-    init(_ presenter: ItemsPresenterDataDelegate) {
+    init(_ presenter: WorkoutPresenterDataDelegate) {
         self.presenter = presenter
     }
 }

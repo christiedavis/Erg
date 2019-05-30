@@ -24,8 +24,6 @@ protocol AddErgViewControllerDelegate: class {
 
 class AddErgDataViewController: UIViewController {
 
-//    @IBOutlet weak var tableView: UITableView!
-
     @IBOutlet weak var segmentView: UISegmentedControl!
     @IBOutlet weak var noPiecesLabel: UILabel!
     @IBOutlet weak var noPiecesStepper: UIStepper!

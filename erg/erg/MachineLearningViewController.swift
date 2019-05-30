@@ -157,7 +157,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                 destinationVc.presenter = AddErgPresenter(piece: pieceDTO)
                 destinationVc.presenter?.viewDelegate = destinationVc
                 destinationVc.dissmissableCompletetionView = self
-                
             }
         }
     }
@@ -167,7 +166,11 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func addErgTapped(_ sender: Any) {
-        
+        let addErgVC = AddErgDataViewController()
+        addErgVC.presenter = AddErgPresenter(piece: pieceDTO)
+        addErgVC.presenter?.viewDelegate = addErgVC
+        addErgVC.dissmissableCompletetionView = self
+        addErgVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(addErgVC, animated: true)
     }
 }
-

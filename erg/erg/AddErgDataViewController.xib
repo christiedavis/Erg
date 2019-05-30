@@ -21,6 +21,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddErgDataViewController" customModule="erg" customModuleProvider="target">
             <connections>
                 <outlet property="addSessionView" destination="jra-kH-B7f" id="Rqj-CL-toP"/>
+                <outlet property="segmentView" destination="Swb-VR-gR3" id="vs2-JN-OYm"/>
                 <outlet property="submitButton" destination="c1Z-wm-W1E" id="3Zm-k9-Xyj"/>
                 <outlet property="view" destination="zzb-c9-lTe" id="1KS-I7-pC7"/>
             </connections>

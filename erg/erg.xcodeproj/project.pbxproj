@@ -79,6 +79,7 @@
 		F5875438226D47110090211F /* MachineLearningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5875437226D47110090211F /* MachineLearningViewController.xib */; };
 		F587543A226D47320090211F /* ItemsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5875439226D47320090211F /* ItemsTableViewController.xib */; };
 		F5875440226ED8A20090211F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F587543F226ED8A20090211F /* Default-568h@2x.png */; };
+		F5B1A129229F8C3100820B8E /* ImageClassifier-erg 2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F5B1A128229F8C3100820B8E /* ImageClassifier-erg 2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		F5875437226D47110090211F /* MachineLearningViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MachineLearningViewController.xib; sourceTree = "<group>"; };
 		F5875439226D47320090211F /* ItemsTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsTableViewController.xib; sourceTree = "<group>"; };
 		F587543F226ED8A20090211F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F5B1A128229F8C3100820B8E /* ImageClassifier-erg 2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = "ImageClassifier-erg 2.mlmodel"; path = "../../Models/ImageClassifier-erg 2.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +211,6 @@
 		871E05AA1EC6E4F6002933E6 = {
 			isa = PBXGroup;
 			children = (
-				F587543F226ED8A20090211F /* Default-568h@2x.png */,
 				871E05B51EC6E4F6002933E6 /* erg */,
 				871E05CD1EC6E4F7002933E6 /* ergTests */,
 				871E05B41EC6E4F6002933E6 /* Products */,
@@ -230,6 +231,7 @@
 		871E05B51EC6E4F6002933E6 /* erg */ = {
 			isa = PBXGroup;
 			children = (
+				F587543F226ED8A20090211F /* Default-568h@2x.png */,
 				F58754172266F4A60090211F /* Coordinator */,
 				87E7A2CD20E59ACA00322E00 /* erg.entitlements */,
 				87606DD0202CFD8600261CF2 /* Models */,
@@ -256,6 +258,7 @@
 		87606DBF202CECAC00261CF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F5B1A128229F8C3100820B8E /* ImageClassifier-erg 2.mlmodel */,
 				87606DC0202CECBE00261CF2 /* Fonts */,
 				87CF635720DBA2BB0030F744 /* Extensions.swift */,
 				8758065620E74EB90082B6D9 /* GoogleService-Info.plist */,
@@ -700,6 +703,7 @@
 				877D42EF209B2F4B00892A5C /* Constants.swift in Sources */,
 				87CDA22A2043F2DA00E2D86B /* Workout.swift in Sources */,
 				8766A22220D60D250044AA9C /* CameraViewController.swift in Sources */,
+				F5B1A129229F8C3100820B8E /* ImageClassifier-erg 2.mlmodel in Sources */,
 				F587541F2266F7AB0090211F /* AuthenticationService.swift in Sources */,
 				878655D8203197B30050D1BD /* ItemsPresenter.swift in Sources */,
 				878655D1203184AF0050D1BD /* HeaderCell.swift in Sources */,

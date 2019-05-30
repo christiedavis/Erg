@@ -66,14 +66,12 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         
         // register to receive buffers from the camera
         let videoOutput = AVCaptureVideoDataOutput()
-//        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "MyQueue"))
         self.captureSession.addOutput(videoOutput)
         
         // begin the session
         self.captureSession.startRunning()
         self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: [:])
         self.takePhoto()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,49 +84,49 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerEditedImage]
        
-//        imageClassification(image: image as? UIImage)
         if let uiimage = image as? UIImage {
             self.imageView.image = uiimage
             let textBlockFeatures = self.textDetector?.features(in: uiimage, options: [:])
             self.processImageData(textBlockFeatures)
+            self.imageClassification(image: uiimage)
         }
         picker.dismiss(animated: true, completion: nil)
 
     }
    
-//    func imageClassification(image: UIImage?) {
-//        guard let classificationRequest = self.classificationRequest(), let image = image, let ciiMahe = CIImage(image: image) else {
-//            return
-//        }
-//
-//
-//        DispatchQueue.global(qos: .userInitiated).async {
-//
-//            let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
-////            VNImageRequestHandler(cgImage: T##CGImage, options: T##[VNImageOption : Any])
-//            do {
-//                try handler.perform([classificationRequest])
-//            } catch {
-//                /*
-//                 This handler catches general image processing errors. The `classificationRequest`'s
-//                 completion handler `processClassifications(_:error:)` catches errors specific
-//                 to processing that request.
-//                 */
-//                print("Failed to perform classification.\n\(error.localizedDescription)")
-//            }
-//        }
-//    }
+    func imageClassification(image: UIImage?) {
+        guard let classificationRequest = self.classificationRequest(), let image = image, let ciiMahe = CIImage(image: image) else {
+            return
+        }
+
+
+        DispatchQueue.global(qos: .userInitiated).async {
+
+            let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
+//            VNImageRequestHandler(cgImage: T##CGImage, options: T##[VNImageOption : Any])
+            do {
+                try handler.perform([classificationRequest])
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
+            }
+        }
+    }
     
     func classificationRequest() -> VNCoreMLRequest? {
         
-//        if let model = try? VNCoreMLModel(for: MobileNet().model) {
-//        
-//            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
-//                self?.processClassifications(for: request, error: error)
-//            })
-//            request.imageCropAndScaleOption = .centerCrop
-//            return request
-//        }
+        if let model = try? VNCoreMLModel(for: ImageClassifier_erg_2_1().model) {
+        
+            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                self?.processClassifications(for: request, error: error)
+            })
+            request.imageCropAndScaleOption = .centerCrop
+            return request
+        }
         return nil
     }
     
@@ -139,14 +137,12 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                 return
             }
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
-            let classifications = results as! [VNClassificationObservation]
+            let classifications = results as? [VNClassificationObservation]
             print(results.count)
-            self.classificationLabel.text = classifications.first?.identifier
             
+            self.classificationLabel.text = classifications?.first?.identifier
         }
-            
     }
-    
     
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -156,7 +152,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     private func processImageData(_ textBlockFeatures:  [GMVFeature]?) {
         let processor = StringProcessor()
         self.pieceDTO = processor.processImageData(textBlockFeatures)
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -187,7 +182,6 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         if segue.identifier == "GoToAddWorkout" {
             if let destinationVc = segue.destination as? AddErgDataViewController {
                 
-//                let piece = PieceDTO(rowId: 0)
                 destinationVc.presenter = AddErgPresenter(piece: pieceDTO)
                 destinationVc.presenter?.viewDelegate = destinationVc
                 destinationVc.dissmissableCompletetionView = self

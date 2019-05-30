@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import Vision
 
+// THIS USES iOS
 class CameraViewController: BaseViewController {
 
     var requests = [VNRequest]()
@@ -26,10 +27,8 @@ class CameraViewController: BaseViewController {
     
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-        
     }
    
-    
     func detectTextHandler(request: VNRequest, error: Error?) {
         guard let observations = request.results else {
             print("no result")
@@ -81,8 +80,8 @@ class CameraViewController: BaseViewController {
         return
         #else
 
-        startLiveVideo()
-        startTextDetection()
+//        startLiveVideo()
+//        startTextDetection()
         #endif
      
     }

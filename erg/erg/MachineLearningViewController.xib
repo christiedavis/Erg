@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MachineLearningViewController" customModule="erg" customModuleProvider="target">
             <connections>
+                <outlet property="classificationLabel" destination="eYl-AM-Vmi" id="vii-B3-t2v"/>
+                <outlet property="errorMessage" destination="l9p-qd-aru" id="t0M-5F-YqH"/>
                 <outlet property="imageView" destination="YoX-3o-Qu0" id="PsG-VV-lci"/>
                 <outlet property="view" destination="d6f-Rk-fS1" id="51M-PU-zdg"/>
             </connections>
@@ -44,15 +46,31 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="classification label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYl-AM-Vmi">
+                    <rect key="frame" x="16" y="85" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I think this is a..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjz-NZ-wcs">
+                    <rect key="frame" x="16" y="60" width="382" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.20000000000000001" green="0.69019607839999997" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="l9p-qd-aru" firstAttribute="centerX" secondItem="d6f-Rk-fS1" secondAttribute="centerX" id="173-dQ-aHa"/>
                 <constraint firstItem="YoX-3o-Qu0" firstAttribute="top" secondItem="RfC-H5-CAR" secondAttribute="top" id="1CB-ae-bfY"/>
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="bottom" secondItem="ASi-WK-T42" secondAttribute="bottom" constant="20" id="A0D-Vw-XwY"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="eYl-AM-Vmi" secondAttribute="trailing" constant="16" id="A0Y-cV-hGw"/>
+                <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="Cjz-NZ-wcs" secondAttribute="trailing" constant="16" id="BBp-bV-cMj"/>
                 <constraint firstItem="6pI-9x-6c3" firstAttribute="leading" secondItem="ASi-WK-T42" secondAttribute="trailing" constant="20" id="E55-YK-QmU"/>
                 <constraint firstItem="l9p-qd-aru" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" constant="10" id="FUA-6s-XSY"/>
                 <constraint firstItem="ASi-WK-T42" firstAttribute="width" secondItem="6pI-9x-6c3" secondAttribute="width" id="GzR-as-BMB"/>
+                <constraint firstItem="Cjz-NZ-wcs" firstAttribute="top" secondItem="RfC-H5-CAR" secondAttribute="top" constant="16" id="Oi9-1Q-bJA"/>
+                <constraint firstItem="eYl-AM-Vmi" firstAttribute="top" secondItem="Cjz-NZ-wcs" secondAttribute="bottom" constant="4" id="POD-1W-Iou"/>
                 <constraint firstItem="YoX-3o-Qu0" firstAttribute="top" secondItem="RfC-H5-CAR" secondAttribute="top" id="Qll-jp-1yR"/>
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="l9p-qd-aru" secondAttribute="trailing" constant="10" id="QnV-nu-Q8F"/>
                 <constraint firstItem="YoX-3o-Qu0" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" id="R8O-Y6-rIb"/>
@@ -60,9 +78,11 @@
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="bottom" secondItem="YoX-3o-Qu0" secondAttribute="bottom" constant="100" id="bxv-iZ-vop"/>
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="6pI-9x-6c3" secondAttribute="trailing" constant="20" id="dgP-zE-Hhb"/>
                 <constraint firstItem="ASi-WK-T42" firstAttribute="top" secondItem="YoX-3o-Qu0" secondAttribute="bottom" constant="20" id="iv6-pQ-TMf"/>
+                <constraint firstItem="Cjz-NZ-wcs" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" constant="16" id="lJ5-F1-jGf"/>
                 <constraint firstItem="6pI-9x-6c3" firstAttribute="top" secondItem="YoX-3o-Qu0" secondAttribute="bottom" constant="20" id="tj4-dg-0wR"/>
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="bottom" secondItem="6pI-9x-6c3" secondAttribute="bottom" constant="20" id="vQ8-07-KYN"/>
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="YoX-3o-Qu0" secondAttribute="trailing" id="w9P-Gt-02j"/>
+                <constraint firstItem="eYl-AM-Vmi" firstAttribute="leading" secondItem="RfC-H5-CAR" secondAttribute="leading" constant="16" id="x1u-l0-EoY"/>
                 <constraint firstItem="RfC-H5-CAR" firstAttribute="trailing" secondItem="YoX-3o-Qu0" secondAttribute="trailing" id="x93-cd-1Tp"/>
                 <constraint firstItem="ASi-WK-T42" firstAttribute="top" secondItem="l9p-qd-aru" secondAttribute="bottom" constant="20" id="y2f-FD-oXq"/>
             </constraints>

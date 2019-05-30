@@ -6,7 +6,11 @@ target 'erg' do
   use_frameworks!
 
   # Pods for erg
-	
+  pod 'Firebase/Analytics'
+  pod 'Firebase/MLVision'
+  # If using an on-device API:
+  pod 'Firebase/MLVisionTextModel'
+    
     pod 'Firebase/Core'
     pod 'Firebase/Database'
     pod 'Firebase/Auth'

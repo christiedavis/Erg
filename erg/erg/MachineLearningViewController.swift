@@ -36,40 +36,12 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet var classificationLabel: UILabel!
     
     var shouldDismissOnAppear: Bool = false
-
-    private(set) lazy var cameraLayer: AVCaptureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-    
-    
-    private lazy var captureSession: AVCaptureSession = {
-        let session = AVCaptureSession()
-        session.sessionPreset = AVCaptureSession.Preset.photo
-        
-        guard
-            let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
-            let input = try? AVCaptureDeviceInput(device: backCamera)
-            else {
-                return session
-        }
-        
-        session.addInput(input)
-        return session
-    }()
-    
   
     var textDetector: GMVDetector?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cameraLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(cameraLayer)
-        
-        // register to receive buffers from the camera
-        let videoOutput = AVCaptureVideoDataOutput()
-        self.captureSession.addOutput(videoOutput)
-        
-        // begin the session
-        self.captureSession.startRunning()
+    
         self.textDetector = GMVDetector(ofType: GMVDetectorTypeText, options: [:])
         self.takePhoto()
     }
@@ -103,7 +75,7 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         DispatchQueue.global(qos: .userInitiated).async {
 
             let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
-//            VNImageRequestHandler(cgImage: T##CGImage, options: T##[VNImageOption : Any])
+
             do {
                 try handler.perform([classificationRequest])
             } catch {
@@ -188,6 +160,14 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
                 
             }
         }
+    }
+    
+    @IBAction func retaketapped(_ sender: Any) {
+        self.takePhoto()
+    }
+    
+    @IBAction func addErgTapped(_ sender: Any) {
+        
     }
 }
 

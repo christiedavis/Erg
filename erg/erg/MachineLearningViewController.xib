@@ -32,6 +32,9 @@
                     <state key="normal" title="Retake">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="retaketapped:" destination="-1" eventType="touchUpInside" id="ydM-2g-zXf"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pI-9x-6c3">
                     <rect key="frame" x="217" y="782" width="177" height="60"/>
@@ -39,6 +42,9 @@
                     <state key="normal" title="Add Erg">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="addErgTapped:" destination="-1" eventType="touchUpInside" id="lIe-Y3-Iod"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9p-qd-aru">
                     <rect key="frame" x="10" y="762" width="394" height="0.0"/>

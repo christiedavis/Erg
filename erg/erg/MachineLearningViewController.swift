@@ -25,7 +25,7 @@ protocol Dismissable: class {
     var shouldDismissOnAppear: Bool { get set }
 
 }
-
+// THIS ONE USES GOOGLE VISION
 class MachineLearningViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, Dismissable {
     
     @IBOutlet var errorMessage: UILabel!
@@ -85,41 +85,39 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerEditedImage]
-        self.imageView.image = image as? UIImage
        
-        imageClassification(image: image as? UIImage)
-        
-        let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
-        self.processImageData(textBlockFeatures)
-
+//        imageClassification(image: image as? UIImage)
+        if let uiimage = image as? UIImage {
+            self.imageView.image = uiimage
+            let textBlockFeatures = self.textDetector?.features(in: uiimage, options: [:])
+            self.processImageData(textBlockFeatures)
+        }
         picker.dismiss(animated: true, completion: nil)
 
     }
    
-    func imageClassification(image: UIImage?) {
-        
-        guard let classificationRequest = self.classificationRequest(), let image = image, let ciiMahe = CIImage(image: image) else {
-            return
-        }
-        
-        
-
-        DispatchQueue.global(qos: .userInitiated).async {
-            
-            let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
-//            VNImageRequestHandler(cgImage: <#T##CGImage#>, options: <#T##[VNImageOption : Any]#>)
-            do {
-                try handler.perform([classificationRequest])
-            } catch {
-                /*
-                 This handler catches general image processing errors. The `classificationRequest`'s
-                 completion handler `processClassifications(_:error:)` catches errors specific
-                 to processing that request.
-                 */
-                print("Failed to perform classification.\n\(error.localizedDescription)")
-            }
-        }
-    }
+//    func imageClassification(image: UIImage?) {
+//        guard let classificationRequest = self.classificationRequest(), let image = image, let ciiMahe = CIImage(image: image) else {
+//            return
+//        }
+//
+//
+//        DispatchQueue.global(qos: .userInitiated).async {
+//
+//            let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
+////            VNImageRequestHandler(cgImage: T##CGImage, options: T##[VNImageOption : Any])
+//            do {
+//                try handler.perform([classificationRequest])
+//            } catch {
+//                /*
+//                 This handler catches general image processing errors. The `classificationRequest`'s
+//                 completion handler `processClassifications(_:error:)` catches errors specific
+//                 to processing that request.
+//                 */
+//                print("Failed to perform classification.\n\(error.localizedDescription)")
+//            }
+//        }
+//    }
     
     func classificationRequest() -> VNCoreMLRequest? {
         

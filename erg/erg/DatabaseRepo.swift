@@ -69,8 +69,9 @@ class DatabaseRepo {
         let sessionID = sessionReference.childByAutoId()
         
         sessionID.setValue(sessionDBO)
-        pieceReference.child(sessionID.key).setValue(workout.pieces)
-  
+        if let sessionKey = sessionID.key {
+            pieceReference.child(sessionKey).setValue(workout.pieces)
+        }
         //TODO: check if i need to update this to go here
 //        NotificationCenter.default.post(name: .databaseLoaded, object: nil)
     

@@ -32,7 +32,8 @@ class AppCoordinator {
     fileprivate lazy var loginCoordinator: FlowCoordinatorProtocol = LoginCoordinator()
     fileprivate lazy var dashboardCoordinator: FlowCoordinatorProtocol = DashboardCoordinator()
     
-    init() {        self.dashboardCoordinator.appCoordinator = self
+    init() {
+        self.dashboardCoordinator.appCoordinator = self
         self.loginCoordinator.appCoordinator = self
     }
     
@@ -46,14 +47,14 @@ class AppCoordinator {
             let navController = UINavigationController()
             window?.rootViewController = navController
             window?.makeKeyAndVisible()
-            navigationController = navController
-            navigationController?.pushViewController(LaunchViewController(), animated: false)
+            self.navigationController = navController
+            self.navigationController?.pushViewController(LaunchViewController(), animated: false)
             
            // from launch
             self.enterNextFlow(currentCoordinator: currentCoordinator, sender: sender)
         }
         
-        if let navController = internalViewController ?? self.navigationController {
+        if let navController = self.navigationController {
             self.enterNextFlow(currentCoordinator: currentCoordinator, navigationController: navController, sender: sender)
         }
     }

@@ -69,18 +69,19 @@ class AddErgDataViewController: UIViewController {
     }
     
     @IBAction func dismissView(_ sender: Any) {
-        dismissView()
+        self.dismissView()
     }
 
     @IBAction func submittButtonTapped(_ sender: Any) {
         presenter?.saveSession()
         dissmissableCompletetionView?.shouldDismissOnAppear = true
-        dismissView()
+        self.dismissView()
     }
     
     internal func dismissView() {
         dismissKeyboard()
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     @objc

@@ -425,7 +425,7 @@
 					};
 					871E05C91EC6E4F7002933E6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = RU5SGBJGGX;
+						DevelopmentTeam = 77B4XKLPCN;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 871E05B21EC6E4F6002933E6;
@@ -823,7 +823,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = RU5SGBJGGX;
+				DEVELOPMENT_TEAM = 77B4XKLPCN;
 				INFOPLIST_FILE = ergTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = star.ergTests;
@@ -840,7 +840,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = RU5SGBJGGX;
+				DEVELOPMENT_TEAM = 77B4XKLPCN;
 				INFOPLIST_FILE = ergTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = star.ergTests;

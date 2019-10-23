@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseCore
 import FirebaseDatabase
-import FirebaseAuth
 
 enum OrderingByType: Int {
     case date

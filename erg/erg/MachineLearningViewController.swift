@@ -90,11 +90,12 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
         let image = info[UIImagePickerControllerEditedImage]
         self.imageView.image = image as? UIImage
         // todo add image classifier here
-        let classifier = Erg
+//        let classifier: Erg_Row_Classifier_1 = Erg_Row_Classifier_1
         
-        let textBlockFeatures = self.textDetector?.features(in: image as? UIImage, options: [:])
-        self.processImageData(textBlockFeatures)
-        
+        if let image = image as? UIImage {
+            let textBlockFeatures = self.textDetector?.features(in: image, options: [:])
+            self.processImageData(textBlockFeatures)
+        }
         picker.dismiss(animated: true, completion: nil)
     }
    

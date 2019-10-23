@@ -7,8 +7,9 @@
 //
 
 import UIKit
-import FirebaseAuth
+import FirebaseCore
 import YXWaveView
+import FirebaseAuth
 
 class SignUpViewController: BaseViewController {
     

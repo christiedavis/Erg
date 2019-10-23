@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseCore
 import FirebaseDatabase
 import FirebaseAuth
 
@@ -56,8 +56,9 @@ class DatabaseRepo {
         let sessionID = sessionReference.childByAutoId()
         
         sessionID.setValue(sessionDBO)
-        pieceReference.child(sessionID.key).setValue(workout.pieces)
-  
+        if let key = sessionID.key {
+            pieceReference.child(key).setValue(workout.pieces)
+        }
         //TODO: check if i need to update this to go here
 //        NotificationCenter.default.post(name: .databaseLoaded, object: nil)
 

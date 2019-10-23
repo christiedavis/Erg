@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseCore
 import FirebaseAuth
 import YXWaveView
 

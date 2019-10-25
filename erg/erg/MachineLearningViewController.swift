@@ -21,11 +21,6 @@ struct Line {
     var words: [String] = []
 }
 
-struct Column {
-    var xPos: Int = 0
-    var value: [String] = []
-}
-
 protocol Dismissable: class {
     var shouldDismissOnAppear: Bool { get set }
 
@@ -37,6 +32,8 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var imageView: UIImageView!
     
     private var pieceDTO: PieceDTO?
+    
+    @IBOutlet var classificationLabel: UILabel!
     
     var shouldDismissOnAppear: Bool = false
 
@@ -87,21 +84,75 @@ class MachineLearningViewController: UIViewController, UIImagePickerControllerDe
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-// Local variable inserted by Swift 4.2 migrator.
-let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
-        let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)]
-        self.imageView.image = image as? UIImage
-        // todo add image classifier here
-//        let classifier: Erg_Row_Classifier_1 = Erg_Row_Classifier_1
-        
-        if let image = image as? UIImage {
+       
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.imageView.image = image
+           
+            imageClassification(image: image)
+            
             let textBlockFeatures = self.textDetector?.features(in: image, options: [:])
             self.processImageData(textBlockFeatures)
+
         }
+
         picker.dismiss(animated: true, completion: nil)
+
     }
    
+    func imageClassification(image: UIImage?) {
+        
+        guard let classificationRequest = self.classificationRequest(), let image = image, let ciiMahe = CIImage(image: image) else {
+            return
+        }
+        
+        
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let handler = VNImageRequestHandler(ciImage: ciiMahe, options: [:] )
+//            VNImageRequestHandler(cgImage: <#T##CGImage#>, options: <#T##[VNImageOption : Any]#>)
+            do {
+                try handler.perform([classificationRequest])
+            } catch {
+                /*
+                 This handler catches general image processing errors. The `classificationRequest`'s
+                 completion handler `processClassifications(_:error:)` catches errors specific
+                 to processing that request.
+                 */
+                print("Failed to perform classification.\n\(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func classificationRequest() -> VNCoreMLRequest? {
+        
+//        if let model = try? VNCoreMLModel(for: MobileNet().model) {
+//        
+//            let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+//                self?.processClassifications(for: request, error: error)
+//            })
+//            request.imageCropAndScaleOption = .centerCrop
+//            return request
+//        }
+        return nil
+    }
+    
+    func processClassifications(for request: VNRequest, error: Error?) {
+        DispatchQueue.main.async {
+            guard let results = request.results else {
+                print("Unable to classify image.\n\(error!.localizedDescription)")
+                return
+            }
+            // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+            let classifications = results as! [VNClassificationObservation]
+            print(results.count)
+            self.classificationLabel.text = classifications.first?.identifier
+            
+        }
+            
+    }
+    
+    
     @IBAction func dismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
@@ -151,14 +202,3 @@ let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
     }
 }
 
-
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
-	return input.rawValue
-}

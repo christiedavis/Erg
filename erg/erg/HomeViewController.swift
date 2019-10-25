@@ -72,9 +72,9 @@ class HomeViewController: BaseViewController {
                 targetController.presenter = itemPresenter
             }
         } else if segue.identifier == "goToCamera" {
-            if let targetController = segue.destination as? CameraViewController {
+//            if let targetController = segue.destination as? CameraViewController {
                 // no set up reqd yet
-            }
+//            }
         } else if segue.identifier == "goToPredict" {
             // no set up reqd yet
 

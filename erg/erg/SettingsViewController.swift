@@ -47,7 +47,7 @@ class SettingsViewController: UIViewController {
     @IBAction func formTapped(_ sender: Any) {
         if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLScgi7g91EaJHDykxXr8mHinAx0R3htFi_MLQ6tNgVcbw2iyJg/viewform?usp=sf_link") {
             if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                UIApplication.shared.open(url, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
             }
         }
     }
@@ -77,4 +77,9 @@ extension SettingsViewController: MFMailComposeViewControllerDelegate {
         
         self.dismissView(self)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

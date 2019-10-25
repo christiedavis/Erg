@@ -131,7 +131,7 @@ class StringProcessor {
             
             if let textBlock = feature as? GMVTextBlockFeature {
                 
-                NSLog("Text Block: %@", NSStringFromCGRect(textBlock.bounds));
+                NSLog("Text Block: %@", NSCoder.string(for: textBlock.bounds));
                 NSLog(" Text Block: language: \(textBlock.language) , value: \(textBlock.value)")
                 
                 
@@ -145,7 +145,7 @@ class StringProcessor {
                             lineArrayProcessed.append(newLine.value)
                             var line = Line(line: newLine.value, words: [])
                             
-                            NSLog("Text Line: %@", NSStringFromCGRect(newLine.bounds));
+                            NSLog("Text Line: %@", NSCoder.string(for: newLine.bounds));
                             NSLog("text line: lang: %@ value: %@", newLine.language, newLine.value);
                             
                             // For each line, iterate over each word.
